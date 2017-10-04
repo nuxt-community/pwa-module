@@ -1,0 +1,1 @@
+Please refer to [nuxt-community/pwa](https://github.com/nuxt-community/pwa) for documentation.
