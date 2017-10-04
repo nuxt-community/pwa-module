@@ -1,8 +1,20 @@
-<h1 align="center">PWA</h1>
+<h1 align="center">⚡ PWA Module</h1>
 
-Progressive Web Apps (PWA) are reliable, fast,and engaging, although there are many things that can take a PWA from a baseline to exemplary experience. ([learn more](https://developers.google.com/web/progressive-web-apps)).
+<p align="center">
+<a href="https://www.npmjs.com/package/@nuxtjs/pwa">
+    <img alt="" src="https://img.shields.io/npm/dt/@nuxtjs/pwa.svg?style=flat-square">
+</a>
+<a href="https://www.npmjs.com/package/@nuxtjs/pwa">
+    <img alt="" src="https://img.shields.io/npm/v/@nuxtjs/pwa.svg?style=flat-square">
+</a>
+<a href="https://github.com/bakjs/@nuxtjs/pwa">
+    <img alt="" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square">
+</a>
+</p>
 
-Using Nuxt PWA you can supercharge your exciting or next Nuxt project with a heavily tested, updated and stable PWA config.
+> Progressive Web Apps (PWA) are reliable, fast,and engaging, although there are many things that can take a PWA from a baseline to exemplary experience. ([learn more](https://developers.google.com/web/progressive-web-apps)).
+
+Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA config with _almost_ zero-config!
 
 <!-- PWA -->
 <h2 align="center">Quick Setup</h2>
@@ -23,7 +35,7 @@ yarn add @nuxtjs/pwa
 }
 ```
 
-3. Ensure `static` dir exists and optionally create `static/icon.png`. Recommended to be square png and >= `512x512px`
+3. Ensure `static` dir exists and optionally create `static/icon.png`. (Recommended to be square png and >= `512x512px`)
 
 4. Create or add this to `.gitignore`:
 
@@ -32,20 +44,23 @@ sw.*
 workbox-*
 ```
 
-`@nuxtjs/pwa` is a preset module (IE a collection of smaller modules). Continue reading this docs, for detailed info and more customization.
+<h2 align="center">Configuration</h2>
 
-# Modules
+PWA module is actually a preset, with a collection of smaller modules and is designed to magically work out of the box **without need to any configs**. To disable each sub-module, you can pass `false` option with it's name as key. For example to disable _icon_ module:
 
-<!-- PWA -->
-<h2 align="center">PWA</h2>
+```js
+{
+    ['@nuxtjs/pwa', { icon: false }]
+}
+```
 
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/pwa.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/pwa)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/pwa/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/pwa)
+Also each sub-module has it's own configuration. Continue reading this docs, for detailed info.
 
-This module adds all other modules for full PWA experience with Nuxt with _almost_ zero-config!
+
+<h2 align="center">Modules</h2>
 
 <!-- Manifest -->
-<h2 align="center">Manifest</h2>
+## Manifest
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/manifest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/manifest/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest)
@@ -64,7 +79,7 @@ You can add additional options to `manifest` section of `nuxt.config.js` to over
 ```
 
 <!-- Meta -->
-<h2 align="center">Meta</h2>
+## Meta
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/meta.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/meta/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
@@ -106,8 +121,7 @@ Please read this resources before setting IOS specific options:
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
 
 <!-- Workbox -->
-
-<h2 align="center">Workbox</h2>
+## Workbox
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/workbox.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/workbox/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox)
@@ -122,8 +136,7 @@ For list of available options
 see [generateSW](https://workboxjs.org/reference-docs/latest/module-workbox-build.html#.generateSW).
 
 <!-- Icon -->
-
-<h2 align="center">Icon</h2>
+## Icon
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/icon.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/icon/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon)
