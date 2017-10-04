@@ -11,7 +11,6 @@
     "@nuxtjs/icon": "^1.1.1",
     "@nuxtjs/manifest": "^1.7.1",
     "@nuxtjs/meta": "^1.5.2",
-    "@nuxtjs/optimize": "^0.2.2",
     "@nuxtjs/workbox": "^1.2.1"
   }
 }
