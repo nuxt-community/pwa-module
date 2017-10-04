@@ -1,7 +1,15 @@
 # Change Log
 
 All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="1.5.2"></a>
+## 1.5.2 (2017-10-04)
+
+
+
+
+**Note:** Version bump only for package @nuxtjs/meta
 
 <a name="1.5.1"></a>
 ## [1.5.1](https://github.com/nuxt/modules/compare/@nuxtjs/meta@1.5.0...@nuxtjs/meta@1.5.1) (2017-09-22)

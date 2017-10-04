@@ -1,7 +1,15 @@
 # Change Log
 
 All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="1.7.1"></a>
+## 1.7.1 (2017-10-04)
+
+
+
+
+**Note:** Version bump only for package @nuxtjs/manifest
 
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/nuxt/modules/compare/@nuxtjs/manifest@1.6.1...@nuxtjs/manifest@1.7.0) (2017-09-22)
