@@ -12,9 +12,9 @@
 </a>
 </p>
 
-> Progressive Web Apps (PWA) are reliable, fast,and engaging, although there are many things that can take a PWA from a baseline to exemplary experience. ([learn more](https://developers.google.com/web/progressive-web-apps)).
+> Progressive Web Apps (PWA) are reliable, fast,and engaging, although there are many things that can take a PWA from a baseline to exemplary experience. ([learn more](https://developers.google.com/web/progressive-web-apps))
 
-Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA config with _almost_ zero-config!
+Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA solution and zero-config!
 
 <!-- PWA -->
 <h2 align="center">Quick Setup</h2>
@@ -50,7 +50,9 @@ PWA module is actually a preset, with a collection of smaller modules and is des
 
 ```js
 {
-    ['@nuxtjs/pwa', { icon: false }]
+    modules: {
+        ['@nuxtjs/pwa', { icon: false }],
+    }
 }
 ```
 
