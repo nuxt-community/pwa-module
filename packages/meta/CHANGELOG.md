@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.3"></a>
+## 1.5.3 (2017-10-04)
+
+
+### Bug Fixes
+
+* **docs:** add reference to pwa module ([49b7c49](https://github.com/nuxt-community/pwa/commit/49b7c49))
+
+
+
+
 <a name="1.5.2"></a>
 ## 1.5.2 (2017-10-04)
 
