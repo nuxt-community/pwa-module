@@ -3,8 +3,7 @@
   "version": "1.7.0",
   "license": "MIT",
   "main": "index.js",
-  "repository": "https://github.com/nuxt/modules",
-  "homepage": "https://github.com/nuxt/modules/tree/master/modules/manifest",
+  "repository": "https://github.com/nuxt-community/pwa",
   "publishConfig": {
     "access": "public"
   },
