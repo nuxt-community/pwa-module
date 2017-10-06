@@ -29,9 +29,9 @@ yarn add @nuxtjs/pwa
 
 ```js
 {
-    modules: {
+    modules: [
         '@nuxtjs/pwa',
-    },
+    ],
 }
 ```
 
@@ -50,9 +50,9 @@ PWA module is actually a preset, with a collection of smaller modules and is des
 
 ```js
 {
-    modules: {
+    modules: [
         ['@nuxtjs/pwa', { icon: false }],
-    }
+    ]
 }
 ```
 
