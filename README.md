@@ -16,6 +16,17 @@
 
 Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA solution and zero-config!
 
+<h2 align="center">Contents</h2>
+
+- [Quick Setup](#quick-setup)
+- [Configuration](#configuration)
+- [Modules](#modules)
+    - [Manifest](#manifest)
+    - [Meta](#meta)
+    - [Workbox](#workbox)
+    - [Icon](#icon)
+- [License](#license)
+
 <!-- PWA -->
 <h2 align="center">Quick Setup</h2>
 
