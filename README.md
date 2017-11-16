@@ -29,9 +29,9 @@ Package  | Downloads | Latest | Changelog
 - [Quick Setup](#quick-setup)
 - [Configuration](#configuration)
 - [Manifest](#manifest)
-- [Meta](#meta)
 - [Workbox](#workbox)
 - [Icon](#icon)
+- [Meta](#meta)
 
 <!-- PWA -->
 ## Quick Setup
@@ -88,22 +88,42 @@ PWA module is actually a preset, with a collection of smaller modules and is des
 Also each sub-module has it's own configuration. Continue reading this docs, for detailed info.
 
 ## Manifest
-This module adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
-
+Manifest adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
 You can add additional options to `manifest` section of `nuxt.config.js` to override defaults:
 
 ```js
-{
-  manifest: {
-    name: 'My Awesome App',
-    lang: 'fa'
-  }
+manifest: {
+  name: 'My Awesome App',
+  lang: 'fa'
 }
 ```
 
-## Meta
-This module easily adds common meta tags into your project with zero-config needed.
+## Workbox
+Workbox is a collection of JavaScript libraries for Progressive Web Apps.
+([Learn more](https://github.com/GoogleChrome/workbox)) . This module adds full offline support using workbox.
 
+### Options
+For list of available options
+see [generateSW](https://workboxjs.org/reference-docs/latest/module-workbox-build.html#.generateSW).
+
+## Icon
+This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp).
+
+- This module fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module.
+- Source icon is being resized using *cover* method.
+
+### options
+
+#### `iconSrc`
+- Default: `[srcDir]/static/icon.png`
+
+#### `sizes`
+- Default: `[16, 120, 144, 152, 192, 384, 512]`
+
+Array of sizes to be generated (Square).
+
+## Meta
+Meta easily adds common meta tags into your project with zero-config needed.
 You can optionally override meta using either `manifest` or `meta` section of `nuxt.config.js`:
 
 ```js
@@ -139,31 +159,6 @@ Please read this resources if you want to enable `mobileAppIOS` option:
 - https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
 
-## Workbox
-Workbox is a collection of JavaScript libraries for Progressive Web Apps.
-([Learn more](https://github.com/GoogleChrome/workbox))
-
-This module adds full offline support using workbox.
-
-### Options
-For list of available options
-see [generateSW](https://workboxjs.org/reference-docs/latest/module-workbox-build.html#.generateSW).
-
-## Icon
-This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp).
-
-- This module fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module.
-- Source icon is being resized using *cover* method.
-
-### options
-
-#### `iconSrc`
-- Default: `[srcDir]/static/icon.png`
-
-#### `sizes`
-- Default: `[16, 120, 144, 152, 192, 384, 512]`
-
-Array of sizes to be generated (Square).
 
 ## License
 
