@@ -1,5 +1,3 @@
-const fs = require('fs-extra')
-const path = require('path')
 const hash = require('hash-sum')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')

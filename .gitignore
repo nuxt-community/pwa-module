@@ -3,3 +3,5 @@ node_modules
 .idea
 *.log*
 modules/*/package-lock.json
+.nuxt
+coverage

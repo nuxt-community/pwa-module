@@ -6,5 +6,5 @@ window.onNuxtReady(() => {
 
   navigator.serviceWorker.register('<%= options.swURL %>', {
     scope: '<%= options.swScope %>'
-  });
+  })
 })

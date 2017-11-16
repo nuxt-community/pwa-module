@@ -10,6 +10,12 @@
 <a href="https://github.com/bakjs/@nuxtjs/pwa">
     <img alt="" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square">
 </a>
+<a href="https://circleci.com/gh/nuxt-community/pwa-module">
+    <img alt="" src="https://img.shields.io/circleci/project/github/nuxt-community/pwa-module.svg?style=flat-square">
+</a>
+<a href="https://codecov.io/gh/nuxt-community/pwa-module">
+    <img alt="" src="https://img.shields.io/codecov/c/github/nuxt-community/pwa-module.svg?style=flat-square">
+</a>
 </p>
 
 > Progressive Web Apps (PWA) are reliable, fast,and engaging, although there are many things that can take a PWA from a baseline to exemplary experience. ([learn more](https://developers.google.com/web/progressive-web-apps))
