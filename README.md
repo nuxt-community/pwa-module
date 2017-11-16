@@ -28,12 +28,10 @@ Package  | Downloads | Latest | Changelog
 
 - [Quick Setup](#quick-setup)
 - [Configuration](#configuration)
-- [Modules](#modules)
-    - [Manifest](#manifest)
-    - [Meta](#meta)
-    - [Workbox](#workbox)
-    - [Icon](#icon)
-- [License](#license)
+- [Manifest](#manifest)
+- [Meta](#meta)
+- [Workbox](#workbox)
+- [Icon](#icon)
 
 <!-- PWA -->
 ## Quick Setup
@@ -65,13 +63,25 @@ workbox-*
 
 ## Configuration
 
-PWA module is actually a preset, with a collection of smaller modules and is designed to magically work out of the box **without need to any configs**. To disable each sub-module, you can pass `false` option with it's name as key. For example to disable _icon_ module:
+PWA module is actually a preset, with a collection of smaller modules and is designed to magically work out of the box. To disable each sub-module, you can pass `false` option with it's name as key. For example to disable _icon_ module:
 
 ```js
 {
     modules: [
         ['@nuxtjs/pwa', { icon: false }],
-    ]
+    ],
+
+    manifest: {
+      // ...
+    },
+
+    meta: {
+      // ...
+    },
+
+    workbox: {
+      // ...
+    }
 }
 ```
 
