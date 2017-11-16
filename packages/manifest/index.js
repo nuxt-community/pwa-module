@@ -6,10 +6,12 @@ const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 const find = (arr, key, val) => arr.find(obj => val ? obj[key] === val : obj[key])
 
 module.exports = function nuxtManifest (options) {
-  this.nuxt.plugin('build', builder => {
+  const hook = builder => {
     debug('Adding manifest')
     addManifest.call(this, options)
-  })
+  }
+
+  this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
 }
 
 function addManifest (options) {

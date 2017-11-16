@@ -19,13 +19,15 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     return
   }
 
-  this.nuxt.plugin('build', builder => {
+  const hook = builder => {
     debug('Adding workbox')
     getRouterBase.call(this, ctx)
     workboxInject.call(this, ctx)
     emitAssets.call(this, ctx)
     addTemplates.call(this, ctx)
-  })
+  }
+
+  this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
 }
 
 // =============================================
@@ -89,13 +91,21 @@ function emitAssets (ctx) {
   }
 
   // Write assets after build
-  this.nuxt.plugin('build', builder => {
+  const hook = builder => {
     builder.plugin('built', () => {
       assets.forEach(({source, dst}) => {
         writeFileSync(path.resolve(this.options.buildDir, 'dist', dst), source, 'utf-8')
       })
     })
-  })
+  }
+
+  if (this.nuxt.hook) {
+    this.nuxt.hook('build.done', hook)
+  } else {
+    this.nuxt.plugin('build', builder => {
+      builder.plugin('built', hook)
+    })
+  }
 
   // workbox.js
   let wbPath = require.resolve('workbox-sw')
@@ -137,13 +147,19 @@ function workboxInject (ctx) {
     ]
   }, ctx.options)
 
-  this.nuxt.plugin('build', builder => {
-    builder.plugin('built', () => {
-      const opts = Object.assign({}, ctx.workboxOptions)
-      delete opts.runtimeCaching
-      return swBuild.injectManifest(opts)
+  const hook = () => {
+    const opts = Object.assign({}, ctx.workboxOptions)
+    delete opts.runtimeCaching
+    return swBuild.injectManifest(opts)
+  }
+
+  if (this.nuxt.hook) {
+    this.nuxt.hook('build.done', hook)
+  } else {
+    this.nuxt.plugin('build', builder => {
+      builder.plugin('built', hook)
     })
-  })
+  }
 }
 
 module.exports.meta = require('./package.json')

@@ -7,10 +7,12 @@ const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 
 module.exports = function nuxtIcon (options) {
-  this.nuxt.plugin('build', builder => {
+  const hook = builder => {
     debug('Adding icons')
     return generateIcons.call(this, options)
-  })
+  }
+
+  this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
 }
 
 function generateIcons (options) {
