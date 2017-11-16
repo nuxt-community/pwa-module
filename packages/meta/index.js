@@ -8,8 +8,9 @@ module.exports = function nuxtMeta (_options) {
     charset: 'utf-8',
     viewport: undefined,
     mobileApp: true,
+    nativeUI: false,
     favicon: true,
-    mobileAppIOS: false,
+    mobileAppIOS: undefined,
     appleStatusBarStyle: 'default',
     theme_color: this.options.loading && this.options.loading.color,
     lang: 'en',
@@ -23,7 +24,12 @@ module.exports = function nuxtMeta (_options) {
 
   // Default value for viewport
   if (options.viewport === undefined) {
-    options.viewport = 'width=device-width, initial-scale=1'
+    options.viewport = options.nativeUI ? 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui' : 'width=device-width, initial-scale=1'
+  }
+
+  // Default value for mobileAppIOS
+  if (options.mobileAppIOS === undefined) {
+    options.mobileAppIOS = !!options.nativeUI
   }
 
   // Charset

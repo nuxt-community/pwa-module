@@ -113,11 +113,11 @@ You can optionally override meta using either `manifest` or `meta` section of `n
     // ...
   }
 }
-``` 
+```
 
 ### options
 
-Meta / Link                            | Customize With        |   Default value 
+Meta / Link                            | Customize With        |   Default value
 ---------------------------------------|-----------------------|-------------------
 `charset`                              | `charset`             | `utf-8`
 `viewport`                             | `viewport`            | `width=device-width, initial-scale=1`
@@ -133,8 +133,9 @@ Meta / Link                            | Customize With        |   Default value
 `og:title`                             | `ogTitle`             | same as options.name
 `og:description`                       | `ogDescription`       | same as options.description
 
+By setting `meta.nativeUI` to `true` (Defaults to `false`) `viewport` defaults to `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui` and `mobileAppIOS` will be enabled if not explicitly set to `false` which is suitable for native looking mobile apps.
 
-Please read this resources before setting IOS specific options:
+Please read this resources if you want to enable `mobileAppIOS` option:
 
 - https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
@@ -162,8 +163,8 @@ see [generateSW](https://workboxjs.org/reference-docs/latest/module-workbox-buil
 
 This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp).
 
-- This module fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module. 
-- Source icon is being resized using *cover* method. 
+- This module fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module.
+- Source icon is being resized using *cover* method.
 
 ### options
 
@@ -173,7 +174,7 @@ This module automatically generates app icons and favicon with different sizes u
 #### `sizes`
 - Default: `[16, 120, 144, 152, 192, 384, 512]`
 
-Array of sizes to be generated (Square). 
+Array of sizes to be generated (Square).
 
 <h2 align="center">License</h2>
 
