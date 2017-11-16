@@ -3,7 +3,7 @@
   "version": "1.1.2",
   "license": "MIT",
   "main": "index.js",
-  "repository": "https://github.com/nuxt-community/pwa",
+  "repository": "https://github.com/nuxt-community/pwa-module",
   "publishConfig": {
     "access": "public"
   },
