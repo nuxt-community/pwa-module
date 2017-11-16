@@ -6,7 +6,7 @@ module.exports = function nuxtMeta (_options) {
     name: process.env.npm_package_name,
     description: process.env.npm_package_description,
     charset: 'utf-8',
-    viewport: 'width=device-width, initial-scale=1, minimal-ui',
+    viewport: undefined,
     mobileApp: true,
     favicon: true,
     mobileAppIOS: false,
@@ -20,6 +20,11 @@ module.exports = function nuxtMeta (_options) {
 
   // Combine sources
   const options = Object.assign({}, defaults, this.options.manifest, this.options.meta, _options)
+
+  // Default value for viewport
+  if (options.viewport === undefined) {
+    options.viewport = 'width=device-width, initial-scale=1'
+  }
 
   // Charset
   if (options.charset && !find(this.options.head.meta, 'charset')) {

@@ -120,7 +120,7 @@ You can optionally override meta using either `manifest` or `meta` section of `n
 Meta / Link                            | Customize With        |   Default value 
 ---------------------------------------|-----------------------|-------------------
 `charset`                              | `charset`             | `utf-8`
-`viewport`                             | `viewport`            | `width=device-width, initial-scale=1, minimal-ui`
+`viewport`                             | `viewport`            | `width=device-width, initial-scale=1`
 `mobile-web-app-capable`               | `mobileApp`           | `true`
 `apple-mobile-web-app-capable`         | `mobileAppIOS`*       | **`false`**
 `apple-mobile-web-app-status-bar-style`| `appleStatusBarStyle`*| `default`
