@@ -62,11 +62,12 @@ module.exports = function nuxtWorkbox (options) {
   })
 
   // Register runtime plugin
+  const swURL = `${routerBase}/${options.swURL || swFileName}`
   this.addPlugin({
     src: path.resolve(__dirname, 'plugin.js'),
     ssr: false,
     options: {
-      swURL: fixUrl(`${routerBase}/${swFileName}`),
+      swURL: fixUrl(swURL),
       swScope: fixUrl(`${routerBase}/`)
     }
   })
