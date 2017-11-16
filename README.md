@@ -33,7 +33,6 @@ Package  | Downloads | Latest | Changelog
 - [Icon](#icon)
 - [Meta](#meta)
 
-<!-- PWA -->
 ## Quick Setup
 
 1. Install npm package:
@@ -58,38 +57,22 @@ yarn add @nuxtjs/pwa
 
 ```
 sw.*
-workbox-*
 ```
 
-## Configuration
-
-PWA module is actually a preset, with a collection of smaller modules and is designed to magically work out of the box. To disable each sub-module, you can pass `false` option with it's name as key. For example to disable _icon_ module:
+PWA module is a collection of smaller modules that are designed to magically work out of the box together. To disable each sub-module, you can pass `false` option with it's name as key. For example to disable _icon_ module:
 
 ```js
-{
-    modules: [
-        ['@nuxtjs/pwa', { icon: false }],
-    ],
-
-    manifest: {
-      // ...
-    },
-
-    meta: {
-      // ...
-    },
-
-    workbox: {
-      // ...
-    }
-}
+modules: [
+    ['@nuxtjs/pwa', { icon: false }],
+],
 ```
 
-Also each sub-module has it's own configuration. Continue reading this docs, for detailed info.
+Also each sub-module has it's own configuration. Continue reading docs for detailed info.
 
 ## Manifest
 Manifest adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
-You can add additional options to `manifest` section of `nuxt.config.js` to override defaults:
+
+You can pass options to `manifest` section in `nuxt.config.js` to override defaults.
 
 ```js
 manifest: {
@@ -100,11 +83,23 @@ manifest: {
 
 ## Workbox
 Workbox is a collection of JavaScript libraries for Progressive Web Apps.
-([Learn more](https://github.com/GoogleChrome/workbox)) . This module adds full offline support using workbox.
+([Learn more](https://developers.google.com/web/tools/workbox)). This module adds full offline support using workbox.
+Workbox module is only enabled on *production* builds.
+
+You can pass options to `workbox` section in `nuxt.config.js` to override defaults.
+
+```js
+workbox: {
+ // Workbox options
+}
+```
 
 ### Options
-For list of available options
-see [generateSW](https://workboxjs.org/reference-docs/latest/module-workbox-build.html#.generateSW).
+
+**dev**: Use dev build for workbox service worker lib.
+**swURL**: If for any reason you need to register another service worker (OneSignal, etc) you can use this option.
+
+For list of all available options see [this table](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#abstract-types)
 
 ## Icon
 This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp).
