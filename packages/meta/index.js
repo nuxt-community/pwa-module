@@ -1,10 +1,10 @@
-const debug = require('debug')('nuxt:pwa:meta')
+const debug = require('debug')('nuxt:pwa')
 
 const find = (arr, key, val) => arr.find(obj => val ? obj[key] === val : obj[key])
 
 module.exports = function nuxtMeta (_options) {
   this.nuxt.plugin('build', builder => {
-    debug('Generating meta')
+    debug('Adding meta')
     generateMeta.call(this, _options)
   })
 }

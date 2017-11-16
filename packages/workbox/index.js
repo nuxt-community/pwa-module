@@ -2,7 +2,7 @@ const path = require('path')
 const swBuild = require('workbox-build')
 const { readFileSync, writeFileSync } = require('fs')
 const hashSum = require('hash-sum')
-const debug = require('debug')('nuxt:pwa:workbox')
+const debug = require('debug')('nuxt:pwa')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0

@@ -1,5 +1,5 @@
 const hash = require('hash-sum')
-const debug = require('debug')('nuxt:pwa:manifest')
+const debug = require('debug')('nuxt:pwa')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0

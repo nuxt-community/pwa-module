@@ -1,14 +1,14 @@
 const fs = require('fs-extra')
 const path = require('path')
 const Jimp = require('jimp')
-const debug = require('debug')('nuxt:pwa:icon')
+const debug = require('debug')('nuxt:pwa')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 
 module.exports = function nuxtIcon (options) {
   this.nuxt.plugin('build', builder => {
-    debug('Generating icons')
+    debug('Adding icons')
     generateIcons.call(this, options)
   })
 }
