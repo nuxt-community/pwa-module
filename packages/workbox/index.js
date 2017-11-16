@@ -92,10 +92,8 @@ function emitAssets (ctx) {
 
   // Write assets after build
   const hook = builder => {
-    builder.plugin('built', () => {
-      assets.forEach(({source, dst}) => {
-        writeFileSync(path.resolve(this.options.buildDir, 'dist', dst), source, 'utf-8')
-      })
+    assets.forEach(({source, dst}) => {
+      writeFileSync(path.resolve(this.options.buildDir, 'dist', dst), source, 'utf-8')
     })
   }
 
