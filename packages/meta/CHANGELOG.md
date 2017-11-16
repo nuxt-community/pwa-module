@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/meta@1.5.3...@nuxtjs/meta@2.0.0) (2017-11-16)
+
+
+### Bug Fixes
+
+* **meta:** generate only on build ([1cace26](https://github.com/nuxt-community/pwa-module/commit/1cace26))
+* **meta:** remove minimal-ui from default viewport ([cf48b3f](https://github.com/nuxt-community/pwa-module/commit/cf48b3f))
+
+
+### Features
+
+* **meta:** add nativeUI option ([3c7aa7d](https://github.com/nuxt-community/pwa-module/commit/3c7aa7d))
+* Add compatibility for nuxt 1.0.0 hooks ([c0efb1d](https://github.com/nuxt-community/pwa-module/commit/c0efb1d))
+* **meta:** add property attribiture for og tags ([dc39fcb](https://github.com/nuxt-community/pwa-module/commit/dc39fcb))
+
+
+
+
 <a name="1.5.3"></a>
 ## 1.5.3 (2017-10-04)
 

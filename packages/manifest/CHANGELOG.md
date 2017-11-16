@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/manifest@1.7.2...@nuxtjs/manifest@2.0.0) (2017-11-16)
+
+
+### Bug Fixes
+
+* **manifest:** run only on build ([ecaa835](https://github.com/nuxt-community/pwa-module/commit/ecaa835))
+
+
+### Features
+
+* Add compatibility for nuxt 1.0.0 hooks ([c0efb1d](https://github.com/nuxt-community/pwa-module/commit/c0efb1d))
+
+
+
+
 <a name="1.7.2"></a>
 ## 1.7.2 (2017-10-04)
 

@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/workbox@1.2.2...@nuxtjs/workbox@2.0.0) (2017-11-16)
+
+
+### Features
+
+* Add compatibility for nuxt 1.0.0 hooks ([c0efb1d](https://github.com/nuxt-community/pwa-module/commit/c0efb1d))
+* add option to register third-party sw ([#12](https://github.com/nuxt-community/pwa-module/issues/12)) ([9c0b61e](https://github.com/nuxt-community/pwa-module/commit/9c0b61e))
+* **workbox:** expose registration as window.$sw ([a5ddf59](https://github.com/nuxt-community/pwa-module/commit/a5ddf59))
+* **workbox:** importScripts option ([7c8644c](https://github.com/nuxt-community/pwa-module/commit/7c8644c))
+* **workbox:** rewrite with better template support ([b0af84e](https://github.com/nuxt-community/pwa-module/commit/b0af84e))
+
+
+
+
 <a name="1.2.2"></a>
 ## 1.2.2 (2017-10-04)
 
