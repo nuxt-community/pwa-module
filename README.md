@@ -1,15 +1,6 @@
 <h1 align="center">⚡ PWA Module</h1>
 
 <p align="center">
-<a href="https://www.npmjs.com/package/@nuxtjs/pwa">
-    <img alt="" src="https://img.shields.io/npm/dt/@nuxtjs/pwa.svg?style=flat-square">
-</a>
-<a href="https://www.npmjs.com/package/@nuxtjs/pwa">
-    <img alt="" src="https://img.shields.io/npm/v/@nuxtjs/pwa.svg?style=flat-square">
-</a>
-<a href="https://github.com/bakjs/@nuxtjs/pwa">
-    <img alt="" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square">
-</a>
 <a href="https://circleci.com/gh/nuxt-community/pwa-module">
     <img alt="" src="https://img.shields.io/circleci/project/github/nuxt-community/pwa-module.svg?style=flat-square">
 </a>
@@ -22,7 +13,18 @@
 
 Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA solution and zero-config!
 
-<h2 align="center">Contents</h2>
+
+## Packages
+
+Package  | Downloads | Latest | Changelog
+---------|-----------|--------|-----------
+@nuxtjs/pwa | [![npm](https://img.shields.io/npm/dt/@nuxtjs/pwa.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/pwa) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/pwa/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/pwa) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/pwa/CHANGELOG.md)
+@nuxtjs/manifest | [![npm](https://img.shields.io/npm/dt/@nuxtjs/manifest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/manifest/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/manifest/CHANGELOG.md)
+@nuxtjs/meta | [![npm](https://img.shields.io/npm/dt/@nuxtjs/meta.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/meta/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/meta/CHANGELOG.md)
+@nuxtjs/workbox | [![npm](https://img.shields.io/npm/dt/@nuxtjs/workbox.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/workbox/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/workbox/CHANGELOG.md)
+@nuxtjs/icon | [![npm](https://img.shields.io/npm/dt/@nuxtjs/icon.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/icon/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/icon/CHANGELOG.md)
+
+## Contents
 
 - [Quick Setup](#quick-setup)
 - [Configuration](#configuration)
@@ -34,7 +36,7 @@ Using Nuxt PWA you can supercharge your current or next Nuxt project with a heav
 - [License](#license)
 
 <!-- PWA -->
-<h2 align="center">Quick Setup</h2>
+## Quick Setup
 
 1. Install npm package:
 
@@ -61,7 +63,7 @@ sw.*
 workbox-*
 ```
 
-<h2 align="center">Configuration</h2>
+## Configuration
 
 PWA module is actually a preset, with a collection of smaller modules and is designed to magically work out of the box **without need to any configs**. To disable each sub-module, you can pass `false` option with it's name as key. For example to disable _icon_ module:
 
@@ -75,16 +77,8 @@ PWA module is actually a preset, with a collection of smaller modules and is des
 
 Also each sub-module has it's own configuration. Continue reading this docs, for detailed info.
 
-
-<h2 align="center">Modules</h2>
-
-<!-- Manifest -->
 ## Manifest
-
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/manifest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/manifest/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest)
-
-This module adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain!
+This module adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
 
 You can add additional options to `manifest` section of `nuxt.config.js` to override defaults:
 
@@ -97,12 +91,7 @@ You can add additional options to `manifest` section of `nuxt.config.js` to over
 }
 ```
 
-<!-- Meta -->
 ## Meta
-
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/meta.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/meta/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
-
 This module easily adds common meta tags into your project with zero-config needed.
 
 You can optionally override meta using either `manifest` or `meta` section of `nuxt.config.js`:
@@ -140,12 +129,7 @@ Please read this resources if you want to enable `mobileAppIOS` option:
 - https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
 
-<!-- Workbox -->
 ## Workbox
-
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/workbox.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/workbox/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox)
-
 Workbox is a collection of JavaScript libraries for Progressive Web Apps.
 ([Learn more](https://github.com/GoogleChrome/workbox))
 
@@ -155,12 +139,7 @@ This module adds full offline support using workbox.
 For list of available options
 see [generateSW](https://workboxjs.org/reference-docs/latest/module-workbox-build.html#.generateSW).
 
-<!-- Icon -->
 ## Icon
-
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/icon.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/icon/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon)
-
 This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp).
 
 - This module fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module.
@@ -176,6 +155,6 @@ This module automatically generates app icons and favicon with different sizes u
 
 Array of sizes to be generated (Square).
 
-<h2 align="center">License</h2>
+## License
 
 MIT - Nuxt Community - Pooya Parsa
