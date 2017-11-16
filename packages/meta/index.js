@@ -117,24 +117,24 @@ function generateMeta (_options) {
   }
 
   // og:type
-  if (options.ogType && !find(this.options.head.meta, 'name', 'og:type')) {
-    this.options.head.meta.push({ name: 'og:type', content: options.ogType })
+  if (options.ogType && !find(this.options.head.meta, 'property', 'og:type') && !find(this.options.head.meta, 'name', 'og:type')) {
+    this.options.head.meta.push({ name: 'og:type', property: 'og:type', content: options.ogType })
   }
 
   // og:title
   if (options.ogTitle === true) {
     options.ogTitle = options.name
   }
-  if (options.ogTitle && !find(this.options.head.meta, 'name', 'og:title')) {
-    this.options.head.meta.push({ name: 'og:title', content: options.ogTitle })
+  if (options.ogTitle && !find(this.options.head.meta, 'property', 'og:title') && !find(this.options.head.meta, 'name', 'og:title')) {
+    this.options.head.meta.push({ name: 'og:title', property: 'og:title', content: options.ogTitle })
   }
 
   // og:description
   if (options.ogDescription === true) {
     options.ogDescription = options.description
   }
-  if (options.ogDescription && !find(this.options.head.meta, 'name', 'og:description')) {
-    this.options.head.meta.push({ name: 'og:description', content: options.ogDescription })
+  if (options.ogDescription && !find(this.options.head.meta, 'property', 'og:description') && !find(this.options.head.meta, 'name', 'og:description')) {
+    this.options.head.meta.push({ name: 'og:description', property: 'og:description', content: options.ogDescription })
   }
 }
 
