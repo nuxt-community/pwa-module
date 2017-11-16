@@ -100,7 +100,7 @@ function emitAssets (ctx) {
   }
 
   if (this.nuxt.hook) {
-    this.nuxt.hook('build.done', hook)
+    this.nuxt.hook('build:done', hook)
   } else {
     this.nuxt.plugin('build', builder => {
       builder.plugin('built', hook)
@@ -154,7 +154,7 @@ function workboxInject (ctx) {
   }
 
   if (this.nuxt.hook) {
-    this.nuxt.hook('build.done', hook)
+    this.nuxt.hook('build:done', hook)
   } else {
     this.nuxt.plugin('build', builder => {
       builder.plugin('built', hook)
