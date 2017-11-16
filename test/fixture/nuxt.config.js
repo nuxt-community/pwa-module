@@ -1,6 +1,16 @@
 module.exports = {
   srcDir: __dirname,
   dev: false,
+  build: {
+    extractCSS: true,
+    filenames: {
+      css: 'vendor.css',
+      manifest: 'manifest.js',
+      vendor: 'vendor.js',
+      app: 'app.js',
+      chunk: '[name].js'
+    }
+  },
   modules: [
     '@nuxtjs/pwa'
   ],
