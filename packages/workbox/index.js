@@ -12,19 +12,16 @@ const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 // =============================================
 
 module.exports = function nuxtWorkbox (moduleOptions) {
-  const options = Object.assign({}, moduleOptions, this.options.workbox)
-  const ctx = { options }
-
   if (this.options.dev) {
     return
   }
 
   const hook = builder => {
     debug('Adding workbox')
-    getRouterBase.call(this, ctx)
-    workboxInject.call(this, ctx)
-    emitAssets.call(this, ctx)
-    addTemplates.call(this, ctx)
+    const options = getOptions.call(this, moduleOptions)
+    workboxInject.call(this, options)
+    emitAssets.call(this, options)
+    addTemplates.call(this, options)
   }
 
   this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
@@ -34,7 +31,8 @@ module.exports = function nuxtWorkbox (moduleOptions) {
 // getRouterBase
 // =============================================
 
-function getRouterBase (ctx) {
+function getOptions (moduleOptions) {
+  // Router Base
   const routerBase = this.options.router.base
   let publicPath = fixUrl(`${routerBase}/${this.options.build.publicPath}`)
   if (isUrl(this.options.build.publicPath)) { // CDN
@@ -44,34 +42,66 @@ function getRouterBase (ctx) {
     }
   }
 
-  ctx.routerBase = routerBase
-  ctx.publicPath = publicPath
+  const options = Object.assign({
+    routerBase,
+    publicPath,
+    swSrc: path.resolve(this.options.buildDir, 'sw.template.js'),
+    swDest: path.resolve(this.options.srcDir, 'static', 'sw.js'),
+    directoryIndex: '/',
+    cacheId: process.env.npm_package_name + '_' + process.env.npm_package_version,
+    clientsClaim: true,
+    globPatterns: ['**/*.{js,css}'],
+    globDirectory: path.resolve(this.options.buildDir, 'dist'),
+    modifyUrlPrefix: {
+      '': fixUrl(publicPath)
+    },
+    runtimeCaching: [
+      // Cache routes if offline
+      {
+        urlPattern: fixUrl(routerBase + '/**'),
+        handler: 'networkFirst'
+      },
+      // Cache other _nuxt resources runtime
+      // They are hashed by webpack so are safe to loaded by cacheFirst handler
+      {
+        urlPattern: fixUrl(publicPath + '/**'),
+        handler: 'cacheFirst'
+      }
+    ]
+  }, moduleOptions, this.options.workbox)
+
+  return options
 }
 
 // =============================================
 // addTemplates
 // =============================================
 
-function addTemplates (ctx) {
+function addTemplates (options) {
   // Add sw.template.js
   this.addTemplate({
     src: path.resolve(__dirname, 'templates/sw.template.js'),
     fileName: 'sw.template.js',
     options: {
-      importPath: ctx.wbDst,
-      wb: ctx.workboxOptions
+      importScripts: [options.wbDst].concat(options.importScripts || []),
+      runtimeCaching: options.runtimeCaching,
+      wbOptions: {
+        cacheId: options.cacheId,
+        clientsClaim: options.clientsClaim,
+        directoryIndex: options.directoryIndex
+      }
     }
   })
 
   // Add sw.plugin.js
-  const swURL = `${ctx.routerBase}/${ctx.options.swURL || 'sw.js'}`
+  const swURL = `${options.routerBase}/${options.swURL || 'sw.js'}`
   this.addPlugin({
     src: path.resolve(__dirname, 'templates/sw.plugin.js'),
     ssr: false,
     fileName: 'sw.plugin.js',
     options: {
       swURL: fixUrl(swURL),
-      swScope: fixUrl(`${ctx.routerBase}/`)
+      swScope: fixUrl(`${options.routerBase}/`)
     }
   })
 }
@@ -80,7 +110,7 @@ function addTemplates (ctx) {
 // emitAssets
 // =============================================
 
-function emitAssets (ctx) {
+function emitAssets (options) {
   const assets = []
   const emitAsset = (path, name, ext = 'js') => {
     const source = readFileSync(path)
@@ -107,46 +137,19 @@ function emitAssets (ctx) {
 
   // workbox.js
   let wbPath = require.resolve('workbox-sw')
-  if (ctx.options.dev) {
+  if (options.dev) {
     wbPath = wbPath.replace(/prod/g, 'dev')
   }
-  ctx.wbDst = fixUrl(ctx.publicPath + '/' + emitAsset(wbPath, 'workbox' + (ctx.options.dev ? '.dev' : '')))
+  options.wbDst = fixUrl(options.publicPath + '/' + emitAsset(wbPath, 'workbox' + (options.dev ? '.dev' : '')))
 }
 
 // =============================================
 // workboxInject
 // =============================================
 
-function workboxInject (ctx) {
-  // https://workboxjs.org/reference-docs/latest/module-workbox-build.html#.generateSW
-  ctx.workboxOptions = Object.assign({
-    swSrc: path.resolve(this.options.buildDir, 'sw.template.js'),
-    swDest: path.resolve(this.options.srcDir, 'static', 'sw.js'),
-    directoryIndex: '/',
-    cacheId: process.env.npm_package_name + '_' + process.env.npm_package_version,
-    clientsClaim: true,
-    globPatterns: ['**/*.{js,css}'],
-    globDirectory: path.resolve(this.options.buildDir, 'dist'),
-    modifyUrlPrefix: {
-      '': fixUrl(ctx.publicPath)
-    },
-    runtimeCaching: [
-      // Cache routes if offline
-      {
-        urlPattern: fixUrl(ctx.routerBase + '/**'),
-        handler: 'networkFirst'
-      },
-      // Cache other _nuxt resources runtime
-      // They are hashed by webpack so are safe to loaded by cacheFirst handler
-      {
-        urlPattern: fixUrl(ctx.publicPath + '/**'),
-        handler: 'cacheFirst'
-      }
-    ]
-  }, ctx.options)
-
+function workboxInject (options) {
   const hook = () => {
-    const opts = Object.assign({}, ctx.workboxOptions)
+    const opts = Object.assign({}, options)
     delete opts.runtimeCaching
     return swBuild.injectManifest(opts)
   }

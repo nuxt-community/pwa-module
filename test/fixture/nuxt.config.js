@@ -17,5 +17,10 @@ module.exports = {
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description'
+  },
+  workbox: {
+    importScripts: [
+      'custom-sw.js'
+    ]
   }
 }

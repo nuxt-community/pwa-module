@@ -96,8 +96,11 @@ workbox: {
 
 ### Options
 
-**dev**: Use dev build for workbox service worker lib.
-**swURL**: If for any reason you need to register another service worker (OneSignal, etc) you can use this option.
+**dev** - Use dev build for workbox service worker lib.
+
+**swURL** - If for any reason you need to register another service worker (OneSignal, etc) you can use this option.
+
+**importScripts** (Array) - Additional scripts to be imported in service worker script. (Relative to `/`. Can be placed in `assets/` directory)
 
 For list of all available options see [this table](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#abstract-types)
 

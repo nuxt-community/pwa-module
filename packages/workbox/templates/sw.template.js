@@ -1,13 +1,9 @@
-importScripts('<%= options.importPath %>')
+importScripts(<%= options.importScripts.map(i => `'${i}'`).join(', ') %>)
 
-const workboxSW = new self.WorkboxSW({
-  cacheId: '<%= options.wb.cacheId %>',
-  clientsClaim: <%= options.wb.clientsClaim %>,
-  directoryIndex: '<%= options.wb.directoryIndex %>'
-})
+const workboxSW = new self.WorkboxSW(<%= JSON.stringify(options.wbOptions, null, 2) %>)
 
 workboxSW.precache([])
 
-<% options.wb.runtimeCaching.forEach(r => { %>
+<% options.runtimeCaching.forEach(r => { %>
 workboxSW.router.registerRoute('<%= r.urlPattern %>', workboxSW.strategies.<%= r.handler %>({}), 'GET')
 <% }) %>
