@@ -9,7 +9,7 @@ const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 module.exports = function nuxtIcon (options) {
   this.nuxt.plugin('build', builder => {
     debug('Adding icons')
-    generateIcons.call(this, options)
+    return generateIcons.call(this, options)
   })
 }
 
