@@ -20,7 +20,7 @@ Using Nuxt PWA you can supercharge your current or next Nuxt project with a heav
 - [Workbox Module](#-workbox-module)
 - [Icon Module](#-icon-module)
 - [Meta Module](#-meta-module)
-- [OneSignal Module](#-onesignal)
+- [OneSignal Module](#-onesignal-module)
 
 
 **Packages**
@@ -151,7 +151,7 @@ workbox: {
 
 <h2 align="center">📦 Icon Module</h2>
 
-This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp) and fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module. Source icon is being resized using *cover* method.
+This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp) and fills `manifest.icons[]` with proper paths to generated assets that is used by manifest module. Source icon is being resized using *cover* method.
 
 ### options
 
