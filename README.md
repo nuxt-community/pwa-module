@@ -131,6 +131,24 @@ workbox: {
 }
 ```
 
+### Adding custom service worker
+
+Create `static/custom-sw.js` file:
+
+```js
+console.log('Custom service worker!')
+```
+
+Add it with `importScripts` option in `nuxt.config.js`:
+
+```js
+workbox: {
+  importScripts: [
+      'custom-sw.js'
+  ],
+}
+```
+
 <h2 align="center">📦 Icon Module</h2>
 
 This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp) and fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module. Source icon is being resized using *cover* method.
