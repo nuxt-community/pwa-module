@@ -108,7 +108,7 @@ For list of all available options see [here](https://developers.google.com/web/t
 
 ### Adding custom runtimeCaching items (For CDN)
 
-By default resources in dist (`/_nuxt/`) will be cached with CacheFirst and other requests to same domain will be cached with NetworkFirst strategy. Also all JS webpack emitted resources will be precached.
+By default resources in dist (`/_nuxt/`) will be cached with CacheFirst and other requests to same domain will be cached with NetworkFirst strategy. Also all JS and CSS webpack emitted resources will be precached.
 
 If you have a custom CDN and need to cache requests for it, simply use `runtimeCaching`:
 
@@ -117,7 +117,7 @@ nuxt.config.js
 workbox: {
       runtimeCaching: [
       {
-        // Should be a regex string. Compiles into new RegExp('https://google.com/.*')
+        // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
         urlPattern: 'https://my-cdn.com/.*',
         // Defaults to `networkFirst` if omitted 
         handler: 'cacheFirst',
