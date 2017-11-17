@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/workbox@2.0.0...@nuxtjs/workbox@2.0.1) (2017-11-17)
+
+
+### Bug Fixes
+
+* **workbox:** make cacheId independent of npm package version ([b744a27](https://github.com/nuxt-community/pwa-module/commit/b744a27))
+* **workbox:** use regexp for runtimeCaching. fixes [#14](https://github.com/nuxt-community/pwa-module/issues/14). ([f384103](https://github.com/nuxt-community/pwa-module/commit/f384103))
+
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/workbox@1.2.2...@nuxtjs/workbox@2.0.0) (2017-11-16)
 
