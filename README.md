@@ -13,6 +13,16 @@
 
 Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA solution and zero-config!
 
+**Contents**
+
+- [Quick Setup](#quick-setup)
+- [Configuration](#configuration)
+- [Manifest](#manifest)
+- [Workbox](#workbox)
+- [Icon](#icon)
+- [Meta](#meta)
+- [OneSignal](#onesignal)
+
 
 **Packages**
 
@@ -25,17 +35,8 @@ Package  | Downloads | Latest | Changelog
 @nuxtjs/icon | [![npm](https://img.shields.io/npm/dt/@nuxtjs/icon.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/icon/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/icon/CHANGELOG.md)
 @nuxtjs/onesignal | [![npm](https://img.shields.io/npm/dt/@nuxtjs/onesignal.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/onesignal/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/onesignal/CHANGELOG.md)
 
-**Contents**
 
-- [Quick Setup](#quick-setup)
-- [Configuration](#configuration)
-- [Manifest](#manifest)
-- [Workbox](#workbox)
-- [Icon](#icon)
-- [Meta](#meta)
-- [OneSignal](#onesignal)
-
-<h2 align="center">Quick Setup</h2>
+<h2 align="center">✅ Quick Setup</h2>
 
 1. Install npm package:
 
