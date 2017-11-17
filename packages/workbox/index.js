@@ -58,19 +58,20 @@ function getOptions (moduleOptions) {
     modifyUrlPrefix: {
       '': fixUrl(publicPath)
     },
-    runtimeCaching: [
+    _runtimeCaching: [
       // Cache all _nuxt resources at runtime
       // They are hashed by webpack so are safe to loaded by cacheFirst handler
       {
-        urlPattern: escapeStringRegexp(fixUrl(publicPath + '/')) + '.*',
+        urlPattern: fixUrl(publicPath + '/.*'),
         handler: 'cacheFirst'
       },
       // Cache other routes if offline
       {
-        urlPattern: escapeStringRegexp(fixUrl(routerBase + '/')) + '.*',
+        urlPattern: fixUrl(routerBase + '/.*'),
         handler: 'networkFirst'
       }
-    ]
+    ],
+    runtimeCaching: []
   }
 
   const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
@@ -89,7 +90,7 @@ function addTemplates (options) {
     fileName: 'sw.template.js',
     options: {
       importScripts: [options.wbDst].concat(options.importScripts || []),
-      runtimeCaching: options.runtimeCaching.map(i => (Object.assign({}, i, {
+      runtimeCaching: [].concat(options._runtimeCaching, options.runtimeCaching).map(i => (Object.assign({}, i, {
         urlPattern: i.urlPattern,
         handler: i.handler || 'networkFirst',
         method: i.method || 'GET'

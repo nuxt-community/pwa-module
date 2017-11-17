@@ -104,7 +104,29 @@ workbox: {
 
 **importScripts** (Array) - Additional scripts to be imported in service worker script. (Relative to `/`. Can be placed in `assets/` directory)
 
-For list of all available options see [this table](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#abstract-types)
+For list of all available options see [here](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#abstract-types)
+
+### Adding custom runtimeCaching items (For CDN)
+
+By default resources in dist (`/_nuxt/`) will be cached with CacheFirst and other requests to same domain will be cached with NetworkFirst strategy. Also all JS webpack emitted resources will be precached.
+
+If you have a custom CDN and need to cache requests for it, simply use `runtimeCaching`:
+
+nuxt.config.js
+```js
+workbox: {
+      runtimeCaching: [
+      {
+        // Should be a regex string. Compiles into new RegExp('https://google.com/.*')
+        urlPattern: 'https://my-cdn.com/.*',
+        // Defaults to `networkFirst` if omitted 
+        handler: 'cacheFirst',
+        // Defaults to `GET` if omitted
+        method: 'GET'
+      }
+    ]
+}
+```
 
 ## Icon
 This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp).
