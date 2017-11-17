@@ -15,13 +15,12 @@ Using Nuxt PWA you can supercharge your current or next Nuxt project with a heav
 
 **Contents**
 
-- [Quick Setup](#quick-setup)
-- [Configuration](#configuration)
-- [Manifest](#manifest)
-- [Workbox](#workbox)
-- [Icon](#icon)
-- [Meta](#meta)
-- [OneSignal](#onesignal)
+- [Quick Setup](#-quick-setup)
+- [Manifest Module](#-manifest-module)
+- [Workbox Module](#-workbox-module)
+- [Icon Module](#-icon-module)
+- [Meta Module](#-meta-module)
+- [OneSignal Module](#-onesignal)
 
 
 **Packages**
