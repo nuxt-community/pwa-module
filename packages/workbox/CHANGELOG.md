@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/workbox@2.0.1...@nuxtjs/workbox@2.1.0) (2017-11-17)
+
+
+### Bug Fixes
+
+* **workbox:** faster service worker register ([07524a2](https://github.com/nuxt-community/pwa-module/commit/07524a2))
+
+
+### Features
+
+* **runtimeCaching:** Support runtimeCaching ([fdcda0f](https://github.com/nuxt-community/pwa-module/commit/fdcda0f))
+* **workbox:** add options.autoRegister ([f1e1fe1](https://github.com/nuxt-community/pwa-module/commit/f1e1fe1))
+* **workbox, onegisnal:** Use defaultsDeep for options ([5ac89cf](https://github.com/nuxt-community/pwa-module/commit/5ac89cf))
+
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/workbox@2.0.0...@nuxtjs/workbox@2.0.1) (2017-11-17)
 
