@@ -40,13 +40,16 @@ function addOneSignal (moduleOptions) {
 
   // Merge options
   const defaults = {
+    // Special options
     OneSignalSDK: undefined,
     cdn: false,
     GcmSenderId: '482941778795',
-    allowLocalhostAsSecureOrigin: true,
     importScripts: [
       '/sw.js'
-    ]
+    ],
+    // SDK init options
+    // https://documentation.onesignal.com/docs/web-push-sdk#section--init-
+    allowLocalhostAsSecureOrigin: true
   }
 
   const options = Object.assign(defaults, moduleOptions, this.options.oneSignal)
