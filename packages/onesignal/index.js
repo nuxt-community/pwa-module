@@ -41,18 +41,17 @@ function addOneSignal (moduleOptions) {
 
   // Merge options
   const defaults = {
-    // Special options
     OneSignalSDK: undefined,
     cdn: false,
     GcmSenderId: '482941778795',
     importScripts: [
       '/sw.js'
     ],
-    // SDK init options
-    // https://documentation.onesignal.com/docs/web-push-sdk#section--init-
-    allowLocalhostAsSecureOrigin: true,
-    welcomeNotification: {
-      disable: true
+    init: {
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true
+      }
     }
   }
 
@@ -117,20 +116,12 @@ function addOneSignal (moduleOptions) {
   makeSW('OneSignalSDKWorker.js', [].concat(options.importScripts || []).concat(options.OneSignalSDK))
   makeSW('OneSignalSDKUpdaterWorker.js', [options.OneSignalSDK])
 
-  // Add OneSignal init plugin
-  const onsOpts = Object.assign({}, options)
-  delete onsOpts.OneSignalSDK
-  delete onsOpts.cdn
-  delete onsOpts.GcmSenderId
-  delete onsOpts.importScripts
-
+  // Add OneSignal plugin
   this.addPlugin({
     src: path.resolve(__dirname, 'templates/plugin.js'),
     ssr: false,
     fileName: 'onesignal.js',
-    options: {
-      onsOpts
-    }
+    options
   })
 }
 

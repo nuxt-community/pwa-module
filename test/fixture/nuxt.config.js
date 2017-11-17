@@ -33,6 +33,8 @@ module.exports = {
     ]
   },
   oneSignal: {
-    appId: 'd867ac26-f7be-4c62-9fdd-b756a33c4a8f'
+    init: {
+      appId: 'd867ac26-f7be-4c62-9fdd-b756a33c4a8f'
+    }
   }
 }

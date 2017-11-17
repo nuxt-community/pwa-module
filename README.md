@@ -240,8 +240,9 @@ modules: [
 
 // Options
 oneSignal: {
-  appId: 'YOUR_APP_ID',
-  // ...your other init settings (see references below)
+  init: {
+    appId: 'YOUR_APP_ID',
+  }
 }
 ```
 
