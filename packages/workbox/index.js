@@ -49,7 +49,7 @@ function getOptions (moduleOptions) {
     swSrc: path.resolve(this.options.buildDir, 'sw.template.js'),
     swDest: path.resolve(this.options.srcDir, 'static', 'sw.js'),
     directoryIndex: '/',
-    cacheId: process.env.npm_package_name + '_' + process.env.npm_package_version,
+    cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
     globPatterns: ['**/*.{js,css}'],
     globDirectory: path.resolve(this.options.buildDir, 'dist'),
