@@ -26,8 +26,6 @@ module.exports = {
     ]
   },
   oneSignal: {
-    appId: 'd867ac26-f7be-4c62-9fdd-b756a33c4a8f',
-    OneSignalSDK: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js'
-
+    appId: 'd867ac26-f7be-4c62-9fdd-b756a33c4a8f'
   }
 }
