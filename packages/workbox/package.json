@@ -8,6 +8,7 @@
     "access": "public"
   },
   "dependencies": {
+    "escape-string-regexp": "^1.0.5",
     "workbox-build": "^2.1.1"
   }
 }

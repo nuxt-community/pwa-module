@@ -2,6 +2,7 @@ const path = require('path')
 const swBuild = require('workbox-build')
 const { readFileSync, writeFileSync } = require('fs')
 const hashSum = require('hash-sum')
+const escapeStringRegexp = require('escape-string-regexp')
 const debug = require('debug')('nuxt:pwa')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
@@ -56,16 +57,16 @@ function getOptions (moduleOptions) {
       '': fixUrl(publicPath)
     },
     runtimeCaching: [
-      // Cache routes if offline
-      {
-        urlPattern: fixUrl(routerBase + '/**'),
-        handler: 'networkFirst'
-      },
-      // Cache other _nuxt resources runtime
+      // Cache all _nuxt resources at runtime
       // They are hashed by webpack so are safe to loaded by cacheFirst handler
       {
-        urlPattern: fixUrl(publicPath + '/**'),
+        urlPattern: escapeStringRegexp(fixUrl(publicPath + '/')) + '.*',
         handler: 'cacheFirst'
+      },
+      // Cache other routes if offline
+      {
+        urlPattern: escapeStringRegexp(fixUrl(routerBase + '/')) + '.*',
+        handler: 'networkFirst'
       }
     ]
   }, moduleOptions, this.options.workbox)
@@ -84,7 +85,11 @@ function addTemplates (options) {
     fileName: 'sw.template.js',
     options: {
       importScripts: [options.wbDst].concat(options.importScripts || []),
-      runtimeCaching: options.runtimeCaching,
+      runtimeCaching: options.runtimeCaching.map(i => (Object.assign({}, i, {
+        urlPattern: i.urlPattern,
+        handler: i.handler || 'networkFirst',
+        method: i.method || 'GET'
+      }))),
       wbOptions: {
         cacheId: options.cacheId,
         clientsClaim: options.clientsClaim,
