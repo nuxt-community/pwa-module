@@ -44,6 +44,7 @@ function getOptions (moduleOptions) {
   }
 
   const options = Object.assign({
+    autoRegister: true,
     routerBase,
     publicPath,
     swSrc: path.resolve(this.options.buildDir, 'sw.template.js'),
@@ -99,16 +100,18 @@ function addTemplates (options) {
   })
 
   // Add sw.plugin.js
-  const swURL = `${options.routerBase}/${options.swURL || 'sw.js'}`
-  this.addPlugin({
-    src: path.resolve(__dirname, 'templates/sw.plugin.js'),
-    ssr: false,
-    fileName: 'sw.plugin.js',
-    options: {
-      swURL: fixUrl(swURL),
-      swScope: fixUrl(`${options.routerBase}/`)
-    }
-  })
+  if (options.autoRegister) {
+    const swURL = `${options.routerBase}/${options.swURL || 'sw.js'}`
+    this.addPlugin({
+      src: path.resolve(__dirname, 'templates/sw.plugin.js'),
+      ssr: false,
+      fileName: 'sw.plugin.js',
+      options: {
+        swURL: fixUrl(swURL),
+        swScope: fixUrl(`${options.routerBase}/`)
+      }
+    })
+  }
 }
 
 // =============================================
