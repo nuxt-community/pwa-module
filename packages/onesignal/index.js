@@ -49,7 +49,10 @@ function addOneSignal (moduleOptions) {
     ],
     // SDK init options
     // https://documentation.onesignal.com/docs/web-push-sdk#section--init-
-    allowLocalhostAsSecureOrigin: true
+    allowLocalhostAsSecureOrigin: true,
+    welcomeNotification: {
+      disable: true
+    }
   }
 
   const options = Object.assign(defaults, moduleOptions, this.options.oneSignal)
