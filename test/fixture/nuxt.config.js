@@ -23,6 +23,13 @@ module.exports = {
     dev: true,
     importScripts: [
       'custom-sw.js'
+    ],
+    runtimeCaching: [
+      {
+        urlPattern: 'https://google.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET'
+      }
     ]
   },
   oneSignal: {
