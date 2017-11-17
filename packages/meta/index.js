@@ -3,9 +3,13 @@ const debug = require('debug')('nuxt:pwa')
 const find = (arr, key, val) => arr.find(obj => val ? obj[key] === val : obj[key])
 
 module.exports = function nuxtMeta (_options) {
-  const hook = builder => {
+  const hook = () => {
     debug('Adding meta')
     generateMeta.call(this, _options)
+  }
+
+  if (this.options.mode === 'spa') {
+    return hook()
   }
 
   this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
