@@ -2,6 +2,7 @@ const path = require('path')
 const { writeFileSync, readFileSync } = require('fs')
 const hashSum = require('hash-sum')
 const debug = require('debug')('nuxt:pwa')
+const { defaultsDeep } = require('lodash')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
@@ -55,7 +56,7 @@ function addOneSignal (moduleOptions) {
     }
   }
 
-  const options = Object.assign(defaults, moduleOptions, this.options.oneSignal)
+  const options = defaultsDeep({}, this.options.oneSignal, moduleOptions, defaults)
 
   if (options.OneSignalSDK === undefined) {
     if (options.cdn) {

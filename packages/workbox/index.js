@@ -4,6 +4,7 @@ const { readFileSync, writeFileSync } = require('fs')
 const hashSum = require('hash-sum')
 const escapeStringRegexp = require('escape-string-regexp')
 const debug = require('debug')('nuxt:pwa')
+const { defaultsDeep } = require('lodash')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
@@ -43,7 +44,7 @@ function getOptions (moduleOptions) {
     }
   }
 
-  const options = Object.assign({
+  const defaults = {
     autoRegister: true,
     routerBase,
     publicPath,
@@ -70,7 +71,9 @@ function getOptions (moduleOptions) {
         handler: 'networkFirst'
       }
     ]
-  }, moduleOptions, this.options.workbox)
+  }
+
+  const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
 
   return options
 }
