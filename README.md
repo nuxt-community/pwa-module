@@ -23,6 +23,7 @@ Package  | Downloads | Latest | Changelog
 @nuxtjs/meta | [![npm](https://img.shields.io/npm/dt/@nuxtjs/meta.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/meta/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/meta/CHANGELOG.md)
 @nuxtjs/workbox | [![npm](https://img.shields.io/npm/dt/@nuxtjs/workbox.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/workbox/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/workbox/CHANGELOG.md)
 @nuxtjs/icon | [![npm](https://img.shields.io/npm/dt/@nuxtjs/icon.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/icon/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/icon/CHANGELOG.md)
+@nuxtjs/onesignal | [![npm](https://img.shields.io/npm/dt/@nuxtjs/onesignal.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/onesignal/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/onesignal/CHANGELOG.md)
 
 ## Contents
 
@@ -32,6 +33,7 @@ Package  | Downloads | Latest | Changelog
 - [Workbox](#workbox)
 - [Icon](#icon)
 - [Meta](#meta)
+- [OneSignal](#onesignal)
 
 ## Quick Setup
 
@@ -157,6 +159,75 @@ Please read this resources if you want to enable `mobileAppIOS` option:
 - https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
 
+## OneSignal
+OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications.[Learn More](https://documentation.onesignal.com/docs/product-overview)
+
+Setting and and using this module is little tricky as OneSignal requires to register it's own Service worker. (see [Web Push SDK Setup (HTTPS)](https://documentation.onesignal.com/docs/web-push-sdk-setup-https))
+
+First add dependency as it is not being installed by default when using PWA module:
+
+```bash
+yarn add @nuxtjs/onesignal
+# OR
+npm i @nuxtjs/onesignal
+```
+
+Then add module to `nuxt.config.js` **BEFORE** `@nuxtjs/pwa` and provide options under `oneSignal`:
+
+```js
+modules: [
+  '@nuxtjs/onesignal',
+  '@nuxtjs/pwa',
+],
+
+// Options
+oneSignal: {
+  appId: 'YOUR_APP_ID',
+  // ...your other init settings
+}
+```
+
+### Async Functions
+This module exposes oneSignal as `$OneSignal` everywhere. So you can call it. 
+Please note that because of async loading of OneSignal SDK script, every action should be pushed into `$OneSignal` stack.
+
+```js
+// Inside page components
+this.$OneSignal.push(() => {
+    this.$OneSignal.isPushNotificationsEnabled((isEnabled) => {
+    if (isEnabled) {
+      console.log('Push notifications are enabled!')
+    } else {
+      console.log('Push notifications are not enabled yet.')
+    }
+  })
+})
+
+// Using window and array form
+window.$OneSignal.push(['addListenerForNotificationOpened', (data) => {
+  console.log('Received NotificationOpened:', data }
+]);
+```
+
+### Change OneSignal SDK Script URL
+
+By default this modules ships with latest SDK dist.
+
+You can use recommended CDN by using `cdn: true` or changing it to a custom value using `OneSignalSDK`.
+
+```js
+oneSignal: {
+  // Use CDN
+  cdn: true,
+
+  // Use any custom URL
+  OneSignalSDK: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js'
+}
+```
+
+### References
+
+Please see [Web Push SDK Reference](https://documentation.onesignal.com/docs/web-push-sdk) for all available options and API functions.
 
 ## License
 
