@@ -182,9 +182,7 @@ Please read this resources if you want to enable `mobileAppIOS` option:
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
 
 ## OneSignal
-OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. ([Learn More](https://documentation.onesignal.com/docs/product-overview))
-
-Setting and and using this module is a little tricky as OneSignal requires to register it's own Service worker. (See [Web Push SDK Setup](https://documentation.onesignal.com/docs/web-push-sdk-setup-https))
+OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. Setting and and using this module is a little tricky as OneSignal requires to register it's own Service worker.
 
 First add dependency as it is not being installed by default when using PWA module:
 
@@ -203,7 +201,7 @@ modules: [
 // Options
 oneSignal: {
   appId: 'YOUR_APP_ID',
-  // ...your other init settings
+  // ...your other init settings (see references below)
 }
 ```
 
@@ -247,7 +245,11 @@ oneSignal: {
 
 ### References
 
-Please see [Web Push SDK Reference](https://documentation.onesignal.com/docs/web-push-sdk) for all available options and API functions.
+- [Web Push SDK Reference](https://documentation.onesignal.com/docs/web-push-sdk) - Available options and API calls
+- [Customize Permission Messages](https://documentation.onesignal.com/docs/customize-permission-messages)
+- [Thanks for Subscribing Notifications](https://documentation.onesignal.com/docs/welcome-notifications)
+- [Product overview](https://documentation.onesignal.com/docs/product-overview) - More info about OneSignal
+- [Web Push SDK Setup](https://documentation.onesignal.com/docs/web-push-sdk-setup-https) - Setup guides for in-depth reading what this modules does.
 
 ## License
 
