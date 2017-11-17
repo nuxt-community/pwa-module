@@ -242,9 +242,15 @@ modules: [
 oneSignal: {
   init: {
     appId: 'YOUR_APP_ID',
+    allowLocalhostAsSecureOrigin: true,
+    welcomeNotification: {
+        disable: true
+    }
   }
 }
 ```
+
+See references below for all `init` options.
 
 ### Async Functions
 This module exposes oneSignal as `$OneSignal` everywhere. So you can call it. 
