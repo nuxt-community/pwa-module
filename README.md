@@ -160,16 +160,14 @@ Please read this resources if you want to enable `mobileAppIOS` option:
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
 
 ## OneSignal
-OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications.[Learn More](https://documentation.onesignal.com/docs/product-overview)
+OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. ([Learn More](https://documentation.onesignal.com/docs/product-overview))
 
-Setting and and using this module is little tricky as OneSignal requires to register it's own Service worker. (see [Web Push SDK Setup (HTTPS)](https://documentation.onesignal.com/docs/web-push-sdk-setup-https))
+Setting and and using this module is a little tricky as OneSignal requires to register it's own Service worker. (See [Web Push SDK Setup](https://documentation.onesignal.com/docs/web-push-sdk-setup-https))
 
 First add dependency as it is not being installed by default when using PWA module:
 
 ```bash
-yarn add @nuxtjs/onesignal
-# OR
-npm i @nuxtjs/onesignal
+yarn add @nuxtjs/onesignal # OR npm i @nuxtjs/onesignal
 ```
 
 Then add module to `nuxt.config.js` **BEFORE** `@nuxtjs/pwa` and provide options under `oneSignal`:
