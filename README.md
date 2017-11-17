@@ -1,4 +1,4 @@
-<h2 align="center">⚡ PWA Module</h1>
+<h2 align="center">⚡ PWA Module</h2>
 
 <p align="center">
 <a href="https://circleci.com/gh/nuxt-community/pwa-module">
@@ -25,7 +25,7 @@ Package  | Downloads | Latest | Changelog
 @nuxtjs/icon | [![npm](https://img.shields.io/npm/dt/@nuxtjs/icon.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/icon/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/icon/CHANGELOG.md)
 @nuxtjs/onesignal | [![npm](https://img.shields.io/npm/dt/@nuxtjs/onesignal.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal) | [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/onesignal/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal) | [Changelog](https://github.com/nuxt-community/pwa-module/blob/master/packages/onesignal/CHANGELOG.md)
 
-## Contents
+**Contents**
 
 - [Quick Setup](#quick-setup)
 - [Configuration](#configuration)
@@ -35,7 +35,7 @@ Package  | Downloads | Latest | Changelog
 - [Meta](#meta)
 - [OneSignal](#onesignal)
 
-<h2 align="center">Quick Setup</h1>
+<h2 align="center">Quick Setup</h2>
 
 1. Install npm package:
 
@@ -72,7 +72,7 @@ modules: [
 Also each sub-module has it's own configuration. Continue reading docs for detailed info.
 
 
-<h2 align="center">📦 Manifest Module</h1>
+<h2 align="center">📦 Manifest Module</h2>
 
 Manifest adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
 
@@ -85,7 +85,7 @@ manifest: {
 }
 ```
 
-<h2 align="center">📦 Workbox Module</h1>
+<h2 align="center">📦 Workbox Module</h2>
 
 Workbox is a collection of JavaScript libraries for Progressive Web Apps.
 ([Learn more](https://developers.google.com/web/tools/workbox)). This module adds full offline support using workbox.
@@ -131,23 +131,21 @@ workbox: {
 }
 ```
 
-<h2 align="center">📦 Icon Module</h1>
-This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp).
+<h2 align="center">📦 Icon Module</h2>
 
-- This module fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module.
-- Source icon is being resized using *cover* method.
+This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp) and fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module. Source icon is being resized using *cover* method.
 
 ### options
 
-#### `iconSrc`
+**iconSrc**
 - Default: `[srcDir]/static/icon.png`
 
-#### `sizes`
+**sizes**
 - Default: `[16, 120, 144, 152, 192, 384, 512]`
 
 Array of sizes to be generated (Square).
 
-<h2 align="center">📦 Meta Module<h1>
+<h2 align="center">📦 Meta Module</h2>
 
 Meta easily adds common meta tags into your project with zero-config needed.
 You can optionally override meta using either `manifest` or `meta` section of `nuxt.config.js`:
@@ -222,7 +220,8 @@ Please read this resources before you enable `mobileAppIOS` option:
 
 By setting `meta.nativeUI` to `true` (Defaults to `false`) `viewport` defaults to `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui` and `mobileAppIOS` will be enabled if not explicitly set to `false` which is suitable for native looking mobile apps.
 
-<h2 align="center">📦 OneSignal Module</h1>
+<h2 align="center">📦 OneSignal Module</h2>
+
 OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. Setting and and using this module is a little tricky as OneSignal requires to register it's own Service worker.
 
 First add dependency as it is not being installed by default when using PWA module:
@@ -292,6 +291,6 @@ oneSignal: {
 - [Product overview](https://documentation.onesignal.com/docs/product-overview) - More info about OneSignal
 - [Web Push SDK Setup](https://documentation.onesignal.com/docs/web-push-sdk-setup-https) - Setup guides for in-depth reading what this modules does.
 
-## License
+<h2 align="center">License</h2>
 
 MIT - Nuxt Community - Pooya Parsa
