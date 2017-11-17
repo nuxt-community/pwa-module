@@ -14,7 +14,7 @@
 Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA solution and zero-config!
 
 
-## Packages
+**Packages**
 
 Package  | Downloads | Latest | Changelog
 ---------|-----------|--------|-----------
@@ -71,7 +71,9 @@ modules: [
 
 Also each sub-module has it's own configuration. Continue reading docs for detailed info.
 
-## Manifest
+
+<h1 align="center">Manifest Module</h1>
+
 Manifest adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
 
 You can pass options to `manifest` section in `nuxt.config.js` to override defaults.
@@ -83,7 +85,8 @@ manifest: {
 }
 ```
 
-## Workbox
+<h1 align="center">Workbox Module</h1>
+
 Workbox is a collection of JavaScript libraries for Progressive Web Apps.
 ([Learn more](https://developers.google.com/web/tools/workbox)). This module adds full offline support using workbox.
 Workbox module is only enabled on *production* builds.
@@ -128,7 +131,7 @@ workbox: {
 }
 ```
 
-## Icon
+<h1 align="center">Icon Module</h1>
 This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp).
 
 - This module fills `manifest.icons[]` with proper paths to generated assets that is used by [manifest](../manifest) module.
@@ -144,7 +147,7 @@ This module automatically generates app icons and favicon with different sizes u
 
 Array of sizes to be generated (Square).
 
-## Meta
+<h1 align="center">Meta Module<h1>
 Meta easily adds common meta tags into your project with zero-config needed.
 You can optionally override meta using either `manifest` or `meta` section of `nuxt.config.js`:
 
@@ -215,9 +218,10 @@ Please read this resources before you enable `mobileAppIOS` option:
 
 **nativeUI**
 - Default: `false`
+
 By setting `meta.nativeUI` to `true` (Defaults to `false`) `viewport` defaults to `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui` and `mobileAppIOS` will be enabled if not explicitly set to `false` which is suitable for native looking mobile apps.
 
-## OneSignal
+<h1 align="center">OneSignal Module</h1>
 OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. Setting and and using this module is a little tricky as OneSignal requires to register it's own Service worker.
 
 First add dependency as it is not being installed by default when using PWA module:
