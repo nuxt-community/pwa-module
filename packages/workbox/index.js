@@ -2,7 +2,6 @@ const path = require('path')
 const swBuild = require('workbox-build')
 const { readFileSync, writeFileSync } = require('fs')
 const hashSum = require('hash-sum')
-const escapeStringRegexp = require('escape-string-regexp')
 const debug = require('debug')('nuxt:pwa')
 const { defaultsDeep } = require('lodash')
 
