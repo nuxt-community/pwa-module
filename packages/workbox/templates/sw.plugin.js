@@ -1,14 +1,11 @@
-window.onNuxtReady(() => {
-  if (!('serviceWorker' in navigator)) {
-    console.warn('Service workers are not supported.')
-    return
-  }
-
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('<%= options.swURL %>', {
     scope: '<%= options.swScope %>'
   }).then(function(registration) {
     window.$sw = registration
   }).catch(function(error) {
-    console.error('Service worker registration failed:', error);
-  });
-})
+    console.error('Service worker registration failed:', error)
+  })
+} else {
+  console.warn('Service workers are not supported.')
+}
