@@ -223,7 +223,7 @@ By setting `meta.nativeUI` to `true` (Defaults to `false`) `viewport` defaults t
 
 <h2 align="center">📦 OneSignal Module</h2>
 
-OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. Setting and and using this module is a little tricky as OneSignal requires to register it's own Service worker.
+OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. Setting and using this module is a little tricky as OneSignal requires to register it's own Service worker.
 
 First add dependency as it is not being installed by default when using PWA module:
 
