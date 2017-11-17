@@ -19,6 +19,7 @@ module.exports = {
     description: 'Test Project Description'
   },
   workbox: {
+    dev: true,
     importScripts: [
       'custom-sw.js'
     ]
