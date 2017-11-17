@@ -5,3 +5,4 @@ node_modules
 modules/*/package-lock.json
 .nuxt
 coverage
+dist/
