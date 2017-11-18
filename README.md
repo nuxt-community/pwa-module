@@ -122,7 +122,7 @@ workbox: {
       {
         // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
         urlPattern: 'https://my-cdn.com/.*',
-        // Defaults to `networkFirst` if omitted 
+        // Defaults to `networkFirst` if omitted
         handler: 'cacheFirst',
         // Defaults to `GET` if omitted
         method: 'GET'
@@ -183,7 +183,7 @@ You can optionally override meta using either `manifest` or `meta` section of `n
 
 **viewport**
 - Default: `width=device-width, initial-scale=1`
-- Meta: `viewport` 
+- Meta: `viewport`
 
 **mobileApp**
 - Default: `true`
@@ -197,13 +197,13 @@ Please read this resources before you enable `mobileAppIOS` option:
 
 - https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
- 
+
 **appleStatusBarStyle**
 - Default: `default`
 
 **favicon**
 - Default: `true` (to use options.icons)
-- Meta: `shortcut icon` + `apple-touch-icon` 
+- Meta: `shortcut icon` + `apple-touch-icon`
 
 **name**
 - Default: *npm_package_name*
@@ -211,7 +211,7 @@ Please read this resources before you enable `mobileAppIOS` option:
 
 **description**
 - Default: *npm_package_description*
-- Meta: `description` 
+- Meta: `description`
 
 **theme_color**
 - Default: options.loading.color
@@ -219,11 +219,11 @@ Please read this resources before you enable `mobileAppIOS` option:
 
 **lang**
 - Default: `en`
-- Meta: `lang` 
+- Meta: `lang`
 
 **ogType**
 - Default: `website`
-- Meta: `og:type` 
+- Meta: `og:type`
 
 **ogTitle**
 - Default: same as options.name
@@ -271,7 +271,7 @@ oneSignal: {
 See references below for all `init` options.
 
 ### Async Functions
-This module exposes oneSignal as `$OneSignal` everywhere. So you can call it. 
+This module exposes oneSignal as `$OneSignal` everywhere. So you can call it.
 Please note that because of async loading of OneSignal SDK script, every action should be pushed into `$OneSignal` stack.
 
 ```js
@@ -288,7 +288,7 @@ this.$OneSignal.push(() => {
 
 // Using window and array form
 window.$OneSignal.push(['addListenerForNotificationOpened', (data) => {
-  console.log('Received NotificationOpened:', data }
+  console.log('Received NotificationOpened:', data )}
 ]);
 ```
 
