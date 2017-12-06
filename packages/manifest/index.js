@@ -34,6 +34,7 @@ function addManifest (options) {
     name: process.env.npm_package_name,
     short_name: process.env.npm_package_name,
     description: process.env.npm_package_description,
+    publicPath,
     icons: [],
     start_url: routerBase + '?standalone=true',
     display: 'standalone',
@@ -71,7 +72,7 @@ function addManifest (options) {
 
   // Add manifest meta
   if (!find(this.options.head.link, 'rel', 'manifest')) {
-    this.options.head.link.push({ rel: 'manifest', href: fixUrl(`${publicPath}/${manifestFileName}`) })
+    this.options.head.link.push({ rel: 'manifest', href: fixUrl(`${manifest.publicPath}/${manifestFileName}`) })
   } else {
     console.warn('Manifest meta already provided!')
   }
