@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/manifest@2.0.1...@nuxtjs/manifest@2.1.0) (2017-12-07)
+
+
+### Features
+
+* **manifest:** allow overriding publicPath ([#19](https://github.com/nuxt-community/pwa-module/issues/19)) ([4e6782e](https://github.com/nuxt-community/pwa-module/commit/4e6782e))
+
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/manifest@2.0.0...@nuxtjs/manifest@2.0.1) (2017-11-17)
 
