@@ -49,27 +49,27 @@ function generateMeta (_options) {
 
   // Charset
   if (options.charset && !find(this.options.head.meta, 'charset')) {
-    this.options.head.meta.push({ charset: options.charset })
+    this.options.head.meta.push({ hid: 'charset', charset: options.charset })
   }
 
   // Viewport
   if (options.viewport && !find(this.options.head.meta, 'name', 'viewport')) {
-    this.options.head.meta.push({ name: 'viewport', content: options.viewport })
+    this.options.head.meta.push({ hid: 'viewport', name: 'viewport', content: options.viewport })
   }
 
   // mobileApp
   if (options.mobileApp && !find(this.options.head.meta, 'name', 'mobile-web-app-capable')) {
-    this.options.head.meta.push({ name: 'mobile-web-app-capable', content: 'yes' })
+    this.options.head.meta.push({ hid: 'mobile-web-app-capable', name: 'mobile-web-app-capable', content: 'yes' })
   }
 
   // mobileApp (IOS)
   if (options.mobileAppIOS && !find(this.options.head.meta, 'name', 'apple-mobile-web-app-capable')) {
-    this.options.head.meta.push({ name: 'apple-mobile-web-app-capable', content: 'yes' })
+    this.options.head.meta.push({ hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes' })
   }
 
   // statusBarStyle (IOS)
   if (options.mobileAppIOS && options.appleStatusBarStyle && !find(this.options.head.meta, 'name', 'apple-mobile-web-app-status-bar-style')) {
-    this.options.head.meta.push({ name: 'apple-mobile-web-app-status-bar-style', content: options.appleStatusBarStyle })
+    this.options.head.meta.push({ hid: 'apple-mobile-web-app-status-bar-style', name: 'apple-mobile-web-app-status-bar-style', content: options.appleStatusBarStyle })
   }
 
   // Icons
@@ -99,7 +99,7 @@ function generateMeta (_options) {
   // IOS launch icon title
   const title = options.name || this.options.head.title || false
   if (title && !find(this.options.head.meta, 'name', 'apple-mobile-web-app-title')) {
-    this.options.head.meta.push({ name: 'apple-mobile-web-app-title', content: title })
+    this.options.head.meta.push({ hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: title })
   }
 
   // description meta
@@ -109,7 +109,7 @@ function generateMeta (_options) {
 
   // theme-color meta
   if (options.theme_color && !find(this.options.head.meta, 'name', 'theme-color')) {
-    this.options.head.meta.push({ name: 'theme-color', content: options.theme_color })
+    this.options.head.meta.push({ hid: 'theme-color', name: 'theme-color', content: options.theme_color })
   }
 
   // Add lang to html tag
@@ -122,7 +122,7 @@ function generateMeta (_options) {
 
   // og:type
   if (options.ogType && !find(this.options.head.meta, 'property', 'og:type') && !find(this.options.head.meta, 'name', 'og:type')) {
-    this.options.head.meta.push({ name: 'og:type', property: 'og:type', content: options.ogType })
+    this.options.head.meta.push({ hid: 'og:type', name: 'og:type', property: 'og:type', content: options.ogType })
   }
 
   // og:title
@@ -130,7 +130,7 @@ function generateMeta (_options) {
     options.ogTitle = options.name
   }
   if (options.ogTitle && !find(this.options.head.meta, 'property', 'og:title') && !find(this.options.head.meta, 'name', 'og:title')) {
-    this.options.head.meta.push({ name: 'og:title', property: 'og:title', content: options.ogTitle })
+    this.options.head.meta.push({ hid: 'og:title', name: 'og:title', property: 'og:title', content: options.ogTitle })
   }
 
   // og:description
@@ -138,7 +138,7 @@ function generateMeta (_options) {
     options.ogDescription = options.description
   }
   if (options.ogDescription && !find(this.options.head.meta, 'property', 'og:description') && !find(this.options.head.meta, 'name', 'og:description')) {
-    this.options.head.meta.push({ name: 'og:description', property: 'og:description', content: options.ogDescription })
+    this.options.head.meta.push({ hid: 'og:description', name: 'og:description', property: 'og:description', content: options.ogDescription })
   }
 }
 
