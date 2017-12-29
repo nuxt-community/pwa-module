@@ -8,7 +8,7 @@
     "access": "public"
   },
   "dependencies": {
-    "fs-extra": "^4.0.2",
+    "fs-extra": "^5.0.0",
     "hash-sum": "^1.0.2",
     "jimp": "^0.2.28"
   }
