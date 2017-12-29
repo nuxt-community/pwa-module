@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/pwa",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/nuxt-community/pwa-module",
