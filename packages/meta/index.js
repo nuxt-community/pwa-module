@@ -31,7 +31,8 @@ function generateMeta (_options) {
     lang: 'en',
     ogType: 'website',
     ogTitle: true,
-    ogDescription: true
+    ogDescription: true,
+    ogImage: true
   }
 
   // Combine sources
@@ -139,6 +140,53 @@ function generateMeta (_options) {
   }
   if (options.ogDescription && !find(this.options.head.meta, 'property', 'og:description') && !find(this.options.head.meta, 'name', 'og:description')) {
     this.options.head.meta.push({ hid: 'og:description', name: 'og:description', property: 'og:description', content: options.ogDescription })
+  }
+
+  // og:image
+  if (options.ogImage === true) {
+    if (options.icons && options.icons.length > 0) {
+      const iconBig = options.icons[options.icons.length - 1]
+      const [width, height] = iconBig.sizes.split('x').map(x => parseInt(x))
+      options.ogImage = {path: iconBig.src, width, height, type: iconBig.type}
+    } else {
+      options.ogImage = false
+    }
+  } else if (typeof options.ogImage === 'string') {
+    options.ogImage = {src: options.ogImage}
+  }
+  if (options.ogImage && !find(this.options.head.meta, 'property', 'og:image') && !find(this.options.head.meta, 'name', 'og:image')) {
+    if (options.ogHost) {
+      this.options.head.meta.push({
+        hid: 'og:image',
+        name: 'og:image',
+        property: 'og:image',
+        content: options.ogHost + options.ogImage.path
+      })
+      if (options.ogImage.width && options.ogImage.height) {
+        this.options.head.meta.push({
+          hid: 'og:image:width',
+          name: 'og:image:width',
+          property: 'og:image:width',
+          content: options.ogImage.width
+        })
+        this.options.head.meta.push({
+          hid: 'og:image:height',
+          name: 'og:image:height',
+          property: 'og:image:height',
+          content: options.ogImage.height
+        })
+      }
+      if (options.ogImage.type) {
+        this.options.head.meta.push({
+          hid: 'og:image:type',
+          name: 'og:image:type',
+          property: 'og:image:type',
+          content: options.ogImage.type
+        })
+      }
+    } else {
+      debug('No host specified, skipping og:image')
+    }
   }
 }
 
