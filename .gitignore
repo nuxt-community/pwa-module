@@ -6,3 +6,4 @@ modules/*/package-lock.json
 .nuxt
 coverage
 dist/
+_book

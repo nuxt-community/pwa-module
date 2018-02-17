@@ -1,0 +1,1 @@
+../../packages/manifest/CHANGELOG.md

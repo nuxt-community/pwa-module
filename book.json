@@ -1,0 +1,27 @@
+{
+  "title": "Nuxt PWA Module",
+  "gitbook": ">3.0.0",
+  "root": "./docs",
+  "plugins": [
+    "edit-link",
+    "prism",
+    "theme-vuejs-2",
+    "-fontsettings",
+    "github"
+  ],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/nuxt-community/pwa-module/tree/master/docs",
+      "label": "Edit This Page"
+    },
+    "github": {
+      "url": "https://github.com/nuxt-community/pwa-module"
+    }
+  },
+  "links": {
+    "sharing": {
+      "facebook": false,
+      "twitter": false
+    }
+  }
+}
