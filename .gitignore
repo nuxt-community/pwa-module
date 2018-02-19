@@ -7,3 +7,4 @@ modules/*/package-lock.json
 coverage
 dist/
 _book
+.DS_Store
