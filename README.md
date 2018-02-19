@@ -1,4 +1,4 @@
-<h2 align="center">⚡ PWA Module</h2>
+# ⚡ PWA Module
 
 <p align="center">
 <a href="https://circleci.com/gh/nuxt-community/pwa-module">
@@ -13,10 +13,8 @@
 
 Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA solution and zero-config!
 
-<p align="center">
-📖 <a href="https://pwa.nuxtjs.org" target="_blank">Read Documentation</a>
-</p>
+📖 [**Read Documentation**](https://pwa.nuxtjs.org)
 
-<h2 align="center">License</h2>
+## License
 
 MIT - Nuxt Community - Pooya Parsa
