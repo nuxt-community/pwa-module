@@ -18,7 +18,7 @@ Progressive Web Apps (PWA) are reliable, fast,and engaging, although there are m
 
 ## Links
 
-* [Github](https://github.com/nuxt-community/auth-module)
+* [Github](https://github.com/nuxt-community/pwa-module)
 
 
 > 👉 To get started head to [Setup](setup.md) section.
