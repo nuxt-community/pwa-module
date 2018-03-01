@@ -4,6 +4,8 @@ const workboxSW = new self.WorkboxSW(<%= JSON.stringify(options.wbOptions, null,
 
 workboxSW.precache([])
 
-<% options.runtimeCaching.forEach(r => { %>
-workboxSW.router.registerRoute(new RegExp('<%= r.urlPattern %>'), workboxSW.strategies.<%= r.handler %>({}), '<%= r.method %>')
+<% options.runtimeCaching.forEach(r => {
+  const strategy = JSON.stringify(r.strategyOptions || {})
+  %>
+workboxSW.router.registerRoute(new RegExp('<%= r.urlPattern %>'), workboxSW.strategies.<%= r.handler %>(<%= strategy %>), '<%= r.method %>')
 <% }) %>
