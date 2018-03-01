@@ -49,7 +49,7 @@ function addManifest (options) {
 
   // Stringify manifest & generate hash
   const manifestSource = JSON.stringify(manifest)
-  const manifestFileName = `manifest.${hash(manifestSource)}.json`
+  const manifestFileName = `manifest.${hash(manifestSource)}.webmanifest`
 
   // Merge final manifest into options.manifest for other modules
   if (!this.options.manifest) {
