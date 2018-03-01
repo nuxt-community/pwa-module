@@ -47,6 +47,24 @@ workbox: {
 }
 ```
 
+#### Adding custom cache [StrategyOption](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-sw.Strategies#.StrategyOptions)
+```js
+workbox: {
+   runtimeCaching: [
+     {
+       urlPattern: 'https://my-cdn.com/posts/.*',
+       strategyOptions: {
+         cacheName: 'our-cache',
+         cacheExpiration: {
+           maxEntries: 10,
+           maxAgeSeconds: 300
+         }
+       }
+     }
+   ]
+}
+```
+
 ### Adding custom service worker
 
 Create `static/custom-sw.js` file:
