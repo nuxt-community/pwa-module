@@ -1,4 +1,4 @@
-const fs = require('fs-extra')
+const { existsSync } = require('fs-extra')
 const path = require('path')
 const Jimp = require('jimp')
 const debug = require('debug')('nuxt:pwa')
@@ -19,7 +19,10 @@ module.exports = function nuxtIcon (options) {
   this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
 }
 
-function generateIcons (options) {
+function generateIcons (moduleOptions) {
+  // Combine sources
+  const options = Object.assign({}, this.options.icon, moduleOptions)
+
   const iconSrc = options.iconSrc || path.resolve(this.options.srcDir, 'static', 'icon.png')
   const sizes = options.sizes || [64, 120, 144, 152, 192, 384, 512]
 
@@ -29,12 +32,12 @@ function generateIcons (options) {
   if (isUrl(this.options.build.publicPath)) { // CDN
     publicPath = this.options.build.publicPath
     if (publicPath.indexOf('//') === 0) {
-      publicPath = '/' + publicPath // escape fixUrl
+      publicPath = `/${publicPath}` // escape fixUrl
     }
   }
 
   // Ensure icon file exists
-  if (!fs.existsSync(iconSrc)) {
+  if (!existsSync(iconSrc)) {
     /* eslint-disable no-console */
     debug(path.relative(this.options.srcDir, iconSrc), 'not found! Please create one or disable icon module.')
     return
@@ -48,7 +51,7 @@ function generateIcons (options) {
         if (err) {
           return reject(err)
         }
-        let fileName = `icons/icon_${size}.${hash}.png`
+        const fileName = `icons/icon_${size}.${hash}.png`
         resolve({ size, buff, fileName })
       })
     }))).then(icons => {
