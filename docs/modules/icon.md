@@ -5,6 +5,14 @@
 
 This module automatically generates app icons and favicon with different sizes using [jimp](https://github.com/oliver-moran/jimp) and fills `manifest.icons[]` with proper paths to generated assets that is used by manifest module. Source icon is being resized using *cover* method.
 
+
+You can pass options to `icon` section in `nuxt.config.js` to override defaults.
+
+```js
+icon: {
+ // Icon options
+}
+```
 ### options
 
 **iconSrc**
