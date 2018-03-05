@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/meta@2.0.2...@nuxtjs/meta@2.1.0) (2018-03-05)
+
+
+### Features
+
+* add og:image support ([#30](https://github.com/nuxt-community/pwa-module/issues/30)) ([afebd96](https://github.com/nuxt-community/pwa-module/commit/afebd96))
+
+
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/meta@2.0.1...@nuxtjs/meta@2.0.2) (2017-12-29)
 

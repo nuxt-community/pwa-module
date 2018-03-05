@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/workbox@2.1.1...@nuxtjs/workbox@2.2.0) (2018-03-05)
+
+
+### Features
+
+* Add support of StrategyOptions to cache ([b17bbd0](https://github.com/nuxt-community/pwa-module/commit/b17bbd0))
+
+
+
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/workbox@2.1.0...@nuxtjs/workbox@2.1.1) (2017-11-27)
 
