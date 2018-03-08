@@ -47,6 +47,10 @@ Please read this resources before you enable `mobileAppIOS` option:
 - Default: *npm_package_name*
 - Meta: `title`
 
+**author**
+- Default: *npm_package_author_name*
+- Meta: `author`
+
 **description**
 - Default: *npm_package_description*
 - Meta: `description`
