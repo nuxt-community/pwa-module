@@ -97,6 +97,19 @@ These types are accepted:
 - Default: ogHost (if defined)
 - Meta: `og:url`
 
+
+**twitterCard**
+- Default: `undefined`
+- Meta: `twitter:card
+
+**twitterSite**
+- Default: `undefined`
+- Meta: `twitter:site
+
+**twitterCreator**
+- Default: `undefined`
+- Meta: `twitter:creator`
+
 **nativeUI**
 - Default: `false`
 
