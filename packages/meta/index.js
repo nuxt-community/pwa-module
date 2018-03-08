@@ -19,6 +19,7 @@ function generateMeta (_options) {
   // Defaults
   const defaults = {
     name: process.env.npm_package_name,
+    author: process.env.npm_package_author_name,
     description: process.env.npm_package_description,
     charset: 'utf-8',
     viewport: undefined,
@@ -101,6 +102,11 @@ function generateMeta (_options) {
   const title = options.name || this.options.head.title || false
   if (title && !find(this.options.head.meta, 'name', 'apple-mobile-web-app-title')) {
     this.options.head.meta.push({ hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: title })
+  }
+
+  // Author
+  if (options.author && !find(this.options.head.meta, 'name', 'author')) {
+    this.options.head.meta.push({ hid: 'author', name: 'author', content: options.author })
   }
 
   // description meta
