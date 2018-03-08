@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/pwa",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/nuxt-community/pwa-module",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@nuxtjs/icon": "^2.1.0",
     "@nuxtjs/manifest": "^2.1.0",
-    "@nuxtjs/meta": "^2.1.0",
+    "@nuxtjs/meta": "^2.2.0",
     "@nuxtjs/workbox": "^2.2.0"
   }
 }

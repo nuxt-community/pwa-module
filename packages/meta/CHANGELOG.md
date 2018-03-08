@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/meta@2.1.0...@nuxtjs/meta@2.2.0) (2018-03-08)
+
+
+### Features
+
+* **meta:** add author property ([#41](https://github.com/nuxt-community/pwa-module/issues/41)) ([cafcfc4](https://github.com/nuxt-community/pwa-module/commit/cafcfc4))
+* **meta:** add ogUrl url property ([#42](https://github.com/nuxt-community/pwa-module/issues/42)) ([3990ddf](https://github.com/nuxt-community/pwa-module/commit/3990ddf))
+* **meta:** add twitter card, site and creator properties ([#43](https://github.com/nuxt-community/pwa-module/issues/43)) ([fe11c76](https://github.com/nuxt-community/pwa-module/commit/fe11c76))
+
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/meta@2.0.2...@nuxtjs/meta@2.1.0) (2018-03-05)
 
