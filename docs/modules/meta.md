@@ -89,6 +89,18 @@ These types are accepted:
   * `width`, `height`: specify the dimensions, respectively.
   * `type`: specify the MIME type.
 
+**twitterCard**
+- Default: `undefined`
+- Meta: `twitter:card
+
+**twitterSite**
+- Default: `undefined`
+- Meta: `twitter:site
+
+**twitterCreator**
+- Default: `undefined`
+- Meta: `twitter:creator
+
 **nativeUI**
 - Default: `false`
 

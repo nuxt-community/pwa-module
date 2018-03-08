@@ -32,7 +32,10 @@ function generateMeta (_options) {
     ogType: 'website',
     ogTitle: true,
     ogDescription: true,
-    ogImage: true
+    ogImage: true,
+    twitterCard: undefined,
+    twitterSite: undefined,
+    twitterCreator: undefined
   }
 
   // Combine sources
@@ -187,6 +190,21 @@ function generateMeta (_options) {
     } else {
       debug('No host specified, skipping og:image')
     }
+  }
+
+  // twitter:card
+  if (options.twitterCard && !find(this.options.head.meta, 'property', 'twitter:card') && !find(this.options.head.meta, 'name', 'twitter:card')) {
+    this.options.head.meta.push({ hid: 'twitter:card', name: 'twitter:card', property: 'twitter:card', content: options.twitterCard })
+  }
+
+  // twitter:site
+  if (options.twitterSite && !find(this.options.head.meta, 'property', 'twitter:site') && !find(this.options.head.meta, 'name', 'twitter:site')) {
+    this.options.head.meta.push({ hid: 'twitter:site', name: 'twitter:site', property: 'twitter:site', content: options.twitterSite })
+  }
+
+  // twitter:creator
+  if (options.twitterCreator && !find(this.options.head.meta, 'property', 'twitter:creator') && !find(this.options.head.meta, 'name', 'twitter:creator')) {
+    this.options.head.meta.push({ hid: 'twitter:creator', name: 'twitter:creator', property: 'twitter:creator', content: options.twitterCreator })
   }
 }
 
