@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.8"></a>
+## [2.0.8](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/pwa@2.0.7...@nuxtjs/pwa@2.0.8) (2018-03-08)
+
+
+
+
+
+**Note:** Version bump only for package @nuxtjs/pwa
+
 <a name="2.0.7"></a>
 ## [2.0.7](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/pwa@2.0.6...@nuxtjs/pwa@2.0.7) (2018-03-08)
 
