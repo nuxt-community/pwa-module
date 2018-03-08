@@ -33,7 +33,9 @@ function generateMeta (_options) {
     ogType: 'website',
     ogTitle: true,
     ogDescription: true,
-    ogImage: true
+    ogImage: true,
+    ogHost: undefined,
+    ogUrl: true
   }
 
   // Combine sources
@@ -146,6 +148,14 @@ function generateMeta (_options) {
   }
   if (options.ogDescription && !find(this.options.head.meta, 'property', 'og:description') && !find(this.options.head.meta, 'name', 'og:description')) {
     this.options.head.meta.push({ hid: 'og:description', name: 'og:description', property: 'og:description', content: options.ogDescription })
+  }
+
+  // og:url
+  if (options.ogHost && options.ogUrl === true) {
+    options.ogUrl = options.ogHost
+  }
+  if (options.ogUrl && !find(this.options.head.meta, 'property', 'og:url') && !find(this.options.head.meta, 'name', 'og:url')) {
+    this.options.head.meta.push({hid: 'og:url', name: 'og:url', property: 'og:url', content: options.ogUrl})
   }
 
   // og:image

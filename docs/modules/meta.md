@@ -93,6 +93,10 @@ These types are accepted:
   * `width`, `height`: specify the dimensions, respectively.
   * `type`: specify the MIME type.
 
+**ogUrl**
+- Default: ogHost (if defined)
+- Meta: `og:url`
+
 **nativeUI**
 - Default: `false`
 
