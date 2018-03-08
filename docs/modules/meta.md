@@ -47,6 +47,10 @@ Please read this resources before you enable `mobileAppIOS` option:
 - Default: *npm_package_name*
 - Meta: `title`
 
+**author**
+- Default: *npm_package_author_name*
+- Meta: `author`
+
 **description**
 - Default: *npm_package_description*
 - Meta: `description`
@@ -89,6 +93,11 @@ These types are accepted:
   * `width`, `height`: specify the dimensions, respectively.
   * `type`: specify the MIME type.
 
+**ogUrl**
+- Default: ogHost (if defined)
+- Meta: `og:url`
+
+
 **twitterCard**
 - Default: `undefined`
 - Meta: `twitter:card
@@ -99,7 +108,7 @@ These types are accepted:
 
 **twitterCreator**
 - Default: `undefined`
-- Meta: `twitter:creator
+- Meta: `twitter:creator`
 
 **nativeUI**
 - Default: `false`
