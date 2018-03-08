@@ -157,7 +157,7 @@ function generateMeta (_options) {
   if (options.ogHost && options.ogUrl === true) {
     options.ogUrl = options.ogHost
   }
-  if (options.ogUrl && !find(this.options.head.meta, 'property', 'og:url') && !find(this.options.head.meta, 'name', 'og:url')) {
+  if (options.ogUrl && options.ogUrl !== true && !find(this.options.head.meta, 'property', 'og:url') && !find(this.options.head.meta, 'name', 'og:url')) {
     this.options.head.meta.push({hid: 'og:url', name: 'og:url', property: 'og:url', content: options.ogUrl})
   }
 
