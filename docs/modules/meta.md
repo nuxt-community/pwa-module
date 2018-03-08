@@ -75,6 +75,24 @@ Please read this resources before you enable `mobileAppIOS` option:
 - Default: same as options.description
 - Meta: `og:description`
 
+**ogHost**
+Specify the domain that the site is hosted. Required for ogImage.
+- Default: `undefined`
+- Meta: `N/A`
+
+**ogImage**
+- Default: `true`
+- Meta: `og:image` and sub-tags
+
+These types are accepted:
+
+- Boolean: the icons from the `icon` module are used.
+- String: the path is used.
+- Object:
+  * `path`: specify the path.
+  * `width`, `height`: specify the dimensions, respectively.
+  * `type`: specify the MIME type.
+
 **nativeUI**
 - Default: `false`
 
