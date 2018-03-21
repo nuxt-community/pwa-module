@@ -12,7 +12,7 @@ Progressive Web Apps (PWA) are reliable, fast,and engaging, although there are m
 - [**Workbox**](./modules/workbox.md) - Registers a service worker for offline caching.
 - [**Manifest**](./modules/manifest.md) - Automatically generate `manifest.json` file.
 - [**Meta**](./modules/meta.md) - Automatically adds SEO friendly meta data with manifest integration.
-- [**Icon**](./modules/icon.md) - Automatically generate sapp icons with different sizes.
+- [**Icon**](./modules/icon.md) - Automatically generate app icons with different sizes.
 - [**Onesignal**](./modules/onesignal.md) - Free background push notifications using onesignal.
 
 
