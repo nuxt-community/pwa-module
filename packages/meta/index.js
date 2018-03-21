@@ -31,6 +31,7 @@ function generateMeta (_options) {
     theme_color: this.options.loading && this.options.loading.color,
     lang: 'en',
     ogType: 'website',
+    ogSiteName: true,
     ogTitle: true,
     ogDescription: true,
     ogImage: true,
@@ -143,6 +144,13 @@ function generateMeta (_options) {
   }
   if (options.ogTitle && !find(this.options.head.meta, 'property', 'og:title') && !find(this.options.head.meta, 'name', 'og:title')) {
     this.options.head.meta.push({ hid: 'og:title', name: 'og:title', property: 'og:title', content: options.ogTitle })
+  }
+  // og:site_name
+  if (options.ogSiteName === true) {
+    options.ogSiteName = options.name
+  }
+  if (options.ogSiteName && !find(this.options.head.meta, 'property', 'og:site_name') && !find(this.options.head.meta, 'name', 'og:site_name')) {
+    this.options.head.meta.push({ hid: 'og:site_name', name: 'og:site_name', property: 'og:site_name', content: options.ogSiteName })
   }
 
   // og:description
