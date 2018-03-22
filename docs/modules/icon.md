@@ -22,3 +22,14 @@ icon: {
 - Default: `[16, 120, 144, 152, 192, 384, 512]`
 
 Array of sizes to be generated (Square).
+
+**accessibleIcons**
+- Default: true
+
+Make icons accessible through Vue instances.
+
+**iconProperty**
+- Default: '$icons'
+
+Name of property for accessible icons.
+Accessible through Vue[property], default Vue.$icons
