@@ -66,7 +66,8 @@ function getOptions (moduleOptions) {
         handler: 'cacheFirst'
       }
     ],
-    runtimeCaching: []
+    runtimeCaching: [],
+    offlineAnalytics: false
   }
 
   const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
@@ -101,8 +102,9 @@ function addTemplates (options) {
       wbOptions: {
         cacheId: options.cacheId,
         clientsClaim: options.clientsClaim,
-        directoryIndex: options.directoryIndex
-      }
+        directoryIndex: options.directoryIndex,
+      },
+      offlineAnalytics: options.offlineAnalytics
     }
   })
 

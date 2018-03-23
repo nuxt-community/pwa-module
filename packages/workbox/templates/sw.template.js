@@ -9,3 +9,7 @@ workboxSW.precache([])
   %>
 workboxSW.router.registerRoute(new RegExp('<%= r.urlPattern %>'), workboxSW.strategies.<%= r.handler %>(<%= strategy %>), '<%= r.method %>')
 <% }) %>
+
+<% if(options.offlineAnalytics){
+  workboxSW.googleAnalytics.initialize()
+} %>

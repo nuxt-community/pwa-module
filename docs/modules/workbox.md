@@ -23,6 +23,8 @@ workbox: {
 
 **importScripts** (Array) - Additional scripts to be imported in service worker script. (Relative to `/`. Can be placed in `assets/` directory)
 
+**offlineAnalytics** - (Default: false) Enable offline Google Analytics tracking [through workbox](https://developers.google.com/web/tools/workbox/guides/enable-offline-analytics)
+
 For list of all available options see [here](https://developers.google.com/web/tools/workbox/modules/workbox-build)
 
 ### Adding custom runtimeCaching items (For CDN)
