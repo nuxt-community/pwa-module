@@ -65,10 +65,11 @@ function getOptions (moduleOptions) {
         handler: 'cacheFirst'
       },
       // Cache other routes if offline
-      {
-        urlPattern: fixUrl(routerBase + '/.*'),
-        handler: 'networkFirst'
-      }
+      // TODO: Submit PR with better configurable fix, temporarily removing this route registration
+      // {
+      //   urlPattern: fixUrl(routerBase + '/.*'),
+      //   handler: 'networkFirst'
+      // }
     ],
     runtimeCaching: []
   }
