@@ -63,12 +63,13 @@ function getOptions (moduleOptions) {
       {
         urlPattern: fixUrl(publicPath + '/.*'),
         handler: 'cacheFirst'
-      },
-      // Cache other routes if offline
-      {
-        urlPattern: fixUrl(routerBase + '/.*'),
-        handler: 'networkFirst'
       }
+      // Cache other routes if offline
+      // TODO: Submit PR with better configurable fix, temporarily removing this route registration
+      // {
+      //   urlPattern: fixUrl(routerBase + '/.*'),
+      //   handler: 'networkFirst'
+      // }
     ],
     runtimeCaching: []
   }
