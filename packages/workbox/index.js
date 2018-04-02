@@ -69,7 +69,7 @@ function getOptions (moduleOptions) {
     runtimeCaching: []
   }
 
-  // Cache other routes for offline
+  // Optionally cache other routes for offline
   if (defaults.offline) {
     defaults._runtimeCaching.push({
       urlPattern: fixUrl(routerBase + '/.*'),
