@@ -67,6 +67,10 @@ Please read this resources before you enable `mobileAppIOS` option:
 - Default: `website`
 - Meta: `og:type`
 
+**ogSiteName**
+- Default: same as options.name
+- Meta: `og:site_name`
+
 **ogTitle**
 - Default: same as options.name
 - Meta: `og:title`
