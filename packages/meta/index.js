@@ -99,7 +99,7 @@ function generateMeta (_options) {
   }
 
   // Title
-  if (options.name && !this.options.head.title) {
+  if (options.name && !this.options.head.title && typeof(this.options.head.titleTemplate) !== 'function') {
     this.options.head.title = options.name
   }
 
