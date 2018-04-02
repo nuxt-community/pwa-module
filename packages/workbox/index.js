@@ -57,7 +57,7 @@ function getOptions (moduleOptions) {
     modifyUrlPrefix: {
       '': fixUrl(publicPath)
     },
-    offline: moduleOptions.offline || true,
+    offline: true,
     _runtimeCaching: [
       // Cache all _nuxt resources at runtime
       // They are hashed by webpack so are safe to loaded by cacheFirst handler
@@ -69,15 +69,15 @@ function getOptions (moduleOptions) {
     runtimeCaching: []
   }
 
+  const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
+
   // Optionally cache other routes for offline
-  if (defaults.offline) {
+  if (options.offline) {
     defaults._runtimeCaching.push({
       urlPattern: fixUrl(routerBase + '/.*'),
       handler: 'networkFirst'
     })
   }
-
-  const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
 
   return options
 }
