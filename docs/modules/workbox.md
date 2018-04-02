@@ -23,7 +23,7 @@ workbox: {
 
 **importScripts** (Array) - Additional scripts to be imported in service worker script. (Relative to `/`. Can be placed in `assets/` directory)
 
-For list of all available options see [here](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#abstract-types)
+For list of all available options see [here](https://developers.google.com/web/tools/workbox/modules/workbox-build)
 
 ### Adding custom runtimeCaching items (For CDN)
 
