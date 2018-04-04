@@ -1,11 +1,14 @@
 importScripts(<%= options.importScripts.map(i => `'${i}'`).join(', ') %>)
 
-const workboxSW = new self.WorkboxSW(<%= JSON.stringify(options.wbOptions, null, 2) %>)
+workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.wbOptions, null, 2) %>)
 
-workboxSW.precache([])
+
+<% if(options.clientClaims) { %>
+  workbox.clientClaims()
+<% } %>
 
 <% options.runtimeCaching.forEach(r => {
   const strategy = JSON.stringify(r.strategyOptions || {})
   %>
-workboxSW.router.registerRoute(new RegExp('<%= r.urlPattern %>'), workboxSW.strategies.<%= r.handler %>(<%= strategy %>), '<%= r.method %>')
+workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workboxSW.strategies.<%= r.handler %>(<%= strategy %>), '<%= r.method %>')
 <% }) %>

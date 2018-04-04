@@ -98,10 +98,11 @@ function addTemplates (options) {
         handler: i.handler || 'networkFirst',
         method: i.method || 'GET'
       }))),
+      clientClaims: options.clientClaims,
       wbOptions: {
         cacheId: options.cacheId,
-        clientsClaim: options.clientsClaim,
-        directoryIndex: options.directoryIndex
+        directoryIndex: options.directoryIndex,
+        cleanUrls: false
       }
     }
   })
@@ -131,13 +132,13 @@ function emitAssets (options) {
     const source = readFileSync(path)
     const hash = hashSum(source)
     const dst = `${name}.${hash}.${ext}`
-    assets.push({source, dst})
+    assets.push({ source, dst })
     return dst
   }
 
   // Write assets after build
   const hook = builder => {
-    assets.forEach(({source, dst}) => {
+    assets.forEach(({ source, dst }) => {
       writeFileSync(path.resolve(this.options.buildDir, 'dist', dst), source, 'utf-8')
     })
   }
@@ -165,6 +166,11 @@ function emitAssets (options) {
 function workboxInject (options) {
   const hook = () => {
     const opts = Object.assign({}, options)
+    const VALID_KEYS = [
+      'swDest', 'swSrc', 'globDirectory', 'globFollow', 'globIgnores', 'globPatterns', 'dontCacheBustUrlsMatching',
+      'globStrict', 'templatedUrls', 'maximumFileSizeToCacheInBytes', 'modifyUrlPrefix', 'manifestTransforms'
+    ]
+    Object.keys(opts).filter(k => !VALID_KEYS.includes(k)).forEach(k => { delete opts[k] })
     delete opts.runtimeCaching
     return swBuild.injectManifest(opts)
   }
