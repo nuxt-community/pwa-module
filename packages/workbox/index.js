@@ -98,7 +98,7 @@ function addTemplates (options) {
         handler: i.handler || 'networkFirst',
         method: i.method || 'GET'
       }))),
-      clientClaims: options.clientClaims,
+      clientsClaim: options.clientsClaim,
       wbOptions: {
         cacheId: options.cacheId,
         directoryIndex: options.directoryIndex,
