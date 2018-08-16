@@ -52,6 +52,7 @@ function getOptions (moduleOptions) {
     directoryIndex: '/',
     cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
+    skipWaiting: true,
     globPatterns: ['**/*.{js,css}'],
     globDirectory: path.resolve(this.options.buildDir, 'dist'),
     modifyUrlPrefix: {
@@ -101,6 +102,7 @@ function addTemplates (options) {
       wbOptions: {
         cacheId: options.cacheId,
         clientsClaim: options.clientsClaim,
+        skipWaiting: options.skipWaiting,
         directoryIndex: options.directoryIndex
       }
     }
