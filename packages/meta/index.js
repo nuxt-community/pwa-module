@@ -179,7 +179,7 @@ function generateMeta (_options) {
       options.ogImage = false
     }
   } else if (typeof options.ogImage === 'string') {
-    options.ogImage = {src: options.ogImage}
+    options.ogImage = {path: options.ogImage}
   }
   if (options.ogImage && !find(this.options.head.meta, 'property', 'og:image') && !find(this.options.head.meta, 'name', 'og:image')) {
     if (options.ogHost) {
