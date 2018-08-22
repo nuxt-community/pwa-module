@@ -24,7 +24,7 @@ yarn add @nuxtjs/pwa
 sw.*
 ```
 
-PWA module is a collection of smaller modules that are designed to magically work out of the box together. To disable each sub-module, you can pass `false` option with it's name as key. For example to disable _icon_ module:
+PWA module is a collection of smaller modules that are designed to magically work out of the box together. To disable each sub-module, you can pass `false` option with its name as key. For example to disable _icon_ module:
 
 ```js
 modules: [
@@ -32,7 +32,7 @@ modules: [
 ],
 ```
 
-Also each sub-module has it's own configuration. Continue reading docs for detailed info.
+Also each sub-module has its own configuration. Continue reading docs for detailed info.
 
 
 <h2 align="center">

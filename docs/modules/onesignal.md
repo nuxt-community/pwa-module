@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/onesignal.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/onesignal/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal)
 
-OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. Setting and using this module is a little tricky as OneSignal requires to register it's own Service worker.
+OneSignal is a Free, high volume and reliable push notification service for websites and mobile applications. Setting and using this module is a little tricky as OneSignal requires to register its own Service worker.
 
 First add dependency as it is not being installed by default when using PWA module:
 
