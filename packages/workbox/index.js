@@ -180,6 +180,7 @@ function workboxInject (options) {
     ]
     Object.keys(opts).filter(k => !VALID_KEYS.includes(k)).forEach(k => { delete opts[k] })
     delete opts.runtimeCaching
+    delete opts.scriptExtensions
     return swBuild.injectManifest(opts)
   }
 
