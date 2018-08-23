@@ -21,6 +21,7 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     debug('Adding workbox')
     const options = getOptions.call(this, moduleOptions)
     workboxInject.call(this, options)
+    setHeaders.call(this, options)
     emitAssets.call(this, options)
     addTemplates.call(this, options)
   }
@@ -175,6 +176,29 @@ function workboxInject (options) {
     this.nuxt.plugin('build', builder => {
       builder.plugin('built', hook)
     })
+  }
+}
+
+// =============================================
+// setHeaders
+// =============================================
+
+function setHeaders (options) {
+  if (options.customHeaders) {
+    return
+  }
+
+  const originalSetHeadersMethod = this.options.render.static.setHeaders
+
+  this.options.render.static.setHeaders = (res, path) => {
+    if (path.match(/sw\.js$/)) {
+      // Prevent caching service worker
+      res.setHeader('Cache-Control', 'no-cache')
+    } else {
+      if (typeof originalSetHeadersMethod !== 'undefined') {
+        originalSetHeadersMethod(res, path)
+      }
+    }
   }
 }
 
