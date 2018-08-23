@@ -1,6 +1,6 @@
 const path = require('path')
 const swBuild = require('workbox-build')
-const { readFileSync, writeFileSync } = require('fs')
+const { readFileSync, writeFileSync, existsSync } = require('fs')
 const hashSum = require('hash-sum')
 const debug = require('debug')('nuxt:pwa')
 const { defaultsDeep } = require('lodash')
@@ -110,11 +110,19 @@ function addTemplates (options) {
   // Add sw.plugin.js
   if (options.autoRegister) {
     const swURL = `${options.routerBase}/${options.swURL || 'sw.js'}`
+    let scriptExtensions
+    if (options.scriptExtensions) {
+      const extPath = this.nuxt.resolveAlias(scriptExtensions)
+      if (existsSync(extPath)) {
+        scriptExtensions = readFileSync(extPath, 'utf8')
+      }
+    }
     this.addPlugin({
       src: path.resolve(__dirname, 'templates/sw.plugin.js'),
       ssr: false,
       fileName: 'sw.plugin.js',
       options: {
+        scriptExtensions,
         swURL: fixUrl(swURL),
         swScope: fixUrl(`${options.routerBase}/`)
       }
