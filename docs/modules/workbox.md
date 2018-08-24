@@ -47,7 +47,7 @@ workbox: {
 }
 ```
 
-#### Adding custom cache [StrategyOption](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-sw.Strategies#.StrategyOptions)
+#### Adding custom cache [StrategyOption](https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox.strategies)
 ```js
 workbox: {
    runtimeCaching: [
