@@ -49,7 +49,7 @@ function getOptions (moduleOptions) {
     routerBase,
     publicPath,
     swSrc: path.resolve(this.options.buildDir, 'sw.template.js'),
-    swDest: path.resolve(this.options.srcDir, 'static', 'sw.js'),
+    swDest: path.resolve(this.options.srcDir, this.options.dir.static || 'static', 'sw.js'),
     directoryIndex: '/',
     cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
