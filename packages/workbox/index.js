@@ -93,13 +93,6 @@ function getOptions (moduleOptions) {
     })
   }
 
-  if (options.offlinePage) {
-    options._runtimeCaching.push({
-      urlPattern: fixUrl(`${routerBase}${options.offlinePage}`),
-      handler: 'cacheFirst'
-    })
-  }
-
   if (options.cachingExtensions) {
     options.cachingExtensions = loadScriptExtension.call(this, options.cachingExtensions)
   }
