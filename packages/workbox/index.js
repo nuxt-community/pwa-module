@@ -114,6 +114,9 @@ function addTemplates (options) {
     src: path.resolve(__dirname, 'templates/sw.template.js'),
     fileName: 'sw.template.js',
     options: {
+      offlinePage: options.offlinePage,
+      cachingExtensions: options.cachingExtensions,
+      routingExtensions: options.routingExtensions,
       importScripts: [options.wbDst].concat(options.importScripts || []),
       runtimeCaching: [].concat(options._runtimeCaching, options.runtimeCaching).map(i => (Object.assign({}, i, {
         urlPattern: i.urlPattern,
@@ -137,8 +140,6 @@ function addTemplates (options) {
       ssr: false,
       fileName: 'sw.plugin.js',
       options: {
-        cachingExtensions: options.cachingExtensions,
-        routingExtensions: options.routingExtensions,
         swURL: fixUrl(swURL),
         swScope: fixUrl(`${options.routerBase}/`)
       }
