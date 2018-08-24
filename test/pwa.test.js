@@ -2,7 +2,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000
 process.env.PORT = process.env.PORT || 5060
 process.env.NODE_ENV = 'production'
 
-const { Nuxt, Builder } = require('nuxt')
+const { Nuxt, Builder } = require('nuxt-edge')
 
 const url = path => `http://localhost:${process.env.PORT}${path}`
 
