@@ -15,10 +15,23 @@ workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strateg
 
 <% if (options.offlinePage) { %>
 // offlinePage support
-const strategy = workbox.strategies.networkOnly()
+const networkOnlyStrategy = workbox.strategies.networkOnly()
+const staleWhileRevalidateStrategy = workbox.strategies.staleWhileRevalidate()
 workbox.routing.registerRoute(new RegExp('/.*'), ({event}) => {
-  return strategy.handle({event})
-    .catch(() => caches.match('<%= options.offlinePage %>'))
+  if (navigator.onLine) {
+    return staleWhileRevalidateStrategy.handle({event})
+  }
+  if (
+    event.request.mode === 'navigate' ||
+    (
+      event.request.method === 'GET' &&
+      event.request.headers.get('accept').includes('text/html')
+    )
+  ) {
+    return caches.match('<%= options.offlinePage %>')
+  } else {
+    return staleWhileRevalidateStrategy.handle({event})
+  }
 })<% } %>
 
 <% if (options.routingExtensions) { %><%= options.routingExtensions %><% } %>
