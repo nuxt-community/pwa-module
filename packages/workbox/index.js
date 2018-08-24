@@ -90,14 +90,14 @@ function getOptions (moduleOptions) {
 // =============================================
 
 function loadScriptExtension (scriptExtension) {
-  if (options[scriptExtension]) {
-    const extPath = this.nuxt.resolveAlias(options[scriptExtension])
+  if (scriptExtension) {
+    const extPath = this.nuxt.resolveAlias(scriptExtension)
     if (existsSync(extPath)) {
       return readFileSync(extPath, 'utf8')
     }
     return null
   }
-
+}
 
 function addTemplates (options) {
   // Add sw.template.js
@@ -123,8 +123,8 @@ function addTemplates (options) {
   // Add sw.plugin.js
   if (options.autoRegister) {
     const swURL = `${options.routerBase}/${options.swURL || 'sw.js'}`
-    const cachingExtensions = loadScriptExtension.call(this, 'cachingExtensions')
-    const routingExtensions = loadScriptExtension.call(this, 'routingExtensions')
+    const cachingExtensions = loadScriptExtension.call(this, options.cachingExtensions)
+    const routingExtensions = loadScriptExtension.call(this, options.routingExtensions)
     this.addPlugin({
       src: path.resolve(__dirname, 'templates/sw.plugin.js'),
       ssr: false,
