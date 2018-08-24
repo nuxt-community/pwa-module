@@ -8,6 +8,6 @@
     "access": "public"
   },
   "dependencies": {
-    "workbox-build": "^2.1.2"
+    "workbox-build": "^3.4.1"
   }
 }
