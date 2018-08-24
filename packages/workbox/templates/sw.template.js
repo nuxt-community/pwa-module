@@ -24,7 +24,7 @@ const offlineRoute = new workbox.routing.NavigationRoute(
   async (args) => {
     try {
       const response = await staleWhileRevalidate.handle(args)
-      return reponse || caches.match('<%= options.offlinePage %>')
+      return response || caches.match('<%= options.offlinePage %>')
     } catch (error) {
       return caches.match('<%= options.offlinePage %>')
     }
