@@ -31,14 +31,14 @@
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-html": "^4.0.1",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^21.21.0",
+    "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^3.1.0",
     "jest": "^23.5.0",
     "jsdom": "^12.0.0",
     "lerna": "^3.1.4",
-    "nuxt-edge": "^2.0.0-25584099.43f639b",
+    "nuxt-edge": "^2.0.0-25585457.ac841ed",
     "standard-version": "^4.4.0"
   }
 }
