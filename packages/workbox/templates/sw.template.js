@@ -30,6 +30,6 @@ const offlineRoute = new workbox.routing.NavigationRoute(
 offlineRoute.staleWhileRevalidate = workbox.strategies.staleWhileRevalidate({
   cacheName: '<%= options.wbOptions.cacheId %>'
 })
-workbox.routing.registerRoute(offlineRoute)<% } %>
+workbox.routing.registerRoute(new RegExp('/.*'), offlineRoute)<% } %>
 
 <% if (options.routingExtensions) { %><%= options.routingExtensions %><% } %>

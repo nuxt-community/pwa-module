@@ -96,7 +96,7 @@ function getOptions (moduleOptions) {
   if (options.offlinePage) {
     options._runtimeCaching.push({
       urlPattern: fixUrl(`${routerBase}${options.offlinePage}`),
-      handler: 'networkFirst'
+      handler: 'cacheFirst'
     })
   }
 
