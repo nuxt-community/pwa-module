@@ -3,7 +3,7 @@ const swBuild = require('workbox-build')
 const { readFileSync, writeFileSync, existsSync } = require('fs')
 const hashSum = require('hash-sum')
 const debug = require('debug')('nuxt:pwa')
-const { defaultsDeep } = require('lodash')
+const { defaultsDeep, pick } = require('lodash')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
@@ -197,15 +197,10 @@ function emitAssets (options) {
 
 function workboxInject (options) {
   const hook = () => {
-    const opts = Object.assign({}, options)
-    const VALID_KEYS = [
+    const opts = pick(options, [
       'swDest', 'swSrc', 'globDirectory', 'globFollow', 'globIgnores', 'globPatterns', 'dontCacheBustUrlsMatching',
       'globStrict', 'templatedUrls', 'maximumFileSizeToCacheInBytes', 'modifyUrlPrefix', 'manifestTransforms'
-    ]
-    Object.keys(opts).filter(k => !VALID_KEYS.includes(k)).forEach(k => { delete opts[k] })
-    delete opts.runtimeCaching
-    delete opts.cachingExtensions
-    delete opts.routingExtensions
+    ])
     return swBuild.injectManifest(opts)
   }
 
