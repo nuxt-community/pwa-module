@@ -25,9 +25,6 @@ const offlineRoute = new workbox.routing.NavigationRoute(
     } catch (error) {
       return caches.match('<%= options.offlinePage %>')
     }
-  }, {
-    whitelist: [],
-    blacklist: []
   }
 )
 navigationRoute.staleWhileRevalidate = workbox.strategies.staleWhileRevalidate({
