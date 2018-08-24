@@ -1,7 +1,7 @@
 importScripts(<%= options.importScripts.map((i) => `'${i}'`).join(', ') %>)
 
 workbox.precaching.precacheAndRoute(
-  [<%= options.offlinePage ? `'${options.offlinePage}'` : ''],
+  [<%= options.offlinePage ? `'${options.offlinePage}'` : '' %>],
   <%= JSON.stringify(options.wbOptions, null, 2) %>
 )
 
