@@ -2,15 +2,9 @@ importScripts(<%= options.importScripts.map((i) => `'${i}'`).join(', ') %>)
 
 workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.wbOptions, null, 2) %>)
 
-<% if (options.offlinePage) { %>
-workbox.precaching.precache(['<%= options.offlinePage %>'])
-<% } %>
-
+<% if (options.offlinePage) { %>workbox.precaching.precache(['<%= options.offlinePage %>'])<% } %>
 <% if (options.cachingExtensions) { %><%= options.cachingExtensions %><% } %>
-
-<% if (options.clientsClaim) { %>
-workbox.clientsClaim()
-<% } %>
+<% if (options.clientsClaim) { %>workbox.clientsClaim()<% } %>
 
 <%
 options.runtimeCaching.forEach(r => {
