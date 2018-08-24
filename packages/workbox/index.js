@@ -64,7 +64,6 @@ function getOptions (moduleOptions) {
     cachingExtensions: null,
     routingExtensions: null,
     cacheId: process.env.npm_package_name || 'nuxt',
-    clientsClaim: true,
     skipWaiting: true,
     globPatterns: ['**/*.{js,css}'],
     globDirectory: path.resolve(this.options.buildDir, 'dist'),
