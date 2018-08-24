@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+# 2.3.0 (2018-08-24)
+
+
+### Bug Fixes
+
+* **docs:** add reference to pwa module ([49b7c49](https://github.com/nuxt-community/pwa-module/commit/49b7c49))
+* **pwa:** no more optimize dependency ([a1c149f](https://github.com/nuxt-community/pwa-module/commit/a1c149f))
+
+
+
+
+
 <a name="2.0.8"></a>
 ## [2.0.8](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/pwa@2.0.7...@nuxtjs/pwa@2.0.8) (2018-03-08)
 

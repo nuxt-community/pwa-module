@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+# 2.3.0 (2018-08-24)
+
+
+### Bug Fixes
+
+* **icon:** await on build ([e3c1be2](https://github.com/nuxt-community/pwa-module/commit/e3c1be2))
+* **icon:** generate only on build ([9d68d70](https://github.com/nuxt-community/pwa-module/commit/9d68d70))
+* workaround to fill meta with SPA and nuxt start ([a0fb908](https://github.com/nuxt-community/pwa-module/commit/a0fb908))
+
+
+### Features
+
+* Add compatibility for nuxt 1.0.0 hooks ([c0efb1d](https://github.com/nuxt-community/pwa-module/commit/c0efb1d))
+* **icon:** add combined option sources ([539430f](https://github.com/nuxt-community/pwa-module/commit/539430f))
+
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/icon@2.0.2...@nuxtjs/icon@2.1.0) (2018-03-05)
 

@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+# 2.3.0 (2018-08-24)
+
+
+### Bug Fixes
+
+* **docs:** add reference to pwa module ([49b7c49](https://github.com/nuxt-community/pwa-module/commit/49b7c49))
+* **meta:** add unique identifiers to meta fields ([#23](https://github.com/nuxt-community/pwa-module/issues/23)) ([76a1f89](https://github.com/nuxt-community/pwa-module/commit/76a1f89))
+* **meta:** generate only on build ([1cace26](https://github.com/nuxt-community/pwa-module/commit/1cace26))
+* **meta:** only set og:url when it has been defined through ogHost or options ([#44](https://github.com/nuxt-community/pwa-module/issues/44)) ([354f818](https://github.com/nuxt-community/pwa-module/commit/354f818))
+* **meta:** remove minimal-ui from default viewport ([cf48b3f](https://github.com/nuxt-community/pwa-module/commit/cf48b3f)), closes [#10](https://github.com/nuxt-community/pwa-module/issues/10)
+* don't override title when titleTemplate is provided  ([#48](https://github.com/nuxt-community/pwa-module/issues/48)) ([8c3f319](https://github.com/nuxt-community/pwa-module/commit/8c3f319))
+* workaround to fill meta with SPA and nuxt start ([a0fb908](https://github.com/nuxt-community/pwa-module/commit/a0fb908))
+
+
+### Features
+
+* Add compatibility for nuxt 1.0.0 hooks ([c0efb1d](https://github.com/nuxt-community/pwa-module/commit/c0efb1d))
+* add og:image support ([#30](https://github.com/nuxt-community/pwa-module/issues/30)) ([afebd96](https://github.com/nuxt-community/pwa-module/commit/afebd96))
+* **meta:** add author property ([#41](https://github.com/nuxt-community/pwa-module/issues/41)) ([cafcfc4](https://github.com/nuxt-community/pwa-module/commit/cafcfc4))
+* **meta:** add nativeUI option ([3c7aa7d](https://github.com/nuxt-community/pwa-module/commit/3c7aa7d)), closes [#10](https://github.com/nuxt-community/pwa-module/issues/10)
+* **meta:** add ogUrl url property ([#42](https://github.com/nuxt-community/pwa-module/issues/42)) ([3990ddf](https://github.com/nuxt-community/pwa-module/commit/3990ddf))
+* **meta:** add property attribiture for og tags ([dc39fcb](https://github.com/nuxt-community/pwa-module/commit/dc39fcb))
+* **meta:** add twitter card, site and creator properties ([#43](https://github.com/nuxt-community/pwa-module/issues/43)) ([fe11c76](https://github.com/nuxt-community/pwa-module/commit/fe11c76))
+* ogSiteName ([#50](https://github.com/nuxt-community/pwa-module/issues/50)) ([0c99ab9](https://github.com/nuxt-community/pwa-module/commit/0c99ab9))
+* **workbox:** workbox 3 + offlinePage ([#60](https://github.com/nuxt-community/pwa-module/issues/60)) ([0fef874](https://github.com/nuxt-community/pwa-module/commit/0fef874))
+
+
+
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/meta@2.2.0...@nuxtjs/meta@2.2.1) (2018-03-08)
 

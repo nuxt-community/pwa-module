@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+# 2.3.0 (2018-08-24)
+
+
+### Bug Fixes
+
+* **docs:** add reference to pwa module ([49b7c49](https://github.com/nuxt-community/pwa-module/commit/49b7c49))
+* **manifest:** run only on build ([ecaa835](https://github.com/nuxt-community/pwa-module/commit/ecaa835))
+* workaround to fill meta with SPA and nuxt start ([a0fb908](https://github.com/nuxt-community/pwa-module/commit/a0fb908))
+
+
+### Features
+
+* Add compatibility for nuxt 1.0.0 hooks ([c0efb1d](https://github.com/nuxt-community/pwa-module/commit/c0efb1d))
+* **manifest:** allow overriding publicPath ([#19](https://github.com/nuxt-community/pwa-module/issues/19)) ([4e6782e](https://github.com/nuxt-community/pwa-module/commit/4e6782e))
+* **manifest:** support crossorigin option ([#71](https://github.com/nuxt-community/pwa-module/issues/71)) ([ccb2c33](https://github.com/nuxt-community/pwa-module/commit/ccb2c33))
+
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/nuxt-community/pwa-module/compare/@nuxtjs/manifest@2.0.1...@nuxtjs/manifest@2.1.0) (2017-12-07)
 
