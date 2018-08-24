@@ -18,7 +18,7 @@ workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strateg
 const strategy = workbox.strategies.networkOnly()
 workbox.routing.registerRoute(new RegExp('/.*'), ({event}) => {
   return strategy.handle({event})
-    .catch(() => caches.match('<%= options.offlinePage %>')
+    .catch(() => caches.match('<%= options.offlinePage %>'))
 })<% } %>
 
 <% if (options.routingExtensions) { %><%= options.routingExtensions %><% } %>
