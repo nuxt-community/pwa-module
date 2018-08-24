@@ -33,6 +33,16 @@ module.exports = function nuxtWorkbox (moduleOptions) {
 // getRouterBase
 // =============================================
 
+function loadScriptExtension (scriptExtension) {
+  if (scriptExtension) {
+    const extPath = this.nuxt.resolveAlias(scriptExtension)
+    if (existsSync(extPath)) {
+      return readFileSync(extPath, 'utf8')
+    }
+    return null
+  }
+}
+
 function getOptions (moduleOptions) {
   // Router Base
   const routerBase = this.options.router.base
@@ -74,8 +84,11 @@ function getOptions (moduleOptions) {
 
   const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
 
+  options.cachingExtensions = loadScriptExtension.call(this, options.cachingExtensions)
+  options.routingExtensions = loadScriptExtension.call(this, options.routingExtensions)
+
   // Optionally cache other routes for offline
-  if (options.offline) {
+  if (options.offline && !options.offlinePage) {
     defaults._runtimeCaching.push({
       urlPattern: fixUrl(routerBase + '/.*'),
       handler: 'networkFirst'
@@ -88,16 +101,6 @@ function getOptions (moduleOptions) {
 // =============================================
 // addTemplates
 // =============================================
-
-function loadScriptExtension (scriptExtension) {
-  if (scriptExtension) {
-    const extPath = this.nuxt.resolveAlias(scriptExtension)
-    if (existsSync(extPath)) {
-      return readFileSync(extPath, 'utf8')
-    }
-    return null
-  }
-}
 
 function addTemplates (options) {
   // Add sw.template.js
@@ -123,15 +126,13 @@ function addTemplates (options) {
   // Add sw.plugin.js
   if (options.autoRegister) {
     const swURL = `${options.routerBase}/${options.swURL || 'sw.js'}`
-    const cachingExtensions = loadScriptExtension.call(this, options.cachingExtensions)
-    const routingExtensions = loadScriptExtension.call(this, options.routingExtensions)
     this.addPlugin({
       src: path.resolve(__dirname, 'templates/sw.plugin.js'),
       ssr: false,
       fileName: 'sw.plugin.js',
       options: {
-        cachingExtensions,
-        routingExtensions,
+        cachingExtensions: options.cachingExtensions,
+        routingExtensions: options.routingExtensions,
         swURL: fixUrl(swURL),
         swScope: fixUrl(`${options.routerBase}/`)
       }
