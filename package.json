@@ -1,15 +1,16 @@
 {
+  "name": "@nuxtjs/pwa",
+  "version": "0.0.0",
   "private": true,
   "contributors": [
-    "Pooya Parsa <pooya@pi0.ir>"
+    "Pooya Parsa <pooya@pi0.ir>",
+    "manniL <hello@lichter.io>",
+    "galvez <jonasgalvez@gmail.com>"
   ],
   "scripts": {
-    "test": "yarn lint && jest",
-    "lerna": "lerna",
-    "bootstrap": "lerna bootstrap",
+    "test": "npm run lint && jest",
     "lint": "eslint --ext .js packages",
-    "release": "lerna publish --conventional-commits",
-    "force-release": "for p in packages/*; do cd $p ; npm publish ; cd ../.. ; done"
+    "release": "lerna publish --conventional-commits"
   },
   "workspaces": [
     "packages/*"
@@ -26,18 +27,18 @@
     "axios": "^0.18.0",
     "babel-eslint": "^8.1.2",
     "codecov": "^3.0.0",
-    "eslint": "^4.14.0",
+    "eslint": "^5.4.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-html": "^4.0.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.5.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "jest": "^22.0.4",
-    "jsdom": "^11.5.1",
-    "lerna": "^3.0.0-alpha.1",
-    "nuxt": "^1.3.0",
-    "standard-version": "^4.2.0"
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.21.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.5.0",
+    "jsdom": "^12.0.0",
+    "lerna": "^3.1.4",
+    "nuxt-edge": "^2.0.0-25584099.43f639b",
+    "standard-version": "^4.4.0"
   }
 }

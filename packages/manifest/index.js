@@ -72,7 +72,9 @@ function addManifest (options) {
 
   // Add manifest meta
   if (!find(this.options.head.link, 'rel', 'manifest')) {
-    this.options.head.link.push({ rel: 'manifest', href: fixUrl(`${manifest.publicPath}/${manifestFileName}`) })
+    const baseAttribute = { rel: 'manifest', href: fixUrl(`${manifest.publicPath}/${manifestFileName}`) }
+    const attribute = manifest.crossorigin ? Object.assign({}, baseAttribute, { crossorigin: manifest.crossorigin }) : baseAttribute
+    this.options.head.link.push(attribute)
   } else {
     console.warn('Manifest meta already provided!')
   }
