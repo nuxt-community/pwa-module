@@ -5,6 +5,7 @@ workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.wbOptions, nu
 <% if (options.offlinePage) { %>workbox.precaching.precacheAndRoute(['<%= options.offlinePage %>'])<% } %>
 <% if (options.cachingExtensions) { %><%= options.cachingExtensions %><% } %>
 <% if (options.clientsClaim) { %>workbox.clientsClaim()<% } %>
+<% if (options.skipWaiting) { %>workbox.skipWaiting()<% } %>
 
 <%
 options.runtimeCaching.forEach(r => {
