@@ -5,6 +5,8 @@ workbox.precaching.precacheAndRoute(
   <%= JSON.stringify(options.wbOptions, null, 2) %>
 )
 
+<% if (options.cachingExtensions) { %><%= options.cachingExtensions %><% } %>
+
 <% if (options.clientsClaim) { %>
 workbox.clientsClaim()
 <% } %>
@@ -15,8 +17,6 @@ options.runtimeCaching.forEach(r => {
 %>
 workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strategies.<%= r.handler %>(<%= strategy %>), '<%= r.method %>')
 <% }) %>
-
-<% if (options.cachingExtensions) { %><%= options.cachingExtensions %><% } %>
 
 <% if (options.offlinePage) { %>
 // offlinePage support
