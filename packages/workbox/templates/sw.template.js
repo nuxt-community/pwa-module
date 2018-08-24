@@ -21,19 +21,17 @@ workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strateg
 
 <% if (options.offlinePage) { %>
 // offlinePage support
-const offlineRoute = new workbox.routing.NavigationRoute(
-  async (args) => {
-    try {
-      const response = await offlineRoute.strategy.handle(args)
-      return response || caches.match('<%= options.offlinePage %>')
-    } catch (error) {
-      return caches.match('<%= options.offlinePage %>')
-    }
-  }
-)
-offlineRoute.strategy = workbox.strategies.networkFirst({
+const networkFirstStrategy = workbox.strategies.networkFirst({
   cacheName: '<%= options.wbOptions.cacheId %>'
 })
-workbox.routing.registerRoute(new RegExp('/.*'), offlineRoute)<% } %>
+const offlineRouteHandler = async (args) => {
+  try {
+    const response = await networkFirstStrategy.handle(args)
+    return response || caches.match('<%= options.offlinePage %>')
+  } catch (error) {
+    return caches.match('<%= options.offlinePage %>')
+  }
+}
+workbox.routing.registerRoute(new RegExp('/.*'), offlineRouteHandler)<% } %>
 
 <% if (options.routingExtensions) { %><%= options.routingExtensions %><% } %>
