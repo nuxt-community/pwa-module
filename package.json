@@ -8,12 +8,9 @@
     "galvez <jonasgalvez@gmail.com>"
   ],
   "scripts": {
-    "test": "yarn lint && jest",
-    "lerna": "lerna",
-    "bootstrap": "lerna bootstrap",
+    "test": "npm run lint && jest",
     "lint": "eslint --ext .js packages",
-    "release": "lerna publish --conventional-commits",
-    "force-release": "for p in packages/*; do cd $p ; npm publish ; cd ../.. ; done"
+    "release": "lerna publish --conventional-commits"
   },
   "workspaces": [
     "packages/*"
