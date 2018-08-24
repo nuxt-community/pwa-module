@@ -8,9 +8,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@nuxtjs/icon": "^2.3.0",
-    "@nuxtjs/manifest": "^2.3.0",
-    "@nuxtjs/meta": "^2.3.0",
+    "@nuxtjs/icon": "^2.3.2",
+    "@nuxtjs/manifest": "^2.3.2",
+    "@nuxtjs/meta": "^2.3.2",
     "@nuxtjs/workbox": "^2.3.2"
   }
 }
