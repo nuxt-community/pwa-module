@@ -15,17 +15,12 @@ workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strateg
 
 <% if (options.offlinePage) { %>
 // offlinePage support
-const networkFirstStrategy = workbox.strategies.networkFirst({
-  cacheName: '<%= options.wbOptions.cacheId %>'
-})
-const offlineRouteHandler = async (args) => {
-  try {
-    const response = await networkFirstStrategy.handle(args)
-    return response || caches.match('<%= options.offlinePage %>')
-  } catch (error) {
-    return caches.match('<%= options.offlinePage %>')
-  }
-}
-workbox.routing.registerRoute(new RegExp('/.*'), offlineRouteHandler)<% } %>
+const strategy = workbox.strategies.staleWhileRevalidate()
+// cacheName: '<%= options.wbOptions.cacheId %>'
+// })
+workbox.routing.registerRoute(new RegExp('/.*'), ({event}) => {
+  return strategy.handle({event})
+    .catch(() => caches.match('<%= options.offlinePage %>')
+})<% } %>
 
 <% if (options.routingExtensions) { %><%= options.routingExtensions %><% } %>
