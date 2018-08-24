@@ -4,8 +4,8 @@
   "private": true,
   "contributors": [
     "Pooya Parsa <pooya@pi0.ir>",
-    "manniL <hello@lichter.io>",
-    "galvez <jonasgalvez@gmail.com>"
+    "Alexander Lichter <hello@lichter.io>",
+    "Jonas Galvez <jonasgalvez@gmail.com>"
   ],
   "scripts": {
     "test": "npm run lint && jest",
