@@ -16,12 +16,9 @@ workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strateg
 <% if (options.offlinePage) { %>
 // offlinePage support
 const strategy = workbox.strategies.staleWhileRevalidate()
-// cacheName: '<%= options.wbOptions.cacheId %>'
-// })
-const offlineRouteHandler = ({event}) => {
+workbox.routing.registerRoute(new RegExp('/.*'), ({event}) => {
   return strategy.handle({event})
     .catch(() => caches.match('<%= options.offlinePage %>')
-}
-workbox.routing.registerRoute(new RegExp('/.*'), offlineRouteHandler)<% } %>
+})<% } %>
 
 <% if (options.routingExtensions) { %><%= options.routingExtensions %><% } %>
