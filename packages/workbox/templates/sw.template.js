@@ -2,11 +2,6 @@ importScripts(<%= options.importScripts.map((i) => `'${i}'`).join(', ') %>)
 
 workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.wbOptions, null, 2) %>)
 
-workbox.precaching.precacheAndRoute(
-  [<%= options.offlinePage ? `'${options.offlinePage}'` : '' %>],
-  <%= JSON.stringify(options.wbOptions, null, 2) %>
-)
-
 <% if (options.cachingExtensions) { %><%= options.cachingExtensions %><% } %>
 
 <% if (options.clientsClaim) { %>
