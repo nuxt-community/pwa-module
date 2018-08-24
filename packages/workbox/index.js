@@ -1,9 +1,9 @@
 const path = require('path')
 const swBuild = require('workbox-build')
-const { readFileSync, writeFileSync } = require('fs')
+const { readFileSync, writeFileSync, existsSync } = require('fs')
 const hashSum = require('hash-sum')
 const debug = require('debug')('nuxt:pwa')
-const { defaultsDeep } = require('lodash')
+const { defaultsDeep, pick } = require('lodash')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
@@ -21,6 +21,7 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     debug('Adding workbox')
     const options = getOptions.call(this, moduleOptions)
     workboxInject.call(this, options)
+    setHeaders.call(this, options)
     emitAssets.call(this, options)
     addTemplates.call(this, options)
   }
@@ -31,6 +32,16 @@ module.exports = function nuxtWorkbox (moduleOptions) {
 // =============================================
 // getRouterBase
 // =============================================
+
+function loadScriptExtension (scriptExtension) {
+  if (scriptExtension) {
+    const extPath = this.nuxt.resolveAlias(scriptExtension)
+    if (existsSync(extPath)) {
+      return readFileSync(extPath, 'utf8')
+    }
+    return null
+  }
+}
 
 function getOptions (moduleOptions) {
   // Router Base
@@ -48,8 +59,10 @@ function getOptions (moduleOptions) {
     routerBase,
     publicPath,
     swSrc: path.resolve(this.options.buildDir, 'sw.template.js'),
-    swDest: path.resolve(this.options.srcDir, 'static', 'sw.js'),
+    swDest: path.resolve(this.options.srcDir, this.options.dir.static || 'static', 'sw.js'),
     directoryIndex: '/',
+    cachingExtensions: null,
+    routingExtensions: null,
     cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
     skipWaiting: true,
@@ -59,6 +72,7 @@ function getOptions (moduleOptions) {
       '': fixUrl(publicPath)
     },
     offline: true,
+    offlinePage: null,
     _runtimeCaching: [
       // Cache all _nuxt resources at runtime
       // They are hashed by webpack so are safe to loaded by cacheFirst handler
@@ -73,11 +87,19 @@ function getOptions (moduleOptions) {
   const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
 
   // Optionally cache other routes for offline
-  if (options.offline) {
-    defaults._runtimeCaching.push({
-      urlPattern: fixUrl(routerBase + '/.*'),
+  if (options.offline && !options.offlinePage) {
+    options._runtimeCaching.push({
+      urlPattern: fixUrl(`${routerBase}/.*`),
       handler: 'networkFirst'
     })
+  }
+
+  if (options.cachingExtensions) {
+    options.cachingExtensions = loadScriptExtension.call(this, options.cachingExtensions)
+  }
+
+  if (options.routingExtensions) {
+    options.routingExtensions = loadScriptExtension.call(this, options.routingExtensions)
   }
 
   return options
@@ -93,17 +115,21 @@ function addTemplates (options) {
     src: path.resolve(__dirname, 'templates/sw.template.js'),
     fileName: 'sw.template.js',
     options: {
+      offlinePage: options.offlinePage,
+      cachingExtensions: options.cachingExtensions,
+      routingExtensions: options.routingExtensions,
       importScripts: [options.wbDst].concat(options.importScripts || []),
       runtimeCaching: [].concat(options._runtimeCaching, options.runtimeCaching).map(i => (Object.assign({}, i, {
         urlPattern: i.urlPattern,
         handler: i.handler || 'networkFirst',
         method: i.method || 'GET'
       }))),
+      clientsClaim: options.clientsClaim,
+      skipWaiting: options.skipWaiting,
       wbOptions: {
         cacheId: options.cacheId,
-        clientsClaim: options.clientsClaim,
-        skipWaiting: options.skipWaiting,
-        directoryIndex: options.directoryIndex
+        directoryIndex: options.directoryIndex,
+        cleanUrls: false
       }
     }
   })
@@ -133,13 +159,13 @@ function emitAssets (options) {
     const source = readFileSync(path)
     const hash = hashSum(source)
     const dst = `${name}.${hash}.${ext}`
-    assets.push({source, dst})
+    assets.push({ source, dst })
     return dst
   }
 
   // Write assets after build
   const hook = builder => {
-    assets.forEach(({source, dst}) => {
+    assets.forEach(({ source, dst }) => {
       writeFileSync(path.resolve(this.options.buildDir, 'dist', dst), source, 'utf-8')
     })
   }
@@ -166,8 +192,10 @@ function emitAssets (options) {
 
 function workboxInject (options) {
   const hook = () => {
-    const opts = Object.assign({}, options)
-    delete opts.runtimeCaching
+    const opts = pick(options, [
+      'swDest', 'swSrc', 'globDirectory', 'globFollow', 'globIgnores', 'globPatterns', 'dontCacheBustUrlsMatching',
+      'globStrict', 'templatedUrls', 'maximumFileSizeToCacheInBytes', 'modifyUrlPrefix', 'manifestTransforms'
+    ])
     return swBuild.injectManifest(opts)
   }
 
@@ -177,6 +205,29 @@ function workboxInject (options) {
     this.nuxt.plugin('build', builder => {
       builder.plugin('built', hook)
     })
+  }
+}
+
+// =============================================
+// setHeaders
+// =============================================
+
+function setHeaders (options) {
+  if (options.customHeaders) {
+    return
+  }
+
+  const originalSetHeadersMethod = this.options.render.static.setHeaders
+
+  this.options.render.static.setHeaders = (res, path) => {
+    if (path.match(/sw\.js$/)) {
+      // Prevent caching service worker
+      res.setHeader('Cache-Control', 'no-cache')
+    } else {
+      if (typeof originalSetHeadersMethod !== 'undefined') {
+        originalSetHeadersMethod(res, path)
+      }
+    }
   }
 }
 
