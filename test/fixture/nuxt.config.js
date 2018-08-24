@@ -1,5 +1,8 @@
-module.exports = {
+import path from 'path'
+
+export default {
   srcDir: __dirname,
+  rootDir: path.resolve(__dirname, '../../'),
   dev: false,
   build: {
     extractCSS: true,
