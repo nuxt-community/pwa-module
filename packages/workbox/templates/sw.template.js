@@ -16,7 +16,7 @@ workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strateg
 
 <% if (options.offlinePage) { %>
 // offlinePage support
-const strategy = workbox.strategies.staleWhileRevalidate()
+const strategy = workbox.strategies.networkOnly()
 workbox.routing.registerRoute(new RegExp('/.*'), ({event}) => {
   return strategy.handle({event})
     .catch(() => caches.match('<%= options.offlinePage %>'))
