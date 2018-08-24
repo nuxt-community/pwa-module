@@ -51,6 +51,8 @@ function getOptions (moduleOptions) {
     swSrc: path.resolve(this.options.buildDir, 'sw.template.js'),
     swDest: path.resolve(this.options.srcDir, 'static', 'sw.js'),
     directoryIndex: '/',
+    cachingExtensions: null,
+    routingExtensions: null,
     cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
     globPatterns: ['**/*.{js,css}'],
@@ -87,6 +89,16 @@ function getOptions (moduleOptions) {
 // addTemplates
 // =============================================
 
+function loadScriptExtension (scriptExtension) {
+  if (options[scriptExtension]) {
+    const extPath = this.nuxt.resolveAlias(options[scriptExtension])
+    if (existsSync(extPath)) {
+      return readFileSync(extPath, 'utf8')
+    }
+    return null
+  }
+
+
 function addTemplates (options) {
   // Add sw.template.js
   this.addTemplate({
@@ -111,19 +123,15 @@ function addTemplates (options) {
   // Add sw.plugin.js
   if (options.autoRegister) {
     const swURL = `${options.routerBase}/${options.swURL || 'sw.js'}`
-    let scriptExtensions
-    if (options.scriptExtensions) {
-      const extPath = this.nuxt.resolveAlias(scriptExtensions)
-      if (existsSync(extPath)) {
-        scriptExtensions = readFileSync(extPath, 'utf8')
-      }
-    }
+    const cachingExtensions = loadScriptExtension.call(this, 'cachingExtensions')
+    const routingExtensions = loadScriptExtension.call(this, 'routingExtensions')
     this.addPlugin({
       src: path.resolve(__dirname, 'templates/sw.plugin.js'),
       ssr: false,
       fileName: 'sw.plugin.js',
       options: {
-        scriptExtensions,
+        cachingExtensions,
+        routingExtensions,
         swURL: fixUrl(swURL),
         swScope: fixUrl(`${options.routerBase}/`)
       }
