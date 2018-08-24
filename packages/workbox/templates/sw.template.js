@@ -16,13 +16,10 @@ options.runtimeCaching.forEach(r => {
 workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strategies.<%= r.handler %>(<%= strategy %>), '<%= r.method %>')
 <% }) %>
 
-<% if (options.cachingExtensions) { %>
-<%= options.cachingExtensions %>
-<% } %>
+<% if (options.cachingExtensions) { %><%= options.cachingExtensions %><% } %>
 
 <% if (options.offlinePage) { %>
 // offlinePage support
-
 const offlineRoute = new workbox.routing.NavigationRoute(
   async (args) => {
     try {
@@ -36,14 +33,9 @@ const offlineRoute = new workbox.routing.NavigationRoute(
     blacklist: []
   }
 )
-
 navigationRoute.staleWhileRevalidate = workbox.strategies.staleWhileRevalidate({
   cacheName: '<%= options.cacheId %>'
 })
+workbox.routing.registerRoute(offlineRoute)<% } %>
 
-workbox.routing.registerRoute(offlineRoute)
-<% } %>
-
-<% if (options.routingExtensions) { %>
-<%= options.routingExtensions %>
-<% } %>
+<% if (options.routingExtensions) { %><%= options.routingExtensions %><% } %>
