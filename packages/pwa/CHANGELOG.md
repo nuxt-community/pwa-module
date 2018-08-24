@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.1"></a>
+# 2.3.1 (2018-08-24)
+
+### Bug Fixes
+
+* **workbox:** `offlinePage` syntax error ([af21d74](https://github.com/nuxt-community/pwa-module/commit/af21d74))
+
+
 <a name="2.3.0"></a>
 # 2.3.0 (2018-08-24)
 
