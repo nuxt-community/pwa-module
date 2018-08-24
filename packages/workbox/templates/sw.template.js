@@ -28,7 +28,7 @@ const offlineRoute = new workbox.routing.NavigationRoute(
   }
 )
 navigationRoute.staleWhileRevalidate = workbox.strategies.staleWhileRevalidate({
-  cacheName: '<%= options.cacheId %>'
+  cacheName: '<%= options.wbOptions.cacheId %>'
 })
 workbox.routing.registerRoute(offlineRoute)<% } %>
 
