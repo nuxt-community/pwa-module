@@ -20,14 +20,14 @@ workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strateg
 const offlineRoute = new workbox.routing.NavigationRoute(
   async (args) => {
     try {
-      const response = await navigationRoute.staleWhileRevalidate.handle(args)
+      const response = await offlineRoute.staleWhileRevalidate.handle(args)
       return response || caches.match('<%= options.offlinePage %>')
     } catch (error) {
       return caches.match('<%= options.offlinePage %>')
     }
   }
 )
-navigationRoute.staleWhileRevalidate = workbox.strategies.staleWhileRevalidate({
+offlineRoute.staleWhileRevalidate = workbox.strategies.staleWhileRevalidate({
   cacheName: '<%= options.wbOptions.cacheId %>'
 })
 workbox.routing.registerRoute(offlineRoute)<% } %>
