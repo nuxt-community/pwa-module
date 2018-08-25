@@ -3,25 +3,22 @@ import path from 'path'
 export default {
   srcDir: __dirname,
   rootDir: path.resolve(__dirname, '../../'),
+  buildDir: path.resolve(__dirname, '.nuxt2'),
   dev: false,
-  build: {
-    extractCSS: true,
-    filenames: {
-      css: 'vendor.css',
-      manifest: 'manifest.js',
-      vendor: 'vendor.js',
-      app: 'app.js',
-      chunk: '[name].js'
-    }
+  generate: {
+    dir: path.resolve(__dirname, 'dist')
   },
+
   modules: [
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa'
   ],
+
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description'
   },
+
   workbox: {
     dev: true,
     importScripts: [
@@ -35,6 +32,7 @@ export default {
       }
     ]
   },
+
   oneSignal: {
     init: {
       appId: 'd867ac26-f7be-4c62-9fdd-b756a33c4a8f'
