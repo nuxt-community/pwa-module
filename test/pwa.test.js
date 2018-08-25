@@ -36,5 +36,6 @@ describe('pwa', () => {
     const swContents = await fs.readFile(path.resolve(nuxt.options.generate.dir, 'sw.js'), 'utf-8')
 
     expect(swContents).toContain("new RegExp('/_nuxt/.*')")
+    expect(swContents).toContain('"url": "/_nuxt/app.js"')
   })
 })
