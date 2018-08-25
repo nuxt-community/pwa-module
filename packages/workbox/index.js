@@ -30,8 +30,16 @@ module.exports = function nuxtWorkbox (moduleOptions) {
 
   // Get client output path (#83)
   this.extendBuild((config, { isClient }) => {
-    if (isClient && !options.globDirectory) {
-      options.globDirectory = config.output.path
+    if (!isClient) {
+      return
+    }
+
+    if (!options.clientBuildDir) {
+      options.clientBuildDir = config.output.path
+    }
+
+    if (!options.globDirectory) {
+      options.globDirectory = options.clientBuildDir
     }
   })
 
@@ -177,7 +185,7 @@ function emitAssets (options) {
   // Write assets after build
   const hook = builder => {
     assets.forEach(({ source, dst }) => {
-      writeFileSync(path.resolve(this.options.buildDir, 'dist', dst), source, 'utf-8')
+      writeFileSync(path.resolve(options.clientBuildDir, dst), source, 'utf-8')
     })
   }
 
