@@ -536,13 +536,6 @@
     "@babel/helper-regex" "7.0.0-rc.2"
     regexpu-core "^4.1.3"
 
-"@babel/polyfill@^7.0.0-rc.1":
-  version "7.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.0.0-rc.2.tgz#d0141441713bb0c5fda170b5abddcfd219e055d6"
-  dependencies:
-    core-js "^2.5.7"
-    regenerator-runtime "^0.11.1"
-
 "@babel/preset-env@7.0.0-rc.2":
   version "7.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.0.0-rc.2.tgz#66f7ed731234b67ee9a6189f1df60203873ac98b"
@@ -2861,7 +2854,7 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
-core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.7:
+core-js@^2.4.0, core-js@^2.5.0:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
@@ -5551,11 +5544,10 @@ jest@^23.5.0:
     import-local "^1.0.0"
     jest-cli "^23.5.0"
 
-jimp@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/jimp/-/jimp-0.3.5.tgz#299a3648d306ca114cc302f7df53eebc4d6b8af6"
+jimp@0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/jimp/-/jimp-0.3.4.tgz#df0bca587c28c263102dc72af712bda01a211c51"
   dependencies:
-    "@babel/polyfill" "^7.0.0-rc.1"
     any-base "^1.1.0"
     bmp-js "0.1.0"
     buffer "^5.2.0"
@@ -8320,7 +8312,7 @@ regenerator-runtime@^0.10.0:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
-regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
+regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
