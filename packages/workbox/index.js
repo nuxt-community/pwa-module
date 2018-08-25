@@ -80,6 +80,7 @@ function getOptions (moduleOptions) {
     directoryIndex: '/',
     cachingExtensions: null,
     routingExtensions: null,
+    precacheFiles: [],
     cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
     skipWaiting: true,
@@ -90,7 +91,7 @@ function getOptions (moduleOptions) {
     },
     offline: true,
     offlinePage: null,
-    offlinePageAssets: [],
+    offlineAssets: [],
     _runtimeCaching: [
       // Cache all _nuxt resources at runtime
       // They are hashed by webpack so are safe to loaded by cacheFirst handler
@@ -134,7 +135,7 @@ function addTemplates (options) {
     fileName: 'sw.template.js',
     options: {
       offlinePage: options.offlinePage,
-      offlinePageAssets: options.offlinePageAssets,
+      offlineAssets: options.offlineAssets,
       cachingExtensions: options.cachingExtensions,
       routingExtensions: options.routingExtensions,
       importScripts: [options.wbDst].concat(options.importScripts || []),
