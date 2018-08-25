@@ -3,8 +3,16 @@ const path = require('path')
 module.exports = {
   srcDir: __dirname,
   rootDir: path.resolve(__dirname, '../../'),
-  buildDir: path.resolve(__dirname, '.nuxt2'),
+  buildDir: path.resolve(__dirname, '.nuxt'),
   dev: false,
+
+  build: {
+    filenames: {
+      app: '[name].js',
+      chunk: '[name].js'
+    }
+  },
+
   generate: {
     dir: path.resolve(__dirname, 'dist')
   },

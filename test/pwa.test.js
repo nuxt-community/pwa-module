@@ -1,27 +1,40 @@
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000
-process.env.PORT = process.env.PORT || 5060
-process.env.NODE_ENV = 'production'
+const klawSync = require('klaw-sync')
+const path = require('path')
+const fs = require('fs-extra')
+const { Nuxt, Builder, Generator } = require('nuxt-edge')
 
-const { Nuxt, Builder } = require('nuxt-edge')
+jest.setTimeout(60000)
 
-const url = path => `http://localhost:${process.env.PORT}${path}`
+const getRelativePath = fileObj => path.relative(__dirname, fileObj.path)
 
 describe('pwa', () => {
   let nuxt
 
-  beforeAll(async () => {
+  test('build and generate', async () => {
     nuxt = new Nuxt(require('./fixture/nuxt.config'))
-    await new Builder(nuxt).build()
-    await nuxt.listen(process.env.PORT)
+
+    const builder = new Builder(nuxt)
+    await builder.build()
+
+    const generator = new Generator(nuxt)
+    await generator.generate({ build: false })
   })
 
-  afterAll(async () => {
-    await nuxt.close()
+  test('build files (.nuxt)', async () => {
+    const buildFiles = klawSync(nuxt.options.buildDir).map(getRelativePath)
+
+    expect(buildFiles).toMatchSnapshot()
   })
 
-  test('init', async () => {
-    const window = await nuxt.renderAndGetWindow(url('/'))
-    const headers = window.document.head.innerHTML
-    expect(headers).toMatchSnapshot()
+  test('generate files (dist)', async () => {
+    const generateFiles = klawSync(nuxt.options.generate.dir).map(getRelativePath)
+
+    expect(generateFiles).toMatchSnapshot()
+  })
+
+  test('sw.js', async () => {
+    const swContents = await fs.readFile(path.resolve(nuxt.options.generate.dir, 'sw.js'), 'utf-8')
+
+    expect(swContents).toContain("new RegExp('/_nuxt/.*')")
   })
 })
