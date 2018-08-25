@@ -17,14 +17,23 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     return
   }
 
+  let options
+
   const hook = builder => {
     debug('Adding workbox')
-    const options = getOptions.call(this, moduleOptions)
+    options = getOptions.call(this, moduleOptions)
     workboxInject.call(this, options)
     setHeaders.call(this, options)
     emitAssets.call(this, options)
     addTemplates.call(this, options)
   }
+
+  // Get client output path (#83)
+  this.extendBuild((config, { isClient }) => {
+    if (isClient && !options.globDirectory) {
+      options.globDirectory = config.output.path
+    }
+  })
 
   this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
 }
@@ -67,7 +76,7 @@ function getOptions (moduleOptions) {
     clientsClaim: true,
     skipWaiting: true,
     globPatterns: ['**/*.{js,css}'],
-    globDirectory: path.resolve(this.options.buildDir, 'dist'),
+    globDirectory: undefined,
     modifyUrlPrefix: {
       '': fixUrl(publicPath)
     },
