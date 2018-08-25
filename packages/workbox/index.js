@@ -80,7 +80,6 @@ function getOptions (moduleOptions) {
     directoryIndex: '/',
     cachingExtensions: null,
     routingExtensions: null,
-    precacheFiles: [],
     cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
     skipWaiting: true,
