@@ -1,6 +1,6 @@
-import path from 'path'
+const path = require('path')
 
-export default {
+module.exports = {
   srcDir: __dirname,
   rootDir: path.resolve(__dirname, '../../'),
   buildDir: path.resolve(__dirname, '.nuxt2'),
