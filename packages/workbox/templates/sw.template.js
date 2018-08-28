@@ -1,13 +1,10 @@
 importScripts(<%= options.importScripts.map((i) => `'${i}'`).join(', ') %>)
 
 workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.wbOptions, null, 2) %>)
-
-<% if (options.offlinePage) { %>
-workbox.precaching.precacheAndRoute(['<%= options.offlinePage %>'])
-<% if (options.offlinePageAssets.length) { %>
-workbox.precaching.precacheAndRoute([<%= options.offlinePageAssets.map((i) => `'${i}'`).join(', ') %>])
+<% if (options.offlineAssets.length) { %>
+workbox.precaching.precacheAndRoute([<%= options.offlineAssets.map((i) => `'${i}'`).join(', ') %>])
 <% } %>
-<% } %>
+<% if (options.offlinePage) { %>workbox.precaching.precacheAndRoute(['<%= options.offlinePage %>'])<% } %>
 <% if (options.cachingExtensions) { %><%= options.cachingExtensions %><% } %>
 <% if (options.clientsClaim) { %>workbox.clientsClaim()<% } %>
 <% if (options.skipWaiting) { %>workbox.skipWaiting()<% } %>

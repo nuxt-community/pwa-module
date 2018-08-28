@@ -90,7 +90,7 @@ function getOptions (moduleOptions) {
     },
     offline: true,
     offlinePage: null,
-    offlinePageAssets: [],
+    offlineAssets: [],
     _runtimeCaching: [
       // Cache all _nuxt resources at runtime
       // They are hashed by webpack so are safe to loaded by cacheFirst handler
@@ -103,6 +103,13 @@ function getOptions (moduleOptions) {
   }
 
   const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
+
+  // Backward compatibility
+  // https://github.com/nuxt-community/pwa-module/pull/86
+  if (Array.isArray(options.offlinePageAssets)) {
+    options.offlineAssets = options.offlineAssets.concat(options.offlinePageAssets)
+    delete options.offlinePageAssets
+  }
 
   // Optionally cache other routes for offline
   if (options.offline && !options.offlinePage) {
@@ -134,7 +141,7 @@ function addTemplates (options) {
     fileName: 'sw.template.js',
     options: {
       offlinePage: options.offlinePage,
-      offlinePageAssets: options.offlinePageAssets,
+      offlineAssets: options.offlineAssets,
       cachingExtensions: options.cachingExtensions,
       routingExtensions: options.routingExtensions,
       importScripts: [options.wbDst].concat(options.importScripts || []),
