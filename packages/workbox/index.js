@@ -106,7 +106,7 @@ function getOptions (moduleOptions) {
   
   // Backward compatibility
   // https://github.com/nuxt-community/pwa-module/pull/86
-  if (Array.isArray(options.offlinePageAssets) {
+  if (Array.isArray(options.offlinePageAssets)) {
      options.offlineAssets = options.offlineAssets.concat(options.offlinePageAssets)
      delete options.offlinePageAssets
   }
