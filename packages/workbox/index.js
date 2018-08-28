@@ -103,6 +103,13 @@ function getOptions (moduleOptions) {
   }
 
   const options = defaultsDeep({}, this.options.workbox, moduleOptions, defaults)
+  
+  // Backward compatibility
+  // https://github.com/nuxt-community/pwa-module/pull/86
+  if (Array.isArray(options.offlinePageAssets) {
+     options.offlineAssets = options.offlineAssets.concat(options.offlinePageAssets)
+     delete options.offlinePageAssets
+  }
 
   // Optionally cache other routes for offline
   if (options.offline && !options.offlinePage) {
