@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/onesignal",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/nuxt-community/pwa-module",

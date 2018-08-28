@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/nuxt-community/pwa-module/compare/v2.3.2...v2.4.0) (2018-08-28)
+
+
+### Bug Fixes
+
+* **workbox:** infer default value of globDirectory from webpack config. fixes [#83](https://github.com/nuxt-community/pwa-module/issues/83). ([c7102fd](https://github.com/nuxt-community/pwa-module/commit/c7102fd))
+* **workbox:** more fixes regarding nuxt 2 dist directory changes. fixes [#83](https://github.com/nuxt-community/pwa-module/issues/83). ([7a8bb3b](https://github.com/nuxt-community/pwa-module/commit/7a8bb3b))
+
+
+### Features
+
+* **worbox:** offlineAssets ([#86](https://github.com/nuxt-community/pwa-module/issues/86)) ([27c8fa1](https://github.com/nuxt-community/pwa-module/commit/27c8fa1))
+* **workbox:** offline page assets ([#85](https://github.com/nuxt-community/pwa-module/issues/85)) ([8bc4a3b](https://github.com/nuxt-community/pwa-module/commit/8bc4a3b))
+
+
+
+
 
 <a name="2.3.2"></a>
 # 2.3.2 (2018-08-24)

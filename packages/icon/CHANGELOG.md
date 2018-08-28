@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/nuxt-community/pwa-module/compare/v2.3.2...v2.4.0) (2018-08-28)
+
+
+### Bug Fixes
+
+* **icon:** temporary use jimp@0.3.4 ([#84](https://github.com/nuxt-community/pwa-module/issues/84)) ([3f0e718](https://github.com/nuxt-community/pwa-module/commit/3f0e718))
+
+
+
+
+
 <a name="2.3.0"></a>
 # 2.3.0 (2018-08-24)
 
