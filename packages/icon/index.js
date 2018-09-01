@@ -62,18 +62,25 @@ function generateIcons (moduleOptions) {
       if (!this.options.manifest.icons) {
         this.options.manifest.icons = []
       }
-      const exportIcons = icons.map(icon => ({
-        src: fixUrl(`${publicPath}/${icon.fileName}`),
-        sizes: `${icon.size}x${icon.size}`,
-        type: `image/png`
-      }))
+      const assetIcons = []
+      const exportIcons = {}
+      icons.forEach(icon => {
+        const src = fixUrl(`${publicPath}/${icon.fileName}`)
+        assetIcons.push({
+          src,
+          sizes: `${icon.size}x${icon.size}`,
+          type: `image/png`
+        })
 
-      exportIcons.forEach(icon => { this.options.manifest.icons.push(icon) })
+        exportIcons[icon.size] = src
+      })
+
+      assetIcons.forEach(icon => { this.options.manifest.icons.push(icon) })
 
       // Add plugin to Vue to access icons
       let moduleOptions = Object.assign({
         accessibleIcons: true,
-        iconProperty: '$icons',
+        iconProperty: '$icon',
         icons: exportIcons
       }, options)
 

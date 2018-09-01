@@ -1,6 +1,7 @@
-import Vue from 'vue'
-
-export default async function () {
+export default async function (ctx, inject) {
   const moduleOptions = <%= serialize(options) %>
-  Vue.prototype[moduleOptions.iconProperty] = moduleOptions.icons
+    console.log("Icon object:", moduleOptions.icons)
+  inject(moduleOptions.iconProperty.replace('$', ''), retrieveIcons(moduleOptions.icons))
 }
+
+const retrieveIcons = icons => size => icons[size] || ''
