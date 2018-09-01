@@ -10,15 +10,16 @@ const getRelativePath = fileObj => path.relative(__dirname, fileObj.path)
 describe('pwa', () => {
   let nuxt
 
-  test('build and generate', async () => {
-    nuxt = new Nuxt(require('./fixture/nuxt.config'))
+  test(
+    'build and generate', async () => {
+      nuxt = new Nuxt(require('./fixture/nuxt.config'))
 
-    const builder = new Builder(nuxt)
-    await builder.build()
+      const builder = new Builder(nuxt)
+      await builder.build()
 
-    const generator = new Generator(nuxt)
-    await generator.generate({ build: false })
-  })
+      const generator = new Generator(nuxt)
+      await generator.generate({ build: false })
+    })
 
   test('build files (.nuxt)', async () => {
     const buildFiles = klawSync(nuxt.options.buildDir).map(getRelativePath)
@@ -30,6 +31,11 @@ describe('pwa', () => {
     const generateFiles = klawSync(nuxt.options.generate.dir).map(getRelativePath)
 
     expect(generateFiles).toMatchSnapshot()
+  })
+
+  test('accessible icons', async () => {
+    const {html} = await nuxt.renderRoute('/icons')
+    expect(html).toContain('/_nuxt/icons/icon_512.9mgd2ZDMcQu.png')
   })
 
   test('sw.js', async () => {
