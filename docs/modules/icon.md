@@ -26,10 +26,12 @@ Array of sizes to be generated (Square).
 **accessibleIcons**
 - Default: true
 
-Make icons accessible through Vue instances.
+Make icons accessible through `ctx` or Vue instances.
+
+Example: `ctx.$icon(512)` will return the url for the icon with the size of `512px`.
+Will return an empty string when no icon in the given size is available (eg. when the size is not in `sizes` array).
 
 **iconProperty**
-- Default: '$icons'
+- Default: '$icon'
 
 Name of property for accessible icons.
-Accessible through Vue[property], default Vue.$icons
