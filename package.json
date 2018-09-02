@@ -29,22 +29,22 @@
   },
   "devDependencies": {
     "axios": "^0.18.0",
-    "babel-eslint": "^8.1.2",
+    "babel-eslint": "^9.0.0",
     "codecov": "^3.0.0",
-    "eslint": "^5.4.0",
-    "eslint-config-standard": "^11.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-standard": "^12.0.0",
     "eslint-plugin-html": "^4.0.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-standard": "^4.0.0",
     "fs-extra": "^7.0.0",
     "jest": "^23.5.0",
     "jsdom": "^12.0.0",
     "klaw-sync": "^4.0.0",
-    "lerna": "^3.1.4",
-    "nuxt-edge": "^2.0.0-25585457.ac841ed",
+    "lerna": "^3.2.1",
+    "nuxt-edge": "^2.0.0-25597267.9a70280",
     "standard-version": "^4.4.0"
   }
 }
