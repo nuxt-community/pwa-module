@@ -12,6 +12,10 @@
     "lint": "eslint --ext .js packages",
     "release": "lerna publish --conventional-commits"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nuxt-community/pwa-module.git"
+  },
   "workspaces": [
     "packages/*"
   ],
