@@ -80,6 +80,7 @@ function getOptions (moduleOptions) {
     directoryIndex: '/',
     cachingExtensions: null,
     routingExtensions: null,
+    config: null,
     cacheId: process.env.npm_package_name || 'nuxt',
     clientsClaim: true,
     skipWaiting: true,
@@ -144,6 +145,7 @@ function addTemplates (options) {
       offlineAssets: options.offlineAssets,
       cachingExtensions: options.cachingExtensions,
       routingExtensions: options.routingExtensions,
+      config: options.config,
       importScripts: [options.wbDst].concat(options.importScripts || []),
       runtimeCaching: [].concat(options._runtimeCaching, options.runtimeCaching).map(i => (Object.assign({}, i, {
         urlPattern: i.urlPattern,

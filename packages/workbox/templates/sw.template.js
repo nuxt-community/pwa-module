@@ -1,5 +1,9 @@
 importScripts(<%= options.importScripts.map((i) => `'${i}'`).join(', ') %>)
 
+<% if (options.config) {%>
+workbox.setConfig(<%= JSON.stringify(options.config, null, 2) %>)
+<% } %>
+
 workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.wbOptions, null, 2) %>)
 <% if (options.offlineAssets.length) { %>
 workbox.precaching.precacheAndRoute([<%= options.offlineAssets.map((i) => `'${i}'`).join(', ') %>])
