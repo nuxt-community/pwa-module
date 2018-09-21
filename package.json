@@ -42,7 +42,7 @@
     "fs-extra": "^7.0.0",
     "jest": "^23.5.0",
     "jsdom": "^12.0.0",
-    "klaw-sync": "^4.0.0",
+    "klaw-sync": "^5.0.0",
     "lerna": "^3.2.1",
     "nuxt-edge": "^2.0.0-25597267.9a70280",
     "standard-version": "^4.4.0"
