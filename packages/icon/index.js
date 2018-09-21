@@ -62,13 +62,36 @@ function generateIcons (moduleOptions) {
       if (!this.options.manifest.icons) {
         this.options.manifest.icons = []
       }
+      const assetIcons = []
+      const exportIcons = {}
       icons.forEach(icon => {
-        this.options.manifest.icons.push({
-          src: fixUrl(`${publicPath}/${icon.fileName}`),
+        const src = fixUrl(`${publicPath}/${icon.fileName}`)
+        assetIcons.push({
+          src,
           sizes: `${icon.size}x${icon.size}`,
           type: `image/png`
         })
+
+        exportIcons[icon.size] = src
       })
+
+      assetIcons.forEach(icon => { this.options.manifest.icons.push(icon) })
+
+      // Add plugin to Vue to access icons
+      let moduleOptions = Object.assign({
+        accessibleIcons: true,
+        iconProperty: '$icon',
+        icons: exportIcons
+      }, options)
+
+      if (moduleOptions.accessibleIcons) {
+        this.addPlugin({
+          src: path.resolve(__dirname, './plugin.js'),
+          fileName: 'nuxt-icons.js',
+          options: moduleOptions
+        })
+      }
+
       // Register webpack plugin to emit icons
       this.options.build.plugins.push({
         apply (compiler) {

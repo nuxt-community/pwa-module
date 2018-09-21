@@ -3,7 +3,7 @@ node_modules
 .idea
 *.log*
 modules/*/package-lock.json
-.nuxt
+.nuxt*
 coverage
 dist/
 _book

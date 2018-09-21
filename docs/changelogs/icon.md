@@ -1,1 +1,0 @@
-../../packages/icon/CHANGELOG.md

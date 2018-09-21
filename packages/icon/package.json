@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/icon",
-  "version": "2.3.0",
+  "version": "2.6.0",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/nuxt-community/pwa-module",
@@ -10,6 +10,6 @@
   "dependencies": {
     "fs-extra": "^7.0.0",
     "hash-sum": "^1.0.2",
-    "jimp": "^0.3.5"
+    "jimp": "^0.5.0"
   }
 }

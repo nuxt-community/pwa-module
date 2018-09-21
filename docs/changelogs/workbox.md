@@ -1,1 +1,0 @@
-../../packages/workbox/CHANGELOG.md

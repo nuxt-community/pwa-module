@@ -1,24 +1,32 @@
+const path = require('path')
+
 module.exports = {
   srcDir: __dirname,
+  rootDir: path.resolve(__dirname, '../../'),
+  buildDir: path.resolve(__dirname, '.nuxt'),
   dev: false,
+
   build: {
-    extractCSS: true,
     filenames: {
-      css: 'vendor.css',
-      manifest: 'manifest.js',
-      vendor: 'vendor.js',
-      app: 'app.js',
+      app: '[name].js',
       chunk: '[name].js'
     }
   },
+
+  generate: {
+    dir: path.resolve(__dirname, 'dist')
+  },
+
   modules: [
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa'
   ],
+
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description'
   },
+
   workbox: {
     dev: true,
     importScripts: [
@@ -32,6 +40,7 @@ module.exports = {
       }
     ]
   },
+
   oneSignal: {
     init: {
       appId: 'd867ac26-f7be-4c62-9fdd-b756a33c4a8f'

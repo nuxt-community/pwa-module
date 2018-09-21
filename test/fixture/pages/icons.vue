@@ -1,7 +1,5 @@
 <template>
-<div>
-  Hello!
-</div>
+<pre v-text="$icon(512)"/>
 </template>
 
 <script>

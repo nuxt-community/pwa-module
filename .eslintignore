@@ -1,2 +1,6 @@
 **/templates
+**/node_modules
 **/dist
+
+# Contains Lodash templates
+packages/icon/plugin.js
