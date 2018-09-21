@@ -166,7 +166,7 @@ function generateMeta (_options) {
     options.ogUrl = options.ogHost
   }
   if (options.ogUrl && options.ogUrl !== true && !find(this.options.head.meta, 'property', 'og:url') && !find(this.options.head.meta, 'name', 'og:url')) {
-    this.options.head.meta.push({hid: 'og:url', name: 'og:url', property: 'og:url', content: options.ogUrl})
+    this.options.head.meta.push({ hid: 'og:url', name: 'og:url', property: 'og:url', content: options.ogUrl })
   }
 
   // og:image
@@ -174,12 +174,12 @@ function generateMeta (_options) {
     if (options.icons && options.icons.length > 0) {
       const iconBig = options.icons[options.icons.length - 1]
       const [width, height] = iconBig.sizes.split('x').map(x => parseInt(x))
-      options.ogImage = {path: iconBig.src, width, height, type: iconBig.type}
+      options.ogImage = { path: iconBig.src, width, height, type: iconBig.type }
     } else {
       options.ogImage = false
     }
   } else if (typeof options.ogImage === 'string') {
-    options.ogImage = {path: options.ogImage}
+    options.ogImage = { path: options.ogImage }
   }
   if (options.ogImage && !find(this.options.head.meta, 'property', 'og:image') && !find(this.options.head.meta, 'name', 'og:image')) {
     if (options.ogHost) {
