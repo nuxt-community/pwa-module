@@ -13,4 +13,4 @@
 
 ## Meta
 
-* [Changelogs](../CHANGELOG.md)
+* [Changelog](./CHANGELOG.md)
