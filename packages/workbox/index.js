@@ -112,14 +112,6 @@ function getOptions (moduleOptions) {
     delete options.offlinePageAssets
   }
 
-  // Optionally cache other routes for offline
-  if (options.offline && !options.offlinePage) {
-    options._runtimeCaching.push({
-      urlPattern: fixUrl(`${routerBase}/.*`),
-      handler: 'networkFirst'
-    })
-  }
-
   if (options.cachingExtensions) {
     options.cachingExtensions = loadScriptExtension.call(this, options.cachingExtensions)
   }
@@ -136,6 +128,15 @@ function getOptions (moduleOptions) {
 // =============================================
 
 function addTemplates (options) {
+  // Optionally cache other routes for offline
+  const routerBase = this.options.router.base
+  if (options.offline && !options.offlinePage) {
+    options.runtimeCaching.push({
+      urlPattern: fixUrl(`${routerBase}/.*`),
+      handler: 'networkFirst'
+    })
+  }
+
   // Add sw.template.js
   this.addTemplate({
     src: path.resolve(__dirname, 'templates/sw.template.js'),
