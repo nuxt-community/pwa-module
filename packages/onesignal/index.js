@@ -71,12 +71,11 @@ function addOneSignal (moduleOptions) {
 
       this.options.build.plugins.push({
         apply (compiler) {
-          compiler.plugin('emit', function (compilation, cb) {
+          compiler.hooks.emit.tap('nuxt-pwa-onesignal', (compilation) => {
             compilation.assets[OneSignalSDKFile] = {
               source: () => OneSignalSDKJS,
               size: () => OneSignalSDKJS.length
             }
-            cb()
           })
         }
       })

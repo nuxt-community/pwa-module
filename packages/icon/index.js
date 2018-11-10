@@ -95,14 +95,13 @@ function generateIcons (moduleOptions) {
       // Register webpack plugin to emit icons
       this.options.build.plugins.push({
         apply (compiler) {
-          compiler.plugin('emit', function (compilation, _cb) {
+          compiler.hooks.emit.tap('nuxt-pwa-icon', compilation => {
             icons.forEach(icon => {
               compilation.assets[icon.fileName] = {
                 source: () => icon.buff,
                 size: () => icon.buff.length
               }
             })
-            _cb()
           })
         }
       })
