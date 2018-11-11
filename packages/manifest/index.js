@@ -60,12 +60,11 @@ function addManifest (options) {
   // Register webpack plugin to emit manifest
   this.options.build.plugins.push({
     apply (compiler) {
-      compiler.plugin('emit', function (compilation, cb) {
+      compiler.hooks.emit.tap('nuxt-pwa-manifest', (compilation) => {
         compilation.assets[manifestFileName] = {
           source: () => manifestSource,
           size: () => manifestSource.length
         }
-        cb()
       })
     }
   })
