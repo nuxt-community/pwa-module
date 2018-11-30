@@ -147,7 +147,7 @@ function addTemplates (options) {
       routingExtensions: options.routingExtensions,
       config: options.config,
       importScripts: [options.wbDst].concat(options.importScripts || []),
-      runtimeCaching: [].concat(options._runtimeCaching, options.runtimeCaching).map(i => (Object.assign({}, i, {
+      runtimeCaching: [].concat(options.runtimeCaching, options._runtimeCaching).map(i => (Object.assign({}, i, {
         urlPattern: i.urlPattern,
         handler: i.handler || 'networkFirst',
         method: i.method || 'GET'
