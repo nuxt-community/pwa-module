@@ -10,6 +10,6 @@
   "dependencies": {
     "fs-extra": "^7.0.1",
     "hash-sum": "^1.0.2",
-    "jimp": "^0.5.6"
+    "jimp": "^0.6.0"
   }
 }
