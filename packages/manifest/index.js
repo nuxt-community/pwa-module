@@ -15,7 +15,7 @@ module.exports = function nuxtManifest (options) {
     return hook()
   }
 
-  this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
+  this.nuxt.hook('build:before', hook)
 }
 
 function addManifest (options) {

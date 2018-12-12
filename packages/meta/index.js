@@ -12,7 +12,7 @@ module.exports = function nuxtMeta (_options) {
     return hook()
   }
 
-  this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
+  this.nuxt.hook('build:before', hook)
 }
 
 function generateMeta (_options) {

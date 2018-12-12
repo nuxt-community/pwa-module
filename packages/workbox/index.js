@@ -43,7 +43,7 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     }
   })
 
-  this.nuxt.hook ? this.nuxt.hook('build:before', hook) : this.nuxt.plugin('build', hook)
+  this.nuxt.hook('build:before', hook)
 }
 
 // =============================================
@@ -198,13 +198,7 @@ function emitAssets (options) {
     })
   }
 
-  if (this.nuxt.hook) {
-    this.nuxt.hook('build:done', hook)
-  } else {
-    this.nuxt.plugin('build', builder => {
-      builder.plugin('built', hook)
-    })
-  }
+  this.nuxt.hook('build:done', hook)
 
   // workbox.js
   let wbPath = require.resolve('workbox-sw')
@@ -227,13 +221,7 @@ function workboxInject (options) {
     return swBuild.injectManifest(opts)
   }
 
-  if (this.nuxt.hook) {
-    this.nuxt.hook('build:done', hook)
-  } else {
-    this.nuxt.plugin('build', builder => {
-      builder.plugin('built', hook)
-    })
-  }
+  this.nuxt.hook('build:done', hook)
 }
 
 // =============================================
