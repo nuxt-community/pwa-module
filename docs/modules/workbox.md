@@ -21,7 +21,7 @@ workbox: {
 
 **swURL** - If for any reason you need to register another service worker (OneSignal, etc) you can use this option.
 
-**importScripts** (Array) - Additional scripts to be imported in service worker script. (Relative to `/`. Can be placed in `assets/` directory).
+**importScripts** (Array) - Additional scripts to be imported in service worker script. (Relative to `/`. Can be placed in `assets/` directory)
 
 **offlineAssets** (Array) - List of assets to precache, in case you need extra files precached other than the ones automatically processed (`_nuxt/*` etc) or you want to ensure assets used by your `offlinePage`. (Example: `['/offline.png']`)
 
