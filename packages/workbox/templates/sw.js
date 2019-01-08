@@ -1,4 +1,4 @@
-importScripts(<%= options.importScripts.map((i) => `'${i}'`).join(', ') %>)
+importScripts(<%= [options.wbDst, ...options.importScripts].map((i) => `'${i}'`).join(', ') %>)
 
 // --------------------------------------------------
 // Configure
@@ -10,7 +10,7 @@ workbox.setConfig(<%= JSON.stringify(options.config, null, 2) %>)
 <% } %>
 
 <% if (options.clientsClaim) { %>
-// Start controlling any existing clients as soon as it activates.
+// Start controlling any existing clients as soon as it activates
 workbox.clientsClaim()
 <% } %>
 
@@ -24,7 +24,7 @@ workbox.skipWaiting()
 // --------------------------------------------------
 
 // Precache build artifacts
-workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.wbOptions, null, 2) %>)
+workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.cacheOptions, null, 2) %>)
 
 <% if (options.offlineAssets.length) { %>
 // Precache offlineAssets
