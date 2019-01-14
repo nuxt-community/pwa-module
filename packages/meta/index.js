@@ -1,6 +1,7 @@
 const debug = require('debug')('nuxt:pwa')
 
 const find = (arr, key, val) => arr.find(obj => val ? obj[key] === val : obj[key])
+const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 
 module.exports = function nuxtMeta (_options) {
   const hook = () => {
@@ -182,12 +183,12 @@ function generateMeta (_options) {
     options.ogImage = { path: options.ogImage }
   }
   if (options.ogImage && !find(this.options.head.meta, 'property', 'og:image') && !find(this.options.head.meta, 'name', 'og:image')) {
-    if (options.ogHost) {
+    if (options.ogHost || isUrl(options.ogImage.path)) {
       this.options.head.meta.push({
         hid: 'og:image',
         name: 'og:image',
         property: 'og:image',
-        content: options.ogHost + options.ogImage.path
+        content: isUrl(options.ogImage.path) ? options.ogImage.path : options.ogHost + options.ogImage.path
       })
       if (options.ogImage.width && options.ogImage.height) {
         this.options.head.meta.push({
