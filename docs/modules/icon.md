@@ -16,10 +16,16 @@ icon: {
 ### options
 
 **iconSrc**
-- Default: `[srcDir]/static/icon.png`
+- Default: `[srcDir]/[staticDir]/icon.png`
+
+**iconFileName**
+- Default: `icon.png`
 
 **sizes**
 - Default: `[16, 120, 144, 152, 192, 384, 512]`
+
+**targetDir**
+- Default: `icons`
 
 Array of sizes to be generated (Square).
 
