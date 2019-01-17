@@ -21,10 +21,14 @@ module.exports = function nuxtIcon (options) {
 
 function generateIcons (moduleOptions) {
   // Combine sources
-  const options = Object.assign({}, this.options.icon, moduleOptions)
-
-  const iconSrc = options.iconSrc || path.resolve(this.options.srcDir, 'static', 'icon.png')
-  const sizes = options.sizes || [64, 120, 144, 152, 192, 384, 512]
+  const defaults = {
+    iconSrc: null,
+    iconFileName: 'icon.png',
+    sizes: [64, 120, 144, 152, 192, 384, 512],
+    targetDir: 'icons'
+  }
+  const options = Object.assign({}, defaults, this.options.icon, moduleOptions)
+  const iconSrc = options.iconSrc || path.resolve(this.options.srcDir, this.options.dir.static, options.iconFileName)
 
   // routerBase and publicPath
   const routerBase = this.options.router.base
@@ -46,12 +50,12 @@ function generateIcons (moduleOptions) {
   return Jimp.read(iconSrc).then(srcIcon => {
     // get base64 phash of source image
     const hash = srcIcon.hash()
-    return Promise.all(sizes.map(size => new Promise((resolve, reject) => {
+    return Promise.all(options.sizes.map(size => new Promise((resolve, reject) => {
       srcIcon.clone().contain(size, size).getBuffer(Jimp.MIME_PNG, (err, buff) => {
         if (err) {
           return reject(err)
         }
-        const fileName = `icons/icon_${size}.${hash}.png`
+        const fileName = `${options.targetDir}/icon_${size}.${hash}.png`
         resolve({ size, buff, fileName })
       })
     }))).then(icons => {
