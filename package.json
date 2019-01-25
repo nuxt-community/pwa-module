@@ -40,7 +40,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "fs-extra": "^7.0.1",
-    "jest": "^23.6.0",
+    "jest": "^24.0.0",
     "jsdom": "^13.1.0",
     "klaw-sync": "^6.0.0",
     "lerna": "^3.10.6",
