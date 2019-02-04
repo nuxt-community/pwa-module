@@ -42,7 +42,7 @@ function addOneSignal (moduleOptions) {
   // Merge options
   const defaults = {
     OneSignalSDK: undefined,
-    cdn: false,
+    cdn: true,
     GcmSenderId: '482941778795',
     importScripts: [
       '/sw.js'
