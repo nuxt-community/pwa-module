@@ -14,7 +14,7 @@ workbox: {
 }
 ```
 
-### Options
+## Options
 
 ### `workboxVersion`
 
@@ -98,6 +98,8 @@ workbox: {
 
 (String) Defaults to `routerBase`.
 
+## Examples
+
 ### Adding custom runtimeCaching items (For CDN)
 
 By default resources in dist (`/_nuxt/`) will be cached with `cacheFirst` and other requests to same domain will be cached with `networkFirst` strategy.
@@ -122,7 +124,7 @@ workbox: {
 }
 ```
 
-#### Adding custom cache [StrategyOption](https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox.strategies)
+### Adding custom cache [StrategyOption](https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox.strategies)
 
 ```js
 workbox: {
