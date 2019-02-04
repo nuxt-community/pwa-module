@@ -7,12 +7,15 @@ jest.setTimeout(60000)
 
 const getRelativePath = fileObj => path.relative(__dirname, fileObj.path)
 
+const noJS = item => !/\.js/.test(item)
+
 describe('pwa', () => {
   let nuxt
 
   test(
     'build and generate', async () => {
       nuxt = new Nuxt(require('./fixture/nuxt.config'))
+      await nuxt.ready()
 
       const builder = new Builder(nuxt)
       await builder.build()
@@ -24,13 +27,13 @@ describe('pwa', () => {
   test('build files (.nuxt)', async () => {
     const buildFiles = klawSync(nuxt.options.buildDir).map(getRelativePath)
 
-    expect(buildFiles).toMatchSnapshot()
+    expect(buildFiles.filter(noJS)).toMatchSnapshot()
   })
 
   test('generate files (dist)', async () => {
     const generateFiles = klawSync(nuxt.options.generate.dir).map(getRelativePath)
 
-    expect(generateFiles).toMatchSnapshot()
+    expect(generateFiles.filter(noJS)).toMatchSnapshot()
   })
 
   test('accessible icons', async () => {
@@ -41,7 +44,6 @@ describe('pwa', () => {
   test('sw.js', async () => {
     const swContents = await fs.readFile(path.resolve(nuxt.options.generate.dir, 'sw.js'), 'utf-8')
 
-    expect(swContents).toContain("new RegExp('/_nuxt/.*')")
-    expect(swContents).toContain('"url": "/_nuxt/app.js"')
+    expect(swContents).toMatchSnapshot()
   })
 })

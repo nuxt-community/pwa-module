@@ -2,21 +2,12 @@
 
 exports[`pwa build files (.nuxt) 1`] = `
 Array [
-  "fixture/.nuxt/App.js",
-  "fixture/.nuxt/client.js",
   "fixture/.nuxt/components",
-  "fixture/.nuxt/components/no-ssr.js",
-  "fixture/.nuxt/components/nuxt-child.js",
   "fixture/.nuxt/components/nuxt-error.vue",
-  "fixture/.nuxt/components/nuxt-link.client.js",
-  "fixture/.nuxt/components/nuxt-link.server.js",
   "fixture/.nuxt/components/nuxt-loading.vue",
-  "fixture/.nuxt/components/nuxt.js",
   "fixture/.nuxt/dist",
   "fixture/.nuxt/dist/client",
   "fixture/.nuxt/dist/client/LICENSES",
-  "fixture/.nuxt/dist/client/app.js",
-  "fixture/.nuxt/dist/client/commons.app.js",
   "fixture/.nuxt/dist/client/icons",
   "fixture/.nuxt/dist/client/icons/icon_120.9mgd2ZDMcQu.png",
   "fixture/.nuxt/dist/client/icons/icon_144.9mgd2ZDMcQu.png",
@@ -25,39 +16,12 @@ Array [
   "fixture/.nuxt/dist/client/icons/icon_384.9mgd2ZDMcQu.png",
   "fixture/.nuxt/dist/client/icons/icon_512.9mgd2ZDMcQu.png",
   "fixture/.nuxt/dist/client/icons/icon_64.9mgd2ZDMcQu.png",
-  "fixture/.nuxt/dist/client/manifest.0fc4969c.json",
-  "fixture/.nuxt/dist/client/ons.40ac840e.js",
-  "fixture/.nuxt/dist/client/pages",
-  "fixture/.nuxt/dist/client/pages/icons.js",
-  "fixture/.nuxt/dist/client/pages/index.js",
-  "fixture/.nuxt/dist/client/runtime.js",
-  "fixture/.nuxt/dist/client/workbox.dev.4c4f5ca6.js",
   "fixture/.nuxt/dist/server",
-  "fixture/.nuxt/dist/server/client.manifest.json",
   "fixture/.nuxt/dist/server/index.spa.html",
   "fixture/.nuxt/dist/server/index.ssr.html",
-  "fixture/.nuxt/dist/server/ons.40ac840e.js",
-  "fixture/.nuxt/dist/server/pages",
-  "fixture/.nuxt/dist/server/pages/icons.js",
-  "fixture/.nuxt/dist/server/pages/icons.js.map",
-  "fixture/.nuxt/dist/server/pages/index.js",
-  "fixture/.nuxt/dist/server/pages/index.js.map",
-  "fixture/.nuxt/dist/server/server.js",
-  "fixture/.nuxt/dist/server/server.js.map",
-  "fixture/.nuxt/dist/server/server.manifest.json",
-  "fixture/.nuxt/empty.js",
-  "fixture/.nuxt/index.js",
   "fixture/.nuxt/layouts",
   "fixture/.nuxt/layouts/default.vue",
   "fixture/.nuxt/loading.html",
-  "fixture/.nuxt/middleware.js",
-  "fixture/.nuxt/nuxt-icons.js",
-  "fixture/.nuxt/onesignal.js",
-  "fixture/.nuxt/router.js",
-  "fixture/.nuxt/server.js",
-  "fixture/.nuxt/sw.plugin.js",
-  "fixture/.nuxt/sw.template.js",
-  "fixture/.nuxt/utils.js",
   "fixture/.nuxt/views",
   "fixture/.nuxt/views/app.template.html",
   "fixture/.nuxt/views/error.html",
@@ -69,12 +33,8 @@ Array [
   "fixture/dist/.gitkeep",
   "fixture/dist/.nojekyll",
   "fixture/dist/200.html",
-  "fixture/dist/OneSignalSDKUpdaterWorker.js",
-  "fixture/dist/OneSignalSDKWorker.js",
   "fixture/dist/_nuxt",
   "fixture/dist/_nuxt/LICENSES",
-  "fixture/dist/_nuxt/app.js",
-  "fixture/dist/_nuxt/commons.app.js",
   "fixture/dist/_nuxt/icons",
   "fixture/dist/_nuxt/icons/icon_120.9mgd2ZDMcQu.png",
   "fixture/dist/_nuxt/icons/icon_144.9mgd2ZDMcQu.png",
@@ -83,18 +43,48 @@ Array [
   "fixture/dist/_nuxt/icons/icon_384.9mgd2ZDMcQu.png",
   "fixture/dist/_nuxt/icons/icon_512.9mgd2ZDMcQu.png",
   "fixture/dist/_nuxt/icons/icon_64.9mgd2ZDMcQu.png",
-  "fixture/dist/_nuxt/manifest.0fc4969c.json",
-  "fixture/dist/_nuxt/ons.40ac840e.js",
-  "fixture/dist/_nuxt/pages",
-  "fixture/dist/_nuxt/pages/icons.js",
-  "fixture/dist/_nuxt/pages/index.js",
-  "fixture/dist/_nuxt/runtime.js",
-  "fixture/dist/_nuxt/workbox.dev.4c4f5ca6.js",
-  "fixture/dist/custom-sw.js",
   "fixture/dist/icon.png",
   "fixture/dist/icons",
   "fixture/dist/icons/index.html",
   "fixture/dist/index.html",
-  "fixture/dist/sw.js",
 ]
+`;
+
+exports[`pwa sw.js 1`] = `
+"importScripts('https://cdn.jsdelivr.net/npm/workbox-cdn@3.6.3-5/workbox/workbox-sw.js', 'custom-sw.js')
+
+// --------------------------------------------------
+// Configure
+// --------------------------------------------------
+
+// Set workbox config
+workbox.setConfig({
+  \\"debug\\": true
+})
+
+// Start controlling any existing clients as soon as it activates
+workbox.clientsClaim()
+
+// Skip over the SW waiting lifecycle stage
+workbox.skipWaiting()
+
+// --------------------------------------------------
+// Precaches
+// --------------------------------------------------
+
+// Precache build artifacts
+workbox.precaching.precacheAndRoute([], {
+  \\"cacheId\\": \\"nuxt\\",
+  \\"directoryIndex\\": \\"/\\"
+})
+
+// --------------------------------------------------
+// Runtime Caching
+// --------------------------------------------------
+
+// Register route handlers for runtimeCaching
+workbox.routing.registerRoute(new RegExp('https://google.com/.*'), workbox.strategies.cacheFirst ({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/_nuxt/(?!.*hot-update).+'), workbox.strategies.cacheFirst ({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/.*'), workbox.strategies.networkFirst ({}), 'GET')
+"
 `;
