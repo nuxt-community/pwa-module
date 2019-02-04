@@ -8,37 +8,27 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* path ogImage if is url ([#121](https://github.com/nuxt-community/pwa-module/issues/121)) ([d6dc82b](https://github.com/nuxt-community/pwa-module/commit/d6dc82b))
-* routing order for default offline route (/.*). it must be last order ([#100](https://github.com/nuxt-community/pwa-module/issues/100)) ([1c829d0](https://github.com/nuxt-community/pwa-module/commit/1c829d0))
-
-
-### chore
-
-* only support nuxt.hook ([854d826](https://github.com/nuxt-community/pwa-module/commit/854d826))
+* Handle `ogImage` as url ([#121](https://github.com/nuxt-community/pwa-module/issues/121)) ([d6dc82b](https://github.com/nuxt-community/pwa-module/commit/d6dc82b))
+* Routing order for default offline route `/.*` must be last ([#100](https://github.com/nuxt-community/pwa-module/issues/100)) ([1c829d0](https://github.com/nuxt-community/pwa-module/commit/1c829d0))
 
 
 ### Code Refactoring
 
-* use tapable hooks ([#103](https://github.com/nuxt-community/pwa-module/issues/103)) ([9f27d5c](https://github.com/nuxt-community/pwa-module/commit/9f27d5c))
-
+* Use tapable hooks ([#103](https://github.com/nuxt-community/pwa-module/issues/103)) ([9f27d5c](https://github.com/nuxt-community/pwa-module/commit/9f27d5c))
+* Remove debug ([92ba73e](https://github.com/nuxt-community/pwa-module/commit/92ba73e))
 
 ### Features
 
-* remove debug ([92ba73e](https://github.com/nuxt-community/pwa-module/commit/92ba73e))
-* **onesignal:** enable CDN by default ([7c78c67](https://github.com/nuxt-community/pwa-module/commit/7c78c67))
-* rewrite workbox ([#122](https://github.com/nuxt-community/pwa-module/issues/122)) ([9e49896](https://github.com/nuxt-community/pwa-module/commit/9e49896))
-* update onesignal sdk once ([c08e423](https://github.com/nuxt-community/pwa-module/commit/c08e423))
+* **onesignal:** Use CDN by default ([7c78c67](https://github.com/nuxt-community/pwa-module/commit/7c78c67))
+* **workbox:** Rewrite workbox ([#122](https://github.com/nuxt-community/pwa-module/issues/122)) ([9e49896](https://github.com/nuxt-community/pwa-module/commit/9e49896))
 * **icon:** new options ([#126](https://github.com/nuxt-community/pwa-module/issues/126)) ([12e6576](https://github.com/nuxt-community/pwa-module/commit/12e6576))
-* **workbox:** change the order of default runtimeCache ([#106](https://github.com/nuxt-community/pwa-module/issues/106)) ([033b504](https://github.com/nuxt-community/pwa-module/commit/033b504))
+* **workbox:** change the order of default `runtimeCache` ([#106](https://github.com/nuxt-community/pwa-module/issues/106)) ([033b504](https://github.com/nuxt-community/pwa-module/commit/033b504))
 
 
 ### BREAKING CHANGES
 
-* needs nuxt 2.x or later
-* webpack >= 4 (Nuxt >= 2) is required
-
-
-
+* Only nuxt 2+ supported ([854d826](https://github.com/nuxt-community/pwa-module/commit/854d826))
+* webpack >= 4 is required
 
 
 <a name="2.6.0"></a>
