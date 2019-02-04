@@ -3,14 +3,14 @@ jobs:
   build:
     working_directory: /usr/src/app
     docker:
-      - image: banian/node
+      - image: node:alpine
     steps:
       # Checkout repository
       - checkout
 
       # Restore cache
       - restore_cache:
-          key: yarn-{{ checksum "yarn.lock" }}
+          key: yarn-alpine-{{ checksum "yarn.lock" }}
 
       # Install dependencies
       - run:
