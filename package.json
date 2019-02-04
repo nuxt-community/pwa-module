@@ -7,7 +7,7 @@
     "Jonas Galvez <jonasgalvez@gmail.com>"
   ],
   "scripts": {
-    "test": "yarn lint && NODE_ENV=test jest",
+    "test": "yarn lint && jest",
     "lint": "eslint --ext .js packages",
     "release": "lerna publish --conventional-commits"
   },
