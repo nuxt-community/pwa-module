@@ -6,6 +6,4 @@ if ('serviceWorker' in navigator) {
   }).catch(function(error) {
     console.error('Service worker registration failed:', error)
   })
-} else {
-  console.warn('Service workers are not supported.')
 }

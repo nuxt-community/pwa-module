@@ -8,19 +8,26 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     // Get options
     const options = getOptions.call(this, moduleOptions)
 
-    // Add sw.plugin.js
+    // Disable if on dev mode and dev options is false
+    if (this.options.dev && !options.dev) {
+      return
+    }
+
+    // Register plugin
     if (options.autoRegister) {
       this.addPlugin({
-        src: path.resolve(__dirname, '../templates/sw.plugin.js'),
+        src: path.resolve(__dirname, '../templates/sw.register.js'),
         ssr: false,
-        fileName: 'sw.plugin.js',
-        options
+        fileName: 'sw.register.js',
+        options: {
+          ...options
+        }
       })
     }
 
     // Add sw.js
     this.addTemplate({
-      src: path.resolve(__dirname, '../templates/sw.js'),
+      src: options.swTemplate,
       fileName: options.swDest,
       options: {
         ...options,
