@@ -11,7 +11,7 @@ module.exports = {
   },
 
   modules: [
-    // '@nuxtjs/onesignal',
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa'
   ],
 
