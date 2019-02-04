@@ -1,4 +1,4 @@
-importScripts(<%= [options.wbDst, ...options.importScripts].map((i) => `'${i}'`).join(', ') %>)
+importScripts(<%= [options.workboxURL, ...options.importScripts].map((i) => `'${i}'`).join(', ') %>)
 
 // --------------------------------------------------
 // Configure

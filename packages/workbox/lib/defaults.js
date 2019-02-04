@@ -1,6 +1,11 @@
 module.exports = {
-  importScripts: [],
+  dev: false,
+
+  workboxVersion: '3.6.3-5',
+  workboxURL: undefined,
   workboxConfig: undefined,
+
+  importScripts: [],
 
   offline: true,
   offlinePage: null,
@@ -14,27 +19,17 @@ module.exports = {
 
   runtimeCaching: [],
 
+  cacheAssets: true,
+
   autoRegister: true,
 
   routerBase: undefined,
   publicPath: undefined,
 
+  swTemplate: undefined,
   swSrc: undefined,
-  swDest: undefined,
-  swURL: undefined,
+  swUrl: undefined,
   swScope: undefined,
-
-  globPatterns: [
-    '**/*.{js,css}'
-  ],
-
-  clientBuildDir: undefined,
-
-  globDirectory: undefined,
-
-  modifyUrlPrefix: {
-    '': undefined
-  },
 
   cacheOptions: {
     cacheId: process.env.npm_package_name || 'nuxt',

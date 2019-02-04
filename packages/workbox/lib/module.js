@@ -4,12 +4,9 @@ const { getOptions } = require('./options')
 const { readJSFiles } = require('./utils')
 
 module.exports = function nuxtWorkbox (moduleOptions) {
-  // Options will be lazy evaluated on build only
-  let options
-
   this.nuxt.hook('build:before', () => {
-    // Ealuate options
-    options = getOptions.call(this, moduleOptions)
+    // Get options
+    const options = getOptions.call(this, moduleOptions)
 
     // Add sw.plugin.js
     if (options.autoRegister) {
@@ -24,7 +21,7 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     // Add sw.js
     this.addTemplate({
       src: path.resolve(__dirname, '../templates/sw.js'),
-      fileName: 'sw.js',
+      fileName: options.swDest,
       options: {
         ...options,
         routingExtensions: readJSFiles(options.routingExtensions),
