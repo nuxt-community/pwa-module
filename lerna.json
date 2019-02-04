@@ -1,8 +1,15 @@
 {
   "version": "2.6.0",
   "useWorkspaces": true,
-  "npmClient": "npm",
+  "npmClient": "yarn",
+  "conventionalCommits": true,
+  "exact": true,
   "packages": [
     "packages/*"
-  ]
+  ],
+  "command": {
+    "publish": {
+      "npmClient": "npm"
+    }
+  }
 }
