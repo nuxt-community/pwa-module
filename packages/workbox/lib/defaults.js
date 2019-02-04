@@ -1,9 +1,8 @@
 module.exports = {
-  dev: false,
-
   workboxVersion: '3.6.3-5',
   workboxURL: undefined,
-  workboxConfig: undefined,
+
+  config: {},
 
   importScripts: [],
 

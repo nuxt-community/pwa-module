@@ -26,7 +26,7 @@ function getOptions (moduleOptions) {
 
   // swTemplate
   if (!options.swTemplate) {
-    options.swTemplate = path.resolve(__dirname, '../templates/sw.js')
+    options.swTemplate = path.resolve(__dirname, `../templates/sw${this.options.dev ? '.dev' : ''}.js`)
   }
 
   // swDest
@@ -45,10 +45,9 @@ function getOptions (moduleOptions) {
   }
 
   // Cache all _nuxt resources at runtime
-  // They are hashed by webpack so are safe to loaded by cacheFirst handler
   if (options.cacheAssets) {
     options.runtimeCaching.push({
-      urlPattern: fixUrl(options.publicPath + '/.*'),
+      urlPattern: fixUrl(`${options.publicPath}/(?!.*hot-update).+`),
       handler: 'cacheFirst'
     })
   }
@@ -71,6 +70,12 @@ function getOptions (moduleOptions) {
   // Workbox URL
   if (!options.workboxURL) {
     options.workboxURL = `https://cdn.jsdelivr.net/npm/workbox-cdn@${options.workboxVersion}/workbox/workbox-sw.js`
+  }
+
+  // Workbox Config
+  if (!options.config.debug) {
+    // Debug field is by default set to true for localhost domain which is not always ideal
+    options.config.debug = this.options.dev
   }
 
   return options

@@ -8,11 +8,6 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     // Get options
     const options = getOptions.call(this, moduleOptions)
 
-    // Disable if on dev mode and dev options is false
-    if (this.options.dev && !options.dev) {
-      return
-    }
-
     // Register plugin
     if (options.autoRegister) {
       this.addPlugin({
@@ -26,15 +21,17 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     }
 
     // Add sw.js
-    this.addTemplate({
-      src: options.swTemplate,
-      fileName: options.swDest,
-      options: {
-        ...options,
-        routingExtensions: readJSFiles(options.routingExtensions),
-        cachingExtensions: readJSFiles(options.cachingExtensions)
-      }
-    })
+    if (options.swTemplate) {
+      this.addTemplate({
+        src: options.swTemplate,
+        fileName: options.swDest,
+        options: {
+          ...options,
+          routingExtensions: readJSFiles(options.routingExtensions),
+          cachingExtensions: readJSFiles(options.cachingExtensions)
+        }
+      })
+    }
   })
 }
 

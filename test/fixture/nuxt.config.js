@@ -6,19 +6,12 @@ module.exports = {
   buildDir: path.resolve(__dirname, '.nuxt'),
   dev: false,
 
-  build: {
-    filenames: {
-      app: '[name].js',
-      chunk: '[name].js'
-    }
-  },
-
   generate: {
     dir: path.resolve(__dirname, 'dist')
   },
 
   modules: [
-    '@nuxtjs/onesignal',
+    // '@nuxtjs/onesignal',
     '@nuxtjs/pwa'
   ],
 
@@ -28,7 +21,9 @@ module.exports = {
   },
 
   workbox: {
-    dev: true,
+    config: {
+      debug: true
+    },
     importScripts: [
       'custom-sw.js'
     ],
