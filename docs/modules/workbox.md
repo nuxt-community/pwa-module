@@ -36,7 +36,6 @@ workbox: {
 
 (Boolean) Cache all routes. Enabled by default.
 
-
 ### `offlinePage`
 
 (String) Enables routing all offline requests to the specified path. (Example: `/offline.html`)
@@ -65,17 +64,7 @@ workbox: {
 
 ### `runtimeCaching`
 
-(Array) Custom routes to cache with specific strategy. Useful for caching requests to other origins. Example:
-
-```js
-[
-  {
-    urlPattern: 'https://google.com/.*',
-    handler: 'cacheFirst',
-    method: 'GET'
-  }
-]
-```
+(Array) Custom routes to cache with specific strategy. Useful for caching requests to other origins.
 
 ### `cacheAssets`
 
@@ -109,12 +98,13 @@ workbox: {
 
 (String) Defaults to `routerBase`.
 
-
 ### Adding custom runtimeCaching items (For CDN)
 
-By default resources in dist (`/_nuxt/`) will be cached with CacheFirst and other requests to same domain will be cached with NetworkFirst strategy. Also all JS and CSS webpack emitted resources will be precached.
+By default resources in dist (`/_nuxt/`) will be cached with `cacheFirst` and other requests to same domain will be cached with `networkFirst` strategy.
 
 If you have a custom CDN and need to cache requests for it, simply use `runtimeCaching`:
+
+**IMPORTANT:** Please note that workbox will **not** cache opaque responses. So please only use either `networkFirst` or `staleWhileRevalidate` strategies. Please see [Handle Third Party Requests](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests).
 
 nuxt.config.js
 ```js
@@ -124,9 +114,9 @@ workbox: {
         // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
         urlPattern: 'https://my-cdn.com/.*',
         // Defaults to `networkFirst` if omitted
-        handler: 'cacheFirst',
+        // handler: 'networkFirst',
         // Defaults to `GET` if omitted
-        method: 'GET'
+        // method: 'GET'
       }
     ]
 }
