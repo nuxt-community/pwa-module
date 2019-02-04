@@ -26,7 +26,6 @@ module.exports = {
   publicPath: undefined,
 
   swTemplate: undefined,
-  swSrc: undefined,
   swUrl: undefined,
   swScope: undefined,
 
