@@ -83,7 +83,7 @@ workbox: {
 
 **NOTE:** This is considered safe because all assets should be correctly hashed there.
 
-**NOTE:** Nuxt smart links triegger chunk downloads for next pages when user sees a link to a non-cached page.
+**NOTE:** Nuxt smart links trigger chunk downloads for next pages when user sees a link to a non-cached page.
 
 ### `autoRegister`
 
