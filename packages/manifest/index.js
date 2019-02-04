@@ -1,5 +1,4 @@
 const hash = require('hash-sum')
-const debug = require('debug')('nuxt:pwa')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
@@ -7,7 +6,6 @@ const find = (arr, key, val) => arr.find(obj => val ? obj[key] === val : obj[key
 
 module.exports = function nuxtManifest (options) {
   const hook = () => {
-    debug('Adding manifest')
     addManifest.call(this, options)
   }
 

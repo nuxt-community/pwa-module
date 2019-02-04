@@ -1,14 +1,12 @@
 const { existsSync } = require('fs-extra')
 const path = require('path')
 const Jimp = require('jimp')
-const debug = require('debug')('nuxt:pwa')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 
 module.exports = function nuxtIcon (options) {
   const hook = () => {
-    debug('Adding icons')
     return generateIcons.call(this, options)
   }
 
@@ -43,7 +41,6 @@ function generateIcons (moduleOptions) {
   // Ensure icon file exists
   if (!existsSync(iconSrc)) {
     /* eslint-disable no-console */
-    debug(path.relative(this.options.srcDir, iconSrc), 'not found! Please create one or disable icon module.')
     return
   }
 

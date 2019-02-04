@@ -1,11 +1,8 @@
-const debug = require('debug')('nuxt:pwa')
-
 const find = (arr, key, val) => arr.find(obj => val ? obj[key] === val : obj[key])
 const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 
 module.exports = function nuxtMeta (_options) {
   const hook = () => {
-    debug('Adding meta')
     generateMeta.call(this, _options)
   }
 
@@ -212,8 +209,6 @@ function generateMeta (_options) {
           content: options.ogImage.type
         })
       }
-    } else {
-      debug('No host specified, skipping og:image')
     }
   }
 

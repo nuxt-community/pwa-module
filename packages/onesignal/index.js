@@ -1,7 +1,6 @@
 const path = require('path')
 const { writeFileSync, readFileSync } = require('fs')
 const hashSum = require('hash-sum')
-const debug = require('debug')('nuxt:pwa')
 const { defaultsDeep } = require('lodash')
 
 const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
@@ -13,7 +12,6 @@ const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
 
 module.exports = function nuxtOneSignal (moduleOptions) {
   const hook = () => {
-    debug('Adding OneSignal')
     addOneSignal.call(this, moduleOptions)
   }
 
@@ -92,17 +90,11 @@ function addOneSignal (moduleOptions) {
   if (!this.options.manifest) {
     this.options.manifest = {}
   }
-  if (this.options.manifest.gcm_sender_id) {
-    debug('WARNING: Overriding gcm_sender_id for OnSignal')
-  }
   this.options.manifest.gcm_sender_id = options.GcmSenderId
 
   // Adjust swURL option of Workbox for oneSignal
   if (!this.options.workbox) {
     this.options.workbox = {}
-  }
-  if (this.options.workbox.swURL) {
-    debug('WARNING: Overriding swURL for OneSignal')
   }
   this.options.workbox.swURL = 'OneSignalSDKWorker.js'
 
