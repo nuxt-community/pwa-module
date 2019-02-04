@@ -6,8 +6,5 @@
   "repository": "https://github.com/nuxt-community/pwa-module",
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "lodash": "^4.17.11"
   }
 }
