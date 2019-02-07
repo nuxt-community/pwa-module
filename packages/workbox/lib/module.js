@@ -8,6 +8,11 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     // Get options
     const options = getOptions.call(this, moduleOptions)
 
+    // Warning for dev option
+    if (options.dev) {
+      console.warn('`workbox.dev` enabled. Remember to clean application data and unregister service workers in your browser or you will experience infinity loop!')
+    }
+
     // Register plugin
     if (options.autoRegister) {
       this.addPlugin({
