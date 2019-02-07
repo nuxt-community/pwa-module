@@ -185,3 +185,17 @@ Add it to the `plugins` section of `nuxt.config.js`:
   ]
 }
 ```
+
+### Basic Auth
+
+As a workaround for making basic auth working as described [here](https://thatemil.com/blog/2018/02/21/pwa-basic-auth)
+you have to enable `manifst.crossorigin` in `nuxt.config.js`:
+
+```js
+{
+  manifest: {
+    crossorigin: 'use-credentials'
+  }
+}
+```
+
