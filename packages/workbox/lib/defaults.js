@@ -4,6 +4,8 @@ module.exports = {
 
   config: {},
 
+  dev: false,
+
   importScripts: [],
 
   offline: true,

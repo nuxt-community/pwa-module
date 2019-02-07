@@ -28,6 +28,10 @@ workbox: {
 
 (Object) Options to be passed to workbox before using it's modules. By default `debug` field will be set to `false` for production builds.
 
+### `dev`
+
+(Boolean) Enable workbox in dev mode of nuxt. (Disabled by default)
+
 ### `importScripts`
 
 (Array) Additional scripts to be imported in service worker script. (Relative to `/`. Can be placed in `assets/` directory)

@@ -21,7 +21,8 @@ function getOptions (moduleOptions) {
 
   // swTemplate
   if (!options.swTemplate) {
-    options.swTemplate = path.resolve(__dirname, `../templates/sw${this.options.dev ? '.dev' : ''}.js`)
+    const disabled = this.options.dev && !options.dev
+    options.swTemplate = path.resolve(__dirname, `../templates/sw${disabled ? '.disable' : ''}.js`)
   }
 
   // swDest
@@ -70,7 +71,7 @@ function getOptions (moduleOptions) {
   // Workbox Config
   if (!options.config.debug) {
     // Debug field is by default set to true for localhost domain which is not always ideal
-    options.config.debug = this.options.dev
+    options.config.debug = options.dev || this.options.dev
   }
 
   return options
