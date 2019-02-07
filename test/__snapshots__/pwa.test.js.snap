@@ -84,7 +84,7 @@ workbox.precaching.precacheAndRoute([], {
 
 // Register route handlers for runtimeCaching
 workbox.routing.registerRoute(new RegExp('https://google.com/.*'), workbox.strategies.cacheFirst ({}), 'GET')
-workbox.routing.registerRoute(new RegExp('/_nuxt/(?!.*hot-update).+'), workbox.strategies.cacheFirst ({}), 'GET')
-workbox.routing.registerRoute(new RegExp('/.*'), workbox.strategies.networkFirst ({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/_nuxt/(?!.*(__webpack_hmr|hot-update))'), workbox.strategies.cacheFirst ({}), 'GET')
+workbox.routing.registerRoute(new RegExp('^/(?!.*(__webpack_hmr|hot-update))'), workbox.strategies.networkFirst ({}), 'GET')
 "
 `;

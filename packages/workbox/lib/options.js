@@ -3,6 +3,8 @@ const path = require('path')
 const defaults = require('./defaults')
 const { fixUrl, isUrl } = require('./utils')
 
+const HMRRegex = '(?!.*(__webpack_hmr|hot-update))'
+
 function getOptions (moduleOptions) {
   const options = Object.assign({}, defaults, moduleOptions, this.options.workbox)
 
@@ -47,7 +49,7 @@ function getOptions (moduleOptions) {
   // Cache all _nuxt resources at runtime
   if (options.cacheAssets) {
     options.runtimeCaching.push({
-      urlPattern: fixUrl(`${options.publicPath}/(?!.*hot-update).+`),
+      urlPattern: fixUrl(`${options.publicPath}/${HMRRegex}`),
       handler: 'cacheFirst'
     })
   }
@@ -55,7 +57,7 @@ function getOptions (moduleOptions) {
   // Optionally cache other routes for offline
   if (options.offline && !options.offlinePage) {
     options.runtimeCaching.push({
-      urlPattern: fixUrl(`${options.routerBase}/.*`),
+      urlPattern: fixUrl(`^${options.routerBase}/${HMRRegex}`),
       handler: 'networkFirst'
     })
   }
