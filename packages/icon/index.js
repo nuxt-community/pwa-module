@@ -15,22 +15,37 @@ module.exports = function nuxtIcon (options) {
   this.nuxt.hook('build:before', hook)
 }
 
+const defaults = {
+  iconSrc: null,
+  iconFileName: 'icon.png',
+  sizes: [64, 120, 144, 152, 192, 384, 512],
+  targetDir: 'icons'
+}
+
 function generateIcons (moduleOptions) {
   // Combine sources
-  const defaults = {
-    iconSrc: null,
-    iconFileName: 'icon.png',
-    sizes: [64, 120, 144, 152, 192, 384, 512],
-    targetDir: 'icons'
-  }
   const options = Object.assign({}, defaults, this.options.icon, moduleOptions)
-  const iconSrc = options.iconSrc || path.resolve(this.options.srcDir, this.options.dir.static, options.iconFileName)
 
   const { publicPath } = getRouteParams(this.options)
 
+  // Resolve iconSrc
+  let iconSrc
+
+  const iconSearchPath = [
+    options.iconSrc,
+    path.resolve(this.options.srcDir, this.options.dir.static, options.iconFileName),
+    path.resolve(this.options.srcDir, this.options.dir.assets, options.iconFileName)
+  ]
+
+  for (const p of iconSearchPath) {
+    if (existsSync(p)) {
+      iconSrc = p
+      break
+    }
+  }
+
   // Ensure icon file exists
   if (!existsSync(iconSrc)) {
-    /* eslint-disable no-console */
     return
   }
 
