@@ -33,7 +33,7 @@ function addOneSignal (moduleOptions) {
     cdn: true,
     GcmSenderId: '482941778795',
     importScripts: [
-      '/sw.js'
+      '/sw.js?' + Date.now()
     ],
     init: {
       allowLocalhostAsSecureOrigin: true,
