@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.3](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2019-02-07)
+
+
+### Bug Fixes
+
+* **onesignal:** add cache query to sw.js ([33f8f61](https://github.com/nuxt-community/pwa-module/commit/33f8f61))
+* **pwa-utils:** ensure joinUrl not modifying scheme part ([09a465a](https://github.com/nuxt-community/pwa-module/commit/09a465a))
+
+
+### Features
+
+* options.dev ([fb0d38c](https://github.com/nuxt-community/pwa-module/commit/fb0d38c))
+
+
+
+
+
 # [3.0.0-beta.2](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2019-02-07)
 
 
