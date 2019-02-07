@@ -20,6 +20,10 @@ module.exports = {
     description: 'Test Project Description'
   },
 
+  // build: {
+  //   publicPath: 'https://cdn.com/assets/'
+  // },
+
   workbox: {
     offlineAnalytics: true,
     dev: true,

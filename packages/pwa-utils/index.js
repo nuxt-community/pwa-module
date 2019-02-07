@@ -9,7 +9,7 @@ function isUrl (url) {
 }
 
 function joinUrl (...args) {
-  return path.join(...args)
+  return path.join(...args).replace(':/', '://')
 }
 
 function getRouteParams (options) {
