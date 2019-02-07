@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.1](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.0...v3.0.0-beta.1) (2019-02-07)
+
+
+### Features
+
+* **icon:** allow reading icon from assetc/icon.png ([#29](https://github.com/nuxt-community/pwa-module/issues/29)) ([9e0fde3](https://github.com/nuxt-community/pwa-module/commit/9e0fde3))
+* add HMR test suit ([ff3d502](https://github.com/nuxt-community/pwa-module/commit/ff3d502))
+* use better regexes ([318228e](https://github.com/nuxt-community/pwa-module/commit/318228e))
+
+
+
+
+
 # [3.0.0-beta.0](https://github.com/nuxt-community/pwa-module/compare/v2.6.0...v3.0.0-beta.0) (2019-02-04)
 
 
