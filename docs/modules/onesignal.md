@@ -31,6 +31,8 @@ oneSignal: {
 }
 ```
 
+Add `OneSignalSDKWorker*` to `.gitignore`
+
 See references below for all `init` options.
 
 ### Async Functions
