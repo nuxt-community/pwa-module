@@ -34,7 +34,7 @@ workbox: {
 
 **IMPORTANT NOTE:** Remember to clean application data and unregister service workers in your browser or you will experience infinity loop!
 
-It is recommanded to test workbox using `nuxt build`/`nuxt start`. You can enable debug more using `workbox.config.debug`.
+It is recommanded to test workbox using `nuxt build`/`nuxt start`. You can enable debug mode using `workbox.config.debug`.
 
 ### `importScripts`
 
