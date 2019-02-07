@@ -24,6 +24,11 @@ workbox.skipWaiting()
 workbox.googleAnalytics.initialize()
 <% } %>
 
+<% if (options.workboxExtensions) { %>
+// -- Start of workboxExtensions --
+<%= options.workboxExtensions %>// -- End of workboxExtensions --
+<% } %>
+
 // --------------------------------------------------
 // Precaches
 // --------------------------------------------------
@@ -46,8 +51,7 @@ workbox.precaching.precacheAndRoute(['<%= options.offlinePage %>'])
 // --------------------------------------------------
 <% if (options.cachingExtensions) { %>
 // -- Start of cachingExtensions --
-<%= options.cachingExtensions %>
-// -- End of cachingExtensions --
+<%= options.cachingExtensions %>// -- End of cachingExtensions --
 <% } %>
 
 // Register route handlers for runtimeCaching
@@ -63,6 +67,5 @@ workbox.routing.registerRoute(new RegExp('/.*'), ({event}) => {
 
 <% if (options.routingExtensions) { %>
 // -- Start of routingExtensions --
-<%= options.routingExtensions %>
-// -- End of routingExtensions --
+<%= options.routingExtensions %>// -- End of routingExtensions --
 <% } %>

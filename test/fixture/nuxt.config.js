@@ -28,6 +28,15 @@ module.exports = {
     importScripts: [
       'custom-sw.js'
     ],
+    workboxExtensions: [
+      '~/sw/workbox'
+    ],
+    cachingExtensions: [
+      '~/sw/caching'
+    ],
+    routingExtensions: [
+      '~/sw/routing'
+    ],
     runtimeCaching: [
       {
         urlPattern: 'https://google.com/.*',

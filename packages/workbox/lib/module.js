@@ -27,8 +27,9 @@ module.exports = function nuxtWorkbox (moduleOptions) {
         fileName: options.swDest,
         options: {
           ...options,
-          routingExtensions: readJSFiles(options.routingExtensions),
-          cachingExtensions: readJSFiles(options.cachingExtensions)
+          routingExtensions: readJSFiles.call(this, options.routingExtensions),
+          cachingExtensions: readJSFiles.call(this, options.cachingExtensions),
+          workboxExtensions: readJSFiles.call(this, options.workboxExtensions)
         }
       })
     }

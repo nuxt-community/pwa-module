@@ -71,6 +71,10 @@ workbox.skipWaiting()
 // Enable offline Google Analytics tracking
 workbox.googleAnalytics.initialize()
 
+// -- Start of workboxExtensions --
+// Workbox Extension
+// -- End of workboxExtensions --
+
 // --------------------------------------------------
 // Precaches
 // --------------------------------------------------
@@ -85,9 +89,17 @@ workbox.precaching.precacheAndRoute([], {
 // Runtime Caching
 // --------------------------------------------------
 
+// -- Start of cachingExtensions --
+// Caching Extension
+// -- End of cachingExtensions --
+
 // Register route handlers for runtimeCaching
 workbox.routing.registerRoute(new RegExp('https://google.com/.*'), workbox.strategies.cacheFirst ({}), 'GET')
 workbox.routing.registerRoute(new RegExp('/_nuxt/(?!.*(__webpack_hmr|hot-update))'), workbox.strategies.cacheFirst ({}), 'GET')
 workbox.routing.registerRoute(new RegExp('^/(?!.*(__webpack_hmr|hot-update))'), workbox.strategies.networkFirst ({}), 'GET')
+
+// -- Start of routingExtensions --
+// Routing Extension
+// -- End of routingExtensions --
 "
 `;
