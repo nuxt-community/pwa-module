@@ -31,7 +31,7 @@ oneSignal: {
 }
 ```
 
-Add `OneSignalSDKWorker*` to `.gitignore`
+Add `OneSignalSDK*` to `.gitignore`
 
 See references below for all `init` options.
 
