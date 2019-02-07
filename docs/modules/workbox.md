@@ -203,3 +203,4 @@ you have to enable `manifst.crossorigin` in `nuxt.config.js`:
 }
 ```
 
+Thanks to [@henrixapp](https://github.com/henrixapp) for the tip.
