@@ -19,6 +19,11 @@ workbox.clientsClaim()
 workbox.skipWaiting()
 <% } %>
 
+<% if (options.offlineAnalytics) { %>
+// Enable offline Google Analytics tracking
+workbox.googleAnalytics.initialize()
+<% } %>
+
 // --------------------------------------------------
 // Precaches
 // --------------------------------------------------

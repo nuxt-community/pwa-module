@@ -10,6 +10,8 @@ module.exports = {
   offlinePage: null,
   offlineAssets: [],
 
+  offlineAnalytics: false,
+
   cachingExtensions: [],
   routingExtensions: [],
 

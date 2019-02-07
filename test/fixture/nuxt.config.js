@@ -21,6 +21,7 @@ module.exports = {
   },
 
   workbox: {
+    offlineAnalytics: true,
     config: {
       debug: true
     },

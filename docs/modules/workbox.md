@@ -32,6 +32,10 @@ workbox: {
 
 (Array) Additional scripts to be imported in service worker script. (Relative to `/`. Can be placed in `assets/` directory)
 
+###offlineAnalytics*
+
+(Boolean) Enable offline Google Analytics tracking [through workbox](https://developers.google.com/web/tools/workbox/guides/enable-offline-analytics) (Disabled by default)
+
 ### `offline`
 
 (Boolean) Cache all routes. Enabled by default.
