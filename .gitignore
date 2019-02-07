@@ -8,3 +8,5 @@ coverage
 dist/
 _book
 .DS_Store
+.vscode
+
