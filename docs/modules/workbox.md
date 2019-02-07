@@ -204,3 +204,33 @@ you have to enable `manifst.crossorigin` in `nuxt.config.js`:
 ```
 
 Thanks to [@henrixapp](https://github.com/henrixapp) for the tip.
+
+### Enable rangeRequests
+
+Safari requires rangeRequests.
+
+`plugins/workbox-range-request.js`:
+
+```js
+workbox.routing.registerRoute(
+  /.*\.(mp4|webm)/,
+  workbox.strategies.cacheFirst({
+    plugins: [
+      new workbox.rangeRequests.Plugin(),
+    ],
+  }),
+  'GET'
+);
+```
+
+`nuxt.config.js`:
+
+```js
+{
+  workbox: {
+    cachingExtensions: '@/plugins/workbox-range-request.js'
+  }
+}
+```
+
+Thanks to [@CarterLi](https://github.com/CarterLi) for the tip.
