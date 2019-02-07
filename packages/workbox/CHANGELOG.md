@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.2](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2019-02-07)
+
+
+### Features
+
+* offlineAnalytics ([#55](https://github.com/nuxt-community/pwa-module/issues/55)) ([4c4d3ff](https://github.com/nuxt-community/pwa-module/commit/4c4d3ff))
+* workboxExtensions and extension reading fixes ([5c56484](https://github.com/nuxt-community/pwa-module/commit/5c56484))
+
+
+
+
+
 # [3.0.0-beta.1](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.0...v3.0.0-beta.1) (2019-02-07)
 
 
