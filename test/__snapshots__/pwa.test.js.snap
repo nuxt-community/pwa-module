@@ -68,6 +68,9 @@ workbox.clientsClaim()
 // Skip over the SW waiting lifecycle stage
 workbox.skipWaiting()
 
+// Enable offline Google Analytics tracking
+workbox.googleAnalytics.initialize()
+
 // --------------------------------------------------
 // Precaches
 // --------------------------------------------------
