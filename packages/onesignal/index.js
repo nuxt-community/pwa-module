@@ -2,9 +2,7 @@ const path = require('path')
 const { writeFileSync, readFileSync } = require('fs')
 const hashSum = require('hash-sum')
 const { defaultsDeep } = require('lodash')
-
-const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
-const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
+const { getRouteParams, joinUrl } = require('@nuxtjs/pwa-utils')
 
 // =============================================
 // oneSignal Module
@@ -27,15 +25,7 @@ module.exports = function nuxtOneSignal (moduleOptions) {
 // =============================================
 
 function addOneSignal (moduleOptions) {
-  // Router Base
-  const routerBase = this.options.router.base
-  let publicPath = fixUrl(`${routerBase}/${this.options.build.publicPath}`)
-  if (isUrl(this.options.build.publicPath)) { // CDN
-    publicPath = this.options.build.publicPath
-    if (publicPath.indexOf('//') === 0) {
-      publicPath = '/' + publicPath // Escape fixUrl
-    }
-  }
+  const { publicPath } = getRouteParams(this.options)
 
   // Merge options
   const defaults = {
@@ -65,7 +55,7 @@ function addOneSignal (moduleOptions) {
       const OneSignalSDKHash = hashSum(OneSignalSDKJS)
       const OneSignalSDKFile = `ons.${OneSignalSDKHash}.js`
 
-      options.OneSignalSDK = fixUrl(publicPath + '/' + OneSignalSDKFile)
+      options.OneSignalSDK = joinUrl(publicPath, OneSignalSDKFile)
 
       this.options.build.plugins.push({
         apply (compiler) {

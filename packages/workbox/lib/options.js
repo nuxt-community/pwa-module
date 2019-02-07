@@ -1,7 +1,7 @@
 const path = require('path')
 
 const defaults = require('./defaults')
-const { fixUrl, isUrl } = require('./utils')
+const { joinUrl, getRouteParams } = require('@nuxtjs/pwa-utils')
 
 const HMRRegex = '(?!.*(__webpack_hmr|hot-update))'
 
@@ -15,15 +15,8 @@ function getOptions (moduleOptions) {
 
   // publicPath
   if (!options.publicPath) {
-    if (isUrl(this.options.build.publicPath)) {
-      // CDN
-      options.publicPath = this.options.build.publicPath
-      if (options.publicPath.indexOf('//') === 0) {
-        options.publicPath = '/' + options.publicPath
-      }
-    } else {
-      options.publicPath = fixUrl(`${options.routerBase}/${this.options.build.publicPath}`)
-    }
+    const { publicPath } = getRouteParams(this.options)
+    options.publicPath = publicPath
   }
 
   // swTemplate
@@ -38,18 +31,18 @@ function getOptions (moduleOptions) {
 
   // swURL
   if (!options.swURL) {
-    options.swURL = fixUrl(`${options.routerBase}/sw.js`)
+    options.swURL = joinUrl(options.routerBase, 'sw.js')
   }
 
   // swScope
   if (!options.swScope) {
-    options.swScope = fixUrl(`${options.routerBase}/`)
+    options.swScope = options.routerBase
   }
 
   // Cache all _nuxt resources at runtime
   if (options.cacheAssets) {
     options.runtimeCaching.push({
-      urlPattern: fixUrl(`${options.publicPath}/${HMRRegex}`),
+      urlPattern: joinUrl(options.publicPath, HMRRegex),
       handler: 'cacheFirst'
     })
   }
@@ -57,7 +50,7 @@ function getOptions (moduleOptions) {
   // Optionally cache other routes for offline
   if (options.offline && !options.offlinePage) {
     options.runtimeCaching.push({
-      urlPattern: fixUrl(`^${options.routerBase}/${HMRRegex}`),
+      urlPattern: joinUrl(`^${options.routerBase}`, HMRRegex),
       handler: 'networkFirst'
     })
   }

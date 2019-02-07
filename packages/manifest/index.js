@@ -1,8 +1,6 @@
 const hash = require('hash-sum')
 
-const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
-const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
-const find = (arr, key, val) => arr.find(obj => val ? obj[key] === val : obj[key])
+const { joinUrl, getRouteParams, find } = require('@nuxtjs/pwa-utils')
 
 module.exports = function nuxtManifest (options) {
   const hook = () => {
@@ -17,15 +15,7 @@ module.exports = function nuxtManifest (options) {
 }
 
 function addManifest (options) {
-  // routerBase and publicPath
-  const routerBase = this.options.router.base
-  let publicPath = fixUrl(`${routerBase}/${this.options.build.publicPath}`)
-  if (isUrl(this.options.build.publicPath)) { // CDN
-    publicPath = this.options.build.publicPath
-    if (publicPath.indexOf('//') === 0) {
-      publicPath = '/' + publicPath // escape fixUrl
-    }
-  }
+  const { routerBase, publicPath } = getRouteParams(this.options)
 
   // Defaults
   const defaults = {
@@ -69,7 +59,7 @@ function addManifest (options) {
 
   // Add manifest meta
   if (!find(this.options.head.link, 'rel', 'manifest')) {
-    const baseAttribute = { rel: 'manifest', href: fixUrl(`${manifest.publicPath}/${manifestFileName}`) }
+    const baseAttribute = { rel: 'manifest', href: joinUrl(manifest.publicPath, manifestFileName) }
     const attribute = manifest.crossorigin ? Object.assign({}, baseAttribute, { crossorigin: manifest.crossorigin }) : baseAttribute
     this.options.head.link.push(attribute)
   } else {

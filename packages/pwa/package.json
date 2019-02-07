@@ -11,6 +11,7 @@
     "@nuxtjs/icon": "3.0.0-beta.0",
     "@nuxtjs/manifest": "3.0.0-beta.0",
     "@nuxtjs/meta": "3.0.0-beta.0",
+    "@nuxtjs/pwa-utils": "3.0.0-beta.0",
     "@nuxtjs/workbox": "3.0.0-beta.0"
   }
 }

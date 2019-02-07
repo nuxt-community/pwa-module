@@ -1,9 +1,7 @@
 const { existsSync } = require('fs-extra')
 const path = require('path')
 const Jimp = require('jimp')
-
-const fixUrl = url => url.replace(/\/\//g, '/').replace(':/', '://')
-const isUrl = url => url.indexOf('http') === 0 || url.indexOf('//') === 0
+const { joinUrl, getRouteParams } = require('@nuxtjs/pwa-utils')
 
 module.exports = function nuxtIcon (options) {
   const hook = () => {
@@ -28,15 +26,7 @@ function generateIcons (moduleOptions) {
   const options = Object.assign({}, defaults, this.options.icon, moduleOptions)
   const iconSrc = options.iconSrc || path.resolve(this.options.srcDir, this.options.dir.static, options.iconFileName)
 
-  // routerBase and publicPath
-  const routerBase = this.options.router.base
-  let publicPath = fixUrl(`${routerBase}/${this.options.build.publicPath}`)
-  if (isUrl(this.options.build.publicPath)) { // CDN
-    publicPath = this.options.build.publicPath
-    if (publicPath.indexOf('//') === 0) {
-      publicPath = `/${publicPath}` // escape fixUrl
-    }
-  }
+  const { publicPath } = getRouteParams(this.options)
 
   // Ensure icon file exists
   if (!existsSync(iconSrc)) {
@@ -66,7 +56,7 @@ function generateIcons (moduleOptions) {
       const assetIcons = []
       const exportIcons = {}
       icons.forEach(icon => {
-        const src = fixUrl(`${publicPath}/${icon.fileName}`)
+        const src = joinUrl(publicPath, icon.fileName)
         assetIcons.push({
           src,
           sizes: `${icon.size}x${icon.size}`,
