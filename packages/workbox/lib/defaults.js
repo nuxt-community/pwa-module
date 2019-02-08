@@ -16,6 +16,7 @@ module.exports = {
 
   cachingExtensions: [],
   routingExtensions: [],
+  workboxExtensions: [],
 
   clientsClaim: true,
   skipWaiting: true,
