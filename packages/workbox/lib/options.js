@@ -1,7 +1,7 @@
 const path = require('path')
 
 const defaults = require('./defaults')
-const { joinUrl, getRouteParams } = require('@nuxtjs/pwa-utils')
+const { joinUrl, getRouteParams, startCase } = require('@nuxtjs/pwa-utils')
 
 const HMRRegex = '(?!.*(__webpack_hmr|hot-update))'
 
@@ -47,7 +47,7 @@ function getOptions (moduleOptions) {
   if (options.cacheAssets) {
     options.runtimeCaching.push({
       urlPattern: options.assetsURLPattern,
-      handler: 'cacheFirst'
+      handler: 'CacheFirst'
     })
   }
 
@@ -58,7 +58,7 @@ function getOptions (moduleOptions) {
   if (options.offline && !options.offlinePage) {
     options.runtimeCaching.push({
       urlPattern: options.pagesURLPattern,
-      handler: 'networkFirst'
+      handler: 'NetworkFirst'
     })
   }
 
@@ -75,7 +75,7 @@ function getOptions (moduleOptions) {
   // Normalize runtimeCaching
   options.runtimeCaching = options.runtimeCaching.map(entry => ({
     ...entry,
-    handler: entry.handler || 'networkFirst',
+    handler: startCase(entry.handler) || 'NetworkFirst',
     method: entry.method || 'GET'
   }))
 

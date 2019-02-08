@@ -11,12 +11,12 @@ workbox.setConfig(<%= JSON.stringify(options.config, null, 2) %>)
 
 <% if (options.clientsClaim) { %>
 // Start controlling any existing clients as soon as it activates
-workbox.clientsClaim()
+workbox.core.clientsClaim()
 <% } %>
 
 <% if (options.skipWaiting) { %>
 // Skip over the SW waiting lifecycle stage
-workbox.skipWaiting()
+workbox.core.skipWaiting()
 <% } %>
 
 <% if (options.offlineAnalytics) { %>
@@ -48,13 +48,13 @@ workbox.precaching.precacheAndRoute(<%= JSON.stringify(options.preCaching, null,
 // --------------------------------------------------
 
 // Register route handlers for runtimeCaching
-<% options.runtimeCaching.forEach(r => { %>workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), workbox.strategies.<%= r.handler %> (<%= JSON.stringify(r.strategyOptions || {}) %>), '<%= r.method %>')
+<% options.runtimeCaching.forEach(r => { %>workbox.routing.registerRoute(new RegExp('<%= r.urlPattern %>'), new workbox.strategies.<%= r.handler %> (<%= JSON.stringify(r.strategyOptions || {}) %>), '<%= r.method %>')
 <% }) %>
 
 <% if (options.offlinePage) { %>
 // Register router handler for offlinePage
 workbox.routing.registerRoute(new RegExp('<%= options.pagesURLPattern %>'), ({event}) => {
-  return workbox.strategies.networkOnly().handle({event})
+  return new workbox.strategies.NetworkOnly().handle({event})
     .catch(() => caches.match('<%= options.offlinePage %>'))
 })<% } %>
 

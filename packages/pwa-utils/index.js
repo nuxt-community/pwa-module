@@ -30,9 +30,14 @@ function getRouteParams (options) {
   }
 }
 
+function startCase (str) {
+  return str[0].toUpperCase() + str.substr(1)
+}
+
 module.exports = {
   find,
   isUrl,
   joinUrl,
-  getRouteParams
+  getRouteParams,
+  startCase
 }
