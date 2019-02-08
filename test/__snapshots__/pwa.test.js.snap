@@ -47,6 +47,7 @@ Array [
   "fixture/dist/icons",
   "fixture/dist/icons/index.html",
   "fixture/dist/index.html",
+  "fixture/dist/offline.html",
 ]
 `;
 
@@ -103,7 +104,7 @@ workbox.routing.registerRoute(new RegExp('https://google.com/.*'), workbox.strat
 workbox.routing.registerRoute(new RegExp('/_nuxt/(?!.*(__webpack_hmr|hot-update))'), workbox.strategies.cacheFirst ({}), 'GET')
 
 // Register router handler for offlinePage
-workbox.routing.registerRoute(new RegExp('/.*'), ({event}) => {
+workbox.routing.registerRoute(new RegExp('^/(?!.*(__webpack_hmr|hot-update))'), ({event}) => {
   return workbox.strategies.networkOnly().handle({event})
     .catch(() => caches.match('/offline.html'))
 })
