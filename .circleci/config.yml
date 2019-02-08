@@ -1,5 +1,5 @@
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node
     steps:
@@ -25,10 +25,3 @@ jobs:
       - run:
           name: Tests
           command: yarn test && yarn codecov
-
-workflows:
-  version: 2
-
-  test:
-    jobs:
-      - build
