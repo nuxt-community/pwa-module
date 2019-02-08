@@ -1,6 +1,6 @@
 module.exports = {
   // General
-  workboxVersion: '3.6.3-5',
+  workboxVersion: '4.0.0-rc.0',
   workboxURL: undefined,
   importScripts: [],
   autoRegister: true,
