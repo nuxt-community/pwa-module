@@ -19,6 +19,10 @@ workbox.core.clientsClaim()
 workbox.core.skipWaiting()
 <% } %>
 
+<% if (options.cleanupOutdatedCaches) { %>
+workbox.precaching.cleanupOutdatedCaches()
+<% } %>
+
 <% if (options.offlineAnalytics) { %>
 // Enable offline Google Analytics tracking
 workbox.googleAnalytics.initialize()

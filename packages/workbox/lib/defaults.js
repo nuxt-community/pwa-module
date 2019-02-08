@@ -21,6 +21,7 @@ module.exports = {
     revision: undefined
   },
   cachingExtensions: [],
+  cleanupOutdatedCaches: true,
 
   // Offline
   offline: true,
