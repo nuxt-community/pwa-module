@@ -1,41 +1,40 @@
 module.exports = {
+  // General
+  dev: false,
   workboxVersion: '3.6.3-5',
   workboxURL: undefined,
-
-  config: {},
-
-  dev: false,
-
   importScripts: [],
+  autoRegister: true,
+
+  // Router
+  routerBase: undefined,
+  publicPath: undefined,
+
+  // Sw
+  swTemplate: undefined,
+  swUrl: undefined,
+  swScope: undefined,
+
+  // Config
+  config: {},
+  clientsClaim: true,
+  skipWaiting: true,
+  offlineAnalytics: false,
+  workboxExtensions: [],
+
+  // Precache
+  cacheOptions: {
+    cacheId: process.env.npm_package_name || 'nuxt',
+    directoryIndex: '/'
+  },
+  cachingExtensions: [],
 
   offline: true,
   offlinePage: null,
   offlineAssets: [],
 
-  offlineAnalytics: false,
-
-  cachingExtensions: [],
-  routingExtensions: [],
-  workboxExtensions: [],
-
-  clientsClaim: true,
-  skipWaiting: true,
-
+  // Runtime Caching
   runtimeCaching: [],
-
-  cacheAssets: true,
-
-  autoRegister: true,
-
-  routerBase: undefined,
-  publicPath: undefined,
-
-  swTemplate: undefined,
-  swUrl: undefined,
-  swScope: undefined,
-
-  cacheOptions: {
-    cacheId: process.env.npm_package_name || 'nuxt',
-    directoryIndex: '/'
-  }
+  routingExtensions: [],
+  cacheAssets: true
 }
