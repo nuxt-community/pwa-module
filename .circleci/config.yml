@@ -3,14 +3,14 @@ jobs:
   build:
     working_directory: /usr/src/app
     docker:
-      - image: node:alpine
+      - image: circleci/node
     steps:
       # Checkout repository
       - checkout
 
       # Restore cache
       - restore_cache:
-          key: yarn-alpine-{{ checksum "yarn.lock" }}
+          key: yarn-{{ checksum "yarn.lock" }}
 
       # Install dependencies
       - run:
