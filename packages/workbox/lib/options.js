@@ -53,7 +53,7 @@ function getOptions (moduleOptions) {
 
   // Optionally cache other routes for offline
   if (!options.pagesURLPattern) {
-    options.pagesURLPattern = joinUrl(`^${options.routerBase}`, HMRRegex)
+    options.pagesURLPattern = joinUrl(options.routerBase, HMRRegex)
   }
   if (options.offline && !options.offlinePage) {
     options.runtimeCaching.push({

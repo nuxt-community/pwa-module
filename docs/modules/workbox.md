@@ -141,7 +141,7 @@ Default: `/_nuxt/(?!.*(__webpack_hmr|hot-update))`
 
 Default is auto generated based on `router.base`.
 
-Default: `^/(?!.*(__webpack_hmr|hot-update))`
+Default: `/(?!.*(__webpack_hmr|hot-update))`
 
 <!-- SW -->
 

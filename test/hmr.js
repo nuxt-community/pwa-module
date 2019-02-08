@@ -11,7 +11,7 @@ const regexes = {
   cacheFirstCDN: new RegExp(`${CSNPublicPath}/${HMRRegex}`),
 
   // Regex for networkFist
-  networkFirst: new RegExp(`^/${HMRRegex}`)
+  networkFirst: new RegExp(`/${HMRRegex}`)
 }
 
 const lists = {
