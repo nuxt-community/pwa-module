@@ -43,7 +43,7 @@ module.exports = {
       '~/sw/routing'
     ],
     preCaching: [
-      'precahce.1.js'
+      'precache.js'
     ],
     offline: true,
     offlinePage: '/offline.html',

@@ -48,11 +48,12 @@ Array [
   "fixture/dist/icons/index.html",
   "fixture/dist/index.html",
   "fixture/dist/offline.html",
+  "fixture/dist/offline.png",
 ]
 `;
 
 exports[`pwa sw.js 1`] = `
-"importScripts('https://cdn.jsdelivr.net/npm/workbox-cdn@3.6.3-5/workbox/workbox-sw.js', 'custom-sw.js')
+"importScripts('https://cdn.jsdelivr.net/npm/workbox-cdn@4.0.0-rc.0/workbox/workbox-sw.js', 'custom-sw.js')
 
 // --------------------------------------------------
 // Configure
@@ -85,7 +86,7 @@ workbox.googleAnalytics.initialize()
 workbox.precaching.precacheAndRoute([
   \\"/offline.html\\",
   \\"/offline.png\\",
-  \\"precahce.1.js\\"
+  \\"precache.js\\"
 ], {
   \\"cacheId\\": \\"nuxt\\",
   \\"directoryIndex\\": \\"/\\"
