@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.5](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.3...v3.0.0-beta.5) (2019-02-08)
+
+**Note:** Version bump only for package @nuxtjs/pwa
+
+
+
+
+
 # [3.0.0-beta.3](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2019-02-07)
 
 **Note:** Version bump only for package @nuxtjs/pwa

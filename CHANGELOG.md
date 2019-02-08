@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.5](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.3...v3.0.0-beta.5) (2019-02-08)
+
+
+### Bug Fixes
+
+* add workboxExtensions to defaults ([#138](https://github.com/nuxt-community/pwa-module/issues/138)) ([ac8ba74](https://github.com/nuxt-community/pwa-module/commit/ac8ba74))
+
+
+
+
+
 # [3.0.0-beta.3](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2019-02-07)
 
 
