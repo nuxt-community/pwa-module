@@ -79,8 +79,13 @@ workbox.googleAnalytics.initialize()
 // Precaches
 // --------------------------------------------------
 
-// Precache build artifacts
-workbox.precaching.precacheAndRoute([], {
+// Precache assets
+
+workbox.precaching.precacheAndRoute([
+  \\"/offline.html\\",
+  \\"/offline.png\\",
+  \\"precahce.1.js\\"
+], {
   \\"cacheId\\": \\"nuxt\\",
   \\"directoryIndex\\": \\"/\\"
 })
@@ -96,7 +101,12 @@ workbox.precaching.precacheAndRoute([], {
 // Register route handlers for runtimeCaching
 workbox.routing.registerRoute(new RegExp('https://google.com/.*'), workbox.strategies.cacheFirst ({}), 'GET')
 workbox.routing.registerRoute(new RegExp('/_nuxt/(?!.*(__webpack_hmr|hot-update))'), workbox.strategies.cacheFirst ({}), 'GET')
-workbox.routing.registerRoute(new RegExp('^/(?!.*(__webpack_hmr|hot-update))'), workbox.strategies.networkFirst ({}), 'GET')
+
+// Register router handler for offlinePage
+workbox.routing.registerRoute(new RegExp('/.*'), ({event}) => {
+  return workbox.strategies.networkOnly().handle({event})
+    .catch(() => caches.match('/offline.html'))
+})
 
 // -- Start of routingExtensions --
 // Routing Extension

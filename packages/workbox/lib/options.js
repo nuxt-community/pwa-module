@@ -56,6 +56,16 @@ function getOptions (moduleOptions) {
     })
   }
 
+  // Add offlineAssets to precaching
+  if (options.offlineAssets.length) {
+    options.preCaching.unshift(...options.offlineAssets)
+  }
+
+  // Add offlinePage to precaching
+  if (options.offlinePage) {
+    options.preCaching.unshift(options.offlinePage)
+  }
+
   // Normalize runtimeCaching
   options.runtimeCaching = options.runtimeCaching.map(entry => ({
     ...entry,

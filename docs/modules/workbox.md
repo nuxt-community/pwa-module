@@ -67,6 +67,12 @@ It is recommanded to test workbox using `nuxt build`/`nuxt start`. You can enabl
 
 <!-- Precache -->
 
+### `preCaching`
+
+(Array) Cache a set of files when registering service worker. Default is `[]`
+
+Workbox takes a lot of the heavy lifting out of precaching by simplifying the API and ensuring assets are downloaded efficiently.
+
 ### `cacheOptions`
 
 (Object) Default:
@@ -74,7 +80,8 @@ It is recommanded to test workbox using `nuxt build`/`nuxt start`. You can enabl
 ```js
 {
   cacheId: '<npm package name> || nuxt',
-  directoryIndex: '/'
+  directoryIndex: '/',
+  revision: undefined
 }
 ```
 

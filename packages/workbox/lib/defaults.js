@@ -14,9 +14,11 @@ module.exports = {
   workboxExtensions: [],
 
   // Precache
+  preCaching: [],
   cacheOptions: {
     cacheId: process.env.npm_package_name || 'nuxt',
-    directoryIndex: '/'
+    directoryIndex: '/',
+    revision: undefined
   },
   cachingExtensions: [],
 

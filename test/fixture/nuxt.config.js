@@ -42,6 +42,14 @@ module.exports = {
     routingExtensions: [
       '~/sw/routing'
     ],
+    preCaching: [
+      'precahce.1.js'
+    ],
+    offline: true,
+    offlinePage: '/offline.html',
+    offlineAssets: [
+      '/offline.png'
+    ],
     runtimeCaching: [
       {
         urlPattern: 'https://google.com/.*',

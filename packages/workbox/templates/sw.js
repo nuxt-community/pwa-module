@@ -33,17 +33,9 @@ workbox.googleAnalytics.initialize()
 // Precaches
 // --------------------------------------------------
 
-// Precache build artifacts
-workbox.precaching.precacheAndRoute([], <%= JSON.stringify(options.cacheOptions, null, 2) %>)
-
-<% if (options.offlineAssets.length) { %>
-// Precache offlineAssets
-workbox.precaching.precacheAndRoute([<%= options.offlineAssets.map((i) => `'${i}'`).join(', ') %>])
-<% } %>
-
-<% if (options.offlinePage) { %>
-// Precache offlinePage
-workbox.precaching.precacheAndRoute(['<%= options.offlinePage %>'])
+// Precache assets
+<% if (options.preCaching.length) { %>
+workbox.precaching.precacheAndRoute(<%= JSON.stringify(options.preCaching, null, 2) %>, <%= JSON.stringify(options.cacheOptions, null, 2) %>)
 <% } %>
 
 <% if (options.cachingExtensions) { %>
