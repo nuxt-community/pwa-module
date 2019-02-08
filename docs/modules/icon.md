@@ -1,4 +1,8 @@
-# 📦 Icon Module
+---
+sidebar: auto
+---
+
+# Icon Module
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/icon.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/icon/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/icon)
@@ -13,7 +17,8 @@ icon: {
  // Icon options
 }
 ```
-### options
+
+## options
 
 **iconSrc**
 - Default: `[srcDir]/[staticDir]/icon.png`

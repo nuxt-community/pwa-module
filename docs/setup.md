@@ -1,4 +1,8 @@
-# ✅ Quick Setup
+---
+
+---
+
+# Get Started
 
 1. Install npm package:
 
@@ -33,6 +37,3 @@ modules: [
 ```
 
 Also each sub-module has its own configuration. Continue reading docs for detailed info.
-
-
-<h2 align="center">

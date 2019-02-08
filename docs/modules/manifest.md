@@ -1,4 +1,8 @@
-# 📦 Manifest Module
+---
+sidebar: auto
+---
+
+# Manifest Module
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/manifest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/manifest/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest)

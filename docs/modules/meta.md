@@ -1,4 +1,8 @@
-# 📦 Meta Module
+---
+sidebar: auto
+---
+
+# Meta Module
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/meta.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/meta/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
@@ -14,20 +18,21 @@ You can optionally override meta using either `manifest` or `meta` section of `n
 }
 ```
 
-### options
+## options
 
-**charset**
+### `charset`
 - Default: `utf-8`
 
-**viewport**
+### `viewport`
+
 - Default: `width=device-width, initial-scale=1`
 - Meta: `viewport`
 
-**mobileApp**
+### `mobileApp`
 - Default: `true`
 - Meta: `mobile-web-app-capable`
 
-**mobileAppIOS**
+### `mobileAppIOS`
 - Default: `false`
 - Meta: `apple-mobile-web-app-capable`
 
@@ -36,55 +41,55 @@ Please read this resources before you enable `mobileAppIOS` option:
 - https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
 - https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
 
-**appleStatusBarStyle**
+### `appleStatusBarStyle`
 - Default: `default`
 
-**favicon**
+### `favicon`
 - Default: `true` (to use options.icons)
 - Meta: `shortcut icon` + `apple-touch-icon`
 
-**name**
+### `name`
 - Default: *npm_package_name*
 - Meta: `title`
 
-**author**
+### `author`
 - Default: *npm_package_author_name*
 - Meta: `author`
 
-**description**
+### `description`
 - Default: *npm_package_description*
 - Meta: `description`
 
-**theme_color**
+### `theme_color`
 - Default: options.loading.color
 - Meta: `theme-color`
 
-**lang**
+### `lang`
 - Default: `en`
 - Meta: `lang`
 
-**ogType**
+### `ogType`
 - Default: `website`
 - Meta: `og:type`
 
-**ogSiteName**
+### `ogSiteName`
 - Default: same as options.name
 - Meta: `og:site_name`
 
-**ogTitle**
+### `ogTitle`
 - Default: same as options.name
 - Meta: `og:title`
 
-**ogDescription**
+### `ogDescription`
 - Default: same as options.description
 - Meta: `og:description`
 
-**ogHost**
+### `ogHost`
 Specify the domain that the site is hosted. Required for ogImage.
 - Default: `undefined`
 - Meta: `N/A`
 
-**ogImage**
+### `ogImage`
 - Default: `true`
 - Meta: `og:image` and sub-tags
 
@@ -97,24 +102,24 @@ These types are accepted:
   * `width`, `height`: specify the dimensions, respectively.
   * `type`: specify the MIME type.
 
-**ogUrl**
+### `ogUrl`
 - Default: ogHost (if defined)
 - Meta: `og:url`
 
 
-**twitterCard**
+### `twitterCard`
 - Default: `undefined`
 - Meta: `twitter:card
 
-**twitterSite**
+### `twitterSite`
 - Default: `undefined`
 - Meta: `twitter:site
 
-**twitterCreator**
+### `twitterCreator`
 - Default: `undefined`
 - Meta: `twitter:creator`
 
-**nativeUI**
+### `nativeUI`
 - Default: `false`
 
 By setting `meta.nativeUI` to `true` (Defaults to `false`) `viewport` defaults to `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui` and `mobileAppIOS` will be enabled if not explicitly set to `false` which is suitable for native looking mobile apps.

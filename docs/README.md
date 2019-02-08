@@ -1,11 +1,11 @@
-# ⚡ PWA Module
-
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/pwa.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/pwa)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/pwa/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/pwa)
+---
+home: true
+actionText: Get Started →
+actionLink: /setup.html
+---
 
 Progressive Web Apps (PWA) are reliable, fast, and engaging, although there are many things that can take a PWA from a baseline to exemplary experience. ([learn more](https://developers.google.com/web/progressive-web-apps))
 
-> Using Nuxt PWA you can supercharge your current or next Nuxt project with a heavily tested, updated and stable PWA solution and zero-config!
 
 ## Modules
 
@@ -14,11 +14,3 @@ Progressive Web Apps (PWA) are reliable, fast, and engaging, although there are 
 - [**Meta**](./modules/meta.md) - Automatically adds SEO friendly meta data with manifest integration.
 - [**Icon**](./modules/icon.md) - Automatically generates app icons with different sizes.
 - [**OneSignal**](./modules/onesignal.md) - Free background push notifications using OneSignal.
-
-
-## Links
-
-* [Github](https://github.com/nuxt-community/pwa-module)
-
-
-> 👉 To get started head to [Setup](setup.md) section.

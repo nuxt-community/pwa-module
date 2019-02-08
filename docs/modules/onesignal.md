@@ -1,4 +1,8 @@
-# 📦 OneSignal Module
+---
+sidebar: auto
+---
+
+# OneSignal Module
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/onesignal.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/onesignal/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/onesignal)
@@ -35,7 +39,7 @@ Add `OneSignalSDK*` to `.gitignore`
 
 See references below for all `init` options.
 
-### Async Functions
+## Async Functions
 This module exposes oneSignal as `$OneSignal` everywhere. So you can call it.
 Please note that because of async loading of OneSignal SDK script, every action should be pushed into `$OneSignal` stack.
 
@@ -57,7 +61,7 @@ window.$OneSignal.push(['addListenerForNotificationOpened', (data) => {
 ]);
 ```
 
-### Change OneSignal SDK Script URL
+## Change OneSignal SDK Script URL
 
 By default this modules ships with latest SDK dist.
 
@@ -73,7 +77,7 @@ oneSignal: {
 }
 ```
 
-### References
+## References
 
 - [Web Push SDK Reference](https://documentation.onesignal.com/docs/web-push-sdk) - Available options and API calls
 - [Customize Permission Messages](https://documentation.onesignal.com/docs/customize-permission-messages)

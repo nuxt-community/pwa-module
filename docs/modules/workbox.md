@@ -1,4 +1,8 @@
-# 📦 Workbox Module
+---
+sidebar: auto
+---
+
+# Workbox Module
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/workbox.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/workbox/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox)
