@@ -1,19 +1,10 @@
 module.exports = {
   // General
-  dev: false,
   workboxVersion: '3.6.3-5',
   workboxURL: undefined,
   importScripts: [],
   autoRegister: true,
-
-  // Router
-  routerBase: undefined,
-  publicPath: undefined,
-
-  // Sw
-  swTemplate: undefined,
-  swUrl: undefined,
-  swScope: undefined,
+  dev: false,
 
   // Config
   config: {},
@@ -29,6 +20,7 @@ module.exports = {
   },
   cachingExtensions: [],
 
+  // Offline
   offline: true,
   offlinePage: null,
   offlineAssets: [],
@@ -36,5 +28,14 @@ module.exports = {
   // Runtime Caching
   runtimeCaching: [],
   routingExtensions: [],
-  cacheAssets: true
+  cacheAssets: true,
+
+  // Sw
+  swTemplate: undefined,
+  swUrl: undefined,
+  swScope: undefined,
+
+  // Router
+  routerBase: undefined,
+  publicPath: undefined
 }
