@@ -1,4 +1,9 @@
 version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:latest
+
 jobs:
   build:
     docker:
@@ -54,3 +59,13 @@ jobs:
           name: Build Docs
           command: cd docs && yarn build
 
+workflows:
+  version: 2
+
+  test:
+    jobs:
+      - build
+
+  docs:
+    jobs:
+      - docs
