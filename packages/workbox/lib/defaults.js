@@ -31,6 +31,8 @@ module.exports = {
   runtimeCaching: [],
   routingExtensions: [],
   cacheAssets: true,
+  assetsURLPattern: undefined,
+  pagesURLPattern: undefined,
 
   // Sw
   swTemplate: undefined,

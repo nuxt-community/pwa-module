@@ -41,17 +41,23 @@ function getOptions (moduleOptions) {
   }
 
   // Cache all _nuxt resources at runtime
+  if (!options.assetsURLPattern) {
+    options.assetsURLPattern = joinUrl(options.publicPath, HMRRegex)
+  }
   if (options.cacheAssets) {
     options.runtimeCaching.push({
-      urlPattern: joinUrl(options.publicPath, HMRRegex),
+      urlPattern: options.assetsURLPattern,
       handler: 'cacheFirst'
     })
   }
 
   // Optionally cache other routes for offline
+  if (!options.pagesURLPattern) {
+    options.pagesURLPattern = joinUrl(`^${options.routerBase}`, HMRRegex)
+  }
   if (options.offline && !options.offlinePage) {
     options.runtimeCaching.push({
-      urlPattern: joinUrl(`^${options.routerBase}`, HMRRegex),
+      urlPattern: options.pagesURLPattern,
       handler: 'networkFirst'
     })
   }
