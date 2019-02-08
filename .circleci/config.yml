@@ -26,3 +26,31 @@ jobs:
       - run:
           name: Tests
           command: yarn test && yarn codecov
+
+  docs:
+    docker:
+      - image: circleci/node
+    steps:
+      # Checkout repository
+      - checkout
+
+      # Restore cache
+      - restore_cache:
+          key: yarn-docs-{{ checksum "docs/yarn.lock" }}
+
+      # Install dependencies
+      - run:
+          name: Install Dependencies
+          command: cd docs && NODE_ENV=dev yarn
+
+      # Keep cache
+      - save_cache:
+          key: yarn-docs-{{ checksum "docs/yarn.lock" }}
+          paths:
+            - "node_modules"
+
+      # Build Docs
+      - run:
+          name: Build Docs
+          command: cd docs && yarn build
+
