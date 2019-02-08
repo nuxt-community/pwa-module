@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.6](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2019-02-08)
+
+
+### Bug Fixes
+
+* relax pages regex for workbox 4 compatiblity ([04e74a7](https://github.com/nuxt-community/pwa-module/commit/04e74a7))
+
+
+### Features
+
+* cleanupOutdatedCaches ([9167013](https://github.com/nuxt-community/pwa-module/commit/9167013))
+* **workbox:** assetsURLPattern, pagesURLPattern ([5fc3d66](https://github.com/nuxt-community/pwa-module/commit/5fc3d66))
+* **workbox:** preCaching option ([67f1c3d](https://github.com/nuxt-community/pwa-module/commit/67f1c3d))
+* **workbox:** upgrade workboxVersion to 4.0.0-rc.0 ([b364572](https://github.com/nuxt-community/pwa-module/commit/b364572))
+
+
+
+
+
 # [3.0.0-beta.5](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.3...v3.0.0-beta.5) (2019-02-08)
 
 
