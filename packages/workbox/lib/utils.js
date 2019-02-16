@@ -1,7 +1,7 @@
 const { readFileSync, existsSync } = require('fs')
 
 function isString (value) {
-  return typeof value === "string"
+  return typeof value === 'string'
 }
 
 function readJSFiles (files) {
