@@ -44,6 +44,6 @@
     "klaw-sync": "^6.0.0",
     "lerna": "^3.11.0",
     "nuxt-edge": "^2.4.0-25811407.6d8da0ed",
-    "standard-version": "^4.4.0"
+    "standard-version": "^5.0.0"
   }
 }
