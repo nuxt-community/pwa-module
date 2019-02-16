@@ -1,11 +1,7 @@
 const { readFileSync, existsSync } = require('fs')
 
-function isString (value) {
-  return typeof value === 'string'
-}
-
 function readJSFiles (files) {
-  return Array.from(isString(files) ? [files] : files)
+  return Array.from(Array.isArray(files) ? files : [files])
     .map(path => {
       path = this.nuxt.resolver.resolvePath(path)
       if (path && existsSync(path)) {
