@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.7](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2019-02-17)
+
+
+### Bug Fixes
+
+* **module:** handle readJSFiles for string param ([#143](https://github.com/nuxt-community/pwa-module/issues/143)) ([4f06479](https://github.com/nuxt-community/pwa-module/commit/4f06479))
+
+
+### Features
+
+* **workbox:** bump to 4.0.0-rc.2 ([7e278f0](https://github.com/nuxt-community/pwa-module/commit/7e278f0))
+
+
+
+
+
 # [3.0.0-beta.6](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2019-02-08)
 
 
