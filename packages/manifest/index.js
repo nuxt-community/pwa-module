@@ -14,10 +14,10 @@ module.exports = function nuxtManifest (options) {
   this.nuxt.hook('build:before', hook)
 }
 
-function addManifest (options) {
+function addManifest (_options) {
   const { routerBase, publicPath } = getRouteParams(this.options)
 
-  // Defaults
+  // Combine sources
   const defaults = {
     name: process.env.npm_package_name,
     short_name: process.env.npm_package_name,
@@ -30,10 +30,12 @@ function addManifest (options) {
     theme_color: this.options.loading && this.options.loading.color,
     lang: 'en'
   }
+  const options = { ...defaults, ...this.options.manifest, ..._options }
 
-  // Combine sources
-  const manifest = Object.assign({}, defaults, this.options.manifest, options)
+  // Remve extra fields from manifest
+  const manifest = { ...options }
   delete manifest.src
+  delete manifest.publicPath
 
   // Stringify manifest & generate hash
   const manifestSource = JSON.stringify(manifest)
@@ -59,7 +61,7 @@ function addManifest (options) {
 
   // Add manifest meta
   if (!find(this.options.head.link, 'rel', 'manifest')) {
-    const baseAttribute = { rel: 'manifest', href: joinUrl(manifest.publicPath, manifestFileName) }
+    const baseAttribute = { rel: 'manifest', href: joinUrl(options.publicPath, manifestFileName) }
     const attribute = manifest.crossorigin ? Object.assign({}, baseAttribute, { crossorigin: manifest.crossorigin }) : baseAttribute
     this.options.head.link.push(attribute)
   } else {
