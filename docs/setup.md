@@ -7,6 +7,11 @@
 1. Install npm package:
 
 ```js
+npm install @nuxtjs/pwa
+```
+Or install yarn package:
+
+```js
 yarn add @nuxtjs/pwa
 ```
 
