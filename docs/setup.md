@@ -4,15 +4,18 @@
 
 # Get Started
 
-1. Install npm package:
+1. Install `@nuxtjs/pwa`
 
-```js
-npm install @nuxtjs/pwa
-```
-Or install yarn package:
+Using Yarn:
 
 ```js
 yarn add @nuxtjs/pwa
+```
+
+Using NPM:
+
+```js
+npm install @nuxtjs/pwa
 ```
 
 2. Edit your `nuxt.config.js` file to add pwa module:
