@@ -31,7 +31,7 @@ function getRouteParams (options) {
 }
 
 function startCase (str) {
-  return str[0].toUpperCase() + str.substr(1)
+  return typeof str === 'string' ? str[0].toUpperCase() + str.substr(1) : str
 }
 
 module.exports = {
