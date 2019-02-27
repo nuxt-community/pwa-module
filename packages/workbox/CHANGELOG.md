@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.10](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2019-02-27)
+
+
+### Features
+
+* **workbox:** use workbox 4.0.0-0 ([70813ef](https://github.com/nuxt-community/pwa-module/commit/70813ef))
+
+
+
+
+
 # [3.0.0-beta.9](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2019-02-27)
 
 **Note:** Version bump only for package @nuxtjs/workbox
