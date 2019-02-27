@@ -53,7 +53,7 @@ Array [
 `;
 
 exports[`pwa sw.js 1`] = `
-"importScripts('https://cdn.jsdelivr.net/npm/workbox-cdn@4.0.0-rc.2/workbox/workbox-sw.js', 'custom-sw.js')
+"importScripts('https://cdn.jsdelivr.net/npm/workbox-cdn@4.0.0-0/workbox/workbox-sw.js', 'custom-sw.js')
 
 // --------------------------------------------------
 // Configure
