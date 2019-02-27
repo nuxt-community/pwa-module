@@ -42,7 +42,7 @@
     "jest": "^24.1.0",
     "jsdom": "^13.2.0",
     "klaw-sync": "^6.0.0",
-    "lerna": "^3.13.0",
+    "lerna": "^3.13.1",
     "nuxt-edge": "^2.4.0-25811407.6d8da0ed",
     "standard-version": "^5.0.0"
   }
