@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.9](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2019-02-27)
+
+
+### Bug Fixes
+
+* **pwa-utils:** handle non-strings in `startCase` ([#150](https://github.com/nuxt-community/pwa-module/issues/150)) ([782217a](https://github.com/nuxt-community/pwa-module/commit/782217a))
+
+
+
+
+
 # [3.0.0-beta.8](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.7...v3.0.0-beta.8) (2019-02-18)
 
 
