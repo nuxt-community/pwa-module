@@ -32,7 +32,7 @@ module.exports = {
     },
     cacheNames: {
       prefix: 'test',
-      googleAnalytics: 'test-analytics'
+      googleAnalytics: 'test-ga'
     },
     importScripts: [
       'custom-sw.js'
