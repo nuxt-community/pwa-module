@@ -64,6 +64,12 @@ workbox.setConfig({
   \\"debug\\": true
 })
 
+// Set workbox cache names
+workbox.core.setCacheNameDetails({
+  \\"prefix\\": \\"test\\",
+  \\"googleAnalytics\\": \\"test-ga\\"
+})
+
 // Start controlling any existing clients as soon as it activates
 workbox.core.clientsClaim()
 

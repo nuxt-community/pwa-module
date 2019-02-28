@@ -48,6 +48,10 @@ It is recommanded to test workbox using `nuxt build`/`nuxt start`. You can enabl
 
 <!-- Config -->
 
+### `cacheNames`
+
+(Object) Configure the workbox cache names.
+
 ### `config`
 
 (Object) Options to be passed to workbox before using it's modules. By default `debug` field will be set to `false` for production builds.
