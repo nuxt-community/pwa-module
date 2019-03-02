@@ -9,6 +9,11 @@ importScripts(<%= [options.workboxURL, ...options.importScripts].map((i) => `'${
 workbox.setConfig(<%= JSON.stringify(options.config, null, 2) %>)
 <% } %>
 
+<% if (options.cacheNames) {%>
+// Set workbox cache names
+workbox.core.setCacheNameDetails(<%= JSON.stringify(options.cacheNames, null, 2) %>)
+<% } %>
+
 <% if (options.clientsClaim) { %>
 // Start controlling any existing clients as soon as it activates
 workbox.core.clientsClaim()

@@ -30,6 +30,10 @@ module.exports = {
     config: {
       debug: true
     },
+    cacheNames: {
+      prefix: 'test',
+      googleAnalytics: 'test-ga'
+    },
     importScripts: [
       'custom-sw.js'
     ],
