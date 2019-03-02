@@ -50,7 +50,7 @@ It is recommanded to test workbox using `nuxt build`/`nuxt start`. You can enabl
 
 ### `cacheNames`
 
-(Object) Configure the workbox cache names.
+(Object) Configure the workbox cache names. See [workbox docs](https://developers.google.com/web/tools/workbox/guides/configure-workbox#configure_cache_names) for more information on this.
 
 ### `config`
 
