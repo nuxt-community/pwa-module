@@ -86,7 +86,7 @@ function addOneSignal (moduleOptions) {
   if (!this.options.workbox) {
     this.options.workbox = {}
   }
-  this.options.workbox.swURL = 'OneSignalSDKWorker.js'
+  this.options.workbox.swURL = '/OneSignalSDKWorker.js'
 
   // Provide OneSignalSDKWorker.js and OneSignalSDKUpdaterWorker.js
   const makeSW = (name, scripts) => {
