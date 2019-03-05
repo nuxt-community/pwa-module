@@ -31,9 +31,7 @@ function getOptions (moduleOptions) {
   }
 
   // swURL
-  if (!options.swURL) {
-    options.swURL = joinUrl(options.routerBase, 'sw.js')
-  }
+  options.swURL = joinUrl(options.routerBase, options.swURL || 'sw.js')
 
   // swScope
   if (!options.swScope) {
