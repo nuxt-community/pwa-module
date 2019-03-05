@@ -18,6 +18,12 @@ workbox: {
 }
 ```
 
+## Workbox Window
+
+A global `$workbox` service is injected to the application, which can be used either by plugins (via `context.app.$workbox`) or pages (via `this.$workbox`).
+
+See [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) docs for more information about use cases.
+
 ## Options
 
 <!-- General -->

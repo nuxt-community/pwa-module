@@ -8,6 +8,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@nuxtjs/pwa-utils": "3.0.0-beta.10"
+    "@nuxtjs/pwa-utils": "3.0.0-beta.10",
+    "workbox-window": "4.0.0"
   }
 }

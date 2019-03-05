@@ -11271,6 +11271,18 @@ wordwrap@~1.0.0:
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
   integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
 
+workbox-core@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-4.0.0.tgz#3b4aa11c9d739361ed8916b7611abc3b6fefed8b"
+  integrity sha512-FRoOUuJBl7COTwvGO5FC9k0VyYGv/LkjVqgVwKk9MXQn/Xi+bvGDcqSVF7qfT+sJ6Ffcr/V+dVMpoZAE/X5e+g==
+
+workbox-window@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/workbox-window/-/workbox-window-4.0.0.tgz#a4d6404c96cc65d4882f79331d4e812c10f912a6"
+  integrity sha512-gdLzP/L0vu5Gi3pdUYtVNmg0yE7OriEuYZBoLt8AYoILXh6cta9WsWHKQ0/pXfmEmZywr4Dfu0qkLLvc9VlZGQ==
+  dependencies:
+    workbox-core "^4.0.0"
+
 worker-farm@^1.5.2:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/worker-farm/-/worker-farm-1.6.0.tgz#aecc405976fab5a95526180846f0dba288f3a4a0"
