@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.12](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2019-03-05)
+
+
+### Bug Fixes
+
+* **pwa-utils:** don't combine with esm ([fddfa7a](https://github.com/nuxt-community/pwa-module/commit/fddfa7a)), closes [#147](https://github.com/nuxt-community/pwa-module/issues/147)
+
+
+
+
+
 # [3.0.0-beta.11](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2019-03-05)
 
 **Note:** Version bump only for package @nuxtjs/pwa-utils
