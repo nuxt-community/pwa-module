@@ -1,4 +1,4 @@
-import { posix as path } from 'path'
+const path = require('path').posix
 
 function find (arr, key, val) {
   return arr.find(obj => val ? obj[key] === val : obj[key])
