@@ -10,7 +10,7 @@ sidebar: auto
 Workbox is a collection of JavaScript libraries for Progressive Web Apps.
 ([Learn more](https://developers.google.com/web/tools/workbox)). This module adds full offline support using workbox.
 
-You can pass options to `workbox` section in `nuxt.config.js` to override defaults.
+You can pass options to `workbox` section in `nuxt.config.js` to override the [defaults](https://github.com/nuxt-community/pwa-module/blob/master/packages/workbox/lib/defaults.js).
 
 ```js
 workbox: {
