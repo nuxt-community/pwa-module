@@ -71,10 +71,13 @@ function addOneSignal (moduleOptions) {
   }
 
   // Add the oneSignal SDK script to head
-  this.options.head.script.push({
-    async: true,
-    src: options.OneSignalSDK
-  })
+  if (!this.options.head.script.find(s => s.hid === 'onesignal')) {
+    this.options.head.script.push({
+      async: true,
+      src: options.OneSignalSDK,
+      hid: 'onesignal'
+    })
+  }
 
   // Adjust manifest for oneSignal
   if (!this.options.manifest) {
