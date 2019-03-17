@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.14](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2019-03-17)
+
+
+### Bug Fixes
+
+* **onesignal:** ensure no duplicate script is added ([#161](https://github.com/nuxt-community/pwa-module/issues/161)) ([89c1a1d](https://github.com/nuxt-community/pwa-module/commit/89c1a1d))
+
+
+### Features
+
+* **workbox:** make plugin fully asynchronous ([1eb1190](https://github.com/nuxt-community/pwa-module/commit/1eb1190))
+* improve computed cacheId ([cd6c9cc](https://github.com/nuxt-community/pwa-module/commit/cd6c9cc))
+* improve sw.register error handling ([9aa76f8](https://github.com/nuxt-community/pwa-module/commit/9aa76f8))
+
+
+
+
+
 # [3.0.0-beta.13](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2019-03-17)
 
 
