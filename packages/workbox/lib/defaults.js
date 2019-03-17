@@ -4,7 +4,7 @@ module.exports = {
   workboxURL: undefined,
   importScripts: [],
   autoRegister: true,
-  dev: false,
+  dev: undefined,
 
   // Config
   config: {},
@@ -16,7 +16,7 @@ module.exports = {
   // Precache
   preCaching: [],
   cacheOptions: {
-    cacheId: process.env.npm_package_name || 'nuxt',
+    cacheId: undefined,
     directoryIndex: '/',
     revision: undefined
   },

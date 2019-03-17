@@ -70,6 +70,11 @@ function getOptions (moduleOptions) {
     options.preCaching.unshift(options.offlinePage)
   }
 
+  // Default cacheId
+  if (options.cacheOptions.cacheId === undefined) {
+    options.cacheOptions.cacheId = (process.env.npm_package_name || 'nuxt') + (this.options.dev ? '-dev' : '-prod')
+  }
+
   // Normalize runtimeCaching
   options.runtimeCaching = options.runtimeCaching.map(entry => ({
     ...entry,
@@ -83,7 +88,7 @@ function getOptions (moduleOptions) {
   }
 
   // Workbox Config
-  if (!options.config.debug) {
+  if (options.config.debug === undefined) {
     // Debug field is by default set to true for localhost domain which is not always ideal
     options.config.debug = options.dev || this.options.dev
   }
