@@ -20,9 +20,18 @@ workbox: {
 
 ## Workbox Window
 
-A global `$workbox` service is injected to the application, which can be used either by plugins (via `context.app.$workbox`) or pages (via `this.$workbox`).
+This module uses [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) to register and communicate with workbox service worker.
+See docs for more information about use cases.
 
-See [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) docs for more information about use cases.
+As service worker is registered in background, to access instance you have to await on a promise:
+
+```js
+const workbox = await window.$workbox
+
+if (workbox) {
+  // Service worker is available
+}
+```
 
 ## Options
 
