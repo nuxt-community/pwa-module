@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/pwa",
-  "version": "3.0.0-beta.12",
+  "version": "3.0.0-beta.13",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/nuxt-community/pwa-module",
@@ -8,10 +8,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@nuxtjs/icon": "3.0.0-beta.12",
-    "@nuxtjs/manifest": "3.0.0-beta.12",
-    "@nuxtjs/meta": "3.0.0-beta.12",
-    "@nuxtjs/pwa-utils": "3.0.0-beta.12",
-    "@nuxtjs/workbox": "3.0.0-beta.12"
+    "@nuxtjs/icon": "3.0.0-beta.13",
+    "@nuxtjs/manifest": "3.0.0-beta.13",
+    "@nuxtjs/meta": "3.0.0-beta.13",
+    "@nuxtjs/pwa-utils": "3.0.0-beta.13",
+    "@nuxtjs/workbox": "3.0.0-beta.13"
   }
 }

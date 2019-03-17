@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/workbox",
-  "version": "3.0.0-beta.12",
+  "version": "3.0.0-beta.13",
   "license": "MIT",
   "main": "lib/module.js",
   "repository": "https://github.com/nuxt-community/pwa-module",
@@ -8,7 +8,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@nuxtjs/pwa-utils": "3.0.0-beta.12",
+    "@nuxtjs/pwa-utils": "3.0.0-beta.13",
     "workbox-cdn": "^4.1.1"
   }
 }

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.13](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2019-03-17)
+
+
+### Features
+
+* **workbox:** improve sw.register ([c35f610](https://github.com/nuxt-community/pwa-module/commit/c35f610))
+* sync workbox version with workbox-window ([9a3632a](https://github.com/nuxt-community/pwa-module/commit/9a3632a))
+
+
+
+
+
 # [3.0.0-beta.12](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2019-03-05)
 
 
