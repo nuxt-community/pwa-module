@@ -1,6 +1,6 @@
 module.exports = {
   // General
-  workboxVersion: '4.0.0-0',
+  workboxVersion: require('workbox-window/package.json').version,
   workboxURL: undefined,
   importScripts: [],
   autoRegister: true,

@@ -44,6 +44,6 @@ describe('pwa', () => {
   test('sw.js', async () => {
     const swContents = await fs.readFile(path.resolve(nuxt.options.generate.dir, 'sw.js'), 'utf-8')
 
-    expect(swContents).toMatchSnapshot()
+    expect(swContents.replace(/@[^/]*/, '')).toMatchSnapshot()
   })
 })
