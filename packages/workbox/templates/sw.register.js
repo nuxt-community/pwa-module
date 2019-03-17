@@ -1,4 +1,4 @@
-import { Workbox } from 'workbox-window/build/workbox-window.<%= options.dev ? 'dev' : 'prod' %>.mjs'
+import { Workbox } from 'workbox-cdn/workbox/workbox-window.<%= options.dev ? 'dev' : 'prod' %>.es5.mjs'
 
 export default async function(ctx, inject) {
   const workbox = new Workbox('<%= options.swURL %>', {

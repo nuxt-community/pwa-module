@@ -1,6 +1,6 @@
 module.exports = {
   // General
-  workboxVersion: require('workbox-window/package.json').version,
+  workboxVersion: require('workbox-cdn/package.json').version,
   workboxURL: undefined,
   importScripts: [],
   autoRegister: true,
