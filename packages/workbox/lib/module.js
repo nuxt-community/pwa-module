@@ -10,7 +10,7 @@ module.exports = function nuxtWorkbox (moduleOptions) {
 
     // Warning for dev option
     if (options.dev) {
-      console.warn('`workbox.dev` enabled. Remember to clean application data and unregister service workers in your browser or you will experience infinity loop!')
+      console.warn('Workbox running in `dev` mode. Please clear browser cache and prevent using this option for production!')
     }
 
     // Register plugin
