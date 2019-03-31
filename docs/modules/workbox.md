@@ -55,11 +55,11 @@ if (workbox) {
 
 ### `dev`
 
-(Boolean) Enable workbox in dev mode of nuxt. (Disabled by default - Not Recommanded)
+(Boolean) Enable workbox in dev mode of nuxt. (Disabled by default - Not recommended)
 
 **IMPORTANT NOTE:** Remember to clean application data and unregister service workers in your browser or you will experience infinity loop!
 
-It is recommanded to test workbox using `nuxt build`/`nuxt start`. You can enable debug mode using `workbox.config.debug`.
+It is recommended to test workbox using `nuxt build`/`nuxt start`. You can enable debug mode using `workbox.config.debug`.
 
 <!-- Config -->
 
@@ -170,7 +170,7 @@ Default: `/(?!.*(__webpack_hmr|hot-update))`
 
 ### `swTemplate`
 
-(String) You can use this to customize generated `sw.js`. Not recommanded to be directly used.
+(String) You can use this to customize generated `sw.js`. Not recommended to be directly used.
 
 ### `swURL`
 
