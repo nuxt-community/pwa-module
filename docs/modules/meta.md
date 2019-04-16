@@ -109,11 +109,11 @@ These types are accepted:
 
 ### `twitterCard`
 - Default: `undefined`
-- Meta: `twitter:card
+- Meta: `twitter:card`
 
 ### `twitterSite`
 - Default: `undefined`
-- Meta: `twitter:site
+- Meta: `twitter:site`
 
 ### `twitterCreator`
 - Default: `undefined`
