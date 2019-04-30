@@ -53,7 +53,9 @@ async function run (moduleOptions, _emitAssets) {
   addManifest.call(this, options)
 
   // Add plugin
-  addPlugin.call(this, options)
+  if (options.accessibleIcons) {
+    addPlugin.call(this, options)
+  }
 
   // Emit assets in background
   if (_emitAssets) {
@@ -76,11 +78,19 @@ async function findIcon (options) {
 }
 
 async function addPlugin (options) {
+  const icons = {}
+  for (const icon of options._assetIcons) {
+    icons[icon.sizes] = icon.src
+  }
+
   if (options.accessibleIcons) {
     this.addPlugin({
       src: path.resolve(__dirname, './plugin.js'),
       fileName: 'nuxt-icons.js',
-      options
+      options: {
+        iconProperty: options.iconProperty,
+        icons
+      }
     })
   }
 }
