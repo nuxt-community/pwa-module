@@ -5,11 +5,11 @@ const { fork } = require('child_process')
 const { joinUrl, getRouteParams } = require('@nuxtjs/pwa-utils')
 
 module.exports = function (options) {
-  if (this.options.mode === 'spa') {
-    return run.call(this, options, false)
-  }
-
   this.nuxt.hook('build:before', () => run.call(this, options, true))
+
+  if (this.options.mode === 'spa' && !this.options.dev) {
+    return run.call(this, options, false) // Fill meta
+  }
 }
 
 async function run (moduleOptions, _emitAssets) {
