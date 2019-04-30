@@ -38,7 +38,7 @@ describe('pwa', () => {
 
   test('accessible icons', async () => {
     const { html } = await nuxt.renderRoute('/icons')
-    expect(html).toContain('/_nuxt/icons/icon_512.9mgd2ZDMcQu.png')
+    expect(html).toContain('/_nuxt/icons/icon_512.b8f3a1.png')
   })
 
   test('sw.js', async () => {
