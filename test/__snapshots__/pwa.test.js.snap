@@ -44,6 +44,8 @@ Array [
   "fixture/dist/_nuxt/icons/icon_512.b8f3a1.png",
   "fixture/dist/_nuxt/icons/icon_64.b8f3a1.png",
   "fixture/dist/icon.png",
+  "fixture/dist/icons",
+  "fixture/dist/icons/index.html",
   "fixture/dist/index.html",
   "fixture/dist/offline.html",
   "fixture/dist/offline.png",
