@@ -140,10 +140,11 @@ function emitAssets (options) {
       config.plugins.push({
         apply (compiler) {
           compiler.hooks.emit.tapPromise('nuxt-pwa-icon', async compilation => {
-            const resizedIcons = await resizePromise
+            await resizePromise
             for (const size of options.sizes) {
-              const src = await fs.readFile(resizedIcons[size])
               const targetFilename = options._icons[size]
+              const srcFileName = path.join(options._cacheDir, `${size}.png`)
+              const src = await fs.readFile(srcFileName)
               compilation.assets[targetFilename] = { source: () => src, size: () => src.length }
             }
           })
@@ -154,9 +155,13 @@ function emitAssets (options) {
 }
 
 async function resizeIcons (options) {
+  if (await fs.exists(options._cacheDir)) {
+    return
+  }
+
   await fs.mkdirpSync(options._cacheDir)
 
-  const icons = await new Promise((resolve, reject) => {
+  await new Promise((resolve, reject) => {
     const child = fork(require.resolve('./resize'), [
       JSON.stringify({
         input: options.iconSrc,
@@ -164,15 +169,10 @@ async function resizeIcons (options) {
         sizes: options.sizes
       })
     ])
-    child.on('message', message => {
-      resolve(message)
-    })
     child.on('exit', (code) => {
-      reject(code)
+      return code ? reject(code) : resolve()
     })
   })
-
-  return icons
 }
 
 module.exports.meta = require('./package.json')
