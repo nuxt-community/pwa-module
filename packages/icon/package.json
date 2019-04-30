@@ -11,6 +11,6 @@
     "@nuxtjs/pwa-utils": "3.0.0-beta.14",
     "fs-extra": "^7.0.1",
     "hash-sum": "^1.0.2",
-    "jimp": "^0.6.1"
+    "jimp": "^0.6.4"
   }
 }
