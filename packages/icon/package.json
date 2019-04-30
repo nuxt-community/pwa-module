@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "@nuxtjs/pwa-utils": "3.0.0-beta.14",
+    "execa": "^1.0.0",
     "fs-extra": "^7.0.1",
     "hash-sum": "^1.0.2",
+    "hasha": "^5.0.0",
     "jimp": "^0.6.4"
   }
 }
