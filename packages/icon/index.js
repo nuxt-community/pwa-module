@@ -159,7 +159,7 @@ async function resizeIcons (options) {
     return
   }
 
-  await fs.mkdirpSync(options._cacheDir)
+  await fs.mkdirp(options._cacheDir)
 
   await new Promise((resolve, reject) => {
     const child = fork(require.resolve('./resize'), [
