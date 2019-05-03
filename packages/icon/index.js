@@ -141,12 +141,12 @@ function emitAssets (options) {
         apply (compiler) {
           compiler.hooks.emit.tapPromise('nuxt-pwa-icon', async compilation => {
             await resizePromise
-            for (const size of options.sizes) {
+            await Promise.all(options.sizes.map(async size => {
               const targetFilename = options._icons[size]
               const srcFileName = path.join(options._cacheDir, `${size}.png`)
               const src = await fs.readFile(srcFileName)
               compilation.assets[targetFilename] = { source: () => src, size: () => src.length }
-            }
+            }))
           })
         }
       })
