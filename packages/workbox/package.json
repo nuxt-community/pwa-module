@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "@nuxtjs/pwa-utils": "3.0.0-beta.14",
-    "workbox-cdn": "^4.3.0"
+    "workbox-cdn": "^4.3.1"
   }
 }
