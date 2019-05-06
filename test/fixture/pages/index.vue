@@ -1,12 +1,14 @@
 <template>
-<div>
-  <h1>Nuxt PWA!</h1>
-  <nuxt-link to="/icons">Icons</nuxt-link>
-  <br><br>
-
-  Now: {{ date }}
-</div>
+<main>
+  <img class="icon" :src="$icon(512)" >
+</main>
 </template>
+
+<style scoped>
+.icon {
+  max-width: 100%;
+}
+</style>
 
 <script>
 export default {
