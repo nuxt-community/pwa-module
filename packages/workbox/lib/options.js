@@ -42,10 +42,10 @@ function getOptions (moduleOptions) {
   if (!options.assetsURLPattern) {
     options.assetsURLPattern = joinUrl(options.publicPath, HMRRegex)
   }
-  if (options.cacheAssets && !this.options.dev) {
+  if (options.cacheAssets) {
     options.runtimeCaching.push({
       urlPattern: options.assetsURLPattern,
-      handler: 'CacheFirst'
+      handler: this.options.dev ? 'NetworkFirst' : 'CacheFirst'
     })
   }
 
