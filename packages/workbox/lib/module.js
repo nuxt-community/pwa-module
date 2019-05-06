@@ -16,9 +16,9 @@ module.exports = function nuxtWorkbox (moduleOptions) {
     // Register plugin
     if (options.autoRegister) {
       this.addPlugin({
-        src: path.resolve(__dirname, '../templates/sw.register.js'),
+        src: path.resolve(__dirname, '../templates/workbox.js'),
         ssr: false,
-        fileName: 'sw.register.js',
+        fileName: 'workbox.js',
         options: {
           ...options
         }
