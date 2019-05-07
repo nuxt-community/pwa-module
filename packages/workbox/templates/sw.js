@@ -63,7 +63,7 @@ workbox.precaching.precacheAndRoute(<%= JSON.stringify(options.preCaching, null,
 <% if (options.offlinePage) { %>
 // Register router handler for offlinePage
 workbox.routing.registerRoute(new RegExp('<%= options.pagesURLPattern %>'), ({event}) => {
-  return new workbox.strategies.NetworkOnly().handle({event})
+  return new workbox.strategies.<%= options.offlineStrategy %>().handle({event})
     .catch(() => caches.match('<%= options.offlinePage %>'))
 })<% } %>
 

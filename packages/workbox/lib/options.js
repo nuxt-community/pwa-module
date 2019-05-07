@@ -56,7 +56,7 @@ function getOptions (moduleOptions) {
   if (options.offline && !options.offlinePage) {
     options.runtimeCaching.push({
       urlPattern: options.pagesURLPattern,
-      handler: 'NetworkFirst'
+      handler: options.offlineStrategy
     })
   }
 

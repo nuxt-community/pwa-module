@@ -5,7 +5,7 @@
     <nuxt-link
       v-for="p in ['Foo', 'Bar', 'Baz']"
       :key="p"
-      :to="'/' + p"
+      :to="'/' + p.toLowerCase()"
     >
       {{ p }}
     </nuxt-link>
