@@ -145,7 +145,7 @@ Workbox takes a lot of the heavy lifting out of precaching by simplifying the AP
 
 Default is auto generated based on `publicPath`. Supports CDN too.
 
-Default: `/_nuxt/(?!.*(__webpack_hmr|hot-update))`
+Default: `/_nuxt/`
 
 ### `pagesURLPattern`
 
@@ -153,7 +153,7 @@ Default: `/_nuxt/(?!.*(__webpack_hmr|hot-update))`
 
 Default is auto generated based on `router.base`.
 
-Default: `/(?!.*(__webpack_hmr|hot-update))`
+Default: `/`
 
 <!-- SW -->
 

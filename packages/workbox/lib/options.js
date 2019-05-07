@@ -3,8 +3,6 @@ const path = require('path')
 const defaults = require('./defaults')
 const { joinUrl, getRouteParams, startCase } = require('@nuxtjs/pwa-utils')
 
-const HMRRegex = '(?!.*(__webpack_hmr|hot-update))'
-
 function getOptions (moduleOptions) {
   const options = Object.assign({}, defaults, moduleOptions, this.options.workbox)
 
@@ -40,7 +38,7 @@ function getOptions (moduleOptions) {
 
   // Cache all _nuxt resources at runtime
   if (!options.assetsURLPattern) {
-    options.assetsURLPattern = joinUrl(options.publicPath, HMRRegex)
+    options.assetsURLPattern = options.publicPath
   }
   if (options.cacheAssets) {
     options.runtimeCaching.push({
@@ -51,7 +49,7 @@ function getOptions (moduleOptions) {
 
   // Optionally cache other routes for offline
   if (!options.pagesURLPattern) {
-    options.pagesURLPattern = joinUrl(options.routerBase, HMRRegex)
+    options.pagesURLPattern = options.routerBase
   }
   if (options.offline && !options.offlinePage) {
     options.runtimeCaching.push({
