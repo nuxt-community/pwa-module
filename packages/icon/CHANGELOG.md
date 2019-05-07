@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.15](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2019-05-07)
+
+
+### Bug Fixes
+
+* **icon:** handle jimp.write callback ([bffe6ed](https://github.com/nuxt-community/pwa-module/commit/bffe6ed))
+
+
+### Features
+
+* rewrite icon with async image resizer ([#171](https://github.com/nuxt-community/pwa-module/issues/171)) ([a4a457e](https://github.com/nuxt-community/pwa-module/commit/a4a457e))
+
+
+
+
+
 # [3.0.0-beta.14](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2019-03-17)
 
 **Note:** Version bump only for package @nuxtjs/icon

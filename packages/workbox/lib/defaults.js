@@ -25,6 +25,7 @@ module.exports = {
 
   // Offline
   offline: true,
+  offlineStrategy: 'NetworkFirst',
   offlinePage: null,
   offlineAssets: [],
 

@@ -1,6 +1,5 @@
 export default async function (ctx, inject) {
-  const moduleOptions = <%= serialize(options) %>
-  inject(moduleOptions.iconProperty.replace('$', ''), retrieveIcons(moduleOptions.icons))
+  const icons = <%= JSON.stringify(options.icons) %>
+  const getIcon = size => icons[size + 'x' + size] || ''
+  inject('<%= options.iconProperty.replace('$', '') %>', getIcon)
 }
-
-const retrieveIcons = icons => size => icons[size] || ''

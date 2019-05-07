@@ -1,119 +1,177 @@
-const { existsSync } = require('fs-extra')
+const fs = require('fs-extra')
 const path = require('path')
-const Jimp = require('jimp')
+const hasha = require('hasha')
+const { fork } = require('child_process')
 const { joinUrl, getRouteParams } = require('@nuxtjs/pwa-utils')
 
-module.exports = function nuxtIcon (options) {
-  const hook = () => {
-    return generateIcons.call(this, options)
-  }
+module.exports = function (options) {
+  this.nuxt.hook('build:before', () => run.call(this, options, true))
 
-  if (this.options.mode === 'spa') {
-    return hook()
+  if (this.options.mode === 'spa' && !this.options.dev) {
+    return run.call(this, options, false) // Fill meta
   }
-
-  this.nuxt.hook('build:before', hook)
 }
 
-const defaults = {
-  iconSrc: null,
-  iconFileName: 'icon.png',
-  sizes: [64, 120, 144, 152, 192, 384, 512],
-  targetDir: 'icons'
-}
-
-function generateIcons (moduleOptions) {
-  // Combine sources
-  const options = Object.assign({}, defaults, this.options.icon, moduleOptions)
-
+async function run (moduleOptions, _emitAssets) {
   const { publicPath } = getRouteParams(this.options)
 
-  // Resolve iconSrc
-  let iconSrc
+  // Defaults
+  const defaults = {
+    iconFileName: 'icon.png',
+    sizes: [64, 120, 144, 152, 192, 384, 512],
+    targetDir: 'icons',
+    accessibleIcons: true,
+    iconProperty: '$icon',
+    publicPath,
+    iconSrc: null,
 
+    _iconHash: null,
+    _cacheDir: null,
+    _icons: null,
+    _assetIcons: null
+  }
+
+  // Merge options
+  const options = {
+    ...defaults,
+    ...this.options.icon,
+    ...moduleOptions
+  }
+
+  // Find iconSrc
+  options.iconSrc = await findIcon.call(this, options)
+
+  // Disable module if no icon specified
+  if (!options.iconSrc) {
+    return
+  }
+
+  // Generate icons
+  await generateIcons.call(this, options)
+
+  // Add manifest
+  addManifest.call(this, options)
+
+  // Add plugin
+  if (options.accessibleIcons) {
+    addPlugin.call(this, options)
+  }
+
+  // Emit assets in background
+  if (_emitAssets) {
+    emitAssets.call(this, options)
+  }
+}
+
+async function findIcon (options) {
   const iconSearchPath = [
     options.iconSrc,
     path.resolve(this.options.srcDir, this.options.dir.static, options.iconFileName),
     path.resolve(this.options.srcDir, this.options.dir.assets, options.iconFileName)
   ]
 
-  for (const p of iconSearchPath) {
-    if (existsSync(p)) {
-      iconSrc = p
-      break
+  for (const iconSrc of iconSearchPath) {
+    if (await fs.exists(iconSrc)) {
+      return iconSrc
     }
   }
+}
 
-  // Ensure icon file exists
-  if (!existsSync(iconSrc)) {
-    return
+async function addPlugin (options) {
+  const icons = {}
+  for (const icon of options._assetIcons) {
+    icons[icon.sizes] = icon.src
   }
 
-  return Jimp.read(iconSrc).then(srcIcon => {
-    // get base64 phash of source image
-    const hash = srcIcon.hash()
-    return Promise.all(options.sizes.map(size => new Promise((resolve, reject) => {
-      srcIcon.clone().contain(size, size).getBuffer(Jimp.MIME_PNG, (err, buff) => {
-        if (err) {
-          return reject(err)
-        }
-        const fileName = `${options.targetDir}/icon_${size}.${hash}.png`
-        resolve({ size, buff, fileName })
-      })
-    }))).then(icons => {
-      // Fill manifest icons
-      if (!this.options.manifest) {
-        this.options.manifest = {}
+  if (options.accessibleIcons) {
+    this.addPlugin({
+      src: path.resolve(__dirname, './plugin.js'),
+      fileName: 'nuxt-icons.js',
+      options: {
+        iconProperty: options.iconProperty,
+        icons
       }
-      if (!this.options.manifest.icons) {
-        this.options.manifest.icons = []
-      }
-      const assetIcons = []
-      const exportIcons = {}
-      icons.forEach(icon => {
-        const src = joinUrl(publicPath, icon.fileName)
-        assetIcons.push({
-          src,
-          sizes: `${icon.size}x${icon.size}`,
-          type: `image/png`
-        })
+    })
+  }
+}
 
-        exportIcons[icon.size] = src
-      })
+async function generateIcons (options) {
+  // Get hash of source image
+  if (!options.iconHash) {
+    options.iconHash = await hasha.fromFile(options.iconSrc).then(h => h.substring(0, 6))
+  }
+  if (!options._cacheDir) {
+    options._cacheDir = path.join(__dirname, '.cache', options.iconHash)
+  }
 
-      assetIcons.forEach(icon => { this.options.manifest.icons.push(icon) })
+  // Generate _icons
+  options._icons = {}
+  for (const size of options.sizes) {
+    options._icons[size] = `${options.targetDir}/icon_${size}.${options.iconHash}.png`
+  }
 
-      // Add plugin to Vue to access icons
-      let moduleOptions = Object.assign({
-        accessibleIcons: true,
-        iconProperty: '$icon',
-        icons: exportIcons
-      }, options)
+  // Generate _assetIcons
+  options._assetIcons = options.sizes.map(size => ({
+    src: joinUrl(options.publicPath, options._icons[size]),
+    sizes: `${size}x${size}`,
+    type: `image/png`
+  }))
+}
 
-      if (moduleOptions.accessibleIcons) {
-        this.addPlugin({
-          src: path.resolve(__dirname, './plugin.js'),
-          fileName: 'nuxt-icons.js',
-          options: moduleOptions
-        })
-      }
+function addManifest (options) {
+  if (!this.options.manifest) {
+    this.options.manifest = {}
+  }
 
-      // Register webpack plugin to emit icons
-      this.options.build.plugins.push({
+  if (!this.options.manifest.icons) {
+    this.options.manifest.icons = []
+  }
+
+  this.options.manifest.icons.push(...options._assetIcons)
+}
+
+function emitAssets (options) {
+  // Start resize task in background
+  const resizePromise = resizeIcons.call(this, options)
+
+  // Register webpack plugin to emit icons
+  this.extendBuild((config, { isClient }) => {
+    if (isClient) {
+      config.plugins.push({
         apply (compiler) {
-          compiler.hooks.emit.tap('nuxt-pwa-icon', compilation => {
-            icons.forEach(icon => {
-              compilation.assets[icon.fileName] = {
-                source: () => icon.buff,
-                size: () => icon.buff.length
-              }
-            })
+          compiler.hooks.emit.tapPromise('nuxt-pwa-icon', async compilation => {
+            await resizePromise
+            await Promise.all(options.sizes.map(async size => {
+              const targetFilename = options._icons[size]
+              const srcFileName = path.join(options._cacheDir, `${size}.png`)
+              const src = await fs.readFile(srcFileName)
+              compilation.assets[targetFilename] = { source: () => src, size: () => src.length }
+            }))
           })
         }
       })
+    }
+  })
+}
+
+async function resizeIcons (options) {
+  if (await fs.exists(options._cacheDir)) {
+    return
+  }
+
+  await fs.mkdirp(options._cacheDir)
+
+  await new Promise((resolve, reject) => {
+    const child = fork(require.resolve('./resize'), [
+      JSON.stringify({
+        input: options.iconSrc,
+        distDir: options._cacheDir,
+        sizes: options.sizes
+      })
+    ])
+    child.on('exit', (code) => {
+      return code ? reject(code) : resolve()
     })
-  }).catch(err => {
-    console.error('[icon] unable to read', err)
   })
 }
 

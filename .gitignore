@@ -9,4 +9,4 @@ dist/
 _book
 .DS_Store
 .vscode
-
+.cache

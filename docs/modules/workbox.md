@@ -18,21 +18,6 @@ workbox: {
 }
 ```
 
-## Workbox Window
-
-This module uses [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) to register and communicate with workbox service worker.
-See docs for more information about use cases.
-
-As service worker is registered in background, to access instance you have to await on a promise:
-
-```js
-const workbox = await window.$workbox
-
-if (workbox) {
-  // Service worker is available
-}
-```
-
 ## Options
 
 <!-- General -->
@@ -55,11 +40,11 @@ if (workbox) {
 
 ### `dev`
 
-(Boolean) Enable workbox in dev mode of nuxt. (Disabled by default - Not Recommanded)
+(Boolean) Enable workbox in dev mode of nuxt. (Disabled by default - Not recommended)
 
 **IMPORTANT NOTE:** Remember to clean application data and unregister service workers in your browser or you will experience infinity loop!
 
-It is recommanded to test workbox using `nuxt build`/`nuxt start`. You can enable debug mode using `workbox.config.debug`.
+It is recommended to test workbox using `nuxt build`/`nuxt start`. You can enable debug mode using `workbox.config.debug`.
 
 <!-- Config -->
 
@@ -122,6 +107,10 @@ Workbox takes a lot of the heavy lifting out of precaching by simplifying the AP
 
 (Boolean) Cache all routes. Enabled by default.
 
+### `offlineStrategy`
+
+(String) Strategy for caching routes. Default is `NetworkFirst`.
+
 ### `offlinePage`
 
 (String) Enables routing all offline requests to the specified path. (Example: `/offline.html`)
@@ -156,7 +145,7 @@ Workbox takes a lot of the heavy lifting out of precaching by simplifying the AP
 
 Default is auto generated based on `publicPath`. Supports CDN too.
 
-Default: `/_nuxt/(?!.*(__webpack_hmr|hot-update))`
+Default: `/_nuxt/`
 
 ### `pagesURLPattern`
 
@@ -164,13 +153,13 @@ Default: `/_nuxt/(?!.*(__webpack_hmr|hot-update))`
 
 Default is auto generated based on `router.base`.
 
-Default: `/(?!.*(__webpack_hmr|hot-update))`
+Default: `/`
 
 <!-- SW -->
 
 ### `swTemplate`
 
-(String) You can use this to customize generated `sw.js`. Not recommanded to be directly used.
+(String) You can use this to customize generated `sw.js`. Not recommended to be directly used.
 
 ### `swURL`
 
@@ -189,6 +178,22 @@ Default: `/(?!.*(__webpack_hmr|hot-update))`
 ### `publicPath`
 
 (String) Defaults to `/_nuxt`.
+
+
+## Workbox Window
+
+This module uses [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) to register and communicate with workbox service worker.
+See docs for more information about use cases.
+
+As service worker is registered in background, to access instance you have to await on a promise:
+
+```js
+const workbox = await window.$workbox
+
+if (workbox) {
+  // Service worker is available
+}
+```s
 
 ## Examples
 

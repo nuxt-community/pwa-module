@@ -9,18 +9,16 @@ Array [
   "fixture/.nuxt/dist/client",
   "fixture/.nuxt/dist/client/LICENSES",
   "fixture/.nuxt/dist/client/icons",
-  "fixture/.nuxt/dist/client/icons/icon_120.9mgd2ZDMcQu.png",
-  "fixture/.nuxt/dist/client/icons/icon_144.9mgd2ZDMcQu.png",
-  "fixture/.nuxt/dist/client/icons/icon_152.9mgd2ZDMcQu.png",
-  "fixture/.nuxt/dist/client/icons/icon_192.9mgd2ZDMcQu.png",
-  "fixture/.nuxt/dist/client/icons/icon_384.9mgd2ZDMcQu.png",
-  "fixture/.nuxt/dist/client/icons/icon_512.9mgd2ZDMcQu.png",
-  "fixture/.nuxt/dist/client/icons/icon_64.9mgd2ZDMcQu.png",
+  "fixture/.nuxt/dist/client/icons/icon_120.b8f3a1.png",
+  "fixture/.nuxt/dist/client/icons/icon_144.b8f3a1.png",
+  "fixture/.nuxt/dist/client/icons/icon_152.b8f3a1.png",
+  "fixture/.nuxt/dist/client/icons/icon_192.b8f3a1.png",
+  "fixture/.nuxt/dist/client/icons/icon_384.b8f3a1.png",
+  "fixture/.nuxt/dist/client/icons/icon_512.b8f3a1.png",
+  "fixture/.nuxt/dist/client/icons/icon_64.b8f3a1.png",
   "fixture/.nuxt/dist/server",
   "fixture/.nuxt/dist/server/index.spa.html",
   "fixture/.nuxt/dist/server/index.ssr.html",
-  "fixture/.nuxt/layouts",
-  "fixture/.nuxt/layouts/default.vue",
   "fixture/.nuxt/loading.html",
   "fixture/.nuxt/views",
   "fixture/.nuxt/views/app.template.html",
@@ -36,16 +34,14 @@ Array [
   "fixture/dist/_nuxt",
   "fixture/dist/_nuxt/LICENSES",
   "fixture/dist/_nuxt/icons",
-  "fixture/dist/_nuxt/icons/icon_120.9mgd2ZDMcQu.png",
-  "fixture/dist/_nuxt/icons/icon_144.9mgd2ZDMcQu.png",
-  "fixture/dist/_nuxt/icons/icon_152.9mgd2ZDMcQu.png",
-  "fixture/dist/_nuxt/icons/icon_192.9mgd2ZDMcQu.png",
-  "fixture/dist/_nuxt/icons/icon_384.9mgd2ZDMcQu.png",
-  "fixture/dist/_nuxt/icons/icon_512.9mgd2ZDMcQu.png",
-  "fixture/dist/_nuxt/icons/icon_64.9mgd2ZDMcQu.png",
+  "fixture/dist/_nuxt/icons/icon_120.b8f3a1.png",
+  "fixture/dist/_nuxt/icons/icon_144.b8f3a1.png",
+  "fixture/dist/_nuxt/icons/icon_152.b8f3a1.png",
+  "fixture/dist/_nuxt/icons/icon_192.b8f3a1.png",
+  "fixture/dist/_nuxt/icons/icon_384.b8f3a1.png",
+  "fixture/dist/_nuxt/icons/icon_512.b8f3a1.png",
+  "fixture/dist/_nuxt/icons/icon_64.b8f3a1.png",
   "fixture/dist/icon.png",
-  "fixture/dist/icons",
-  "fixture/dist/icons/index.html",
   "fixture/dist/index.html",
   "fixture/dist/offline.html",
   "fixture/dist/offline.png",
@@ -110,11 +106,11 @@ workbox.precaching.precacheAndRoute([
 
 // Register route handlers for runtimeCaching
 workbox.routing.registerRoute(new RegExp('https://google.com/.*'), new workbox.strategies.CacheFirst ({}), 'GET')
-workbox.routing.registerRoute(new RegExp('/_nuxt/(?!.*(__webpack_hmr|hot-update))'), new workbox.strategies.CacheFirst ({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/_nuxt/'), new workbox.strategies.CacheFirst ({}), 'GET')
 
 // Register router handler for offlinePage
-workbox.routing.registerRoute(new RegExp('/(?!.*(__webpack_hmr|hot-update))'), ({event}) => {
-  return new workbox.strategies.NetworkOnly().handle({event})
+workbox.routing.registerRoute(new RegExp('/'), ({event}) => {
+  return new workbox.strategies.NetworkFirst().handle({event})
     .catch(() => caches.match('/offline.html'))
 })
 
