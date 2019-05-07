@@ -18,21 +18,6 @@ workbox: {
 }
 ```
 
-## Workbox Window
-
-This module uses [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) to register and communicate with workbox service worker.
-See docs for more information about use cases.
-
-As service worker is registered in background, to access instance you have to await on a promise:
-
-```js
-const workbox = await window.$workbox
-
-if (workbox) {
-  // Service worker is available
-}
-```
-
 ## Options
 
 <!-- General -->
@@ -122,6 +107,10 @@ Workbox takes a lot of the heavy lifting out of precaching by simplifying the AP
 
 (Boolean) Cache all routes. Enabled by default.
 
+### `offlineStrategy`
+
+(String) Strategy for caching routes. Default is `NetworkFirst`.
+
 ### `offlinePage`
 
 (String) Enables routing all offline requests to the specified path. (Example: `/offline.html`)
@@ -189,6 +178,22 @@ Default: `/(?!.*(__webpack_hmr|hot-update))`
 ### `publicPath`
 
 (String) Defaults to `/_nuxt`.
+
+
+## Workbox Window
+
+This module uses [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) to register and communicate with workbox service worker.
+See docs for more information about use cases.
+
+As service worker is registered in background, to access instance you have to await on a promise:
+
+```js
+const workbox = await window.$workbox
+
+if (workbox) {
+  // Service worker is available
+}
+```s
 
 ## Examples
 
