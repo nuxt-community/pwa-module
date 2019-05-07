@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/icon",
-  "version": "3.0.0-beta.14",
+  "version": "3.0.0-beta.15",
   "license": "MIT",
   "main": "index.js",
   "repository": "https://github.com/nuxt-community/pwa-module",
@@ -8,7 +8,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@nuxtjs/pwa-utils": "3.0.0-beta.14",
+    "@nuxtjs/pwa-utils": "3.0.0-beta.15",
     "execa": "^1.0.0",
     "fs-extra": "^7.0.1",
     "hash-sum": "^1.0.2",

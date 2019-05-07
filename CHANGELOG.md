@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.15](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2019-05-07)
+
+
+### Bug Fixes
+
+* **icon:** handle jimp.write callback ([bffe6ed](https://github.com/nuxt-community/pwa-module/commit/bffe6ed))
+* **workbox:** disable `cacheAssets` for dev mode ([dbf6d67](https://github.com/nuxt-community/pwa-module/commit/dbf6d67))
+* **workbox:** use NetworkFirst for dev ([9a67580](https://github.com/nuxt-community/pwa-module/commit/9a67580))
+
+
+### Features
+
+* **workbox:** offlineStrategy ([e377436](https://github.com/nuxt-community/pwa-module/commit/e377436))
+* rewrite icon with async image resizer ([#171](https://github.com/nuxt-community/pwa-module/issues/171)) ([a4a457e](https://github.com/nuxt-community/pwa-module/commit/a4a457e))
+
+
+### Reverts
+
+* remove unnecessary hmr regex ([1ac5f5c](https://github.com/nuxt-community/pwa-module/commit/1ac5f5c))
+
+
+### BREAKING CHANGES
+
+* **workbox:** default changed from NetworkOnly to NetworkFirst when offlinePage is enabled
+
+
+
+
+
 # [3.0.0-beta.14](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2019-03-17)
 
 
