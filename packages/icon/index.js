@@ -68,7 +68,7 @@ async function findIcon (options) {
     options.iconSrc,
     path.resolve(this.options.srcDir, this.options.dir.static, options.iconFileName),
     path.resolve(this.options.srcDir, this.options.dir.assets, options.iconFileName)
-  ]
+  ].filter(p => p)
 
   for (const iconSrc of iconSearchPath) {
     if (await fs.exists(iconSrc)) {
