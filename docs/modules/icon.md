@@ -27,7 +27,7 @@ icon: {
 - Default: `icon.png`
 
 **sizes**
-- Default: `[16, 120, 144, 152, 192, 384, 512]`
+- Default: `[64, 120, 144, 152, 192, 384, 512]`
 
 **targetDir**
 - Default: `icons`
