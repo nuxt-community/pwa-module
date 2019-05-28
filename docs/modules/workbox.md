@@ -193,7 +193,7 @@ const workbox = await window.$workbox
 if (workbox) {
   // Service worker is available
 }
-```s
+```
 
 ## Examples
 
@@ -206,6 +206,7 @@ If you have a custom CDN and need to cache requests for it, simply use `runtimeC
 **IMPORTANT:** Please note that workbox will **not** cache opaque responses. So please only use either `networkFirst` or `staleWhileRevalidate` strategies. Please see [Handle Third Party Requests](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests).
 
 nuxt.config.js
+
 ```js
 workbox: {
       runtimeCaching: [
