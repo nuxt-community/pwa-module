@@ -19,10 +19,13 @@ function addManifest (_options) {
 
   // Combine sources
   const defaults = {
+    // Module options (not part of the manifest)
+    publicPath,
+    fileHash: true,
+    // Manifest defaults
     name: process.env.npm_package_name,
     short_name: process.env.npm_package_name,
     description: process.env.npm_package_description,
-    publicPath,
     icons: [],
     start_url: routerBase + '?standalone=true',
     display: 'standalone',
@@ -36,10 +39,11 @@ function addManifest (_options) {
   const manifest = { ...options }
   delete manifest.src
   delete manifest.publicPath
+  delete manifest.fileHash
 
   // Stringify manifest & generate hash
   const manifestSource = JSON.stringify(manifest)
-  const manifestFileName = `manifest.${hash(manifestSource)}.json`
+  const manifestFileName = options.fileHash ? `manifest.${hash(manifestSource)}.json` : 'manifest.json'
 
   // Merge final manifest into options.manifest for other modules
   if (!this.options.manifest) {
