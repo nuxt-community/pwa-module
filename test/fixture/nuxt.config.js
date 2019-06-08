@@ -11,8 +11,7 @@ module.exports = {
   },
 
   modules: [
-    // '@nuxtjs/onesignal',
-    '@nuxtjs/pwa'
+    require('../..')
   ],
 
   manifest: {

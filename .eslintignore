@@ -3,4 +3,4 @@
 **/dist
 
 # Contains Lodash templates
-packages/icon/plugin.js
+**/plugin.js

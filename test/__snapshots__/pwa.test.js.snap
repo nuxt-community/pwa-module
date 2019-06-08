@@ -92,7 +92,7 @@ workbox.precaching.precacheAndRoute([
   \\"/offline.png\\",
   \\"precache.js\\"
 ], {
-  \\"cacheId\\": \\"nuxt-prod\\",
+  \\"cacheId\\": \\"@nuxtjs/pwa-prod\\",
   \\"directoryIndex\\": \\"/\\"
 })
 

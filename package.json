@@ -1,30 +1,26 @@
 {
-  "version": "0.0.0",
-  "private": true,
-  "contributors": [
-    "Pooya Parsa <pooya@pi0.ir>",
-    "Alexander Lichter <hello@lichter.io>",
-    "Jonas Galvez <jonasgalvez@gmail.com>"
+  "name": "@nuxtjs/pwa",
+  "version": "3.0.0-beta.16",
+  "description": "Supercharge Nuxt with a heavily tested, updated, zero-config and stable PWA solution!",
+  "repository": "nuxt-community/pwa-module",
+  "files": [
+    "lib"
   ],
+  "main": "lib/module.js",
   "scripts": {
-    "test": "yarn lint && jest",
-    "lint": "eslint --ext .js packages",
-    "release": "lerna publish --conventional-commits"
+    "lint": "eslint --ext .js lib",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "generate": "yarn nuxt generate test/fixture",
+    "test": "yarn lint && yarn generate && jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nuxt-community/pwa-module.git"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+  "dependencies": {
+    "defu": "^0.0.3",
+    "execa": "^1.0.0",
+    "fs-extra": "^8.0.1",
+    "hash-sum": "^1.0.2",
+    "hasha": "^5.0.0",
+    "jimp": "^0.6.4",
+    "workbox-cdn": "^4.3.1"
   },
   "devDependencies": {
     "axios": "^0.18.0",

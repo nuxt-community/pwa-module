@@ -1,9 +1,7 @@
 const klawSync = require('klaw-sync')
 const path = require('path')
 const fs = require('fs-extra')
-const { Nuxt, Builder, Generator } = require('nuxt-edge')
-
-jest.setTimeout(60000)
+const { Nuxt, Builder } = require('nuxt-edge')
 
 const getRelativePath = fileObj => path.relative(__dirname, fileObj.path)
 
@@ -12,17 +10,17 @@ const noJS = item => !/\.js/.test(item)
 describe('pwa', () => {
   let nuxt
 
-  test(
-    'build and generate', async () => {
-      nuxt = new Nuxt(require('./fixture/nuxt.config'))
-      await nuxt.ready()
+  test('build project', async () => {
+    nuxt = new Nuxt(require('./fixture/nuxt.config'))
+    await nuxt.ready()
 
-      const builder = new Builder(nuxt)
-      await builder.build()
-
-      const generator = new Generator(nuxt)
-      await generator.generate({ build: false })
-    })
+    // Generate before running tests as a known issue
+    // Build for more coverage
+    const builder = new Builder(nuxt)
+    await builder.build()
+    // const generator = new Generator(nuxt)
+    // await generator.generate({ build: false })
+  }, 60000)
 
   test('build files (.nuxt)', async () => {
     const buildFiles = klawSync(nuxt.options.buildDir).map(getRelativePath)
