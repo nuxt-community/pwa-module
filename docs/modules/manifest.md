@@ -9,11 +9,13 @@ sidebar: auto
 
 Manifest adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
 
-You can pass options to `manifest` section in `nuxt.config.js` to override defaults.
+You can pass options to `pwa.manifest` in `nuxt.config.js` to override defaults.
 
 ```js
-manifest: {
-  name: 'My Awesome App',
-  lang: 'fa'
+pwa: {
+  manifest: {
+    name: 'My Awesome App',
+    lang: 'fa'
+  }
 }
 ```

@@ -8,12 +8,12 @@ sidebar: auto
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/meta/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
 
 Meta easily adds common meta tags into your project with zero-config needed.
-You can optionally override meta using either `manifest` or `meta` section of `nuxt.config.js`:
+You can optionally override meta using `pwa.meta` in `nuxt.config.js`:
 
 ```js
-{
+pwa: {
   meta: {
-    // ...
+    /* meta options */
   }
 }
 ```
