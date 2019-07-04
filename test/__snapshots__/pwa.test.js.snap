@@ -3,6 +3,7 @@
 exports[`pwa build files (.nuxt) 1`] = `
 Array [
   "fixture/.nuxt/components",
+  "fixture/.nuxt/components/nuxt-build-indicator.vue",
   "fixture/.nuxt/components/nuxt-error.vue",
   "fixture/.nuxt/components/nuxt-loading.vue",
   "fixture/.nuxt/dist",
