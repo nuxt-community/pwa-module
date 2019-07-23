@@ -26,11 +26,11 @@
     "axios": "^0.19.0",
     "babel-eslint": "^10.0.2",
     "codecov": "^3.5.0",
-    "eslint": "^6.0.1",
+    "eslint": "^6.1.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.13.6",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
@@ -38,9 +38,9 @@
     "jest": "^24.8.0",
     "jsdom": "^15.1.1",
     "klaw-sync": "^6.0.0",
-    "lerna": "^3.15.0",
+    "lerna": "^3.16.2",
     "node-fetch": "^2.6.0",
-    "nuxt-edge": "^2.9.0-26036650.ac723e6c",
+    "nuxt-edge": "^2.9.0-26064011.e448e3c9",
     "standard-version": "^6.0.1"
   }
 }
