@@ -40,7 +40,7 @@
     "klaw-sync": "^6.0.0",
     "lerna": "^3.16.4",
     "node-fetch": "^2.6.0",
-    "nuxt-edge": "^2.9.0-26104328.b22e0543",
+    "nuxt-edge": "^2.9.2-26105005.69ca84fb",
     "standard-version": "^7.0.0"
   }
 }
