@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "defu": "^0.0.3",
-    "execa": "^1.0.0",
+    "execa": "^2.0.4",
     "fs-extra": "^8.1.0",
     "hash-sum": "^2.0.0",
     "hasha": "^5.0.0",
