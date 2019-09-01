@@ -25,14 +25,14 @@
   },
   "devDependencies": {
     "axios": "^0.19.0",
-    "babel-eslint": "^10.0.2",
+    "babel-eslint": "^10.0.3",
     "codecov": "^3.5.0",
-    "eslint": "^6.2.1",
-    "eslint-config-standard": "^14.0.0",
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.15.2",
-    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-jest": "^22.16.0",
+    "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "fs-extra": "^8.1.0",
@@ -41,7 +41,7 @@
     "klaw-sync": "^6.0.0",
     "lerna": "^3.16.4",
     "node-fetch": "^2.6.0",
-    "nuxt-edge": "^2.9.2-26107211.9ad02c40",
+    "nuxt-edge": "^2.9.2-26120169.c8ee9a66",
     "standard-version": "^7.0.0"
   }
 }
