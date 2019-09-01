@@ -56,10 +56,13 @@ exports[`pwa sw.js 1`] = `
 // Configure
 // --------------------------------------------------
 
+
 // Set workbox config
 workbox.setConfig({
   \\"debug\\": true
 })
+
+
 
 // Set workbox cache names
 workbox.core.setCacheNameDetails({
@@ -67,20 +70,31 @@ workbox.core.setCacheNameDetails({
   \\"googleAnalytics\\": \\"test-ga\\"
 })
 
+
+
 // Start controlling any existing clients as soon as it activates
 workbox.core.clientsClaim()
+
+
 
 // Skip over the SW waiting lifecycle stage
 workbox.core.skipWaiting()
 
+
+
 workbox.precaching.cleanupOutdatedCaches()
+
+
 
 // Enable offline Google Analytics tracking
 workbox.googleAnalytics.initialize()
 
+
+
 // -- Start of workboxExtensions --
 // Workbox Extension
 // -- End of workboxExtensions --
+
 
 // --------------------------------------------------
 // Precaches
@@ -97,9 +111,12 @@ workbox.precaching.precacheAndRoute([
   \\"directoryIndex\\": \\"/\\"
 })
 
+
+
 // -- Start of cachingExtensions --
 // Caching Extension
 // -- End of cachingExtensions --
+
 
 // --------------------------------------------------
 // Runtime Caching
@@ -109,14 +126,18 @@ workbox.precaching.precacheAndRoute([
 workbox.routing.registerRoute(new RegExp('https://google.com/.*'), new workbox.strategies.CacheFirst ({}), 'GET')
 workbox.routing.registerRoute(new RegExp('/_nuxt/'), new workbox.strategies.CacheFirst ({}), 'GET')
 
+
+
 // Register router handler for offlinePage
 workbox.routing.registerRoute(new RegExp('/'), ({event}) => {
   return new workbox.strategies.NetworkFirst().handle({event})
     .catch(() => caches.match('/offline.html'))
 })
 
+
 // -- Start of routingExtensions --
 // Routing Extension
 // -- End of routingExtensions --
+
 "
 `;
