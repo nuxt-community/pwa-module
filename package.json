@@ -17,7 +17,6 @@
     "defu": "^0.0.3",
     "execa": "^1.0.0",
     "fs-extra": "^8.1.0",
-    "hash-sum": "^2.0.0",
     "hasha": "^5.0.0",
     "jimp-compact": "^0.6.8",
     "lodash.template": "^4.5.0",
