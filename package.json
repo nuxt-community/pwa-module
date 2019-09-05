@@ -19,7 +19,7 @@
     "fs-extra": "^8.1.0",
     "hash-sum": "^2.0.0",
     "hasha": "^5.0.0",
-    "jimp-compact": "^0.6.4",
+    "jimp-compact": "^0.6.8",
     "lodash.template": "^4.5.0",
     "workbox-cdn": "^4.3.1"
   },
@@ -31,7 +31,7 @@
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.16.0",
+    "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
