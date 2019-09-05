@@ -1,7 +1,14 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.0.0-beta.17](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2019-09-05)
+
+
+### Features
+
+* `pwa.` scopped options ([010fe0e](https://github.com/nuxt-community/pwa-module/commit/010fe0e))
+* use `jimp-compact` ([5e37b58](https://github.com/nuxt-community/pwa-module/commit/5e37b58))
 
 # [3.0.0-beta.16](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2019-05-07)
 

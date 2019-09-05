@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/pwa",
-  "version": "3.0.0-beta.16",
+  "version": "3.0.0-beta.17",
   "description": "Supercharge Nuxt with a heavily tested, updated, zero-config and stable PWA solution!",
   "repository": "nuxt-community/pwa-module",
   "files": [
