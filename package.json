@@ -18,7 +18,7 @@
     "execa": "^1.0.0",
     "fs-extra": "^8.1.0",
     "hasha": "^5.0.0",
-    "jimp-compact": "^0.6.8",
+    "jimp-compact": "^0.8.0",
     "lodash.template": "^4.5.0",
     "workbox-cdn": "^4.3.1"
   },
