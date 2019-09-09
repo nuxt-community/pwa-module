@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0-beta.18](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2019-09-09)
+
+
+### Bug Fixes
+
+* revert compileTemplate as is fixed by nuxt/nuxt.js[#6283](https://github.com/nuxt-community/pwa-module/issues/6283) for 2.9.x ([d0f96de](https://github.com/nuxt-community/pwa-module/commit/d0f96de))
+* use shared pwa context ([3c19bae](https://github.com/nuxt-community/pwa-module/commit/3c19bae))
+
 ## [3.0.0-beta.17](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2019-09-05)
 
 
