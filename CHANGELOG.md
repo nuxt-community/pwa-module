@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0-beta.19](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2019-09-11)
+
+
+### Bug Fixes
+
+* expose modified pwa context to the config ([c325e44](https://github.com/nuxt-community/pwa-module/commit/c325e44))
+* truncate manifest hash ([5c74621](https://github.com/nuxt-community/pwa-module/commit/5c74621))
+
 ## [3.0.0-beta.18](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2019-09-09)
 
 
