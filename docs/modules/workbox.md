@@ -280,8 +280,10 @@ Add it to the `plugins` section of `nuxt.config.js`:
 ```js
 {
   plugins: [
-    src: '~/plugins/sw.js',
-    ssr: false
+    {
+      src: '~/plugins/sw.js',
+      ssr: false
+    }
   ]
 }
 ```
