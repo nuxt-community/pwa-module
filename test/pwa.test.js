@@ -29,9 +29,13 @@ describe('pwa', () => {
   })
 
   test('generate files (dist)', async () => {
+    jest.mock('hasha', () => {
+      return jest.fn(() => 'HASHMOCK') // always return the same string
+    })
     const generateFiles = klawSync(nuxt.options.generate.dir).map(getRelativePath)
 
     expect(generateFiles.filter(noJS)).toMatchSnapshot()
+    jest.resetModules()
   })
 
   test('accessible icons', async () => {
