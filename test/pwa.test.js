@@ -7,13 +7,6 @@ const getRelativePath = fileObj => path.relative(__dirname, fileObj.path)
 
 const noJS = item => !/\.js/.test(item)
 
-jest.mock('hasha', () => {
-  const originalHasha = jest.requireActual('hasha')
-  const hasha = jest.fn(() => 'HASHMOCK')
-  hasha.fromFile = originalHasha.fromFile
-  return hasha
-})
-
 describe('pwa', () => {
   let nuxt
 
