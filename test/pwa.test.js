@@ -7,6 +7,13 @@ const getRelativePath = fileObj => path.relative(__dirname, fileObj.path)
 
 const noJS = item => !/\.js/.test(item)
 
+jest.mock('hasha', () => {
+  const originalHasha = jest.requireActual('hasha')
+  const hasha = jest.fn(() => 'HASHMOCK')
+  hasha.fromFile = originalHasha.fromFile
+  return hasha
+})
+
 describe('pwa', () => {
   let nuxt
 
@@ -29,13 +36,9 @@ describe('pwa', () => {
   })
 
   test('generate files (dist)', async () => {
-    jest.mock('hasha', () => {
-      return jest.fn(() => 'HASHMOCK') // always return the same string
-    })
     const generateFiles = klawSync(nuxt.options.generate.dir).map(getRelativePath)
 
     expect(generateFiles.filter(noJS)).toMatchSnapshot()
-    jest.resetModules()
   })
 
   test('accessible icons', async () => {
