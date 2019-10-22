@@ -19,31 +19,67 @@ pwa: {
     name: 'My Awesome App',
     lang: 'fa',
     // further configuration other than manifest valid keys
+    // src
     // publicPath
-    fileExtension: 'webmanifest' // Default is `json` but `webmanifest` is recommended.
+    useWebmanifestExtension: true // Default is false, so it will be `json` but `webmanifest` is recommended.
   }
 }
 ```
 
 # Default options
 
-| Property              | Default                                                             |
-|-----------------------|---------------------------------------------------------------------|
-| `name` *1             | `package.json` name property                                        |
-| `short_name` *1       | `package.json` name property                                        |
-| `description` *2      | `package.json` description property                                 |
-| `icons` *1            | (See the [icon module](https://pwa.nuxtjs.org/modules/icon.html))   |
-| `start_url` *1        | `routerBase + '?standalone=true'`                                   |
-| `display` *1          | `'standalone'`                                                      |
-| `background_color` *2 | `'#ffffff'`                                                         |
-| `theme_color` *2      | `this.options.loading.color`                                        |
-| `lang`                | `'en'`                                                              |
-| `fileExtension`       | `json`                                                              |
-| `publicPath`          | A combination of `routerBase` and `options.build.publicPath`        |
+| Property                          | Type            | Default                                                      | Description                                                     |
+| --------------------------------- | --------------- | ------------------------------------------------------------ | --------------------------------------------------------------- |
+| `name` <sup>\*1</sup>             | `String`        | `package.json`'s name property                               | [maximum of 45 characters]                                      |
+| `short_name` <sup>\*1</sup>       | `String`        | `package.json`'s name property                               | [maximum of 12 characters]                                      |
+| `description` <sup>\*2</sup>      | `String`        | `package.json`'s description property                        |                                                                 |
+| `icons` <sup>\*1</sup>            | `Array<Object>` | `[]`                                                         | (See the [icon module])                                         |
+| `start_url` <sup>\*1</sup>        | `String`        | `routerBase + '?standalone=true'`                            | It has to be relative to where the manifest is placed           |
+| `display` <sup>\*1</sup>          | `String`        | `'standalone'`                                               |                                                                 |
+| `background_color` <sup>\*2</sup> | `String`        | `'#ffffff'`                                                  |                                                                 |
+| `theme_color` <sup>\*2</sup>      | `String`        | `this.options.loading.color`                                 | Nuxt [loading color] option                                     |
+| `dir`                             | `String`        | `'ltr'`                                                      | `ltr` or `rtl`. Used with `lang`                                |
+| `lang`                            | `String`        | `'en'`                                                       | Recommended if used `dir`                                       |
+| `useWebmanifestExtension`         | `Boolean`       | `false`                                                      | Whether to use `webmanifest` file extension (or default `json`) |
+| `publicPath`                      | `String`        | A combination of `routerBase` and `options.build.publicPath` |                                                                 |
 
+- <sup>\*1</sup> Mandatory (according [to Google](https://web.dev/add-manifest)).
+  Although [official documentation](https://w3c.github.io/manifest/#json-schema) only mentions `name` and `icons`
+- <sup>\*2</sup> Recommended (according [to Google](https://web.dev/add-manifest))
 
-* (*1) Mandatory (according [to Google](https://web.dev/add-manifest)).
- Although [official documentation](https://w3c.github.io/manifest/#json-schema) only mentions `name` and `icons`
-* (*2) Recommended (according [to Google](https://web.dev/add-manifest))
+[icon module]: https://pwa.nuxtjs.org/modules/icon.html
+[maximum of 45 characters]: https://developer.chrome.com/apps/manifest/name
+[maximum of 12 characters]: https://developer.chrome.com/apps/manifest/name
+[loading color]: https://nuxtjs.org/api/configuration-loading/#customizing-the-progress-bar
 
-For more options, check out the spec: https://w3c.github.io/manifest/
+For more information, check out:
+
+- the spec: https://w3c.github.io/manifest/
+- Pete LePage's article: https://web.dev/add-manifest/
+- MDN Docs: https://developer.mozilla.org/en-US/docs/Web/Manifest
+
+## Difference between `name` and `short_name`:
+
+### `name`
+
+> The name (maximum of 45 characters) is the primary identifier of the app and is a required field. It is displayed in the following locations:
+>
+> - Install dialog
+> - Extension management UI
+> - Chrome Web Store
+
+Source: https://developer.chrome.com/apps/manifest/name
+
+### `short_name`
+
+> The short_name (maximum of 12 characters recommended) is a short version of the app's name. It is an optional field and if not specified, the name will be used, > though it will likely be truncated. The short name is typically used where there is insufficient space to display the full name, such as:
+>
+> - Device home screens
+> - New Tab page
+
+Source: https://developer.chrome.com/apps/manifest/name
+
+## `useWebmanifestExtension`:
+
+This options sets the manifest file extension to `.json` or `.webmanifest`. For more information, check
+[our wiki](https://github.com/nuxt-community/pwa-module/wiki/.webmanifest).
