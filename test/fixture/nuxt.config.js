@@ -17,7 +17,7 @@ module.exports = {
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description',
-    fileExtension: 'webmanifest'
+    useWebmanifestExtension: true
   },
 
   // build: {
