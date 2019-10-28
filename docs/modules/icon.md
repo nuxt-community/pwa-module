@@ -48,3 +48,12 @@ Will return an empty string when no icon in the given size is available (eg. whe
 - Default: '$icon'
 
 Name of property for accessible icons.
+
+**purpose**
+- Default: null
+
+Array of icon purpose.
+Example:
+```js
+purpose: [ 'maskable', 'any' ]
+```
