@@ -280,8 +280,10 @@ Add it to the `plugins` section of `nuxt.config.js`:
 ```js
 {
   plugins: [
-    src: '~/plugins/sw.js',
-    ssr: false
+    {
+      src: '~/plugins/sw.js',
+      ssr: false
+    }
   ]
 }
 ```
@@ -330,3 +332,19 @@ workbox.routing.registerRoute(
 ```
 
 Thanks to [@CarterLi](https://github.com/CarterLi) for the tip.
+
+### Disable Add to Home Screen button (the mini-infobar)
+
+A PWA can be installed by the user if it meets a set of **criteria** and as installable it can trigger an "Add to Home Screen" button (the mini-infobar) as described [here](https://developers.google.com/web/fundamentals/app-install-banners/).
+
+One **criteria** is that `display` must be either `fullscreen`, `standalone`, or `minimal-ui`. If you want to _prevent_ the mini-infobar from appearing in your App, you can set the `pwa.manifest.display` to `browser` in `nuxt.config.js`:
+
+```js
+{
+  pwa {
+   manifest: {
+      display: 'browser'
+    }
+  }
+}
+```
