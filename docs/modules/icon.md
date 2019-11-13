@@ -52,8 +52,12 @@ Name of property for accessible icons.
 **purpose**
 - Default: null
 
-Array of icon purpose.
+Array or string of icon purpose.
 Example:
 ```js
-purpose: [ 'maskable', 'any' ]
+purpose: [ 'badge', 'maskable' ]
+// or
+purpose: 'maskable'
 ```
+
+More detail of "purpose": https://w3c.github.io/manifest/#purpose-member
