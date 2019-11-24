@@ -14,7 +14,7 @@ You can pass options to `pwa.icon` in `nuxt.config.js` to override defaults.
 
 ```js
 pwa: {
-  icons: {
+  icon: {
     /* icon options */
   }
 }
