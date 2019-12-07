@@ -39,6 +39,19 @@ describe('pwa', () => {
     expect(html).toContain('/_nuxt/icons/icon_512.b8f3a1.png')
   })
 
+  test('icons purpose', async () => {
+    const assetDir = path.join(nuxt.options.generate.dir, '_nuxt')
+    const manifestFileName = fs.readdirSync(assetDir).find(item => item.match(/^manifest.+\.json$/i))
+    const manifestContent = JSON.parse(fs.readFileSync(path.join(assetDir, manifestFileName)))
+    expect(manifestContent.icons).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          purpose: expect.stringMatching(/( ?(any|maskable|badge))+/)
+        })
+      ])
+    )
+  })
+
   test('sw.js', async () => {
     const swContents = await fs.readFile(path.resolve(nuxt.options.generate.dir, 'sw.js'), 'utf-8')
 
