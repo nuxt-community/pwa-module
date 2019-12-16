@@ -312,7 +312,7 @@ Safari requires rangeRequests.
 ```js
 workbox.routing.registerRoute(
   /\.(mp4|webm)/,
-  workbox.strategies.cacheFirst({
+  new workbox.strategies.CacheFirst({
     plugins: [
       new workbox.rangeRequests.Plugin(),
     ],
