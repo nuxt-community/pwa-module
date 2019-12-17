@@ -3,43 +3,42 @@
   "version": "3.0.0-beta.19",
   "description": "Supercharge Nuxt with a heavily tested, updated, zero-config and stable PWA solution!",
   "repository": "nuxt-community/pwa-module",
+  "license": "MIT",
+  "contributors": [
+    "Pooya Parsa <pooya@pi0.ir>",
+    "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
+  ],
   "files": [
     "lib"
   ],
   "main": "lib/module.js",
   "scripts": {
-    "lint": "eslint --ext .js lib",
+    "dev": "nuxt test/fixture",
+    "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "generate": "yarn nuxt generate test/fixture",
-    "test": "yarn lint && yarn generate && jest"
+    "test": "yarn lint && jest"
   },
   "dependencies": {
     "defu": "^0.0.3",
-    "execa": "^1.0.0",
     "fs-extra": "^8.1.0",
-    "hasha": "^5.0.0",
-    "jimp-compact": "^0.8.0",
+    "hasha": "^5.1.0",
+    "jimp-compact": "^0.9.3",
     "workbox-cdn": "^4.3.1"
   },
   "devDependencies": {
-    "axios": "^0.19.0",
-    "babel-eslint": "^10.0.3",
-    "codecov": "^3.5.0",
-    "eslint": "^6.3.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.17.0",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "fs-extra": "^8.1.0",
-    "jest": "^24.9.0",
-    "jsdom": "^15.1.1",
-    "klaw-sync": "^6.0.0",
-    "lerna": "^3.16.4",
-    "node-fetch": "^2.6.0",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/module-test-utils": "latest",
+    "codecov": "latest",
+    "eslint": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "klaw-sync": "latest",
     "nuxt-edge": "latest",
-    "standard-version": "^7.0.0"
+    "standard-version": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
