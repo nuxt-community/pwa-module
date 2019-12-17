@@ -3,25 +3,28 @@
   "version": "3.0.0-beta.20",
   "description": "Supercharge Nuxt with a heavily tested, updated, zero-config and stable PWA solution!",
   "repository": "nuxt-community/pwa-module",
+  "license": "MIT",
+  "main": "lib/module.js",
   "files": [
     "lib"
   ],
-  "main": "lib/module.js",
   "scripts": {
-    "lint": "eslint --ext .js lib",
+    "dev": "nuxt test/fixture",
+    "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "generate": "yarn nuxt generate test/fixture",
-    "test": "yarn lint && yarn generate && jest"
+    "test": "yarn lint && jest"
   },
   "dependencies": {
     "defu": "^1.0.0",
-    "execa": "^1.0.0",
+    "execa": "^3.0.0",
     "fs-extra": "^8.1.0",
-    "hasha": "^5.0.0",
-    "jimp-compact": "^0.8.0",
+    "hasha": "^5.1.0",
+    "jimp-compact": "^0.9.3",
     "workbox-cdn": "^4.3.1"
   },
   "devDependencies": {
+    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/module-test-utils": "latest",
     "axios": "latest",
     "babel-eslint": "latest",
     "codecov": "latest",
