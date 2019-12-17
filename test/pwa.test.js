@@ -1,5 +1,5 @@
-const klawSync = require('klaw-sync')
 const path = require('path')
+const klawSync = require('klaw-sync')
 const fs = require('fs-extra')
 const { Nuxt, Builder } = require('nuxt-edge')
 
@@ -22,13 +22,13 @@ describe('pwa', () => {
     // await generator.generate({ build: false })
   }, 60000)
 
-  test('build files (.nuxt)', async () => {
+  test('build files (.nuxt)', () => {
     const buildFiles = klawSync(nuxt.options.buildDir).map(getRelativePath)
 
     expect(buildFiles.filter(noJS)).toMatchSnapshot()
   })
 
-  test('generate files (dist)', async () => {
+  test('generate files (dist)', () => {
     const generateFiles = klawSync(nuxt.options.generate.dir).map(getRelativePath)
 
     expect(generateFiles.filter(noJS)).toMatchSnapshot()

@@ -1,27 +1,29 @@
 <template>
-<div class="container">
-  <nav>
-    <nuxt-link to="/">Home</nuxt-link>
-    <nuxt-link
-      v-for="p in ['Foo', 'Bar', 'Baz']"
-      :key="p"
-      :to="'/' + p.toLowerCase()"
-    >
-      {{ p }}
-    </nuxt-link>
-  </nav>
+  <div class="container">
+    <nav>
+      <nuxt-link to="/">
+        Home
+      </nuxt-link>
+      <nuxt-link
+        v-for="p in ['Foo', 'Bar', 'Baz']"
+        :key="p"
+        :to="'/' + p.toLowerCase()"
+      >
+        {{ p }}
+      </nuxt-link>
+    </nav>
 
-  <nuxt/>
+    <nuxt />
 
-  <footer>
-    Generated on {{ date }}
-  </footer>
-</div>
+    <footer>
+      Generated on {{ date }}
+    </footer>
+  </div>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       date: new Date()
     }
