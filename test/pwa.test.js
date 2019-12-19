@@ -13,6 +13,10 @@ describe('pwa', () => {
     ({ nuxt } = await generate(loadConfig(__dirname)))
   }, 60000)
 
+  afterAll(async () => {
+    await nuxt.close()
+  })
+
   test('build files (.nuxt)', () => {
     const buildFiles = klawSync(nuxt.options.buildDir).map(getRelativePath)
 
