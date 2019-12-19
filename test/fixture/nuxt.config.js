@@ -1,27 +1,15 @@
-const path = require('path')
-
 module.exports = {
-  srcDir: __dirname,
-  rootDir: path.resolve(__dirname, '../../'),
-  buildDir: path.resolve(__dirname, '.nuxt'),
   dev: false,
-
-  generate: {
-    dir: path.resolve(__dirname, 'dist')
-  },
+  rootDir: __dirname,
 
   modules: [
-    require('../..')
+    { handler: require('../../') }
   ],
 
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description'
   },
-
-  // build: {
-  //   publicPath: 'https://cdn.com/assets/'
-  // },
 
   workbox: {
     offlineAnalytics: true,
