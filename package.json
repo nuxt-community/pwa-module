@@ -35,7 +35,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "fs-extra": "^8.1.0",
     "jest": "^24.9.0",
-    "jsdom": "^15.1.1",
+    "jsdom": "^16.0.0",
     "klaw-sync": "^6.0.0",
     "lerna": "^3.16.4",
     "node-fetch": "^2.6.0",
