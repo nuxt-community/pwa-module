@@ -14,7 +14,7 @@
     "test": "yarn lint && yarn generate && jest"
   },
   "dependencies": {
-    "defu": "^0.0.3",
+    "defu": "^0.0.4",
     "execa": "^1.0.0",
     "fs-extra": "^8.1.0",
     "hasha": "^5.0.0",
