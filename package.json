@@ -33,7 +33,6 @@
     "eslint-plugin-node": "latest",
     "eslint-plugin-promise": "latest",
     "eslint-plugin-standard": "latest",
-    "fs-extra": "latest",
     "jest": "latest",
     "jsdom": "latest",
     "klaw-sync": "latest",
