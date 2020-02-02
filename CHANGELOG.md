@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0-beta.20](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2020-02-02)
+
 ## [3.0.0-beta.19](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2019-09-11)
 
 
