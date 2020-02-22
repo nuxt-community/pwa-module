@@ -31,10 +31,10 @@ pwa: {
 **sizes**
 - Default: `[64, 120, 144, 152, 192, 384, 512]`
 
+Array of sizes to be generated (Square).
+
 **targetDir**
 - Default: `icons`
-
-Array of sizes to be generated (Square).
 
 **accessibleIcons**
 - Default: true
