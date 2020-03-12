@@ -1,6 +1,12 @@
-**/templates
-**/node_modules
-**/dist
+# Common
+node_modules
+dist
+.nuxt
+coverage
 
-# Contains Lodash templates
-**/plugin.js
+# Plugin
+lib/**/plugin.js
+lib/**/templates
+
+# Fixtures
+test/fixture/**/static
