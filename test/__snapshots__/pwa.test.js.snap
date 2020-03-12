@@ -21,6 +21,7 @@ Array [
   "fixture/.nuxt/dist/server/index.spa.html",
   "fixture/.nuxt/dist/server/index.ssr.html",
   "fixture/.nuxt/loading.html",
+  "fixture/.nuxt/mixins",
   "fixture/.nuxt/views",
   "fixture/.nuxt/views/app.template.html",
   "fixture/.nuxt/views/error.html",

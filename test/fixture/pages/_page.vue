@@ -1,5 +1,5 @@
 <template>
-<main>
-  You are on page: {{ $route.path }}
-</main>
+  <main>
+    You are on page: {{ $route.path }}
+  </main>
 </template>
