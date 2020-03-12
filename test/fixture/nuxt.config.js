@@ -13,7 +13,8 @@ module.exports = {
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description',
-    useWebmanifestExtension: true
+    useWebmanifestExtension: true,
+    fileName: 'manifest_test.[ext]?[hash]'
   },
 
   workbox: {

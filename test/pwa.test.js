@@ -36,8 +36,8 @@ describe('pwa', () => {
 
   test('icons purpose', () => {
     const assetDir = path.join(nuxt.options.generate.dir, '_nuxt')
-    const manifestFileName = fs.readdirSync(assetDir).find(item => item.match(/^manifest.+\.json$/i))
-    const manifestContent = JSON.parse(fs.readFileSync(path.join(assetDir, manifestFileName)))
+    const manifestFileName = fs.readdirSync(assetDir).find(item => item.match(/^manifest./i))
+    const manifestContent = JSON.parse(fs.readFileSync(path.join(assetDir, manifestFileName.split('?')[0])))
     expect(manifestContent.icons).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
