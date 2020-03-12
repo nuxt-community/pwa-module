@@ -6,6 +6,10 @@ module.exports = {
     { handler: require('../../') }
   ],
 
+  icon: {
+    purpose: 'maskable'
+  },
+
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description'
