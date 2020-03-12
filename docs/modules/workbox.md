@@ -332,3 +332,20 @@ workbox.routing.registerRoute(
 ```
 
 Thanks to [@CarterLi](https://github.com/CarterLi) for the tip.
+
+
+### Refresh to Update Notification
+
+In `layouts/default.vue` (or wherever you want, maybe in a plugin):
+
+```js
+const workbox = await window.$workbox;
+if (workbox) {
+  workbox.addEventListener('installed', (event) => {
+    // If we don't do this we'll be displaying the notification after the initial installation, which isn't perferred.
+    if (event.isUpdate) {
+      // whatever logic you want to use to notify the user that they need to refresh the page.
+    }
+  });
+}
+```
