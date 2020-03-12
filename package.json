@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "defu": "^1.0.0",
-    "execa": "^1.0.0",
+    "execa": "^4.0.0",
     "fs-extra": "^8.1.0",
     "hasha": "^5.0.0",
     "jimp-compact": "^0.8.0",
