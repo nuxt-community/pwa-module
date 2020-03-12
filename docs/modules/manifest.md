@@ -18,10 +18,7 @@ pwa: {
   manifest: {
     name: 'My Awesome App',
     lang: 'fa',
-    // further configuration other than manifest valid keys
-    // src
-    // publicPath
-    useWebmanifestExtension: true // Default is false, so it will be `json` but `webmanifest` is recommended.
+    useWebmanifestExtension: false
   }
 }
 ```
@@ -40,12 +37,13 @@ pwa: {
 | `theme_color` <sup>\*2</sup>      | `String`        | `this.options.loading.color`                                 | Nuxt [loading color] option                                     |
 | `dir`                             | `String`        | `'ltr'`                                                      | `ltr` or `rtl`. Used with `lang`                                |
 | `lang`                            | `String`        | `'en'`                                                       | Recommended if used `dir`                                       |
-| `useWebmanifestExtension`         | `Boolean`       | `false`                                                      | Whether to use `webmanifest` file extension (or default `json`) |
+| `useWebmanifestExtension` <sup>\*3</sup>       | `Boolean`       | `false`                                                      | Whether to use `webmanifest` file extension (or default `json`) |
 | `publicPath`                      | `String`        | A combination of `routerBase` and `options.build.publicPath` |                                                                 |
 
 - <sup>\*1</sup> Mandatory (according [to Google](https://web.dev/add-manifest)).
   Although [official documentation](https://w3c.github.io/manifest/#json-schema) only mentions `name` and `icons`
 - <sup>\*2</sup> Recommended (according [to Google](https://web.dev/add-manifest))
+- <sup>\*3</sup> Please see [wiki](https://github.com/nuxt-community/pwa-module/wiki/.webmanifest)
 
 [icon module]: https://pwa.nuxtjs.org/modules/icon.html
 [maximum of 45 characters]: https://developer.chrome.com/apps/manifest/name
@@ -82,4 +80,4 @@ Source: https://developer.chrome.com/apps/manifest/name
 ## `useWebmanifestExtension`:
 
 This options sets the manifest file extension to `.json` or `.webmanifest`. For more information, check
-[our wiki](https://github.com/nuxt-community/pwa-module/wiki/.webmanifest).
+[this wiki page](https://github.com/nuxt-community/pwa-module/wiki/.webmanifest).
