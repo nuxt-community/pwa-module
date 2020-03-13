@@ -1,7 +1,7 @@
 <template>
-<main>
-  <img class="icon" :src="$icon(512)" >
-</main>
+  <main>
+    <img class="icon" :src="$icon(512)">
+  </main>
 </template>
 
 <style scoped>
@@ -12,22 +12,22 @@
 
 <script>
 export default {
-  asyncData() {
+  asyncData () {
     return {
       date: Date.now()
     }
   },
-  mounted() {
+  computed: {
+    computedDate () {
+      return new Date(this.date)
+    }
+  },
+  mounted () {
     this.int = setInterval(() => {
       this.date = Date.now()
     }, 1000)
   },
-  computed: {
-    computedDate() {
-      return new Date(this.date)
-    }
-  },
-  beforeDestroy() {
+  beforeDestroy () {
     clearInterval(this.int)
   }
 }

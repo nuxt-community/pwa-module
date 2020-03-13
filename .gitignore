@@ -2,11 +2,9 @@ node_modules
 *.iml
 .idea
 *.log*
-modules/*/package-lock.json
-.nuxt*
-coverage
-dist/
-_book
-.DS_Store
+.nuxt
 .vscode
+.DS_Store
+coverage
+dist
 .cache
