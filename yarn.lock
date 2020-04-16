@@ -7367,10 +7367,10 @@ jest@latest:
     import-local "^3.0.2"
     jest-cli "^25.1.0"
 
-jimp-compact@^0.9.8:
-  version "0.9.8"
-  resolved "https://registry.yarnpkg.com/jimp-compact/-/jimp-compact-0.9.8.tgz#b11a5a5b4111e06cf42adb154b83a788f4e403b7"
-  integrity sha512-jo3Zwnk7V1ZSr4TCHXojgyjpXJTqd56XF3ox1BroherqWG9CgHUr+FNnwoO+5JF8VlXZUzONowG0s2657Y0vAg==
+jimp-compact@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/jimp-compact/-/jimp-compact-0.10.1.tgz#c0cc5ebe10b661f9575b9e285ce62d986c4945b6"
+  integrity sha512-ZZxtXylStFbUKxTAenjsFM8Xyy8JBJDElHFDWoWLWlfd41uCQh8j10U3GtvoeDOexe39A5BYG+Uf1y7zhZzUMw==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"

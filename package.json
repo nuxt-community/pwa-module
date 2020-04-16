@@ -19,7 +19,7 @@
     "execa": "^4.0.0",
     "fs-extra": "^9.0.0",
     "hasha": "^5.2.0",
-    "jimp-compact": "^0.9.8",
+    "jimp-compact": "^0.10.1",
     "workbox-cdn": "^4.3.1"
   },
   "devDependencies": {
