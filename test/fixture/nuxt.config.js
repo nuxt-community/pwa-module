@@ -54,7 +54,5 @@ module.exports = {
         method: 'GET'
       }
     ]
-  },
-
-
+  }
 }
