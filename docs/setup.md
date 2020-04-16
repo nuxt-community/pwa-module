@@ -32,7 +32,10 @@ PWA module is a collection of smaller modules that are designed to magically wor
 
 ```js
 modules: [
-    ['@nuxtjs/pwa', { icon: false }],
+    '@nuxtjs/pwa',
+    pwa: {
+        icon: false
+    }
 ],
 ```
 

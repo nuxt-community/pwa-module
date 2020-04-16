@@ -14,8 +14,7 @@ module.exports = {
             'workbox',
             'meta',
             'icon',
-            'manifest',
-            'onesignal'
+            'manifest'
           ]
         }
       ]
@@ -43,7 +42,7 @@ module.exports = {
       },
       {
         text: 'OneSignal',
-        link: '/modules/onesignal'
+        link: 'https://github.com/nuxt-community/onesignal-module'
       },
     ]
   }

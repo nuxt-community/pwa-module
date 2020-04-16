@@ -14,4 +14,5 @@ Note: These docs are for version 3
 - [**Manifest**](./modules/manifest.md) - Automatically generate `manifest.json` file.
 - [**Meta**](./modules/meta.md) - Automatically adds SEO friendly meta data with manifest integration.
 - [**Icon**](./modules/icon.md) - Automatically generates app icons with different sizes.
-- [**OneSignal**](./modules/onesignal.md) - Free background push notifications using OneSignal.
+
+- [**OneSignal**](https://github.com/nuxt-community/onesignal-module) - Background push notifications using OneSignal.
