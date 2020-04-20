@@ -167,6 +167,10 @@ Default: `/`
 
 (String) If you need to register another service worker (OneSignal, etc) you can use this option.
 
+### `swDest`
+
+(String) If you want to change the name of service worker, you must use this option with swURL.
+
 ### `swScope`
 
 (String) Defaults to `routerBase`.
