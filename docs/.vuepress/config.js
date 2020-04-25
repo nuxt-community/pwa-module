@@ -2,6 +2,10 @@ module.exports = {
   title: '⚡ Nuxt PWA',
   description: 'Supercharge Nuxt with a heavily tested, updated and stable PWA solution',
   themeConfig: {
+    algolia: {
+      apiKey: '0226f37644ef2eaccb45814b7b906ec2',
+      indexName: 'nuxtjs_pwa'
+    },
     repo: 'nuxt-community/pwa-module',
     editLinks: true,
     docsDir: 'docs',
