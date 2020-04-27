@@ -38,8 +38,8 @@ pwa: {
 
 Please read this resources before you enable `mobileAppIOS` option:
 
-- https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
-- https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
+- [Apple's Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
+- [Don't use iOS Meta tags](https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb)
 
 ### `appleStatusBarStyle`
 - Default: `default`
