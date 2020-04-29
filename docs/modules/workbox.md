@@ -224,7 +224,7 @@ workbox: {
 }
 ```
 
-### Adding custom cache [StrategyOption](https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox.strategies)
+### Adding custom cache [StrategyOption](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
 
 ```js
 workbox: {
