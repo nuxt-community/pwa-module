@@ -7,5 +7,5 @@
 
 [build]
   base    = "docs"
-  command = "yarn && yarn build"
-  publish = "docs/.vuepress/dist"
+  command = "yarn && yarn generate"
+  publish = "docs/dist"

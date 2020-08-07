@@ -1,8 +1,10 @@
 ---
-sidebar: auto
+title: Meta Module
+description: Meta easily adds common meta tags into your project with zero-config needed
+position: 3
+category: Modules
 ---
 
-# Meta Module
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/meta.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/meta/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
@@ -10,7 +12,7 @@ sidebar: auto
 Meta easily adds common meta tags into your project with zero-config needed.
 You can optionally override meta using `pwa.meta` in `nuxt.config.js`:
 
-```js
+```js{}[nuxt.config.js]
 pwa: {
   meta: {
     /* meta options */
@@ -38,8 +40,8 @@ pwa: {
 
 Please read this resources before you enable `mobileAppIOS` option:
 
-- [Apple's Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
-- [Don't use iOS Meta tags](https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb)
+- https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+- https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
 
 ### `appleStatusBarStyle`
 - Default: `default`
