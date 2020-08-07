@@ -1,17 +1,27 @@
----
-home: true
-actionText: Get Started →
-actionLink: /setup.html
----
+# docs
 
-Progressive Web Apps (PWA) are reliable, fast, and engaging, although there are many things that can take a PWA from a baseline to exemplary experience. ([learn more](https://developers.google.com/web/progressive-web-apps))
+## Setup
 
-Note: These docs are for version 3
+Install dependencies:
 
-## Modules
+```bash
+yarn install
+```
 
-- [**Workbox**](./modules/workbox.md) - Registers a service worker for offline caching.
-- [**Manifest**](./modules/manifest.md) - Automatically generate `manifest.json` file.
-- [**Meta**](./modules/meta.md) - Automatically adds SEO friendly meta data with manifest integration.
-- [**Icon**](./modules/icon.md) - Automatically generates app icons with different sizes.
-- [**OneSignal**](./modules/onesignal.md) - Free background push notifications using OneSignal.
+## Development
+
+```bash
+yarn dev
+```
+
+## Static Generation
+
+This will create the `dist/` directory for publishing to static hosting:
+
+```bash
+yarn generate
+```
+
+To preview the static generated app, run `yarn start`
+
+For detailed explanation on how things work, checkout [nuxt/content](https://content.nuxtjs.org) and [@nuxt/content theme docs](https://content.nuxtjs.org/themes-docs).
