@@ -1,18 +1,16 @@
 ---
-sidebar: auto
+title: Workbox Module
+description: Workbox is a collection of JavaScript libraries for Progressive Web Apps
+position: 5
+category: Modules
 ---
-
-# Workbox Module
-
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/workbox.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/workbox/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/workbox)
 
 Workbox is a collection of JavaScript libraries for Progressive Web Apps.
 ([Learn more](https://developers.google.com/web/tools/workbox)). This module adds full offline support using workbox.
 
 You can pass options to `pwa.workbox` in `nuxt.config.js` to override the [defaults](https://github.com/nuxt-community/pwa-module/blob/dev/lib/workbox/defaults.js).
 
-```js
+```js{}[nuxt.config.js]
 pwa: {
   workbox: {
     /* workbox options */
@@ -211,9 +209,7 @@ If you have a custom CDN and need to cache requests for it, simply use `runtimeC
 
 **IMPORTANT:** Please note that workbox will **not** cache opaque responses. So please only use either `networkFirst` or `staleWhileRevalidate` strategies. Please see [Handle Third Party Requests](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests).
 
-nuxt.config.js
-
-```js
+```js{}[nuxt.config.js]
 workbox: {
       runtimeCaching: [
       {
@@ -228,9 +224,11 @@ workbox: {
 }
 ```
 
-### Adding custom cache [StrategyOption](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
+### Adding custom cache
 
-```js
+[StrategyOption](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
+
+```js{}[nuxt.config.js]
 workbox: {
    runtimeCaching: [
      {
@@ -251,13 +249,13 @@ workbox: {
 
 Create `static/custom-sw.js` file:
 
-```js
+```js{}[static/custom-sw.js]
 console.log('Custom service worker!')
 ```
 
 Add it with `importScripts` option in `nuxt.config.js`:
 
-```js
+```js{}[nuxt.config.js]
 workbox: {
   importScripts: [
       'custom-sw.js'
@@ -269,7 +267,7 @@ workbox: {
 
 Create `plugins/sw.js`:
 
-```js
+```js{}[plugins/sw.js]
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then((registrations) => {
     for (const worker of registrations) {
@@ -281,7 +279,7 @@ if ('serviceWorker' in navigator) {
 
 Add it to the `plugins` section of `nuxt.config.js`:
 
-```js
+```js{}[nuxt.config.js]
 {
   plugins: [
     {
@@ -297,7 +295,7 @@ Add it to the `plugins` section of `nuxt.config.js`:
 As a workaround for making basic auth working as described [here](https://thatemil.com/blog/2018/02/21/pwa-basic-auth)
 you have to enable `manifest.crossorigin` in `nuxt.config.js`:
 
-```js
+```js{}[nuxt.config.js]
 {
   manifest: {
     crossorigin: 'use-credentials'
@@ -313,7 +311,7 @@ Safari requires rangeRequests.
 
 `plugins/workbox-range-request.js`:
 
-```js
+```js{}[plugins/workbox-range-request.js]
 workbox.routing.registerRoute(
   /\.(mp4|webm)/,
   new workbox.strategies.CacheFirst({
@@ -327,7 +325,7 @@ workbox.routing.registerRoute(
 
 `nuxt.config.js`:
 
-```js
+```js{}[nuxt.config.js]
 {
   workbox: {
     cachingExtensions: '@/plugins/workbox-range-request.js'
@@ -344,7 +342,7 @@ A PWA can be installed by the user if it meets a set of **criteria** and as inst
 
 One **criteria** is that `display` must be either `fullscreen`, `standalone`, or `minimal-ui`. If you want to _prevent_ the mini-infobar from appearing in your App, you can set the `pwa.manifest.display` to `browser` in `nuxt.config.js`:
 
-```js
+```js{}[nuxt.config.js]
 {
   pwa {
    manifest: {
@@ -358,7 +356,7 @@ One **criteria** is that `display` must be either `fullscreen`, `standalone`, or
 
 In `layouts/default.vue` (or wherever you want, maybe in a plugin):
 
-```js
+```js{}[layouts/default.vue]
 const workbox = await window.$workbox;
 if (workbox) {
   workbox.addEventListener('installed', (event) => {

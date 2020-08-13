@@ -3,7 +3,6 @@
 exports[`pwa build files (.nuxt) 1`] = `
 Array [
   "fixture/.nuxt/components",
-  "fixture/.nuxt/components/nuxt-build-indicator.vue",
   "fixture/.nuxt/components/nuxt-error.vue",
   "fixture/.nuxt/components/nuxt-loading.vue",
   "fixture/.nuxt/dist",
@@ -28,9 +27,12 @@ Array [
   "fixture/.nuxt/dist/client/icons/icon_iphonexr.b8f3a1.png",
   "fixture/.nuxt/dist/client/icons/icon_iphonexsmax.b8f3a1.png",
   "fixture/.nuxt/dist/client/manifest_test.webmanifest",
+  "fixture/.nuxt/dist/client/node_modules",
+  "fixture/.nuxt/dist/client/pages",
   "fixture/.nuxt/dist/server",
   "fixture/.nuxt/dist/server/index.spa.html",
   "fixture/.nuxt/dist/server/index.ssr.html",
+  "fixture/.nuxt/dist/server/pages",
   "fixture/.nuxt/loading.html",
   "fixture/.nuxt/mixins",
   "fixture/.nuxt/views",
@@ -65,6 +67,14 @@ Array [
   "fixture/dist/_nuxt/icons/icon_iphonexr.b8f3a1.png",
   "fixture/dist/_nuxt/icons/icon_iphonexsmax.b8f3a1.png",
   "fixture/dist/_nuxt/manifest_test.webmanifest",
+  "fixture/dist/_nuxt/node_modules",
+  "fixture/dist/_nuxt/pages",
+  "fixture/dist/bar",
+  "fixture/dist/bar/index.html",
+  "fixture/dist/baz",
+  "fixture/dist/baz/index.html",
+  "fixture/dist/foo",
+  "fixture/dist/foo/index.html",
   "fixture/dist/icon.png",
   "fixture/dist/index.html",
   "fixture/dist/offline.html",
@@ -112,8 +122,6 @@ workbox.googleAnalytics.initialize()
 // Precache assets
 
 workbox.precaching.precacheAndRoute([
-  \\"/offline.html\\",
-  \\"/offline.png\\",
   \\"precache.js\\"
 ], {
   \\"cacheId\\": \\"@nuxtjs/pwa-prod\\",
@@ -131,12 +139,7 @@ workbox.precaching.precacheAndRoute([
 // Register route handlers for runtimeCaching
 workbox.routing.registerRoute(new RegExp('https://google.com/.*'), new workbox.strategies.CacheFirst ({}), 'GET')
 workbox.routing.registerRoute(new RegExp('/_nuxt/'), new workbox.strategies.CacheFirst ({}), 'GET')
-
-// Register router handler for offlinePage
-workbox.routing.registerRoute(new RegExp('/'), ({event}) => {
-  return new workbox.strategies.NetworkFirst().handle({event})
-    .catch(() => caches.match('/offline.html'))
-})
+workbox.routing.registerRoute(new RegExp('/'), new workbox.strategies.NetworkFirst ({}), 'GET')
 
 // -- Start of routingExtensions --
 // Routing Extension

@@ -1,11 +1,9 @@
 ---
-sidebar: auto
+title: Manifest Module
+description: Manifest adds Web App Manifest with no pain
+position: 4
+category: Modules
 ---
-
-# Manifest Module
-
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/manifest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest)
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/manifest/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/manifest)
 
 Manifest adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
 
@@ -13,7 +11,7 @@ You can pass options to `pwa.manifest` in `nuxt.config.js` to override defaults.
 [valid options](https://developer.mozilla.org/en-US/docs/Web/Manifest#Members) available and and it's
 [default options](#default-options) for deeper insights.
 
-```js
+```js{}[nuxt.config.js]
 pwa: {
   manifest: {
     name: 'My Awesome App',
@@ -23,7 +21,7 @@ pwa: {
 }
 ```
 
-# Default options
+## Default options
 
 | Property                          | Type            | Default                                                      | Description                                                     |
 | --------------------------------- | --------------- | ------------------------------------------------------------ | --------------------------------------------------------------- |

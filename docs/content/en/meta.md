@@ -1,8 +1,10 @@
 ---
-sidebar: auto
+title: Meta Module
+description: Meta easily adds common meta tags into your project with zero-config needed
+position: 3
+category: Modules
 ---
 
-# Meta Module
 
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/meta.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/meta/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/meta)
@@ -10,7 +12,7 @@ sidebar: auto
 Meta easily adds common meta tags into your project with zero-config needed.
 You can optionally override meta using `pwa.meta` in `nuxt.config.js`:
 
-```js
+```js{}[nuxt.config.js]
 pwa: {
   meta: {
     /* meta options */
