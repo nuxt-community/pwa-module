@@ -1,7 +1,7 @@
 {
   "name": "@nuxtjs/pwa",
   "version": "3.0.0-beta.20",
-  "description": "Supercharge Nuxt with a heavily tested, updated, zero-config and stable PWA solution!",
+  "description": "Zero config PWA solution for Nuxt.js",
   "repository": "nuxt-community/pwa-module",
   "license": "MIT",
   "main": "lib/module.js",

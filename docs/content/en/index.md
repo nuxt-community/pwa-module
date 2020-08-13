@@ -10,16 +10,10 @@ features:
   - Automatically generates app icons with different sizes.
   - Free background push notifications using OneSignal.
 ---
-<img src="/preview.png" class="light-img" alt="Supercharge Nuxt with a heavily tested, updated and stable PWA solution" />
-<img src="/preview-dark.png" class="dark-img" alt="Supercharge Nuxt with a heavily tested, updated and stable PWA solution" />
 
-[PWA](https://developers.google.com/web/progressive-web-apps) integration with [NuxtJS](https://nuxtjs.org).
-
-
-Progressive Web Apps (PWA) are reliable, fast, and engaging, although there are many things that can take a PWA from a baseline to exemplary experience.
+Zero config [PWA](https://developers.google.com/web/progressive-web-apps) solution for [Nuxt.js](https://nuxtjs.org)
 
 
 ## Features
 
 <list :items="features"></list>
-

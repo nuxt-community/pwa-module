@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Supercharge Nuxt with a heavily tested, updated, zero-config and stable PWA solution!
+> Zero config PWA solution for Nuxt.js
 
 📖 [**Read Documentation**](https://pwa.nuxtjs.org)
 
