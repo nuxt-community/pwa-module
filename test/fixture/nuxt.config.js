@@ -17,6 +17,10 @@ module.exports = {
     fileName: 'manifest_test.[ext]?[hash]'
   },
 
+  meta: {
+    nativeUI: true
+  },
+
   workbox: {
     offlineAnalytics: true,
     dev: true,
