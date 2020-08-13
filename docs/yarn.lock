@@ -1018,7 +1018,7 @@
     rc9 "^1.0.0"
     std-env "^2.2.1"
 
-"@nuxt/content-theme-docs@^0.4.0":
+"@nuxt/content-theme-docs@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@nuxt/content-theme-docs/-/content-theme-docs-0.4.1.tgz#9c51a7ce5c3776d5320ba013bf5bc277da6e8f1a"
   integrity sha512-oytzcLpHchOri0EUCYXZQWkNv5KDTFOzilyIh5JWOjSn9mXlIUP4wUkwShY6WtVd+CRlHmMdnVFBFG9ZhBBCng==
