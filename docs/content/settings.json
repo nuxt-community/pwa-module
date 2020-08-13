@@ -1,0 +1,10 @@
+{
+  "title": "⚡ Nuxt PWA",
+  "url": "https://pwa.nuxtjs.org/",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "nuxt-community/pwa-module",
+  "twitter": "https://twitter.com/nuxt_js"
+}
