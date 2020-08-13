@@ -5020,6 +5020,11 @@ defu@^2.0.4:
   resolved "https://registry.yarnpkg.com/defu/-/defu-2.0.4.tgz#09659a6e87a8fd7178be13bd43e9357ebf6d1c46"
   integrity sha512-G9pEH1UUMxShy6syWk01VQSRVs3CDWtlxtZu7A+NyqjxaCA4gSlWAKDBx6QiUEKezqS8+DUlXLI14Fp05Hmpwg==
 
+defu@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/defu/-/defu-3.1.0.tgz#a6b5104cacc06aa1efa01923becddbedd32505e8"
+  integrity sha512-pc7vS4wbYFtsRL+OaLHKD72VcpOz9eYgzZeoLz9pCs+R8htyPdZnD1CxKP9ttZuT90CLPYFTSaTyc3/7v4gG9A==
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -7922,10 +7927,10 @@ jest@latest:
     import-local "^3.0.2"
     jest-cli "^26.4.0"
 
-jimp-compact@^0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/jimp-compact/-/jimp-compact-0.10.3.tgz#105bd59da9e595978fdc5f085c1c472a72988374"
-  integrity sha512-Rq0s8BNY0+jcgHpyt+XSfNGhtxHtSo1zNTgwn/XBc2C46sdfV6FVBdtSaVpX3Eoez7PyVjYl3AXq4A4bQEIA+A==
+jimp-compact@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/jimp-compact/-/jimp-compact-0.12.1.tgz#f35ae542f83659f7f1b2fa4f955a27869dbe15ea"
+  integrity sha512-WEIxAvP4t7ZrGTExPx4pWa28/fxP+meQ90JedM2Jtwg/6IK2gVCS24hB5ggOEXsA3cBWQAaCdFgSB8WkMYykHA==
 
 jiti@^0.1.11:
   version "0.1.11"
