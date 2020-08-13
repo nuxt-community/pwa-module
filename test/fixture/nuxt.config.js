@@ -42,11 +42,10 @@ module.exports = {
     preCaching: [
       'precache.js'
     ],
-    offline: true,
-    offlinePage: '/offline.html',
-    offlineAssets: [
-      '/offline.png'
-    ],
+    // offlinePage: '/offline.html',
+    // offlineAssets: [
+    //   '/offline.png'
+    // ],
     runtimeCaching: [
       {
         urlPattern: 'https://google.com/.*',
