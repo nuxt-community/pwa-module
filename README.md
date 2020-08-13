@@ -1,10 +1,9 @@
-# ⚡ PWA Module
+# PWA Module
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Checks][checks-src]][checks-href]
 [![Codecov][codecov-src]][codecov-href]
-[![License][license-src]][license-href]
 
 > Zero config PWA solution for Nuxt.js
 
@@ -34,6 +33,3 @@ Copyright (c) - Nuxt Community
 
 [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/pwa-module.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/nuxt-community/pwa-module
-
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/pwa.svg?style=flat-square
-[license-href]: https://npmjs.com/package/@nuxtjs/pwa
