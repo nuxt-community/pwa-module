@@ -34,7 +34,7 @@ Array of sizes to be generated (Square).
 **targetDir**
 - Default: `icons`
 
-**accessibleIcons**
+**iconPlugin**
 - Default: true
 
 Make icons accessible through `ctx` or Vue instances.
