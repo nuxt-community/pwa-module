@@ -38,13 +38,15 @@ pwa: {
 
 (Boolean) Automatically register `/sw.js` on page load. Enabled by default.
 
-### `dev`
+### `enabled`
 
-(Boolean) Enable workbox in dev mode of nuxt. (Disabled by default - Not recommended)
+(Boolean) Enable workbox module. Workbox is **only enabled for production mode by default**.
 
-**IMPORTANT NOTE:** Remember to clean application data and unregister service workers in your browser or you will experience infinity loop!
+**IMPORTANT NOTES:**
 
-It is recommended to test workbox using `nuxt build`/`nuxt start`. You can enable debug mode using `workbox.config.debug`.
+- It is recommended to test workbox using `nuxt build`/`nuxt start`. You can enable debug mode using `workbox.config.debug` for production to debug.
+- When setting `enabled` to `true`, remember to clean application data and unregister service workers in your browser when changing mode between dev or prod to avoid issues.
+- When `enabled` is set to `false` (default for `nuxt dev`) workbox module registers a self-destroying worker and cleans `window.caches`. To completely disable module you can set `pwa.workbox: false` in `nuxt.config`.
 
 <!-- Config -->
 
