@@ -59,3 +59,9 @@ purpose: 'maskable'
 ```
 
 More detail of "purpose": [https://w3c.github.io/manifest/#purpose-member](https://w3c.github.io/manifest/#purpose-member)
+
+
+**cacheDir**
+- Default: `{rootDir}/node_modules/.cache/icon`
+
+Cache dir for generated icons
