@@ -8,10 +8,10 @@ declare module '@nuxt/types' {
 }
 
 export interface PwaOptions {
-  icon: IconOptions,
-  meta: MetaOptions,
-  manifest: ManifestOptions,
-  workbox: WorkboxOptions
+  icon: IconOptions | boolean,
+  meta: MetaOptions | boolean,
+  manifest: ManifestOptions | boolean,
+  workbox: WorkboxOptions | boolean
 }
 
 export type iOSType = 'ipad' | 'ipadpro9' | 'ipadpro9' | 'ipadpro10' | 'ipadpro12' | 'iphonese' | 'iphone6' | 'iphoneplus' | 'iphonex' | 'iphonexr' | 'iphonexsmax'
