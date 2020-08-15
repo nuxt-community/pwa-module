@@ -6,8 +6,10 @@
   "license": "MIT",
   "main": "lib/module.js",
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
+  "types": "./types/index.d.ts",
   "scripts": {
     "dev": "nuxt test/fixture",
     "lint": "eslint --ext .js,.vue .",
