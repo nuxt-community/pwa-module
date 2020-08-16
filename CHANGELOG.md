@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.20...v3.0.0) (2020-08-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* Requeires Node 10.x
+
+### Features
+
+* add types ([#323](https://github.com/nuxt-community/pwa-module/issues/323)) ([8723d07](https://github.com/nuxt-community/pwa-module/commit/8723d076cb87ff9e583ba755f72f4d62360d6eb1))
+* **icon:** add support for icon purpose ([#246](https://github.com/nuxt-community/pwa-module/issues/246)) ([9248174](https://github.com/nuxt-community/pwa-module/commit/9248174fe8bac352318c8fe292012156ccfd56ad))
+* **icon:** default purpose to any + maskable ([30f0f63](https://github.com/nuxt-community/pwa-module/commit/30f0f63bcd1601cc6aa5595a851de965dde9af88))
+* **icon:** expose options.cacheDir ([f8dbf1d](https://github.com/nuxt-community/pwa-module/commit/f8dbf1dac99519648a53dc22ab4019af25a677aa))
+* **icon:** register `favicon.ico` when available ([#258](https://github.com/nuxt-community/pwa-module/issues/258)) ([7a48d2a](https://github.com/nuxt-community/pwa-module/commit/7a48d2a60b1f2ccaa1287789adb846806afd5224))
+* **icon:** rename `accessibleIcons` to `iconPlugin` ([3e175f9](https://github.com/nuxt-community/pwa-module/commit/3e175f93c046028b6f3f9479085ec98d014b460b))
+* **icon:** support for iOS splash screens ([#308](https://github.com/nuxt-community/pwa-module/issues/308)) ([f4eeda7](https://github.com/nuxt-community/pwa-module/commit/f4eeda7ce05cdd7dda4e4c4ab81e986f6c94a951))
+* **module:** allow disabling with top-level options ([65800f9](https://github.com/nuxt-community/pwa-module/commit/65800f91a671e61d59a9faf885c2ff7ecc9d9ca0))
+* **workbox:** enabled option and self destroying sw ([c64226c](https://github.com/nuxt-community/pwa-module/commit/c64226cea36c1b0b9f0efe7640439e6bb134ddce))
+* support `manifest.fileName` with template ([f05353b](https://github.com/nuxt-community/pwa-module/commit/f05353b7ccfef88f5f95f0fa7b0109c2ece4236b)), closes [#193](https://github.com/nuxt-community/pwa-module/issues/193)
+* use integraty file to invalidate icon cache ([6661a09](https://github.com/nuxt-community/pwa-module/commit/6661a09f86bbc169a99effac3d9cb1620f530b3d))
+* **manifest:** add `useWebmanifestExtension` option and improve docs ([#241](https://github.com/nuxt-community/pwa-module/issues/241)) ([4484e6c](https://github.com/nuxt-community/pwa-module/commit/4484e6c697c5534103969894252f1d356d4016ee))
+
+
+### Bug Fixes
+
+* **icon:** clean cacheDir when generating icons ([1e6eb19](https://github.com/nuxt-community/pwa-module/commit/1e6eb19851bbb6bcb51106cea5611475edec75cc))
+* **module:** icon purpose warning appearing when it shouldn't ([#305](https://github.com/nuxt-community/pwa-module/issues/305)) ([5833e31](https://github.com/nuxt-community/pwa-module/commit/5833e311e0379f6617c845a4f319733047ef7a53))
+* **workbox:** unregister only to avoid loop ([44c5cd3](https://github.com/nuxt-community/pwa-module/commit/44c5cd3aa86f12929aeb03d37cfa20df5171f855))
+
+
+* update execa to 4.x ([301a07c](https://github.com/nuxt-community/pwa-module/commit/301a07cd8733b29231bdfbc0390681e59f5decb7))
+
 ## [3.0.0-beta.20](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2020-02-02)
 
 ## [3.0.0-beta.19](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2019-09-11)

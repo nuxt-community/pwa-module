@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/pwa",
-  "version": "3.0.0-beta.20",
+  "version": "3.0.0",
   "description": "Zero config PWA solution for Nuxt.js",
   "repository": "nuxt-community/pwa-module",
   "license": "MIT",
