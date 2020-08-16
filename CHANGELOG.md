@@ -6,7 +6,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ⭐ What's new?
 
-- Finally stable 3.0.0
 - Using workbox 5
 - Support `purpose` option and defaulting to `any maskable`
 - Brand new docs powered by [nuxt/content](https://github.com/nuxt/content)
