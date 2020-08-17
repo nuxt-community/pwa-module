@@ -11,9 +11,13 @@ features:
   - Free background push notifications using OneSignal.
 ---
 
-Zero config [PWA](https://developers.google.com/web/progressive-web-apps) solution for [Nuxt.js](https://nuxtjs.org)
+<img src="/preview.png" class="light-img" />
+<img src="/preview-dark.png" class="dark-img" />
 
+Zero config [PWA](https://developers.google.com/web/progressive-web-apps) solution for [Nuxt.js](https://nuxtjs.org)
 
 ## Features
 
 <list :items="features"></list>
+
+<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="p-2"></app-color-switcher></p>

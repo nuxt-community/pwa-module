@@ -32,9 +32,9 @@ Edit your `nuxt.config.js` file to add pwa module::
 
 ```js{}[nuxt.config.js]
 {
-    modules: [
-        '@nuxtjs/pwa',
-    ],
+  modules: [
+    '@nuxtjs/pwa',
+  ]
 }
 ```
 
@@ -55,12 +55,11 @@ sw.*
 PWA module is a collection of smaller modules that are designed to magically work out of the box together. To disable each sub-module, you can pass `false` option with its name as key. For example to disable _icon_ module:
 
 ```js{}[nuxt.config.js]
-modules: [
-    '@nuxtjs/pwa',
-    pwa: {
-        icon: false // disables the icon module
-    }
-],
+{
+  pwa: {
+    icon: false // disables the icon module
+  }
+}
 ```
 
 Also each sub-module has its own configuration. Continue reading docs for detailed info.
