@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/nuxt-community/pwa-module/compare/v3.0.0...v3.0.1) (2020-08-17)
+
+
+### Bug Fixes
+
+* **icon:** update warning url to docs ([#329](https://github.com/nuxt-community/pwa-module/issues/329)) ([61633fa](https://github.com/nuxt-community/pwa-module/commit/61633fa640793c344748efdf790a56456fad8e2f))
+
 ## [3.0.0](https://github.com/nuxt-community/pwa-module/compare/v3.0.0-beta.20...v3.0.0) (2020-08-16)
 
 ### ⭐ What's new?
