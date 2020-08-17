@@ -1018,38 +1018,38 @@
     rc9 "^1.0.0"
     std-env "^2.2.1"
 
-"@nuxt/content-theme-docs@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@nuxt/content-theme-docs/-/content-theme-docs-0.4.1.tgz#9c51a7ce5c3776d5320ba013bf5bc277da6e8f1a"
-  integrity sha512-oytzcLpHchOri0EUCYXZQWkNv5KDTFOzilyIh5JWOjSn9mXlIUP4wUkwShY6WtVd+CRlHmMdnVFBFG9ZhBBCng==
+"@nuxt/content-theme-docs@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@nuxt/content-theme-docs/-/content-theme-docs-0.5.0.tgz#f17f66244f4b4d6a1773966ddb73935f58fa4bca"
+  integrity sha512-aqVFO+SphQs2VC8tIor2SqlkTFUqkfuN9+vb+5q1P0nd1tr+Srj8Y9y66GrP3j15ny75Ayj1fiCVRkoFimi3xQ==
   dependencies:
-    "@nuxt/content" "^1.6.0"
-    "@nuxt/types" "^2.14.1"
+    "@nuxt/content" "^1.6.1"
+    "@nuxt/types" "^2.14.3"
     "@nuxtjs/color-mode" "^1.0.3"
     "@nuxtjs/google-fonts" "^1.0.0"
-    "@nuxtjs/pwa" "^3.0.0-beta.20"
+    "@nuxtjs/pwa" "^3.0.0"
     "@nuxtjs/tailwindcss" "^3.0.0"
     "@tailwindcss/typography" "^0.2.0"
     clipboard "^2.0.6"
     defu "^3.1.0"
     lodash.groupby "^4.6.0"
     marked "^1.1.1"
-    nuxt-i18n "^6.13.7"
+    nuxt-i18n "^6.13.9"
     prism-themes "^1.4.0"
     vue-scrollactive "^0.9.3"
 
-"@nuxt/content@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-1.6.0.tgz#23d44e7af0178ea14ccbf0b1b4df9cad951f0564"
-  integrity sha512-lajX5ByoFw6HVb8BOtQVZUYj0OPTLkWWWx1IF5UsVH3TPNy6YfxBCWSJPB6wD+trOxmdxWklNBcAtx7EaekTiw==
+"@nuxt/content@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-1.6.1.tgz#567bb899fc2d85469649ddaa5f5d9da9871861e5"
+  integrity sha512-WhZvnDfOzVTvCMNr1A7QKghJz92V9s3GbUh3t7k+5wiFN2BhuU0scWObaEHDUspQbnoQpdiw9/3x6JzGvs8xOA==
   dependencies:
     "@lokidb/full-text-search" "^2.0.0-beta.9"
     "@lokidb/loki" "^2.0.0-beta.9"
-    "@nuxt/types" "^2.14.1"
+    "@nuxt/types" "^2.14.3"
     "@types/js-yaml" "^3.12.5"
     "@types/xml2js" "^0.4.5"
     change-case "^4.1.1"
-    chokidar "^3.4.1"
+    chokidar "^3.4.2"
     consola "^2.15.0"
     csvtojson "^2.0.10"
     defu "^3.1.0"
@@ -1062,8 +1062,8 @@
     mkdirp "^1.0.4"
     node-req "^2.1.2"
     node-res "^5.0.1"
-    p-queue "6.6.0"
-    prismjs "^1.20.0"
+    p-queue "6.6.1"
+    prismjs "^1.21.0"
     rehype-raw "^4.0.2"
     rehype-sort-attribute-values "^3.0.2"
     rehype-sort-attributes "^3.0.2"
@@ -1203,7 +1203,7 @@
     rc9 "^1.0.0"
     std-env "^2.2.1"
 
-"@nuxt/types@^2.14.1":
+"@nuxt/types@^2.14.3":
   version "2.14.3"
   resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-2.14.3.tgz#471c15fafa019e65256d9b034ef761edafc1297c"
   integrity sha512-Ac+3OvztOndN9e8kp8XOMuZjwg/rdg7Czo81zsh8NhffgYRnoHBBqD5L7ued6Gdp4MyK7Y6BOPGb0RuyKl+NJg==
@@ -1334,7 +1334,7 @@
     consola "^2.14.0"
     google-fonts-helper "^1.0.1"
 
-"@nuxtjs/pwa@^3.0.0-beta.20":
+"@nuxtjs/pwa@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-3.0.0.tgz#5d08b8e73aabe5ff2cceca5a704d34f1b81b98fb"
   integrity sha512-joqeeJbNHhexc8s+PjT/JkH9z5C0eGrDG/rs2ziKSG41CiNOp1wSg0OMBuNaHqML6Qsw/KVoy/50/tGu4ue0pA==
@@ -6132,7 +6132,7 @@ nuxt-ackee@^1.0.1:
     ackee-tracker "^3.2.3"
     defu "^1.0.0"
 
-nuxt-i18n@^6.13.7:
+nuxt-i18n@^6.13.9:
   version "6.13.9"
   resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-6.13.9.tgz#dd060a747c8d2c65e7de5119abf2f18ea2fd086b"
   integrity sha512-ysoUyw2F4zBo/UZoK6pxFI1QS/j9NyPvpzyofoY+yKn3phr7XKaR/lZgLuHvZbxIN27f6gKyblCi34wTNjX0Jw==
@@ -6147,7 +6147,7 @@ nuxt-i18n@^6.13.7:
     js-cookie "^2.2.1"
     vue-i18n "^8.18.1"
 
-nuxt@^2.14.2:
+nuxt@^2.14.3:
   version "2.14.3"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.14.3.tgz#1e1fb762d407dc275253360b87f3257c609b4dfd"
   integrity sha512-7f5adPiIkZvv5Fu7tKhHuKdMv4IvSbBC1sbuBcgjtRedu4rP/tQPL4/8PZcEUieolcfwaN+WGPNz3sMGyPTLzg==
@@ -6334,10 +6334,10 @@ p-map@^3.0.0:
   dependencies:
     aggregate-error "^3.0.0"
 
-p-queue@6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/p-queue/-/p-queue-6.6.0.tgz#263f2b73add4cefca81d8d6b2696ee74b326de2f"
-  integrity sha512-zPHXPNy9jZsiym0PpJjvnHQysx1fSd/QdaNVwiDRLU2KFChD6h9CkCB6b8i3U8lBwJyA+mHgNZCzcy77glUssQ==
+p-queue@6.6.1:
+  version "6.6.1"
+  resolved "https://registry.yarnpkg.com/p-queue/-/p-queue-6.6.1.tgz#578891ada028a61371ec2692b26614d1b7d2b10a"
+  integrity sha512-miQiSxLYPYBxGkrldecZC18OTLjdUqnlRebGzPRiVxB8mco7usCmm7hFuxiTvp93K18JnLtE4KMMycjAu/cQQg==
   dependencies:
     eventemitter3 "^4.0.4"
     p-timeout "^3.1.0"
@@ -7299,7 +7299,7 @@ prism-themes@^1.4.0:
   resolved "https://registry.yarnpkg.com/prism-themes/-/prism-themes-1.4.0.tgz#2f93a33450532577c7962928655d7b4305fa843d"
   integrity sha512-VTy6t69sS1FavspBsodoF/x/eduPydUXyZH+++Jkun0VQ4X7lCZVvsfGsYKzkUan2PJNcV2mA4lAFcr7KKXD1g==
 
-prismjs@^1.20.0:
+prismjs@^1.21.0:
   version "1.21.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.21.0.tgz#36c086ec36b45319ec4218ee164c110f9fc015a3"
   integrity sha512-uGdSIu1nk3kej2iZsLyDoJ7e9bnPzIgY0naW/HdknGj61zScaprVEVGHrPoXqI+M9sP0NDnTK2jpkvmldpuqDw==
