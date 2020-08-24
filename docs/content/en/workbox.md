@@ -131,7 +131,7 @@ Workbox takes a lot of the heavy lifting out of precaching by simplifying the AP
 
 ### `cacheAssets`
 
-(Boolean) Cache requests to the `/_nuxt/*` with **cacheFirst** strategy on the fly. Enabled by default.
+(Boolean) Cache requests to the `/_nuxt/*` with **CacheFirst** strategy on the fly. Enabled by default.
 
 **NOTE:** This is considered safe because all assets should be correctly hashed there.
 
@@ -205,11 +205,11 @@ if (workbox) {
 
 ### Adding custom runtimeCaching items (For CDN)
 
-By default resources in dist (`/_nuxt/`) will be cached with `cacheFirst` and other requests to same domain will be cached with `networkFirst` strategy.
+By default resources in dist (`/_nuxt/`) will be cached with `CacheFirst` and other requests to same domain will be cached with `NetworkFirst` strategy.
 
 If you have a custom CDN and need to cache requests for it, simply use `runtimeCaching`:
 
-**IMPORTANT:** Please note that workbox will **not** cache opaque responses. So please only use either `networkFirst` or `staleWhileRevalidate` strategies. Please see [Handle Third Party Requests](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests).
+**IMPORTANT:** Please note that workbox will **not** cache opaque responses. So please only use either `NetworkFirst` or `StaleWhileRevalidate` strategies. Please see [Handle Third Party Requests](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests).
 
 ```js{}[nuxt.config.js]
 workbox: {
@@ -217,8 +217,8 @@ workbox: {
       {
         // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
         urlPattern: 'https://my-cdn.com/.*',
-        // Defaults to `networkFirst` if omitted
-        // handler: 'networkFirst',
+        // Defaults to `NetworkFirst` if omitted
+        // handler: 'NetworkFirst',
         // Defaults to `GET` if omitted
         // method: 'GET'
       }
@@ -318,7 +318,7 @@ workbox.routing.registerRoute(
   /\.(mp4|webm)/,
   new workbox.strategies.CacheFirst({
     plugins: [
-      new workbox.rangeRequests.Plugin(),
+      new workbox.rangeRequests.RangeRequestsPlugin(),
     ],
   }),
   'GET'
