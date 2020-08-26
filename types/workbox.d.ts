@@ -1,5 +1,10 @@
-import { CacheExpirationConfig } from 'workbox-expiration'
 import { HTTPMethod } from 'workbox-routing'
+import { Plugin as BackgroundSyncPlugin } from 'workbox-background-sync'
+import { Plugin as BroadcastUpdatePlugin } from 'workbox-broadcast-update'
+import { Plugin as CacheableResponsePlugin } from 'workbox-cacheable-response'
+import { Plugin as ExpirationPlugin } from 'workbox-expiration'
+import { Plugin as RangeRequestsPlugin } from 'workbox-range-requests'
+import { WorkboxPlugin } from 'workbox-core'
 
 export type CachingStrategy = 'CacheFirst' | 'CacheOnly' | 'NetworkFirst' | 'NetworkOnly' | 'StaleWhileRevalidate'
 
@@ -9,8 +14,40 @@ export type RuntimeCaching = {
   methods?: HTTPMethod,
   strategyOptions?: {
     cacheName: string,
-    cacheExpiration: CacheExpirationConfig
+    plugins?: StrategyPlugin[]
   }
+}
+
+export type StrategyPlugin = BackgroundSync
+  | BroadcastUpdate
+  | CacheableResponse
+  | Expiration
+  | RangeRequests
+  | WorkboxPlugin
+
+export interface BackgroundSync {
+  use: 'BackgroundSync',
+  config: ConstructorParameters<typeof BackgroundSyncPlugin>
+}
+
+export interface BroadcastUpdate {
+  use: 'BroadcastUpdate',
+  config: ConstructorParameters<typeof BroadcastUpdatePlugin>
+}
+
+export interface CacheableResponse {
+  use: 'CacheableResponse',
+  config: ConstructorParameters<typeof CacheableResponsePlugin>
+}
+
+export interface Expiration {
+  use: 'Expiration',
+  config: ConstructorParameters<typeof ExpirationPlugin>
+}
+
+export interface RangeRequests {
+  use: 'RangeRequests',
+  config: ConstructorParameters<typeof RangeRequestsPlugin>
 }
 
 export interface WorkboxOptions {

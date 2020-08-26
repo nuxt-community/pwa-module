@@ -237,10 +237,72 @@ workbox: {
        urlPattern: 'https://my-cdn.com/posts/.*',
        strategyOptions: {
          cacheName: 'our-cache',
-         cacheExpiration: {
-           maxEntries: 10,
-           maxAgeSeconds: 300
-         }
+         plugins: [{
+           // Use Workbox plugins, available options are 'BackgroundSync', 'BroadcastUpdate', 'CacheableResponse', 'Expiration' and 'RangeRequests'
+           use: 'Expiration',
+           // Pass parameter values of the plugin as an array
+           config: [{
+             maxEntries: 10,
+             maxAgeSeconds: 300
+           }]
+         }]
+       }
+     }
+   ]
+}
+```
+
+### Adding custom plugin to Strategy
+
+Apart from adding and configuring [the plugins that provided by Workbox](https://developers.google.com/web/tools/workbox/guides/using-plugins) as shown as an example [here](#adding-custom-cache), we also support passing in [custom plugins](https://developers.google.com/web/tools/workbox/guides/using-plugins#custom_plugins):
+
+```js{}[nuxt.config.js]
+workbox: {
+   runtimeCaching: [
+     {
+       urlPattern: 'https://my-cdn.com/posts/.*',
+       strategyOptions: {
+         cacheName: 'our-cache',
+         plugins: [{
+           cacheWillUpdate: async ({request, response, event}) => {
+             // Return `response`, a different `Response` object, or `null`.
+             return response;
+           },
+           cacheDidUpdate: async ({cacheName, request, oldResponse, newResponse, event}) => {
+             // No return expected
+             // Note: `newResponse.bodyUsed` is `true` when this is called,
+             // meaning the body has already been read. If you need access to
+             // the body of the fresh response, use a technique like:
+             // const freshResponse = await caches.match(request, {cacheName});
+           },
+           cacheKeyWillBeUsed: async ({request, mode}) => {
+             // `request` is the `Request` object that would otherwise be used as the cache key.
+             // `mode` is either 'read' or 'write'.
+             // Return either a string, or a `Request` whose `url` property will be used as the cache key.
+             // Returning the original `request` will make this a no-op.
+             return request;
+           },
+           cachedResponseWillBeUsed: async ({cacheName, request, matchOptions, cachedResponse, event}) => {
+             // Return `cachedResponse`, a different `Response` object, or null.
+             return cachedResponse;
+           },
+           requestWillFetch: async ({request}) => {
+             // Return `request` or a different `Request` object.
+             return request;
+           },
+           fetchDidFail: async ({originalRequest, request, error, event}) => {
+             // No return expected.
+             // NOTE: `originalRequest` is the browser's request, `request` is the
+             // request after being passed through plugins with
+             // `requestWillFetch` callbacks, and `error` is the exception that caused
+             // the underlying `fetch()` to fail.
+           },
+           fetchDidSucceed: async ({request, response}) => {
+             // Return `response` to use the network response as-is,
+             // or alternatively create and return a new `Response` object.
+             return response;
+           }
+         }]
        }
      }
    ]
