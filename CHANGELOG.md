@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.2](https://github.com/nuxt-community/pwa-module/compare/v3.0.1...v3.0.2) (2020-08-26)
+
+
+### Bug Fixes
+
+* **workbox:** missing required parameter request for `handle()` ([#335](https://github.com/nuxt-community/pwa-module/issues/335)) ([eedf23f](https://github.com/nuxt-community/pwa-module/commit/eedf23fa3ab478f8a449817528d0270507babfc8))
+
 ### [3.0.1](https://github.com/nuxt-community/pwa-module/compare/v3.0.0...v3.0.1) (2020-08-17)
 
 
