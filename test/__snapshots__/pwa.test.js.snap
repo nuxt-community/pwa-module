@@ -2,83 +2,83 @@
 
 exports[`pwa build files (.nuxt) 1`] = `
 Array [
-  "fixture/.nuxt/components",
-  "fixture/.nuxt/components/nuxt-error.vue",
-  "fixture/.nuxt/components/nuxt-loading.vue",
-  "fixture/.nuxt/dist",
-  "fixture/.nuxt/dist/client",
-  "fixture/.nuxt/dist/client/LICENSES",
-  "fixture/.nuxt/dist/client/icons",
-  "fixture/.nuxt/dist/client/icons/icon_120x120.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_144x144.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_152x152.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_192x192.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_384x384.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_512x512.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_64x64.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_ipad_1536x2048.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_ipadpro10_1668x2224.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_ipadpro12_2048x2732.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_ipadpro9_1536x2048.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphone6_50x1334.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphoneplus_1080x1920.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphonese_640x1136.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphonex_1125x2436.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphonexr_828x1792.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphonexsmax_1242x2688.b8f3a1.png",
-  "fixture/.nuxt/dist/client/manifest_test.webmanifest",
-  "fixture/.nuxt/dist/client/node_modules",
-  "fixture/.nuxt/dist/client/pages",
-  "fixture/.nuxt/dist/server",
-  "fixture/.nuxt/dist/server/index.spa.html",
-  "fixture/.nuxt/dist/server/index.ssr.html",
-  "fixture/.nuxt/dist/server/pages",
-  "fixture/.nuxt/loading.html",
-  "fixture/.nuxt/mixins",
-  "fixture/.nuxt/views",
-  "fixture/.nuxt/views/app.template.html",
-  "fixture/.nuxt/views/error.html",
+  "fixture\\\\.nuxt\\\\components",
+  "fixture\\\\.nuxt\\\\components\\\\nuxt-error.vue",
+  "fixture\\\\.nuxt\\\\components\\\\nuxt-loading.vue",
+  "fixture\\\\.nuxt\\\\dist",
+  "fixture\\\\.nuxt\\\\dist\\\\client",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\icon_120x120.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\icon_144x144.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\icon_152x152.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\icon_192x192.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\icon_384x384.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\icon_512x512.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\icon_64x64.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_ipadpro10_1668x2224.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_ipadpro12_2048x2732.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_ipadpro9_1536x2048.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_ipad_1536x2048.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_iphone6_50x1334.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_iphoneplus_1080x1920.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_iphonese_640x1136.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_iphonexr_828x1792.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_iphonexsmax_1242x2688.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\icons\\\\splash_iphonex_1125x2436.b8f3a1.png",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\LICENSES",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\manifest_test.webmanifest",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\node_modules",
+  "fixture\\\\.nuxt\\\\dist\\\\client\\\\pages",
+  "fixture\\\\.nuxt\\\\dist\\\\server",
+  "fixture\\\\.nuxt\\\\dist\\\\server\\\\index.spa.html",
+  "fixture\\\\.nuxt\\\\dist\\\\server\\\\index.ssr.html",
+  "fixture\\\\.nuxt\\\\dist\\\\server\\\\pages",
+  "fixture\\\\.nuxt\\\\loading.html",
+  "fixture\\\\.nuxt\\\\mixins",
+  "fixture\\\\.nuxt\\\\views",
+  "fixture\\\\.nuxt\\\\views\\\\app.template.html",
+  "fixture\\\\.nuxt\\\\views\\\\error.html",
 ]
 `;
 
 exports[`pwa generate files (dist) 1`] = `
 Array [
-  "fixture/dist/.gitkeep",
-  "fixture/dist/.nojekyll",
-  "fixture/dist/200.html",
-  "fixture/dist/_nuxt",
-  "fixture/dist/_nuxt/LICENSES",
-  "fixture/dist/_nuxt/icons",
-  "fixture/dist/_nuxt/icons/icon_120x120.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/icon_144x144.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/icon_152x152.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/icon_192x192.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/icon_384x384.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/icon_512x512.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/icon_64x64.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_ipad_1536x2048.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_ipadpro10_1668x2224.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_ipadpro12_2048x2732.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_ipadpro9_1536x2048.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_iphone6_50x1334.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_iphoneplus_1080x1920.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_iphonese_640x1136.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_iphonex_1125x2436.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_iphonexr_828x1792.b8f3a1.png",
-  "fixture/dist/_nuxt/icons/splash_iphonexsmax_1242x2688.b8f3a1.png",
-  "fixture/dist/_nuxt/manifest_test.webmanifest",
-  "fixture/dist/_nuxt/node_modules",
-  "fixture/dist/_nuxt/pages",
-  "fixture/dist/bar",
-  "fixture/dist/bar/index.html",
-  "fixture/dist/baz",
-  "fixture/dist/baz/index.html",
-  "fixture/dist/foo",
-  "fixture/dist/foo/index.html",
-  "fixture/dist/icon.png",
-  "fixture/dist/index.html",
-  "fixture/dist/offline.html",
-  "fixture/dist/offline.png",
+  "fixture\\\\dist\\\\.gitkeep",
+  "fixture\\\\dist\\\\.nojekyll",
+  "fixture\\\\dist\\\\200.html",
+  "fixture\\\\dist\\\\bar",
+  "fixture\\\\dist\\\\bar\\\\index.html",
+  "fixture\\\\dist\\\\baz",
+  "fixture\\\\dist\\\\baz\\\\index.html",
+  "fixture\\\\dist\\\\foo",
+  "fixture\\\\dist\\\\foo\\\\index.html",
+  "fixture\\\\dist\\\\icon.png",
+  "fixture\\\\dist\\\\index.html",
+  "fixture\\\\dist\\\\offline.html",
+  "fixture\\\\dist\\\\offline.png",
+  "fixture\\\\dist\\\\_nuxt",
+  "fixture\\\\dist\\\\_nuxt\\\\icons",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\icon_120x120.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\icon_144x144.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\icon_152x152.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\icon_192x192.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\icon_384x384.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\icon_512x512.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\icon_64x64.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_ipadpro10_1668x2224.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_ipadpro12_2048x2732.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_ipadpro9_1536x2048.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_ipad_1536x2048.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_iphone6_50x1334.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_iphoneplus_1080x1920.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_iphonese_640x1136.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_iphonexr_828x1792.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_iphonexsmax_1242x2688.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\icons\\\\splash_iphonex_1125x2436.b8f3a1.png",
+  "fixture\\\\dist\\\\_nuxt\\\\LICENSES",
+  "fixture\\\\dist\\\\_nuxt\\\\manifest_test.webmanifest",
+  "fixture\\\\dist\\\\_nuxt\\\\node_modules",
+  "fixture\\\\dist\\\\_nuxt\\\\pages",
 ]
 `;
 
@@ -138,6 +138,66 @@ workbox.precaching.precacheAndRoute([
 
 // Register route handlers for runtimeCaching
 workbox.routing.registerRoute(new RegExp('https://google.com/.*'), new workbox.strategies.CacheFirst(), 'GET')
+workbox.routing.registerRoute(new RegExp('https://pwa.nuxtjs.org/.*'), new workbox.strategies.CacheFirst({plugins:[new workbox.expiration.ExpirationPlugin({maxEntries:10,maxAgeSeconds:300})],cacheName:'nuxt-pwa'}), 'GET')
+workbox.routing.registerRoute(new RegExp('https://vuejs.org/.*'), new workbox.strategies.NetworkFirst({plugins:[{cacheWillUpdate:async ({
+            request,
+            response,
+            event
+          }) => {
+            // Return \`response\`, a different \`Response\` object, or \`null\`.
+            return response;
+          },cacheDidUpdate:async ({
+            cacheName,
+            request,
+            oldResponse,
+            newResponse,
+            event
+          }) => {// No return expected
+            // Note: \`newResponse.bodyUsed\` is \`true\` when this is called,
+            // meaning the body has already been read. If you need access to
+            // the body of the fresh response, use a technique like:
+            // const freshResponse = await caches.match(request, {cacheName});
+          },cacheKeyWillBeUsed:async ({
+            request,
+            mode
+          }) => {
+            // \`request\` is the \`Request\` object that would otherwise be used as the cache key.
+            // \`mode\` is either 'read' or 'write'.
+            // Return either a string, or a \`Request\` whose \`url\` property will be used as the cache key.
+            // Returning the original \`request\` will make this a no-op.
+            return request;
+          },cachedResponseWillBeUsed:async ({
+            cacheName,
+            request,
+            matchOptions,
+            cachedResponse,
+            event
+          }) => {
+            // Return \`cachedResponse\`, a different \`Response\` object, or null.
+            return cachedResponse;
+          },requestWillFetch:async ({
+            request
+          }) => {
+            // Return \`request\` or a different \`Request\` object.
+            return request;
+          },fetchDidFail:async ({
+            originalRequest,
+            request,
+            error,
+            event
+          }) => {// No return expected.
+            // NOTE: \`originalRequest\` is the browser's request, \`request\` is the
+            // request after being passed through plugins with
+            // \`requestWillFetch\` callbacks, and \`error\` is the exception that caused
+            // the underlying \`fetch()\` to fail.
+          },fetchDidSucceed:async ({
+            request,
+            response
+          }) => {
+            // Return \`response\` to use the network response as-is,
+            // or alternatively create and return a new \`Response\` object.
+            return response;
+          }}],cacheName:'our-cache'}), 'GET')
 workbox.routing.registerRoute(new RegExp('/_nuxt/'), new workbox.strategies.CacheFirst(), 'GET')
 workbox.routing.registerRoute(new RegExp('/'), new workbox.strategies.NetworkFirst(), 'GET')
 
