@@ -18,7 +18,7 @@ export type CachingStrategy = 'CacheFirst' | 'CacheOnly' | 'NetworkFirst' | 'Net
 export type RuntimeCaching = {
   urlPattern: string,
   handler?: CachingStrategy,
-  methods?: HTTPMethod,
+  method?: HTTPMethod,
   strategyOptions?: StrategyOptions
 }
 
