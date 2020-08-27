@@ -4,7 +4,6 @@ import { Plugin as BroadcastUpdatePlugin } from 'workbox-broadcast-update'
 import { Plugin as CacheableResponsePlugin } from 'workbox-cacheable-response'
 import { Plugin as ExpirationPlugin } from 'workbox-expiration'
 import { Plugin as RangeRequestsPlugin } from 'workbox-range-requests'
-import { WorkboxPlugin } from 'workbox-core'
 import {
   StaleWhileRevalidateOptions,
   CacheFirstOptions,
@@ -31,7 +30,6 @@ export type StrategyPlugin = BackgroundSync
   | CacheableResponse
   | Expiration
   | RangeRequests
-  | WorkboxPlugin
 
 export interface BackgroundSync {
   use: 'BackgroundSync',
