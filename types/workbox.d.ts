@@ -5,6 +5,13 @@ import { Plugin as CacheableResponsePlugin } from 'workbox-cacheable-response'
 import { Plugin as ExpirationPlugin } from 'workbox-expiration'
 import { Plugin as RangeRequestsPlugin } from 'workbox-range-requests'
 import { WorkboxPlugin } from 'workbox-core'
+import {
+  StaleWhileRevalidateOptions,
+  CacheFirstOptions,
+  NetworkFirstOptions,
+  NetworkOnlyOptions,
+  CacheOnlyOptions
+} from 'workbox-strategies'
 
 export type CachingStrategy = 'CacheFirst' | 'CacheOnly' | 'NetworkFirst' | 'NetworkOnly' | 'StaleWhileRevalidate'
 
@@ -12,11 +19,12 @@ export type RuntimeCaching = {
   urlPattern: string,
   handler?: CachingStrategy,
   methods?: HTTPMethod,
-  strategyOptions?: {
-    cacheName: string,
-    plugins?: StrategyPlugin[]
-  }
+  strategyOptions?: StrategyOptions
 }
+
+export type StrategyOptions =
+  Omit<StaleWhileRevalidateOptions | CacheFirstOptions | NetworkFirstOptions | NetworkOnlyOptions | CacheOnlyOptions, 'plugins'>
+  & { plugins?: StrategyPlugin[] }
 
 export type StrategyPlugin = BackgroundSync
   | BroadcastUpdate
