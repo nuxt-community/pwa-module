@@ -267,9 +267,9 @@ workbox: {
 
 ### Hooking on service worker registration life cycle
 
-Create `plugins/sw.js`:
+Create `plugins/sw.client.js`. The `client` suffix tells Nuxt that the plugin should only be loaded on client-side:
 
-```js{}[plugins/sw.js]
+```js{}[plugins/sw.client.js]
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then((registrations) => {
     for (const worker of registrations) {
@@ -284,10 +284,7 @@ Add it to the `plugins` section of `nuxt.config.js`:
 ```js{}[nuxt.config.js]
 {
   plugins: [
-    {
-      src: '~/plugins/sw.js',
-      ssr: false
-    }
+    '~/plugins/sw.client.js'
   ]
 }
 ```
