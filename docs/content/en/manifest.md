@@ -8,7 +8,7 @@ category: Modules
 Manifest adds [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with no pain.
 
 You can pass options to `pwa.manifest` in `nuxt.config.js` to override defaults. Check the
-[valid options](https://developer.mozilla.org/en-US/docs/Web/Manifest#Members) available and and it's
+[valid options](https://developer.mozilla.org/en-US/docs/Web/Manifest#Members) available and and its
 [default options](#default-options) for deeper insights.
 
 ```js{}[nuxt.config.js]
