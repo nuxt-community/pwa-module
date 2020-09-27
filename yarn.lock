@@ -2094,10 +2094,10 @@
     rc9 "^1.0.0"
     std-env "^2.2.1"
 
-"@nuxt/types@^2.14.5":
-  version "2.14.5"
-  resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-2.14.5.tgz#426236eda1790f15c123110421c6d222c3d02c8f"
-  integrity sha512-1gOiwv6K4eNJbrYb68jtmZup/0gw6dGeu6fhUykyCcJS3emt+tzf6V0Lvg7WblJ/1xkzQfnNfbrbCm1CJpRAHg==
+"@nuxt/types@^2.14.6":
+  version "2.14.6"
+  resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-2.14.6.tgz#0b6626acdecf83ddf1d288272f8e97d7127ac2f0"
+  integrity sha512-wK2B71TkbNAWxIcxdaueMfSIubqQ1DK/Yzix1MbXMLp5JM+fQTPofU/o+PQ9cl1vESPmh79bV/PC/JHYC6xK3w==
   dependencies:
     "@types/autoprefixer" "^9.7.2"
     "@types/babel__core" "^7.1.9"
@@ -2107,7 +2107,7 @@
     "@types/file-loader" "^4.2.0"
     "@types/html-minifier" "^4.0.0"
     "@types/less" "^3.0.1"
-    "@types/node" "^12.12.56"
+    "@types/node" "^12.12.62"
     "@types/node-sass" "^4.11.1"
     "@types/optimize-css-assets-webpack-plugin" "^5.0.1"
     "@types/pug" "^2.0.4"
@@ -2586,10 +2586,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.27.tgz#a151873af5a5e851b51b3b065c9e63390a9e0eb1"
   integrity sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
 
-"@types/node@^12.12.56":
-  version "12.12.56"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.56.tgz#83591a89723d8ec3eaf722137e1784a7351edb6c"
-  integrity sha512-8OdIupOIZtmObR13fvGyTvpcuzKmMugkATeVcfNwCjGtHxhjEKmOvLqXwR8U9VOtNnZ4EXaSfNiLVsPinaCXkQ==
+"@types/node@^12.12.62":
+  version "12.12.62"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.62.tgz#733923d73669188d35950253dd18a21570085d2b"
+  integrity sha512-qAfo81CsD7yQIM9mVyh6B/U47li5g7cfpVQEDMfQeF8pSZVwzbhwU3crc0qG4DmpsebpJPR49AKOExQyJ05Cpg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -6992,10 +6992,10 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
-hasha@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/hasha/-/hasha-5.2.0.tgz#33094d1f69c40a4a6ac7be53d5fe3ff95a269e0c"
-  integrity sha512-2W+jKdQbAdSIrggA8Q35Br8qKadTrqCTC8+XZvBWepKDK6m9XkX6Iz1a2yh2KP01kzAR/dpuMeUnocoLYDcskw==
+hasha@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/hasha/-/hasha-5.2.1.tgz#0e5b492aa40de3819e80955f221d2fccef55b5aa"
+  integrity sha512-x15jnRSHTi3VmH+oHtVb9kgU/HuKOK8mjK8iCL3dPQXh4YJlUb9YSI8ZLiiqLAIvY2wuDIlZYZppy8vB2XISkQ==
   dependencies:
     is-stream "^2.0.0"
     type-fest "^0.8.0"
