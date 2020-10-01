@@ -63,7 +63,7 @@ Please read this resources before you enable `mobileAppIOS` option:
 - Meta: `description`
 
 ### `theme_color`
-- Default: options.loading.color
+- Default: `undefined`
 - Meta: `theme-color`
 
 ### `lang`
