@@ -237,20 +237,28 @@ workbox: {
        urlPattern: 'https://my-cdn.com/posts/.*',
        strategyOptions: {
          cacheName: 'our-cache',
-         plugins: [{
-           // Use Workbox plugins, available options are 'BackgroundSync', 'BroadcastUpdate', 'CacheableResponse', 'Expiration' and 'RangeRequests'
-           use: 'Expiration',
-           // Pass parameter values of the plugin's constructor as an array. Function in parameter is not supported.
-           config: [{
-             maxEntries: 10,
-             maxAgeSeconds: 300
-           }]
-         }]
-       }
+       },
+       strategyPlugins: [{
+          use: 'Expiration',
+          config: {
+            maxEntries: 10,
+            maxAgeSeconds: 300
+          }
+        }]
      }
    ]
 }
 ```
+
+This strategy plugins are supported (possible values for `strategyPlugins[].use`):
+
+ - BackgroundSync
+ - BroadcastUpdate
+ - CacheableResponse
+ - Expiration
+ - RangeRequests
+
+You can pass an array for `strategyPlugins[].config` if it supports more than one argument. Only JSON serializable values are supported (for example you cannot pass an inline function as config)
 
 ### Adding custom service worker
 
