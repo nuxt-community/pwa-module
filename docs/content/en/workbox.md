@@ -237,10 +237,15 @@ workbox: {
        urlPattern: 'https://my-cdn.com/posts/.*',
        strategyOptions: {
          cacheName: 'our-cache',
-         cacheExpiration: {
-           maxEntries: 10,
-           maxAgeSeconds: 300
-         }
+         plugins: [{
+           // Use Workbox plugins, available options are 'BackgroundSync', 'BroadcastUpdate', 'CacheableResponse', 'Expiration' and 'RangeRequests'
+           use: 'Expiration',
+           // Pass parameter values of the plugin's constructor as an array. Function in parameter is not supported.
+           config: [{
+             maxEntries: 10,
+             maxAgeSeconds: 300
+           }]
+         }]
        }
      }
    ]
