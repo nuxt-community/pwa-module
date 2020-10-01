@@ -14,22 +14,19 @@ import {
 
 export type CachingStrategy = 'CacheFirst' | 'CacheOnly' | 'NetworkFirst' | 'NetworkOnly' | 'StaleWhileRevalidate'
 
-export type RuntimeCaching = {
-  urlPattern: string,
-  handler?: CachingStrategy,
-  method?: HTTPMethod,
+export interface RuntimeCaching {
+  urlPattern: string
+  handler?: CachingStrategy
+  method?: HTTPMethod
   strategyOptions?: StrategyOptions
+  strategyPlugins?: StrategyPlugin[]
 }
 
 export type StrategyOptions =
   Omit<StaleWhileRevalidateOptions | CacheFirstOptions | NetworkFirstOptions | NetworkOnlyOptions | CacheOnlyOptions, 'plugins'>
-  & { plugins?: StrategyPlugin[] }
 
-export type StrategyPlugin = BackgroundSync
-  | BroadcastUpdate
-  | CacheableResponse
-  | Expiration
-  | RangeRequests
+
+export type StrategyPlugin = BackgroundSync | BroadcastUpdate | CacheableResponse | Expiration | RangeRequests
 
 export interface BackgroundSync {
   use: 'BackgroundSync',

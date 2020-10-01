@@ -57,15 +57,17 @@ module.exports = {
         handler: 'CacheFirst',
         method: 'GET',
         strategyOptions: {
-          cacheName: 'nuxt-pwa',
-          plugins: [{
+          cacheName: 'nuxt-pwa'
+        },
+        strategyPlugins: [
+          {
             use: 'Expiration',
-            config: [{
+            config: {
               maxEntries: 10,
               maxAgeSeconds: 300
-            }]
-          }]
-        }
+            }
+          }
+        ]
       }
     ]
   }
