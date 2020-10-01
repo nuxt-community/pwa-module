@@ -76,7 +76,7 @@ These articles will help you decide an appropriate value:
 - Meta: `description`
 
 ### `theme_color`
-- Default: options.loading.color
+- Default: `undefined`
 - Meta: `theme-color`
 
 ### `lang`

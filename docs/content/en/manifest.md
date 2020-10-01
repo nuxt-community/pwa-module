@@ -32,7 +32,7 @@ pwa: {
 | `start_url` <sup>\*1</sup>        | `String`        | `routerBase + '?standalone=true'`                            | It has to be relative to where the manifest is placed           |
 | `display` <sup>\*1</sup>          | `String`        | `'standalone'`                                               |                                                                 |
 | `background_color` <sup>\*2</sup> | `String`        | `'#ffffff'`                                                  |                                                                 |
-| `theme_color` <sup>\*2</sup>      | `String`        | `this.options.loading.color`                                 | Nuxt [loading color] option                                     |
+| `theme_color` <sup>\*2</sup>      | `String`        | `pwa.meta.theme_color`                                       | This module's meta theme-color (see the [meta module])          |
 | `dir`                             | `String`        | `'ltr'`                                                      | `ltr` or `rtl`. Used with `lang`                                |
 | `lang`                            | `String`        | `'en'`                                                       | Recommended if used `dir`                                       |
 | `useWebmanifestExtension` <sup>\*3</sup>       | `Boolean`       | `false`                                                      | Whether to use `webmanifest` file extension (or default `json`) |
@@ -43,7 +43,8 @@ pwa: {
 - <sup>\*2</sup> Recommended (according [to Google](https://web.dev/add-manifest))
 - <sup>\*3</sup> Please see [wiki](https://github.com/nuxt-community/pwa-module/wiki/.webmanifest)
 
-[icon module]: https://pwa.nuxtjs.org/icon/
+[icon module]: https://pwa.nuxtjs.org/icon
+[meta module]: https://pwa.nuxtjs.org/meta
 [maximum of 45 characters]: https://developer.chrome.com/apps/manifest/name
 [maximum of 12 characters]: https://developer.chrome.com/apps/manifest/name
 [loading color]: https://nuxtjs.org/api/configuration-loading/#customizing-the-progress-bar
