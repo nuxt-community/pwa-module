@@ -32,7 +32,7 @@ pwa: {
 | `start_url` <sup>\*1</sup>        | `String`        | `routerBase + '?standalone=true'`                            | It has to be relative to where the manifest is placed           |
 | `display` <sup>\*1</sup>          | `String`        | `'standalone'`                                               |                                                                 |
 | `background_color` <sup>\*2</sup> | `String`        | `'#ffffff'`                                                  |                                                                 |
-| `theme_color` <sup>\*2</sup>      | `String`        | `this.options.pwa.meta.theme_color`                          | This module's meta theme-color (see the [meta module])          |
+| `theme_color` <sup>\*2</sup>      | `String`        | `pwa.meta.theme_color`                                       | This module's meta theme-color (see the [meta module])          |
 | `dir`                             | `String`        | `'ltr'`                                                      | `ltr` or `rtl`. Used with `lang`                                |
 | `lang`                            | `String`        | `'en'`                                                       | Recommended if used `dir`                                       |
 | `useWebmanifestExtension` <sup>\*3</sup>       | `Boolean`       | `false`                                                      | Whether to use `webmanifest` file extension (or default `json`) |
