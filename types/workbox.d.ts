@@ -28,30 +28,17 @@ export type StrategyOptions =
 
 export type StrategyPlugin = BackgroundSync | BroadcastUpdate | CacheableResponse | Expiration | RangeRequests
 
-export interface BackgroundSync {
-  use: 'BackgroundSync',
-  config: ConstructorParameters<typeof BackgroundSyncPlugin>
+type StrategyPluginOf<name, T> = {
+  use: name
+  config: ConstructorParameters<T>[0] | ConstructorParameters<T>
 }
 
-export interface BroadcastUpdate {
-  use: 'BroadcastUpdate',
-  config: ConstructorParameters<typeof BroadcastUpdatePlugin>
-}
+export type BackgroundSync = StrategyPluginOf<'BackgroundSync', BackgroundSyncPlugin>
+export type BroadcastUpdate = StrategyPluginOf<'BroadcastUpdate', BroadcastUpdatePlugin>
+export type CacheableResponse = StrategyPluginOf<'CacheableResponse', CacheableResponsePlugin>
+export type Expiration = StrategyPluginOf<'Expiration', ExpirationPlugin>
+export type RangeRequests = StrategyPluginOf<'RangeRequests', RangeRequestsPlugin>
 
-export interface CacheableResponse {
-  use: 'CacheableResponse',
-  config: ConstructorParameters<typeof CacheableResponsePlugin>
-}
-
-export interface Expiration {
-  use: 'Expiration',
-  config: ConstructorParameters<typeof ExpirationPlugin>
-}
-
-export interface RangeRequests {
-  use: 'RangeRequests',
-  config: ConstructorParameters<typeof RangeRequestsPlugin>
-}
 
 export interface WorkboxOptions {
   workboxVersion: string,
