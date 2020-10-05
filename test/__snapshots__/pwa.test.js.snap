@@ -83,66 +83,94 @@ Array [
 `;
 
 exports[`pwa sw.js 1`] = `
-"importScripts('https://cdn.jsdelivr.net/npm/workbox-cdn/workbox/workbox-sw.js', 'custom-sw.js')
+"const options = {\\"workboxURL\\":\\"https://cdn.jsdelivr.net/npm/workbox-cdn/workbox/workbox-sw.js\\",\\"importScripts\\":[\\"custom-sw.js\\"],\\"config\\":{\\"debug\\":true},\\"cacheNames\\":{\\"prefix\\":\\"test\\",\\"googleAnalytics\\":\\"test-ga\\"},\\"clientsClaim\\":true,\\"skipWaiting\\":true,\\"cleanupOutdatedCaches\\":true,\\"offlineAnalytics\\":true,\\"preCaching\\":[\\"precache.js\\"],\\"runtimeCaching\\":[{\\"urlPattern\\":\\"https://google.com/.*\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]},{\\"urlPattern\\":\\"https://pwa.nuxtjs.org/.*\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyOptions\\":{\\"cacheName\\":\\"nuxt-pwa\\"},\\"strategyPlugins\\":[{\\"use\\":\\"expiration.ExpirationPlugin\\",\\"config\\":[{\\"maxEntries\\":10,\\"maxAgeSeconds\\":300}]}]},{\\"urlPattern\\":\\"/_nuxt/\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]},{\\"urlPattern\\":\\"/\\",\\"handler\\":\\"NetworkFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]}],\\"offlinePage\\":null}
 
-// --------------------------------------------------
-// Configure
-// --------------------------------------------------
+importScripts(...[options.workboxURL, ...options.importScripts])
 
-// Set workbox config
-workbox.setConfig({
-  \\"debug\\": true
-})
+initWorkbox(workbox, options)
+workboxExtensions(workbox, options)
+precacheAssets(workbox, options)
+cachingExtensions(workbox, options)
+runtimeCaching(workbox, options)
+offlinePage(workbox, options)
+routingExtensions(workbox, options)
 
-// Set workbox cache names
-workbox.core.setCacheNameDetails({
-  \\"prefix\\": \\"test\\",
-  \\"googleAnalytics\\": \\"test-ga\\"
-})
+function getProp(obj, prop) {
+  return prop.split('.').reduce((p, c) => p[c], obj)
+}
 
-// Start controlling any existing clients as soon as it activates
-workbox.core.clientsClaim()
+function initWorkbox(workbox, options) {
+  if (options.config) {
+    // Set workbox config
+    workbox.setConfig(options.config)
+  }
 
-// Skip over the SW waiting lifecycle stage
-workbox.core.skipWaiting()
+  if (options.cacheNames) {
+    // Set workbox cache names
+    workbox.core.setCacheNameDetails(options.cacheNames)
+  }
 
-workbox.precaching.cleanupOutdatedCaches()
+  if (options.clientsClaim) {
+    // Start controlling any existing clients as soon as it activates
+    workbox.core.clientsClaim()
+  }
 
-// Enable offline Google Analytics tracking
-workbox.googleAnalytics.initialize()
+  if (options.skipWaiting) {
+    workbox.core.skipWaiting()
+  }
 
-// -- Start of workboxExtensions --
-// Workbox Extension
-// -- End of workboxExtensions --
+  if (options.cleanupOutdatedCaches) {
+    workbox.precaching.cleanupOutdatedCaches()
+  }
 
-// --------------------------------------------------
-// Precaches
-// --------------------------------------------------
+  if (options.offlineAnalytics) {
+    // Enable offline Google Analytics tracking
+    workbox.googleAnalytics.initialize()
+  }
+}
 
-// Precache assets
+function precacheAssets(workbox, options) {
+  if (options.preCaching.length) {
+    workbox.precaching.precacheAndRoute(options.preCaching, options.cacheOptions)
+  }
+}
 
-workbox.precaching.precacheAndRoute([
-  \\"precache.js\\"
-], {
-  \\"cacheId\\": \\"@nuxtjs/pwa-prod\\",
-  \\"directoryIndex\\": \\"/\\"
-})
+function runtimeCaching(workbox, options) {
+  for (const entry of options.runtimeCaching) {
+    const urlPattern = new RegExp(entry.urlPattern)
+    const method = entry.method || 'GET'
 
-// -- Start of cachingExtensions --
-// Caching Extension
-// -- End of cachingExtensions --
+    const plugins = (entry.strategyPlugins || [])
+      .map(p => new (getProp(workbox, p.use))(...p.config))
 
-// --------------------------------------------------
-// Runtime Caching
-// --------------------------------------------------
+    const strategyOptions = { ...entry.strategyOptions, plugins }
 
-// Register route handlers for runtimeCaching
-workbox.routing.registerRoute(new RegExp('https://google.com/.*'), new workbox.strategies.CacheFirst ({}), 'GET')
-workbox.routing.registerRoute(new RegExp('/_nuxt/'), new workbox.strategies.CacheFirst ({}), 'GET')
-workbox.routing.registerRoute(new RegExp('/'), new workbox.strategies.NetworkFirst ({}), 'GET')
+    const strategy = new workbox.strategies[entry.handler](strategyOptions)
 
-// -- Start of routingExtensions --
-// Routing Extension
-// -- End of routingExtensions --
+    workbox.routing.registerRoute(urlPattern, strategy, method)
+  }
+}
+
+function offlinePage(workbox, options) {
+  // Register router handler for offlinePage
+  workbox.routing.registerRoute(new RegExp(options.pagesURLPattern), ({ request, event }) => {
+    const strategy = new workbox.strategies[options.offlineStrategy]
+    return strategy
+      .handle({ request, event })
+      .catch(() => caches.match(options.offlinePage))
+  })
+}
+
+function workboxExtensions(workbox, options) {
+  // Workbox Extension
+}
+
+function cachingExtensions(workbox, options) {
+  // Caching Extension
+}
+
+function routingExtensions(workbox, options) {
+  // Routing Extension
+}
 "
 `;

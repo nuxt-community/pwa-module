@@ -45,6 +45,9 @@ Please read this resources before you enable `mobileAppIOS` option:
 
 ### `appleStatusBarStyle`
 - Default: `default`
+- Meta: `apple-mobile-web-app-status-bar-style`
+
+This article will help you decide an appropriate value: https://medium.com/appscope/changing-the-ios-status-bar-of-your-progressive-web-app-9fc8fbe8e6ab.
 
 ### `favicon`
 - Default: `true` (to use options.icons)

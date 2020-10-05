@@ -237,15 +237,28 @@ workbox: {
        urlPattern: 'https://my-cdn.com/posts/.*',
        strategyOptions: {
          cacheName: 'our-cache',
-         cacheExpiration: {
-           maxEntries: 10,
-           maxAgeSeconds: 300
-         }
-       }
+       },
+       strategyPlugins: [{
+          use: 'Expiration',
+          config: {
+            maxEntries: 10,
+            maxAgeSeconds: 300
+          }
+        }]
      }
    ]
 }
 ```
+
+This strategy plugins are supported (possible values for `strategyPlugins[].use`):
+
+ - BackgroundSync
+ - BroadcastUpdate
+ - CacheableResponse
+ - Expiration
+ - RangeRequests
+
+You can pass an array for `strategyPlugins[].config` if it supports more than one argument. Only JSON serializable values are supported (for example you cannot pass an inline function as config)
 
 ### Adding custom service worker
 
@@ -267,9 +280,9 @@ workbox: {
 
 ### Hooking on service worker registration life cycle
 
-Create `plugins/sw.js`:
+Create `plugins/sw.client.js`. The `client` suffix tells Nuxt that the plugin should only be loaded on client-side:
 
-```js{}[plugins/sw.js]
+```js{}[plugins/sw.client.js]
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then((registrations) => {
     for (const worker of registrations) {
@@ -284,10 +297,7 @@ Add it to the `plugins` section of `nuxt.config.js`:
 ```js{}[nuxt.config.js]
 {
   plugins: [
-    {
-      src: '~/plugins/sw.js',
-      ssr: false
-    }
+    '~/plugins/sw.client.js'
   ]
 }
 ```

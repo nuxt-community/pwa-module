@@ -1,17 +1,44 @@
-import { CacheExpirationConfig } from 'workbox-expiration'
 import { HTTPMethod } from 'workbox-routing'
+import { Plugin as BackgroundSyncPlugin } from 'workbox-background-sync'
+import { Plugin as BroadcastUpdatePlugin } from 'workbox-broadcast-update'
+import { Plugin as CacheableResponsePlugin } from 'workbox-cacheable-response'
+import { Plugin as ExpirationPlugin } from 'workbox-expiration'
+import { Plugin as RangeRequestsPlugin } from 'workbox-range-requests'
+import {
+  StaleWhileRevalidateOptions,
+  CacheFirstOptions,
+  NetworkFirstOptions,
+  NetworkOnlyOptions,
+  CacheOnlyOptions
+} from 'workbox-strategies'
 
 export type CachingStrategy = 'CacheFirst' | 'CacheOnly' | 'NetworkFirst' | 'NetworkOnly' | 'StaleWhileRevalidate'
 
-export type RuntimeCaching = {
-  urlPattern: string,
-  handler?: CachingStrategy,
-  methods?: HTTPMethod,
-  strategyOptions?: {
-    cacheName: string,
-    cacheExpiration: CacheExpirationConfig
-  }
+export interface RuntimeCaching {
+  urlPattern: string
+  handler?: CachingStrategy
+  method?: HTTPMethod
+  strategyOptions?: StrategyOptions
+  strategyPlugins?: StrategyPlugin[]
 }
+
+export type StrategyOptions =
+  Omit<StaleWhileRevalidateOptions | CacheFirstOptions | NetworkFirstOptions | NetworkOnlyOptions | CacheOnlyOptions, 'plugins'>
+
+
+export type StrategyPlugin = BackgroundSync | BroadcastUpdate | CacheableResponse | Expiration | RangeRequests
+
+type StrategyPluginOf<name, T> = {
+  use: name
+  config: ConstructorParameters<T>[0] | ConstructorParameters<T>
+}
+
+export type BackgroundSync = StrategyPluginOf<'BackgroundSync', BackgroundSyncPlugin>
+export type BroadcastUpdate = StrategyPluginOf<'BroadcastUpdate', BroadcastUpdatePlugin>
+export type CacheableResponse = StrategyPluginOf<'CacheableResponse', CacheableResponsePlugin>
+export type Expiration = StrategyPluginOf<'Expiration', ExpirationPlugin>
+export type RangeRequests = StrategyPluginOf<'RangeRequests', RangeRequestsPlugin>
+
 
 export interface WorkboxOptions {
   workboxVersion: string,

@@ -51,6 +51,23 @@ module.exports = {
         urlPattern: 'https://google.com/.*',
         handler: 'cacheFirst',
         method: 'GET'
+      },
+      {
+        urlPattern: 'https://pwa.nuxtjs.org/.*',
+        handler: 'CacheFirst',
+        method: 'GET',
+        strategyOptions: {
+          cacheName: 'nuxt-pwa'
+        },
+        strategyPlugins: [
+          {
+            use: 'Expiration',
+            config: {
+              maxEntries: 10,
+              maxAgeSeconds: 300
+            }
+          }
+        ]
       }
     ]
   }
