@@ -46,6 +46,7 @@ Please read this resources before you enable `mobileAppIOS` option:
 ### `appleStatusBarStyle`
 - Default: `default`
 - Meta: `apple-mobile-web-app-status-bar-style`
+- Requires `mobileAppIOS` to be `true`
 
 There are three options for the status bar style:
 1. `default`: The default status bar style for Safari PWAs; white background with black text and icons.
