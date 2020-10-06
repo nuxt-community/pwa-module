@@ -38,6 +38,8 @@ Edit your `nuxt.config.js` file to add pwa module::
 }
 ```
 
+**NOTE:** If using `ssr: false` with production mode without `nuxt generate`, you have to use `modules` instead of `buildModules`
+
 ### Add Icon
 
 Ensure `static` dir exists and optionally create `static/icon.png`. (Recommended to be square png and >= `512x512px`)
