@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/nuxt-community/pwa-module/compare/v3.0.2...v3.1.0) (2020-10-06)
+
+
+### Features
+
+* **meta:** merge head at runtime ([#363](https://github.com/nuxt-community/pwa-module/issues/363)) ([c0d86ea](https://github.com/nuxt-community/pwa-module/commit/c0d86ead374efcfd66282959e65055262e4a27cf))
+
+
+### Bug Fixes
+
+* **icon:** fork without original process args ([#343](https://github.com/nuxt-community/pwa-module/issues/343)) ([8b1f19f](https://github.com/nuxt-community/pwa-module/commit/8b1f19f56ddc31a49445334ddc8abe2162b4b760))
+* **manifest:** do not use nuxt loading bar color as default `theme_color` ([#344](https://github.com/nuxt-community/pwa-module/issues/344)) ([a18a79f](https://github.com/nuxt-community/pwa-module/commit/a18a79f62a49a3a563621929e30fc8703c3c133a))
+* **meta:** add missing `router.base` prefix to favicon ([#354](https://github.com/nuxt-community/pwa-module/issues/354)) ([3e910ae](https://github.com/nuxt-community/pwa-module/commit/3e910ae7e87d341c6a6ea018d013105ce1721b5b))
+* **meta:** allow setting `appleStatusBarStyle` without `mobileAppIOS` ([b0f226a](https://github.com/nuxt-community/pwa-module/commit/b0f226aadeee50b47790ac064852b444e33d9b95)), closes [#338](https://github.com/nuxt-community/pwa-module/issues/338)
+* **meta:** prevent build failure for ios splash image when no icon is used ([#362](https://github.com/nuxt-community/pwa-module/issues/362)) ([494eed5](https://github.com/nuxt-community/pwa-module/commit/494eed5db00e7cf6863fc854e6ccb6b7bb8c0ba4))
+* **workbox:** New configuration for specifying plugins when configuring a strategy ([#337](https://github.com/nuxt-community/pwa-module/issues/337)) ([dacf7ec](https://github.com/nuxt-community/pwa-module/commit/dacf7ec3613a6cb985990eab6c78879b78bdbbbc)), closes [/github.com/nuxt-community/pwa-module/pull/337#issuecomment-681870522](https://github.com/nuxt-community//github.com/nuxt-community/pwa-module/pull/337/issues/issuecomment-681870522)
+
 ### [3.0.2](https://github.com/nuxt-community/pwa-module/compare/v3.0.1...v3.0.2) (2020-08-26)
 
 
