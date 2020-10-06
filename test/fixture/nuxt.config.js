@@ -2,7 +2,7 @@ module.exports = {
   dev: false,
   rootDir: __dirname,
 
-  modules: [
+  buildModules: [
     { handler: require('../../') }
   ],
 

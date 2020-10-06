@@ -15,14 +15,14 @@ Add `@nuxtjs/pwa` dependency to your project:
   <code-block label="Yarn" active>
 
   ```bash
-  yarn add @nuxtjs/pwa
+  yarn add --dev @nuxtjs/pwa
   ```
 
   </code-block>
   <code-block label="NPM">
 
   ```bash
-  npm i @nuxtjs/pwa
+  npm i --dev @nuxtjs/pwa
   ```
 
   </code-block>
@@ -32,11 +32,13 @@ Edit your `nuxt.config.js` file to add pwa module::
 
 ```js{}[nuxt.config.js]
 {
-  modules: [
+  buildModules: [
     '@nuxtjs/pwa',
   ]
 }
 ```
+
+**NOTE:** If using `ssr: false` with production mode without `nuxt generate`, you have to use `modules` instead of `buildModules`
 
 ### Add Icon
 
