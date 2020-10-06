@@ -46,8 +46,18 @@ Please read this resources before you enable `mobileAppIOS` option:
 ### `appleStatusBarStyle`
 - Default: `default`
 - Meta: `apple-mobile-web-app-status-bar-style`
+- Requires `mobileAppIOS` to be `true`
 
-This article will help you decide an appropriate value: https://medium.com/appscope/changing-the-ios-status-bar-of-your-progressive-web-app-9fc8fbe8e6ab.
+There are three options for the status bar style:
+1. `default`: The default status bar style for Safari PWAs; white background with black text and icons.
+2. `black`: Black background with white text and icons.
+3. `black-translucent`: Transparent background with white text and icons. It is [not possible](https://stackoverflow.com/a/40786240/8677167) to have a transparent status bar with black text and icons.
+
+Note that with `black-translucent`, the web content is displayed on the entire screen, partially obscured by the status bar.
+
+These articles will help you decide an appropriate value:
+- https://medium.com/appscope/changing-the-ios-status-bar-of-your-progressive-web-app-9fc8fbe8e6ab.
+- https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html#//apple_ref/doc/uid/TP40008193-SW4
 
 ### `favicon`
 - Default: `true` (to use options.icons)
