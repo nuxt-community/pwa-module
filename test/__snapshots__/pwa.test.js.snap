@@ -35,6 +35,7 @@ Array [
   "fixture/.nuxt/dist/server/pages",
   "fixture/.nuxt/loading.html",
   "fixture/.nuxt/mixins",
+  "fixture/.nuxt/pwa",
   "fixture/.nuxt/views",
   "fixture/.nuxt/views/app.template.html",
   "fixture/.nuxt/views/error.html",
