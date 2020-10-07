@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1](https://github.com/nuxt-community/pwa-module/compare/v3.1.0...v3.1.1) (2020-10-07)
+
+
+### Bug Fixes
+
+* **meta:** load meta when `ssr` is disable and using `nuxt dev` (fixes [#219](https://github.com/nuxt-community/pwa-module/issues/219)) ([b6a5ead](https://github.com/nuxt-community/pwa-module/commit/b6a5ead17cdb8f2edff9d12c326ae59d8ac372be))
+* **workbox:** handle `offlinePage` options (fixes [#365](https://github.com/nuxt-community/pwa-module/issues/365)) ([2b9856e](https://github.com/nuxt-community/pwa-module/commit/2b9856e9c226c5f286acb5116cb381e2fc550248))
+
 ## [3.1.0](https://github.com/nuxt-community/pwa-module/compare/v3.0.2...v3.1.0) (2020-10-06)
 
 
