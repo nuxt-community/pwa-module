@@ -80,7 +80,7 @@ Array [
 `;
 
 exports[`pwa sw.js 1`] = `
-"const options = {\\"workboxURL\\":\\"https://cdn.jsdelivr.net/npm/workbox-cdn/workbox/workbox-sw.js\\",\\"importScripts\\":[\\"custom-sw.js\\"],\\"config\\":{\\"debug\\":true},\\"cacheNames\\":{\\"prefix\\":\\"test\\",\\"googleAnalytics\\":\\"test-ga\\"},\\"clientsClaim\\":true,\\"skipWaiting\\":true,\\"cleanupOutdatedCaches\\":true,\\"offlineAnalytics\\":true,\\"preCaching\\":[\\"precache.js\\"],\\"runtimeCaching\\":[{\\"urlPattern\\":\\"https://google.com/.*\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]},{\\"urlPattern\\":\\"https://pwa.nuxtjs.org/.*\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyOptions\\":{\\"cacheName\\":\\"nuxt-pwa\\"},\\"strategyPlugins\\":[{\\"use\\":\\"expiration.ExpirationPlugin\\",\\"config\\":[{\\"maxEntries\\":10,\\"maxAgeSeconds\\":300}]}]},{\\"urlPattern\\":\\"/_nuxt/\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]},{\\"urlPattern\\":\\"/\\",\\"handler\\":\\"NetworkFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]}],\\"offlinePage\\":null}
+"const options = {\\"workboxURL\\":\\"https://cdn.jsdelivr.net/npm/workbox-cdn/workbox/workbox-sw.js\\",\\"importScripts\\":[\\"custom-sw.js\\"],\\"config\\":{\\"debug\\":true},\\"cacheNames\\":{\\"prefix\\":\\"test\\",\\"googleAnalytics\\":\\"test-ga\\"},\\"clientsClaim\\":true,\\"skipWaiting\\":true,\\"cleanupOutdatedCaches\\":true,\\"offlineAnalytics\\":true,\\"preCaching\\":[\\"precache.js\\"],\\"runtimeCaching\\":[{\\"urlPattern\\":\\"https://google.com/.*\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]},{\\"urlPattern\\":\\"https://pwa.nuxtjs.org/.*\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyOptions\\":{\\"cacheName\\":\\"nuxt-pwa\\"},\\"strategyPlugins\\":[{\\"use\\":\\"expiration.ExpirationPlugin\\",\\"config\\":[{\\"maxEntries\\":10,\\"maxAgeSeconds\\":300}]}]},{\\"urlPattern\\":\\"/_nuxt/\\",\\"handler\\":\\"CacheFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]},{\\"urlPattern\\":\\"/\\",\\"handler\\":\\"NetworkFirst\\",\\"method\\":\\"GET\\",\\"strategyPlugins\\":[]}],\\"offlinePage\\":null,\\"pagesURLPattern\\":\\"/\\",\\"offlineStrategy\\":\\"NetworkFirst\\"}
 
 importScripts(...[options.workboxURL, ...options.importScripts])
 
@@ -149,13 +149,15 @@ function runtimeCaching(workbox, options) {
 }
 
 function offlinePage(workbox, options) {
-  // Register router handler for offlinePage
-  workbox.routing.registerRoute(new RegExp(options.pagesURLPattern), ({ request, event }) => {
-    const strategy = new workbox.strategies[options.offlineStrategy]
-    return strategy
-      .handle({ request, event })
-      .catch(() => caches.match(options.offlinePage))
-  })
+  if (options.offlinePage) {
+    // Register router handler for offlinePage
+    workbox.routing.registerRoute(new RegExp(options.pagesURLPattern), ({ request, event }) => {
+      const strategy = new workbox.strategies[options.offlineStrategy]
+      return strategy
+        .handle({ request, event })
+        .catch(() => caches.match(options.offlinePage))
+    })
+  }
 }
 
 function workboxExtensions(workbox, options) {
