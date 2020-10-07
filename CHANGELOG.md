@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.2](https://github.com/nuxt-community/pwa-module/compare/v3.1.1...v3.1.2) (2020-10-07)
+
+
+### Bug Fixes
+
+* **meta:** avoid unnecessary log for meta.json ([de8e039](https://github.com/nuxt-community/pwa-module/commit/de8e039740a5618b59312682ecdea4f023d88414))
+* **meta:** fix issues regarding favicon.ico fallback ([7a1e773](https://github.com/nuxt-community/pwa-module/commit/7a1e77384eb88f0886180bc784efa242ae59e5ad))
+
 ### [3.1.1](https://github.com/nuxt-community/pwa-module/compare/v3.1.0...v3.1.1) (2020-10-07)
 
 
