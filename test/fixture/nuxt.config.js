@@ -1,6 +1,7 @@
 module.exports = {
   dev: false,
   rootDir: __dirname,
+  target: 'static',
 
   buildModules: [
     { handler: require('../../') }
