@@ -52,4 +52,10 @@ describe('pwa', () => {
 
     expect(swContents.replace(/@[^/]*/, '')).toMatchSnapshot()
   })
+
+  test('manifest.json', async () => {
+    const manifestContents = await fs.readFile(path.resolve(nuxt.options.generate.dir, '_nuxt/manifest_test.webmanifest'), 'utf-8')
+
+    expect(manifestContents).toMatchSnapshot()
+  })
 })

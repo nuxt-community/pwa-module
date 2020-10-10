@@ -18,7 +18,8 @@ module.exports = {
     name: 'Test Project Name',
     description: 'Test Project Description',
     useWebmanifestExtension: true,
-    fileName: 'manifest_test.[ext]?[hash]'
+    fileName: 'manifest_test.[ext]?[hash]',
+    orientation: 'portrait'
   },
 
   meta: {
