@@ -62,6 +62,6 @@ More detail of "purpose": [https://w3c.github.io/manifest/#purpose-member](https
 
 
 **cacheDir**
-- Default: `{rootDir}/node_modules/.cache/icon`
+- Default: `{rootDir}/node_modules/.cache/pwa/icon`
 
 Cache dir for generated icons
