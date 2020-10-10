@@ -1,7 +1,14 @@
 module.exports = {
   dev: false,
   rootDir: __dirname,
+
   target: 'static',
+
+  generate: {
+    staticAssets: {
+      version: 'default'
+    }
+  },
 
   buildModules: [
     { handler: require('../../') }
