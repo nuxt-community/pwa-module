@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/nuxt-community/pwa-module/compare/v3.1.2...v3.2.0) (2020-10-13)
+
+
+### Bug Fixes
+
+* support build cache ([#371](https://github.com/nuxt-community/pwa-module/issues/371)) ([9a825c9](https://github.com/nuxt-community/pwa-module/commit/9a825c9d47c057c5934030142cb6e46d23a46e21))
+* **meta:** fix `mergeMeta` cjs export ([774f1a8](https://github.com/nuxt-community/pwa-module/commit/774f1a87d8c102ad3754374e53a41b434a01b82c))
+* **workbox:** restore `sw.js` with smart build (fixes [#352](https://github.com/nuxt-community/pwa-module/issues/352)) ([491f440](https://github.com/nuxt-community/pwa-module/commit/491f440936e107c424864a1aa1121e6995d4e87b))
+
 ### [3.1.2](https://github.com/nuxt-community/pwa-module/compare/v3.1.1...v3.1.2) (2020-10-07)
 
 
