@@ -28,7 +28,7 @@ export interface ManifestOptions {
    */
   background_color: string,
   /**
-   * Default: `this.options.loading.color`
+   * Default: undefined
    */
   theme_color: string,
   /**
