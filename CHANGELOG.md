@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.2](https://github.com/nuxt-community/pwa-module/compare/v3.2.1...v3.2.2) (2020-10-13)
+
+
+### Bug Fixes
+
+* serve static webpack assets from disk in dev mode (fixes [#373](https://github.com/nuxt-community/pwa-module/issues/373)) ([8298f95](https://github.com/nuxt-community/pwa-module/commit/8298f955bf80eb44090cfb7b56070dc7e1a50aa8))
+
 ### [3.2.1](https://github.com/nuxt-community/pwa-module/compare/v3.2.0...v3.2.1) (2020-10-13)
 
 
