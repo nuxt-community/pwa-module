@@ -1,6 +1,6 @@
 {
   "title": "Nuxt PWA",
-  "url": "https://pwa.nuxtjs.org/",
+  "url": "https://pwa.nuxtjs.org",
   "logo": {
     "light": "/logo-light.svg",
     "dark": "/logo-dark.svg"
