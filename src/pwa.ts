@@ -1,7 +1,12 @@
-const { resolve } = require('path')
-const serveStatic = require('serve-static')
+import { resolve } from 'path'
+import serveStatic from 'serve-static'
+import { PKG } from './utils'
+import { icon } from './icon'
+import { manifest } from './manifest'
+import { meta, metaRuntime } from './meta'
+import { workbox } from './workbox'
 
-module.exports = async function nuxtPWA (moduleOptions) {
+export default async function pwa (moduleOptions) {
   const { nuxt } = this
   const moduleContainer = this // TODO: remove dependency when module-utils
 
@@ -11,18 +16,18 @@ module.exports = async function nuxtPWA (moduleOptions) {
 
   if (isRuntime) {
     // Load meta.json for SPA renderer
-    require('./meta/module.runtime')(nuxt)
+    metaRuntime(nuxt)
     return
   }
 
-  const modules = ['icon', 'manifest', 'meta', 'workbox']
+  const modules = { icon, manifest, meta, workbox }
 
   // Shared options context
   nuxt.options.pwa = { ...(nuxt.options.pwa || {}), ...(moduleOptions || {}) }
   const { pwa } = nuxt.options
 
   // Normalize options
-  for (const name of modules) {
+  for (const name in modules) {
     // Skip disabled modules
     if (pwa[name] === false || nuxt.options[name] === false) {
       continue
@@ -38,11 +43,11 @@ module.exports = async function nuxtPWA (moduleOptions) {
   }
 
   // Execute modules in sequence
-  for (const name of modules) {
+  for (const name in modules) {
     if (pwa[name] === false) {
       continue
     }
-    await require(`./${name}/module.js`)(nuxt, pwa, moduleContainer)
+    await modules[name](nuxt, pwa, moduleContainer)
   }
 
   // Serve dist from disk
@@ -55,4 +60,4 @@ module.exports = async function nuxtPWA (moduleOptions) {
   }
 }
 
-module.exports.meta = require('../package.json')
+pwa.meta = PKG

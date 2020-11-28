@@ -1,45 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`pwa build files (.nuxt) 1`] = `
-Array [
-  "fixture/.nuxt/components",
-  "fixture/.nuxt/components/nuxt-error.vue",
-  "fixture/.nuxt/components/nuxt-loading.vue",
-  "fixture/.nuxt/dist",
-  "fixture/.nuxt/dist/client",
-  "fixture/.nuxt/dist/client/LICENSES",
-  "fixture/.nuxt/dist/client/icons",
-  "fixture/.nuxt/dist/client/icons/icon_120x120.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_144x144.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_152x152.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_192x192.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_384x384.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_512x512.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/icon_64x64.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_ipad_1536x2048.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_ipadpro10_1668x2224.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_ipadpro12_2048x2732.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_ipadpro9_1536x2048.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphone6_50x1334.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphoneplus_1080x1920.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphonese_640x1136.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphonex_1125x2436.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphonexr_828x1792.b8f3a1.png",
-  "fixture/.nuxt/dist/client/icons/splash_iphonexsmax_1242x2688.b8f3a1.png",
-  "fixture/.nuxt/dist/client/manifest_test.webmanifest",
-  "fixture/.nuxt/dist/server",
-  "fixture/.nuxt/dist/server/index.spa.html",
-  "fixture/.nuxt/dist/server/index.ssr.html",
-  "fixture/.nuxt/dist/server/pages",
-  "fixture/.nuxt/loading.html",
-  "fixture/.nuxt/mixins",
-  "fixture/.nuxt/pwa",
-  "fixture/.nuxt/views",
-  "fixture/.nuxt/views/app.template.html",
-  "fixture/.nuxt/views/error.html",
-]
-`;
-
 exports[`pwa generate files (dist) 1`] = `
 Array [
   "fixture/dist/.gitkeep",

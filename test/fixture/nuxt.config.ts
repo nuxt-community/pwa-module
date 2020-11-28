@@ -1,7 +1,6 @@
-module.exports = {
-  dev: false,
-  rootDir: __dirname,
+import pwaModule from '../../src/pwa'
 
+export default {
   target: 'static',
 
   generate: {
@@ -11,7 +10,7 @@ module.exports = {
   },
 
   buildModules: [
-    { handler: require('../../') }
+    pwaModule
   ],
 
   manifest: {

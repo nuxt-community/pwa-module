@@ -1,12 +1,12 @@
-const hash = require('hasha')
+import hasha from 'hasha'
+import type { ManifestOptions } from '../types/manifest'
+import { joinUrl, getRouteParams, emitAsset } from './utils'
 
-const { joinUrl, getRouteParams, emitAsset } = require('../utils')
-
-module.exports = function nuxtManifest (nuxt, pwa) {
+export function manifest (nuxt, pwa) {
   const { routerBase, publicPath } = getRouteParams(nuxt.options)
 
   // Combine sources
-  const defaults = {
+  const defaults: ManifestOptions = {
     name: process.env.npm_package_name,
     short_name: process.env.npm_package_name,
     description: process.env.npm_package_description,
@@ -18,10 +18,12 @@ module.exports = function nuxtManifest (nuxt, pwa) {
     theme_color: pwa.meta.theme_color,
     lang: 'en',
     useWebmanifestExtension: false,
-    fileName: 'manifest.[hash].[ext]'
+    fileName: 'manifest.[hash].[ext]',
+    dir: undefined,
+    crossorigin: undefined
   }
 
-  const options = { ...defaults, ...pwa.manifest }
+  const options: ManifestOptions = { ...defaults, ...pwa.manifest }
 
   // Remove extra fields from manifest
   const manifest = { ...options }
@@ -32,7 +34,7 @@ module.exports = function nuxtManifest (nuxt, pwa) {
 
   // Generate file name
   const manifestFileName = options.fileName
-    .replace('[hash]', hash(JSON.stringify(manifest)).substr(0, 8))
+    .replace('[hash]', hasha(JSON.stringify(manifest)).substr(0, 8))
     .replace('[ext]', options.useWebmanifestExtension ? 'webmanifest' : 'json')
 
   // Merge final manifest into options.manifest for other modules
@@ -47,7 +49,7 @@ module.exports = function nuxtManifest (nuxt, pwa) {
   emitAsset(nuxt, manifestFileName, manifestSource)
 
   // Add manifest meta
-  const manifestMeta = { rel: 'manifest', href: joinUrl(options.publicPath, manifestFileName), hid: 'manifest' }
+  const manifestMeta = { rel: 'manifest', href: joinUrl(options.publicPath, manifestFileName), hid: 'manifest' } as any
   if (manifest.crossorigin) {
     manifestMeta.crossorigin = manifest.crossorigin
   }

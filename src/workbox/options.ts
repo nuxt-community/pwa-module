@@ -1,10 +1,10 @@
-const path = require('path')
-const { joinUrl, getRouteParams, startCase } = require('../utils')
-const { randomString } = require('./utils')
-const defaults = require('./defaults')
+import { resolve } from 'path'
+import { joinUrl, getRouteParams, startCase, randomString, PKG_DIR } from '../utils'
+import type { WorkboxOptions } from '../../types/workbox'
+import { defaults } from './defaults'
 
-function getOptions (nuxt, pwa) {
-  const options = { ...defaults, ...pwa.workbox }
+export function getOptions (nuxt, pwa): WorkboxOptions {
+  const options: WorkboxOptions = { ...defaults, ...pwa.workbox }
 
   // enabled
   if (options.enabled === undefined) {
@@ -24,12 +24,12 @@ function getOptions (nuxt, pwa) {
 
   // swTemplate
   if (!options.swTemplate) {
-    options.swTemplate = path.resolve(__dirname, `templates/sw${options.enabled ? '' : '.unregister'}.js`)
+    options.swTemplate = resolve(PKG_DIR, `templates/workbox/sw${options.enabled ? '' : '.unregister'}.js`)
   }
 
   // swDest
   if (!options.swDest) {
-    options.swDest = path.resolve(nuxt.options.srcDir, nuxt.options.dir.static || 'static', 'sw.js')
+    options.swDest = resolve(nuxt.options.srcDir, nuxt.options.dir.static || 'static', 'sw.js')
   }
 
   // swURL
@@ -67,14 +67,23 @@ function getOptions (nuxt, pwa) {
     options.preCaching.unshift(pwa.manifest.start_url)
   }
 
+  // Default revision
+  if (!options.cacheOptions.revision) {
+    options.cacheOptions.revision = randomString(12)
+  }
+  const normalizePreCaching = (arr: any[]) => arr.map(url => ({
+    revision: options.cacheOptions.revision,
+    ...(typeof url === 'string' ? { url } : url)
+  }))
+
   // Add offlineAssets to precaching
   if (options.offlineAssets.length) {
-    options.preCaching.unshift(...options.offlineAssets)
+    options.preCaching.unshift(...normalizePreCaching(options.offlineAssets))
   }
 
   // Add offlinePage to precaching
   if (options.offlinePage) {
-    options.preCaching.unshift(options.offlinePage)
+    options.preCaching.unshift(...(normalizePreCaching([options.offlinePage])))
   }
 
   // Default cacheId
@@ -82,16 +91,8 @@ function getOptions (nuxt, pwa) {
     options.cacheOptions.cacheId = (process.env.npm_package_name || 'nuxt') + (nuxt.options.dev ? '-dev' : '-prod')
   }
 
-  // Default revision
-  if (!options.cacheOptions.revision) {
-    options.cacheOptions.revision = randomString(12)
-  }
-
   // Normalize preCaching
-  options.preCaching = options.preCaching.map(url => ({
-    revision: options.cacheOptions.revision,
-    ...(typeof url === 'string' ? { url } : url)
-  }))
+  options.preCaching = normalizePreCaching(options.preCaching)
 
   // Normalize runtimeCaching
   const pluginModules = {
@@ -102,23 +103,25 @@ function getOptions (nuxt, pwa) {
     RangeRequests: 'rangeRequests.RangeRequestsPlugin'
   }
 
-  options.runtimeCaching = options.runtimeCaching.map(entry => ({
-    ...entry,
-    handler: startCase(entry.handler) || 'NetworkFirst',
-    method: entry.method || 'GET',
-    strategyPlugins: (entry.strategyPlugins || []).map((plugin) => {
-      const use = pluginModules[plugin.use]
-      if (!use) {
-        // eslint-disable-next-line no-console
-        console.warn(`Invalid strategy plugin ${plugin.use}`)
-        return
-      }
-      return {
-        use,
-        config: Array.isArray(plugin.config) ? plugin.config : [plugin.config]
-      }
-    }).filter(Boolean)
-  }))
+  options.runtimeCaching = options.runtimeCaching.map((entry) => {
+    return {
+      ...entry,
+      handler: startCase(entry.handler) || 'NetworkFirst',
+      method: entry.method || 'GET',
+      strategyPlugins: (entry.strategyPlugins || []).map((plugin) => {
+        const use = pluginModules[plugin.use]
+        if (!use) {
+          // eslint-disable-next-line no-console
+          console.warn(`Invalid strategy plugin ${plugin.use}`)
+          return false
+        }
+        return {
+          use,
+          config: Array.isArray(plugin.config) ? plugin.config : [plugin.config]
+        }
+      }).filter(Boolean)
+    }
+  })
 
   // Workbox URL
   if (!options.workboxURL) {
@@ -132,8 +135,4 @@ function getOptions (nuxt, pwa) {
   }
 
   return options
-}
-
-module.exports = {
-  getOptions
 }

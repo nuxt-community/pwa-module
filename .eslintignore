@@ -5,8 +5,7 @@ dist
 coverage
 
 # Plugin
-lib/**/plugin.js
-lib/**/templates
+templates
 
 # Fixtures
 test/fixture/**/static

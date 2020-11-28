@@ -4,12 +4,6 @@
   </main>
 </template>
 
-<style scoped>
-.icon {
-  max-width: 100%;
-}
-</style>
-
 <script>
 export default {
   asyncData () {
@@ -32,3 +26,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.icon {
+  max-width: 100%;
+}
+</style>

@@ -1,6 +1,9 @@
-module.exports = {
+import { version as workboxVersion } from 'workbox-cdn/package.json'
+import type { WorkboxOptions } from '../../types/workbox'
+
+export const defaults: WorkboxOptions = {
   // General
-  workboxVersion: require('workbox-cdn/package.json').version,
+  workboxVersion,
   workboxURL: undefined,
   importScripts: [],
   autoRegister: true,
@@ -38,11 +41,14 @@ module.exports = {
 
   // Sw
   swTemplate: undefined,
-  swUrl: undefined,
+  swURL: undefined,
   swScope: undefined,
   swDest: undefined,
 
   // Router
   routerBase: undefined,
-  publicPath: undefined
+  publicPath: undefined,
+
+  dev: undefined,
+  cacheNames: undefined
 }

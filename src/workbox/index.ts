@@ -1,8 +1,8 @@
-const { resolve } = require('path')
-const { getOptions } = require('./options')
-const { readJSFiles, pick, copyTemplate } = require('./utils')
+import { resolve } from 'path'
+import { readJSFiles, pick, copyTemplate, PKG_DIR } from '../utils'
+import { getOptions } from './options'
 
-module.exports = async function nuxtWorkbox (nuxt, pwa, moduleContainer) {
+export async function workbox (nuxt, pwa, moduleContainer) {
   const options = getOptions(nuxt, pwa)
 
   // Warning for dev option
@@ -14,7 +14,7 @@ module.exports = async function nuxtWorkbox (nuxt, pwa, moduleContainer) {
   // Register plugin
   if (options.autoRegister) {
     moduleContainer.addPlugin({
-      src: resolve(__dirname, `templates/workbox${options.enabled ? '' : '.unregister'}.js`),
+      src: resolve(PKG_DIR, `templates/workbox/workbox${options.enabled ? '' : '.unregister'}.js`),
       ssr: false,
       fileName: 'workbox.js',
       options: {

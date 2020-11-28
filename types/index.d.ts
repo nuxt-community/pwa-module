@@ -1,21 +1,11 @@
-
-import { IconOptions } from './icon'
-import { MetaOptions } from './meta'
-import { ManifestOptions } from './manifest'
-import { WorkboxOptions } from './workbox'
-
+import { PWAOptions } from './pwa'
 
 declare module '@nuxt/types/config/index' {
-  interface NuxtOptions {
-    pwa: {
-      icon: IconOptions | boolean,
-      meta: MetaOptions | boolean,
-      manifest: ManifestOptions | boolean,
-      workbox: WorkboxOptions | boolean
+    interface NuxtOptions {
+        pwa?: PWAOptions
+        meta?: PWAOptions['meta']
+        icon?: PWAOptions['icon']
+        workbox?: PWAOptions['workbox']
+        manifest?: PWAOptions['manifest']
     }
-    icon: IconOptions | boolean
-    meta: MetaOptions | boolean
-    manifest: ManifestOptions | boolean
-    workbox: WorkboxOptions | boolean
-  }
 }

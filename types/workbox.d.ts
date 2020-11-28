@@ -14,19 +14,8 @@ import {
 
 export type CachingStrategy = 'CacheFirst' | 'CacheOnly' | 'NetworkFirst' | 'NetworkOnly' | 'StaleWhileRevalidate'
 
-export interface RuntimeCaching {
-  urlPattern: string
-  handler?: CachingStrategy
-  method?: HTTPMethod
-  strategyOptions?: StrategyOptions
-  strategyPlugins?: StrategyPlugin[]
-}
-
 export type StrategyOptions =
   Omit<StaleWhileRevalidateOptions | CacheFirstOptions | NetworkFirstOptions | NetworkOnlyOptions | CacheOnlyOptions, 'plugins'>
-
-
-export type StrategyPlugin = BackgroundSync | BroadcastUpdate | CacheableResponse | Expiration | RangeRequests
 
 type StrategyPluginOf<name, T> = {
   use: name
@@ -39,8 +28,18 @@ export type CacheableResponse = StrategyPluginOf<'CacheableResponse', CacheableR
 export type Expiration = StrategyPluginOf<'Expiration', ExpirationPlugin>
 export type RangeRequests = StrategyPluginOf<'RangeRequests', RangeRequestsPlugin>
 
+export type StrategyPlugin = BackgroundSync | BroadcastUpdate | CacheableResponse | Expiration | RangeRequests
+
+export interface RuntimeCaching {
+  urlPattern: string
+  handler?: CachingStrategy
+  method?: HTTPMethod
+  strategyOptions?: StrategyOptions
+  strategyPlugins?: StrategyPlugin[]
+}
 
 export interface WorkboxOptions {
+  dev: boolean,
   workboxVersion: string,
   workboxURL: string,
   importScripts: string[],
@@ -70,7 +69,7 @@ export interface WorkboxOptions {
   /**
    * Default: `[]`
    */
-  precaching: string[],
+  preCaching: string[] | {url: string, revision: string}[],
   cacheOptions: {
     /**
      * Default: `<npm package name> || nuxt`
@@ -106,13 +105,13 @@ export interface WorkboxOptions {
   /**
    * Default: `/_nuxt/`
    */
-  assetsURLPattern: string | RegExp,
+  assetsURLPattern: string,
   /**
    * Auto generated based on `router.base`
    *
    * Default: `/`
    */
-  pagesURLPattern: string | RegExp,
+  pagesURLPattern: string,
   swTemplate: string,
   swURL: string,
   swDest: string,

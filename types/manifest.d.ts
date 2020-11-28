@@ -1,3 +1,5 @@
+/* eslint camelcase: 0 */
+
 export interface ManifestOptions {
   /**
    * Default: _npm_package_name_
@@ -46,5 +48,8 @@ export interface ManifestOptions {
   /**
    * Default: A combination of `routerBase` and `options.build.publicPath`
    */
-  publicPath: string
+  publicPath: string,
+
+  fileName: string,
+  crossorigin: boolean
 }

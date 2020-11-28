@@ -1,11 +1,12 @@
-const { join, resolve } = require('path')
-const { existsSync } = require('fs')
-const { isUrl } = require('../utils')
-const nuxtMetaRuntime = require('./module.runtime')
+import { join, resolve } from 'path'
+import { existsSync, readJsonSync } from 'fs-extra'
+import { mergeMeta } from '../lib/meta.utils'
+import type { MetaOptions } from '../types/meta'
+import { isUrl, PKG_DIR } from './utils'
 
-module.exports = function nuxtMeta (nuxt, pwa, moduleContainer) {
+export function meta (nuxt, pwa, moduleContainer) {
   // Defaults
-  const defaults = {
+  const defaults: MetaOptions = {
     name: process.env.npm_package_name,
     author: process.env.npm_package_author_name,
     description: process.env.npm_package_description,
@@ -31,7 +32,7 @@ module.exports = function nuxtMeta (nuxt, pwa, moduleContainer) {
   }
 
   // Combine sources
-  const options = { ...defaults, ...pwa.manifest, ...pwa.meta }
+  const options: MetaOptions = { ...defaults, ...pwa.manifest, ...pwa.meta }
 
   // Default value for viewport
   if (options.viewport === undefined) {
@@ -49,7 +50,7 @@ module.exports = function nuxtMeta (nuxt, pwa, moduleContainer) {
     title: '',
     meta: [],
     link: [],
-    htmlAttrs: {}
+    htmlAttrs: {} as any
   }
 
   // Charset
@@ -255,22 +256,33 @@ module.exports = function nuxtMeta (nuxt, pwa, moduleContainer) {
   }
 
   moduleContainer.addPlugin({
-    src: resolve(__dirname, './plugin.js'),
-    fileName: 'pwa/meta.js',
+    src: resolve(PKG_DIR, 'templates/meta.plugin.js'),
+    fileName: 'pwa/meta.plugin.js',
     options: {}
   })
 
   moduleContainer.addTemplate({
-    src: resolve(__dirname, 'meta.json'),
+    src: resolve(PKG_DIR, 'templates/meta.json'),
     fileName: 'pwa/meta.json',
     options: { head }
   })
 
   moduleContainer.addTemplate({
-    src: resolve(__dirname, 'meta.merge.js'),
-    fileName: 'pwa/meta.merge.js',
+    src: resolve(PKG_DIR, 'lib/meta.utils.js'),
+    fileName: 'pwa/meta.utils.js',
     options: { head }
   })
 
-  nuxtMetaRuntime(nuxt)
+  metaRuntime(nuxt)
+}
+
+export function metaRuntime (nuxt) {
+  const spaSupport = () => {
+    try {
+      const metaJSON = readJsonSync(resolve(nuxt.options.buildDir, 'pwa/meta.json'))
+      mergeMeta(nuxt.options.head, metaJSON)
+    } catch (_err) {}
+  }
+
+  nuxt.hook('render:resourcesLoaded', () => spaSupport())
 }

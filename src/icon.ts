@@ -1,16 +1,15 @@
-const path = require('path')
-const { fork } = require('child_process')
-const { join } = require('path')
-const fs = require('fs-extra')
-const hasha = require('hasha')
-const { joinUrl, getRouteParams, sizeName, emitAsset } = require('../utils')
-const { version } = require('../../package.json')
+import { join, resolve } from 'path'
+import { fork } from 'child_process'
+import fs from 'fs-extra'
+import hasha from 'hasha'
+import type { IconOptions } from '../types/icon'
+import { joinUrl, getRouteParams, sizeName, emitAsset, PKG, PKG_DIR } from './utils'
 
-module.exports = async function (nuxt, pwa, moduleContainer) {
+export async function icon (nuxt, pwa, moduleContainer) {
   const { publicPath } = getRouteParams(nuxt.options)
 
   // Defaults
-  const defaults = {
+  const defaults: IconOptions = {
     sizes: [64, 120, 144, 152, 192, 384, 512],
 
     iosSizes: [
@@ -38,6 +37,7 @@ module.exports = async function (nuxt, pwa, moduleContainer) {
 
     publicPath,
 
+    // @ts-ignore
     _iconHash: null,
     _assets: null,
     _manifestIcons: null,
@@ -45,7 +45,7 @@ module.exports = async function (nuxt, pwa, moduleContainer) {
   }
 
   // Merge options
-  const options = {
+  const options: IconOptions = {
     ...defaults,
     ...pwa.icon
   }
@@ -56,7 +56,7 @@ module.exports = async function (nuxt, pwa, moduleContainer) {
   // Disable module if no icon specified
   if (!options.source) {
     // eslint-disable-next-line no-console
-    console.warn('[pwa] [icon] Icon not found in ' + path.resolve(nuxt.options.srcDir, nuxt.options.dir.static, options.fileName))
+    console.warn('[pwa] [icon] Icon not found in ' + resolve(nuxt.options.srcDir, nuxt.options.dir.static, options.fileName))
     return
   }
 
@@ -90,8 +90,8 @@ module.exports = async function (nuxt, pwa, moduleContainer) {
 function findIcon (nuxt, options) {
   const iconSearchPath = [
     options.source,
-    path.resolve(nuxt.options.srcDir, nuxt.options.dir.static, options.fileName),
-    path.resolve(nuxt.options.srcDir, nuxt.options.dir.assets, options.fileName)
+    resolve(nuxt.options.srcDir, nuxt.options.dir.static, options.fileName),
+    resolve(nuxt.options.srcDir, nuxt.options.dir.assets, options.fileName)
   ].filter(p => p)
 
   for (const source of iconSearchPath) {
@@ -109,8 +109,8 @@ function addPlugin (_nuxt, options, moduleContainer) {
 
   if (options.plugin) {
     moduleContainer.addPlugin({
-      src: path.resolve(__dirname, './plugin.js'),
-      fileName: 'pwa/icons.js',
+      src: resolve(PKG_DIR, 'templates/icon.plugin.js'),
+      fileName: 'pwa/icon.plugin.js',
       options: {
         pluginName: options.pluginName,
         icons
@@ -173,14 +173,14 @@ function emitAssets (nuxt, options) {
   const resizePromise = resizeIcons(nuxt, options)
 
   for (const { name, target } of options._assets) {
-    const srcFileName = path.join(options.cacheDir, `${name}.png`)
+    const srcFileName = join(options.cacheDir, `${name}.png`)
     emitAsset(nuxt, target, resizePromise.then(() => fs.readFile(srcFileName)))
   }
 }
 
 async function resizeIcons (_nuxt, options) {
   const resizeOpts = JSON.stringify({
-    version,
+    version: PKG.version,
     input: options.source,
     distDir: options.cacheDir,
     sizes: [
@@ -189,7 +189,7 @@ async function resizeIcons (_nuxt, options) {
     ]
   })
 
-  const integrityFile = path.join(options.cacheDir, '.' + hasha(resizeOpts).substr(0, 8))
+  const integrityFile = join(options.cacheDir, '.' + hasha(resizeOpts).substr(0, 8))
 
   if (fs.existsSync(integrityFile)) {
     return
@@ -197,10 +197,11 @@ async function resizeIcons (_nuxt, options) {
   await fs.remove(options.cacheDir)
   await fs.mkdirp(options.cacheDir)
 
-  await new Promise((resolve, reject) => {
-    const child = fork(require.resolve('./resize'), [resizeOpts], { execArgv: [] })
+  // eslint-disable-next-line promise/param-names
+  await new Promise((_resolve, _reject) => {
+    const child = fork(resolve(PKG_DIR, 'lib/resize.js'), [resizeOpts], { execArgv: [] })
     child.on('exit', (code) => {
-      return code ? reject(code) : resolve()
+      return code ? _reject(code) : _resolve()
     })
   })
 

@@ -1,11 +1,14 @@
+/* eslint camelcase: 0 */
+import { ManifestOptions } from './manifest'
+
 export type OgImageObject = {
-  path: string,
-  width: number,
-  height: number,
-  type: string
+  path?: string,
+  width?: number,
+  height?: number,
+  type?: string
 }
 
-export interface MetaOptions {
+export interface MetaOptions extends Partial<ManifestOptions> {
   /**
    * Default: `utf-8`
    */
@@ -45,6 +48,10 @@ export interface MetaOptions {
    */
   name: string,
   /**
+   * @deprecated use meta.name
+   */
+  title?: string,
+  /**
    * Default: _npm_package_author_name_
    *
    * Meta: `author`
@@ -79,19 +86,19 @@ export interface MetaOptions {
    *
    * Meta: `og:site_name`
    */
-  ogSiteName: string,
+  ogSiteName: string | true,
   /**
    * Default: _npm_package_name_
    *
    * Meta: `og:title`
    */
-  ogTitle: string,
+  ogTitle: string | true,
   /**
    * Default: _npm_package_description_
    *
    * Meta: `og:description`
    */
-  ogDescription: string,
+  ogDescription: string | true,
   /**
    * Default: `undefined`
    *
@@ -109,7 +116,7 @@ export interface MetaOptions {
    *
    * Meta: `og:url`
    */
-  ogUrl: string | undefined,
+  ogUrl: string | undefined | true,
   /**
    * Default: `undefined`
    *

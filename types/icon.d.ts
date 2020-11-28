@@ -62,5 +62,7 @@ export interface IconOptions {
    *
    * Default: `{rootDir}/node_modules/.cache/icon`
    */
-  cacheDir: string
+  cacheDir: string,
+
+  publicPath: string
 }
