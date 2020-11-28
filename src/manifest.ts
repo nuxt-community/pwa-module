@@ -12,7 +12,7 @@ export function manifest (nuxt, pwa: PWAContext) {
     description: process.env.npm_package_description,
     publicPath,
     icons: [],
-    start_url: routerBase + '?standalone=true&v=2',
+    start_url: routerBase + '?standalone=true',
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: pwa.meta.theme_color,
