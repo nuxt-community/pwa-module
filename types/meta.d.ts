@@ -103,7 +103,7 @@ export interface MetaOptions {
    *
    * Meta: `og:image` and sub-tags
    */
-  ogImage: boolean | string | OgImageObject,
+  ogImage: boolean | string | OgImageObject | OgImageObject[],
   /**
    * Default: ogHost (if defined)
    *
