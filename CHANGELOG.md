@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/nuxt-community/pwa-module/compare/v3.2.2...v3.3.0) (2020-11-28)
+
+
+### Features
+
+* **manifest:** add revision to start_url ([ad26827](https://github.com/nuxt-community/pwa-module/commit/ad26827a9d76b6a4f1123f8a06fd0c946b90b5dd))
+
+
+### Bug Fixes
+
+* **manifest:** invalidate start_url cache ([240d4a1](https://github.com/nuxt-community/pwa-module/commit/240d4a14868fe46ab98bb79ba3a22c7973875d45))
+* precached files are not updated ([#386](https://github.com/nuxt-community/pwa-module/issues/386)) ([872dce1](https://github.com/nuxt-community/pwa-module/commit/872dce1ec2df58cbf6efcfe4a080f632510ea32b))
+
 ### [3.2.2](https://github.com/nuxt-community/pwa-module/compare/v3.2.1...v3.2.2) (2020-10-13)
 
 
