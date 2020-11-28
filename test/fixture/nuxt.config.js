@@ -36,6 +36,9 @@ module.exports = {
       prefix: 'test',
       googleAnalytics: 'test-ga'
     },
+    cacheOptions: {
+      revision: 'test-rev'
+    },
     importScripts: [
       'custom-sw.js'
     ],
