@@ -1,8 +1,8 @@
 import hasha from 'hasha'
-import type { ManifestOptions } from '../types/manifest'
+import type { ManifestOptions, PWAContext } from '../types'
 import { joinUrl, getRouteParams, emitAsset } from './utils'
 
-export function manifest (nuxt, pwa) {
+export function manifest (nuxt, pwa: PWAContext) {
   const { routerBase, publicPath } = getRouteParams(nuxt.options)
 
   // Combine sources
@@ -27,6 +27,7 @@ export function manifest (nuxt, pwa) {
 
   // Remove extra fields from manifest
   const manifest = { ...options }
+  // @ts-ignore
   delete manifest.src
   delete manifest.publicPath
   delete manifest.useWebmanifestExtension

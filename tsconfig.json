@@ -6,7 +6,10 @@
     "outDir": "dist",
     "declaration": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": [
+      "@nuxt/types"
+    ]
   },
   "include": [
     "src"

@@ -5,18 +5,17 @@
   "repository": "nuxt-community/pwa-module",
   "license": "MIT",
   "main": "dist/pwa.js",
-  "types": "./types/index.d.ts",
+  "types": "./dist/pwa.d.ts",
   "files": [
     "lib",
     "dist",
-    "templates",
-    "types"
+    "templates"
   ],
   "scripts": {
     "build": "siroc build",
     "dev": "nuxt-ts test/fixture",
     "lint": "eslint --ext .js,.vue,.ts .",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "release": "yarn test && yarn build && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && jest"
   },
   "dependencies": {

@@ -1,9 +1,9 @@
 import { resolve } from 'path'
 import { joinUrl, getRouteParams, startCase, randomString, PKG_DIR } from '../utils'
-import type { WorkboxOptions } from '../../types/workbox'
+import type { WorkboxOptions, PWAContext } from '../../types'
 import { defaults } from './defaults'
 
-export function getOptions (nuxt, pwa): WorkboxOptions {
+export function getOptions (nuxt, pwa: PWAContext): WorkboxOptions {
   const options: WorkboxOptions = { ...defaults, ...pwa.workbox }
 
   // enabled
@@ -62,19 +62,19 @@ export function getOptions (nuxt, pwa): WorkboxOptions {
     })
   }
 
-  // Add start_url to precaching
-  if (pwa.manifest && pwa.manifest.start_url) {
-    options.preCaching.unshift(pwa.manifest.start_url)
-  }
-
   // Default revision
   if (!options.cacheOptions.revision) {
     options.cacheOptions.revision = randomString(12)
   }
-  const normalizePreCaching = (arr: any[]) => arr.map(url => ({
+  const normalizePreCaching = (arr: any | any[]) => [].concat(arr).map(url => ({
     revision: options.cacheOptions.revision,
     ...(typeof url === 'string' ? { url } : url)
   }))
+
+  // Add start_url to precaching
+  if (pwa.manifest && pwa.manifest.start_url) {
+    options.preCaching.unshift(...normalizePreCaching(pwa.manifest.start_url))
+  }
 
   // Add offlineAssets to precaching
   if (options.offlineAssets.length) {
@@ -83,7 +83,7 @@ export function getOptions (nuxt, pwa): WorkboxOptions {
 
   // Add offlinePage to precaching
   if (options.offlinePage) {
-    options.preCaching.unshift(...(normalizePreCaching([options.offlinePage])))
+    options.preCaching.unshift(...(normalizePreCaching(options.offlinePage)))
   }
 
   // Default cacheId

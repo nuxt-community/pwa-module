@@ -1,5 +1,5 @@
 import { version as workboxVersion } from 'workbox-cdn/package.json'
-import type { WorkboxOptions } from '../../types/workbox'
+import type { WorkboxOptions } from '../../types'
 
 export const defaults: WorkboxOptions = {
   // General

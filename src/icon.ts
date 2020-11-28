@@ -2,10 +2,10 @@ import { join, resolve } from 'path'
 import { fork } from 'child_process'
 import fs from 'fs-extra'
 import hasha from 'hasha'
-import type { IconOptions } from '../types/icon'
+import type { PWAContext, IconOptions } from '../types'
 import { joinUrl, getRouteParams, sizeName, emitAsset, PKG, PKG_DIR } from './utils'
 
-export async function icon (nuxt, pwa, moduleContainer) {
+export async function icon (nuxt, pwa: PWAContext, moduleContainer) {
   const { publicPath } = getRouteParams(nuxt.options)
 
   // Defaults

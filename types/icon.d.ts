@@ -1,4 +1,3 @@
-
 export type iOSType = 'ipad' | 'ipadpro9' | 'ipadpro9' | 'ipadpro10' | 'ipadpro12' | 'iphonese' | 'iphone6' | 'iphoneplus' | 'iphonex' | 'iphonexr' | 'iphonexsmax'
 export type iOSSize = [number, number, iOSType]
 

@@ -1,10 +1,10 @@
 import { join, resolve } from 'path'
 import { existsSync, readJsonSync } from 'fs-extra'
 import { mergeMeta } from '../lib/meta.utils'
-import type { MetaOptions } from '../types/meta'
+import type { MetaOptions, PWAContext } from '../types'
 import { isUrl, PKG_DIR } from './utils'
 
-export function meta (nuxt, pwa, moduleContainer) {
+export function meta (nuxt, pwa: PWAContext, moduleContainer) {
   // Defaults
   const defaults: MetaOptions = {
     name: process.env.npm_package_name,

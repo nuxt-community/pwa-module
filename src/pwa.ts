@@ -1,12 +1,20 @@
 import { resolve } from 'path'
 import serveStatic from 'serve-static'
+import type { MetaOptions, ManifestOptions, IconOptions, PWAContext, WorkboxOptions } from '../types'
 import { PKG } from './utils'
 import { icon } from './icon'
 import { manifest } from './manifest'
 import { meta, metaRuntime } from './meta'
 import { workbox } from './workbox'
 
-export default async function pwa (moduleOptions) {
+interface PWAOptions {
+  meta?: MetaOptions | false
+  icon?: IconOptions | false
+  workbox?: WorkboxOptions | false
+  manifest?: ManifestOptions | false
+}
+
+export default async function pwa (moduleOptions: PWAOptions) {
   const { nuxt } = this
   const moduleContainer = this // TODO: remove dependency when module-utils
 
@@ -24,7 +32,7 @@ export default async function pwa (moduleOptions) {
 
   // Shared options context
   nuxt.options.pwa = { ...(nuxt.options.pwa || {}), ...(moduleOptions || {}) }
-  const { pwa } = nuxt.options
+  const pwa: PWAContext = nuxt.options.pwa
 
   // Normalize options
   for (const name in modules) {
@@ -57,6 +65,16 @@ export default async function pwa (moduleOptions) {
       path: nuxt.options.build.publicPath,
       handler: serveStatic(clientDir)
     })
+  }
+}
+
+declare module '@nuxt/types/config/index' {
+  interface NuxtOptions {
+    pwa?: PWAOptions
+    meta?: MetaOptions | false
+    icon?: IconOptions | false
+    workbox?: WorkboxOptions | false
+    manifest?: ManifestOptions | false
   }
 }
 
