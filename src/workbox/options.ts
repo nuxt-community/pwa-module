@@ -73,7 +73,12 @@ export function getOptions (nuxt, pwa: PWAContext): WorkboxOptions {
 
   // Add start_url to precaching
   if (pwa.manifest && pwa.manifest.start_url) {
-    pwa.manifest.start_url += '&revision=' + options.cacheOptions.revision
+    const r = 'revision=' + options.cacheOptions.revision
+    if (pwa.manifest.start_url.includes('?')) {
+      pwa.manifest.start_url += '&' + r
+    } else {
+      pwa.manifest.start_url += '?' + r
+    }
     options.preCaching.unshift(...normalizePreCaching(pwa.manifest.start_url))
   }
 
