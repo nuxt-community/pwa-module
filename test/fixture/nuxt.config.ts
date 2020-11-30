@@ -16,8 +16,8 @@ export default {
   manifest: {
     name: 'Test Project Name',
     description: 'Test Project Description',
+
     useWebmanifestExtension: true,
-    start_url: '/',
     fileName: 'manifest_test.[ext]?[hash]',
     orientation: 'portrait'
   },
