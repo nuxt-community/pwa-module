@@ -22,7 +22,7 @@ Add `@nuxtjs/pwa` dependency to your project:
   <code-block label="NPM">
 
   ```bash
-  npm i --dev @nuxtjs/pwa
+  npm i --save-dev @nuxtjs/pwa
   ```
 
   </code-block>
