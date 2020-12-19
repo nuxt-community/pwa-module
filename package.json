@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.12.7",
-    "@nuxt/test-utils": "^0.0.1",
-    "@nuxt/types": "^2.14.7",
+    "@nuxt/test-utils": "^0.1.2",
+    "@nuxt/types": "^2.14.12",
     "@nuxt/typescript-build": "^2.0.3",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/eslint-config": "latest",
@@ -45,8 +45,8 @@
     "klaw-sync": "latest",
     "node-fetch": "latest",
     "nuxt-edge": "latest",
-    "siroc": "^0.4.3",
+    "siroc": "^0.6.0",
     "standard-version": "latest",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.3"
   }
 }
