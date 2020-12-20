@@ -25,7 +25,7 @@ Copyright (c) - Nuxt Community
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/pwa/latest.svg?style=flat-square
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/pwa
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/pwa.svg?style=flat-square
+[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/pwa.svg?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/pwa
 
 [checks-src]: https://flat.badgen.net/github/checks/nuxt-community/pwa-module/dev
