@@ -61,7 +61,7 @@ function runtimeCaching(workbox, options) {
     },
     fetchDidFail(ctx) {
       ctx.error.message =
-        `[workbox] Network request for '${ctx.request.url}' threw an error: ` + ctx.error.message
+        '[workbox] Network request for ' + ctx.request.url + ' threw an error: ' + ctx.error.message
       console.error(ctx.error, 'Details:', ctx)
     },
     handlerDidError(ctx) {
