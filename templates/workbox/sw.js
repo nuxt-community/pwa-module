@@ -52,12 +52,34 @@ function precacheAssets(workbox, options) {
 
 
 function runtimeCaching(workbox, options) {
+  const requestInterceptor = {
+    requestWillFetch({ request }) {
+      if (request.cache === 'only-if-cached' && request.mode === 'no-cors') {
+        return new Request(request.url, { ...request, cache: 'default', mode: 'no-cors' })
+      }
+      return request
+    },
+    fetchDidFail(ctx) {
+      ctx.error.message =
+        '[workbox] Network request for ' + ctx.request.url + ' threw an error: ' + ctx.error.message
+      console.error(ctx.error, 'Details:', ctx)
+    },
+    handlerDidError(ctx) {
+      ctx.error.message =
+        `[workbox] Network handler threw an error: ` + ctx.error.message
+      console.error(ctx.error, 'Details:', ctx)
+      return null
+    }
+  }
+
   for (const entry of options.runtimeCaching) {
     const urlPattern = new RegExp(entry.urlPattern)
     const method = entry.method || 'GET'
 
     const plugins = (entry.strategyPlugins || [])
       .map(p => new (getProp(workbox, p.use))(...p.config))
+
+    plugins.unshift(requestInterceptor)
 
     const strategyOptions = { ...entry.strategyOptions, plugins }
 
