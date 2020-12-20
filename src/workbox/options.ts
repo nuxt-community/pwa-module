@@ -1,10 +1,11 @@
 import { resolve } from 'path'
+import cloneDeep from 'clone-deep'
 import { joinUrl, getRouteParams, startCase, randomString, PKG_DIR } from '../utils'
 import type { WorkboxOptions, PWAContext } from '../../types'
 import { defaults } from './defaults'
 
 export function getOptions (nuxt, pwa: PWAContext): WorkboxOptions {
-  const options: WorkboxOptions = { ...defaults, ...pwa.workbox }
+  const options: WorkboxOptions = cloneDeep({ ...defaults, ...pwa.workbox })
 
   // enabled
   if (options.enabled === undefined) {
