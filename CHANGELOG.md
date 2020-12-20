@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.3.3](https://github.com/nuxt-community/pwa-module/compare/v3.3.2...v3.3.3) (2020-12-20)
+
+
+### Bug Fixes
+
+* **workbox:** add additional details for uncaught errors and fix chromium CORS ([#417](https://github.com/nuxt-community/pwa-module/issues/417)) ([f20489c](https://github.com/nuxt-community/pwa-module/commit/f20489c2cc289b9d6f90143078f415d97b3cf4c1))
+* **workbox:** deepClone options to avoid cross-build mutation ([e39027e](https://github.com/nuxt-community/pwa-module/commit/e39027ee7159103d755fe67c1c105235f3257739))
+
 ### [3.3.2](https://github.com/nuxt-community/pwa-module/compare/v3.3.1...v3.3.2) (2020-11-30)
 
 
