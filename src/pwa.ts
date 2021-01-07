@@ -8,10 +8,10 @@ import { meta, metaRuntime } from './meta'
 import { workbox } from './workbox'
 
 interface PWAOptions {
-  meta?: MetaOptions | false
-  icon?: IconOptions | false
-  workbox?: WorkboxOptions | false
-  manifest?: ManifestOptions | false
+  meta?: Partial<MetaOptions> | false
+  icon?: Partial<IconOptions> | false
+  workbox?: Partial<WorkboxOptions> | false
+  manifest?: Partial<ManifestOptions> | false
 }
 
 export default async function pwa (moduleOptions: PWAOptions) {
@@ -70,11 +70,11 @@ export default async function pwa (moduleOptions: PWAOptions) {
 
 declare module '@nuxt/types/config/index' {
   interface NuxtOptions {
-    pwa?: PWAOptions
-    meta?: MetaOptions | false
-    icon?: IconOptions | false
-    workbox?: WorkboxOptions | false
-    manifest?: ManifestOptions | false
+    pwa?: Partial<PWAOptions>
+    meta?: Partial<MetaOptions> | false
+    icon?: Partial<IconOptions> | false
+    workbox?: Partial<WorkboxOptions> | false
+    manifest?: Partial<ManifestOptions> | false
   }
 }
 
