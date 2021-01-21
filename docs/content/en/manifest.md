@@ -23,20 +23,20 @@ pwa: {
 
 ## Default options
 
-| Property                          | Type            | Default                                                      | Description                                                     |
-| --------------------------------- | --------------- | ------------------------------------------------------------ | --------------------------------------------------------------- |
-| `name` <sup>\*1</sup>             | `String`        | `package.json`'s name property                               | [maximum of 45 characters]                                      |
-| `short_name` <sup>\*1</sup>       | `String`        | `package.json`'s name property                               | [maximum of 12 characters]                                      |
-| `description` <sup>\*2</sup>      | `String`        | `package.json`'s description property                        |                                                                 |
-| `icons` <sup>\*1</sup>            | `Array<Object>` | `[]`                                                         | (See the [icon module])                                         |
-| `start_url` <sup>\*1</sup>        | `String`        | `routerBase + '?standalone=true'`                            | It has to be relative to where the manifest is placed           |
-| `display` <sup>\*1</sup>          | `String`        | `'standalone'`                                               |                                                                 |
-| `background_color` <sup>\*2</sup> | `String`        | `'#ffffff'`                                                  |                                                                 |
-| `theme_color` <sup>\*2</sup>      | `String`        | `pwa.meta.theme_color`                                       | This module's meta theme-color (see the [meta module])          |
-| `dir`                             | `String`        | `'ltr'`                                                      | `ltr` or `rtl`. Used with `lang`                                |
-| `lang`                            | `String`        | `'en'`                                                       | Recommended if used `dir`                                       |
-| `useWebmanifestExtension` <sup>\*3</sup>       | `Boolean`       | `false`                                                      | Whether to use `webmanifest` file extension (or default `json`) |
-| `publicPath`                      | `String`        | A combination of `routerBase` and `options.build.publicPath` |                                                                 |
+| Property                                 | Type            | Default                                                      | Description                                                     |
+| ---------------------------------------- | --------------- | ------------------------------------------------------------ | --------------------------------------------------------------- |
+| `name` <sup>\*1</sup>                    | `String`        | `package.json`'s name property                               | [maximum of 45 characters]                                      |
+| `short_name` <sup>\*1</sup>              | `String`        | `package.json`'s name property                               | [maximum of 12 characters]                                      |
+| `description` <sup>\*2</sup>             | `String`        | `package.json`'s description property                        |                                                                 |
+| `icons` <sup>\*1</sup>                   | `Array<Object>` | `[]`                                                         | (See the [icon module])                                         |
+| `start_url` <sup>\*1</sup>               | `String`        | `routerBase + '?standalone=true'`                            | It has to be relative to where the manifest is placed           |
+| `display` <sup>\*1</sup>                 | `String`        | `'standalone'`                                               |                                                                 |
+| `background_color` <sup>\*2</sup>        | `String`        | `'#ffffff'`                                                  |                                                                 |
+| `theme_color` <sup>\*2</sup>             | `String`        | `'#ffffff'`                                                  | This module's meta theme-color (see the [meta module])          |
+| `dir`                                    | `String`        | `'ltr'`                                                      | `ltr` or `rtl`. Used with `lang`                                |
+| `lang`                                   | `String`        | `'en'`                                                       | Recommended if used `dir`                                       |
+| `useWebmanifestExtension` <sup>\*3</sup> | `Boolean`       | `false`                                                      | Whether to use `webmanifest` file extension (or default `json`) |
+| `publicPath`                             | `String`        | A combination of `routerBase` and `options.build.publicPath` |                                                                 |
 
 - <sup>\*1</sup> Mandatory (according [to Google](https://web.dev/add-manifest)).
   Although [official documentation](https://w3c.github.io/manifest/#json-schema) only mentions `name` and `icons`

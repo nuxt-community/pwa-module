@@ -15,7 +15,7 @@ export function manifest (nuxt, pwa: PWAContext) {
     start_url: routerBase + '?standalone=true',
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: pwa.meta.theme_color,
+    theme_color: pwa.meta.theme_color || '#ffffff',
     lang: 'en',
     useWebmanifestExtension: false,
     fileName: 'manifest.[hash].[ext]',
