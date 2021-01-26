@@ -90,7 +90,7 @@ export function meta (nuxt, pwa: PWAContext, moduleContainer) {
     // Shortcut icon
     if (options.favicon) {
       head.link.push({ hid: 'shortcut-icon', rel: 'shortcut icon', href: iconSmall.src })
-      head.link.push({ hid: `apple-touch-icon`, rel: 'apple-touch-icon', href: iconBig.src, sizes: iconBig.sizes })
+      head.link.push({ hid: 'apple-touch-icon', rel: 'apple-touch-icon', href: iconBig.src, sizes: iconBig.sizes })
     }
 
     // Launch Screen Image (IOS)
