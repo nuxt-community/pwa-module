@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.3.5](https://github.com/nuxt-community/pwa-module/compare/v3.3.4...v3.3.5) (2021-01-26)
+
+
+### Bug Fixes
+
+* **meta:** add missing `hid` to icon tags ([#428](https://github.com/nuxt-community/pwa-module/issues/428)) ([d9addb7](https://github.com/nuxt-community/pwa-module/commit/d9addb7917363e812fe277acc1cf228018a8342b))
+
 ### [3.3.4](https://github.com/nuxt-community/pwa-module/compare/v3.3.3...v3.3.4) (2021-01-07)
 
 
