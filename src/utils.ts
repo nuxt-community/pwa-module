@@ -1,3 +1,4 @@
+import devalue from '@nuxt/devalue'
 import { posix, resolve, dirname } from 'path'
 import { mkdirp, readFile, existsSync, writeFile } from 'fs-extra'
 import template from 'lodash.template'
@@ -102,7 +103,10 @@ export function pick (obj, props) {
 }
 
 export async function copyTemplate ({ src, dst, options }) {
-  const compile = template(await readFile(src, 'utf8'))
+  const compile = template(
+    await readFile(src, 'utf8'),
+    { imports: { devalue } }
+  )
   await writeFile(dst, compile({ options }))
 }
 
