@@ -1,7 +1,7 @@
-import devalue from '@nuxt/devalue'
 import { posix, resolve, dirname } from 'path'
 import { mkdirp, readFile, existsSync, writeFile } from 'fs-extra'
 import template from 'lodash.template'
+import devalue from '@nuxt/devalue'
 import { name, version } from '../package.json'
 
 export const PKG = {
