@@ -96,16 +96,16 @@ export function meta (nuxt, pwa: PWAContext, moduleContainer) {
     // Launch Screen Image (IOS)
     if (options.mobileAppIOS && pwa._iosSplash) {
       const splashes = [
-        ['iphonese', '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'],
-        ['iphone6', '(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)'],
-        ['iphoneplus', '(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)'],
-        ['iphonex', '(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)'],
-        ['iphonexr', '(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)'],
-        ['iphonexsmax', '(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)'],
-        ['ipad', '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)'],
-        ['ipadpro1', '(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)'],
-        ['ipadpro2', '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)'],
-        ['ipadpro3', '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)']
+        ['iphonese', '(width: 320px) and (height: 568px) and (-webkit-device-pixel-ratio: 2)'],
+        ['iphone6', '(width: 375px) and (height: 667px) and (-webkit-device-pixel-ratio: 2)'],
+        ['iphoneplus', '(width: 621px) and (height: 1104px) and (-webkit-device-pixel-ratio: 3)'],
+        ['iphonex', '(width: 375px) and (height: 812px) and (-webkit-device-pixel-ratio: 3)'],
+        ['iphonexr', '(width: 414px) and (height: 896px) and (-webkit-device-pixel-ratio: 2)'],
+        ['iphonexsmax', '(width: 414px) and (height: 896px) and (-webkit-device-pixel-ratio: 3)'],
+        ['ipad', '(width: 768px) and (height: 1024px) and (-webkit-device-pixel-ratio: 2)'],
+        ['ipadpro1', '(width: 834px) and (height: 1112px) and (-webkit-device-pixel-ratio: 2)'],
+        ['ipadpro2', '(width: 834px) and (height: 1194px) and (-webkit-device-pixel-ratio: 2)'],
+        ['ipadpro3', '(width: 1024px) and (height: 1366px) and (-webkit-device-pixel-ratio: 2)']
       ]
 
       for (const [type, media] of splashes) {
