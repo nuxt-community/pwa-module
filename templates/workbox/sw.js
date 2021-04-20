@@ -45,7 +45,7 @@ function initWorkbox(workbox, options) {
 }
 
 function precacheAssets(workbox, options) {
-  if (options.preCaching.length) {
+  if (options.preCaching && options.preCaching.length) {
     workbox.precaching.precacheAndRoute(options.preCaching, options.cacheOptions)
   }
 }
