@@ -36,7 +36,7 @@
     "@nuxt/typescript-build": "^2.0.4",
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/eslint-config": "latest",
-    "@nuxtjs/eslint-config-typescript": "^5.0.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/module-test-utils": "latest",
     "@types/workbox-sw": "^4.3.1",
     "babel-eslint": "latest",
