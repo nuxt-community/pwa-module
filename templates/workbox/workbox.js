@@ -22,7 +22,7 @@ const workbox = await window.$workbox
 if (workbox) {
   workbox.addEventListener('installed', event => {
     if (event.isUpdate) {
-      console.debug('There is an update for the PWA, reloading...')
+      console.debug('There is an update for the PWA app, reloading...')
       window.location.reload()
     }
   })
