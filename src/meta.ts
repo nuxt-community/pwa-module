@@ -8,8 +8,8 @@ export function meta (nuxt, pwa: PWAContext, moduleContainer) {
   // Defaults
   const defaults: MetaOptions = {
     name: process.env.npm_package_name,
-    author: process.env.npm_package_author_name,
-    description: process.env.npm_package_description,
+    author: undefined,
+    description: undefined,
     charset: 'utf-8',
     viewport: undefined,
     mobileApp: true,

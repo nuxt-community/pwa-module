@@ -27,7 +27,7 @@ pwa: {
 | --------------------------------- | --------------- | ------------------------------------------------------------ | --------------------------------------------------------------- |
 | `name` <sup>\*1</sup>             | `String`        | `package.json`'s name property                               | [maximum of 45 characters]                                      |
 | `short_name` <sup>\*1</sup>       | `String`        | `package.json`'s name property                               | [maximum of 12 characters]                                      |
-| `description` <sup>\*2</sup>      | `String`        | `package.json`'s description property                        |                                                                 |
+| `description` <sup>\*2</sup>      | `String`        | `undefined`                                                  |                                                                 |
 | `icons` <sup>\*1</sup>            | `Array<Object>` | `[]`                                                         | (See the [icon module])                                         |
 | `start_url` <sup>\*1</sup>        | `String`        | `routerBase + '?standalone=true'`                            | It has to be relative to where the manifest is placed           |
 | `display` <sup>\*1</sup>          | `String`        | `'standalone'`                                               |                                                                 |

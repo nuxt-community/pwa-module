@@ -9,7 +9,7 @@ export function manifest (nuxt, pwa: PWAContext) {
   const defaults: ManifestOptions = {
     name: process.env.npm_package_name,
     short_name: process.env.npm_package_name,
-    description: process.env.npm_package_description,
+    description: undefined,
     publicPath,
     icons: [],
     start_url: routerBase + '?standalone=true',

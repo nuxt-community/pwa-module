@@ -10,7 +10,7 @@ export interface ManifestOptions {
    */
   short_name: string,
   /**
-   * Default: _npm_package_description_
+   * Default: undefined
    */
   description: string,
   /**

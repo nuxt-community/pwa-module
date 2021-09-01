@@ -52,13 +52,13 @@ export interface MetaOptions extends Partial<ManifestOptions> {
    */
   title?: string,
   /**
-   * Default: _npm_package_author_name_
+   * Default: undefined
    *
    * Meta: `author`
    */
   author: string,
   /**
-   * Default: _npm_package_description_
+   * Default: undefined
    *
    * Meta: `description`
    */
