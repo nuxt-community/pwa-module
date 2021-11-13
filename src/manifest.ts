@@ -8,7 +8,7 @@ export function manifest (nuxt, pwa: PWAContext) {
   // Combine sources
   const defaults: ManifestOptions = {
     name: process.env.npm_package_name,
-    short_name: process.env.npm_package_name,
+    short_name: pwa.manifest.name || process.env.npm_package_name,
     description: process.env.npm_package_description,
     publicPath,
     icons: [],
