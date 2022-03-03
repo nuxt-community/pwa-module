@@ -96,7 +96,7 @@ function offlinePage(workbox, options) {
       const strategy = new workbox.strategies[options.offlineStrategy]
       return strategy
         .handle({ request, event })
-        .catch(() => caches.match(options.offlinePage))
+        .catch(() => workbox.precaching.matchPrecache(options.offlinePage))
     })
   }
 }
