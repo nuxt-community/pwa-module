@@ -188,7 +188,7 @@ Default: `/`
 
 ## Workbox Window
 
-This module uses [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) to register and communicate with workbox service worker.
+This module uses [workbox-window](https://developer.chrome.com/docs/workbox/modules/workbox-window/) to register and communicate with workbox service worker.
 See docs for more information about use cases.
 
 As service worker is registered in background, to access instance you have to await on a promise:
