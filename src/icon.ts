@@ -18,7 +18,7 @@ export async function icon (nuxt, pwa: PWAContext, moduleContainer) {
       [1668, 2224, 'ipadpro10'], // Ipad Pro 10.5"
       [2048, 2732, 'ipadpro12'], // Ipad Pro 12.9"
       [640, 1136, 'iphonese'], // Iphone SE
-      [50, 1334, 'iphone6'], // Iphone 6
+      [750, 1334, 'iphone6'], // Iphone 6
       [1080, 1920, 'iphoneplus'], // Iphone Plus
       [1125, 2436, 'iphonex'], // Iphone X
       [828, 1792, 'iphonexr'], // Iphone XR
