@@ -67,11 +67,11 @@ These articles will help you decide an appropriate value:
 - Meta: `title`
 
 ### `author`
-- Default: *npm_package_author_name*
+- Default: `undefined`
 - Meta: `author`
 
 ### `description`
-- Default: *npm_package_description*
+- Default: `undefined`
 - Meta: `description`
 
 ### `theme_color`
