@@ -19,6 +19,7 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
+    "@nuxt/devalue": "^1.2.5",
     "clone-deep": "^4.0.1",
     "defu": "^3.2.2",
     "execa": "^5.0.0",

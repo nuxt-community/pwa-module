@@ -1,4 +1,4 @@
-const options = <%= JSON.stringify(options.swOptions) %>
+const options = <%= devalue(options.swOptions) %>
 
 importScripts(...[options.workboxURL, ...options.importScripts])
 
