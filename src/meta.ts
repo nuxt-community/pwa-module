@@ -17,7 +17,7 @@ export function meta (nuxt, pwa: PWAContext, moduleContainer) {
     favicon: true,
     mobileAppIOS: undefined,
     appleStatusBarStyle: undefined,
-    theme_color: undefined,
+    theme_color: '#ffffff',
     lang: 'en',
     ogType: 'website',
     ogSiteName: true,
