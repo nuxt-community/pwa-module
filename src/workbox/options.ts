@@ -67,33 +67,36 @@ export function getOptions (nuxt, pwa: PWAContext): WorkboxOptions {
   if (!options.cacheOptions.revision) {
     options.cacheOptions.revision = randomString(12)
   }
-  const normalizePreCaching = (arr: any | any[]) => [].concat(arr).map(url => ({
-    revision: options.cacheOptions.revision,
-    ...(typeof url === 'string' ? { url } : url)
-  }))
 
-  // Add start_url to precaching
-  if (pwa.manifest && pwa.manifest.start_url) {
-    options.preCaching.unshift(...normalizePreCaching(pwa.manifest.start_url))
-  }
+  if (options.preCaching !== false) {
+    const normalizePreCaching = (arr: any | any[]) => [].concat(arr).map(url => ({
+      revision: options.cacheOptions.revision,
+      ...(typeof url === 'string' ? { url } : url)
+    }))
 
-  // Add offlineAssets to precaching
-  if (options.offlineAssets.length) {
-    options.preCaching.unshift(...normalizePreCaching(options.offlineAssets))
-  }
+    // Add start_url to precaching
+    if (pwa.manifest && pwa.manifest.start_url) {
+      options.preCaching.unshift(...normalizePreCaching(pwa.manifest.start_url))
+    }
 
-  // Add offlinePage to precaching
-  if (options.offlinePage) {
-    options.preCaching.unshift(...(normalizePreCaching(options.offlinePage)))
+    // Add offlineAssets to precaching
+    if (options.offlineAssets.length) {
+      options.preCaching.unshift(...normalizePreCaching(options.offlineAssets))
+    }
+
+    // Add offlinePage to precaching
+    if (options.offlinePage) {
+      options.preCaching.unshift(...(normalizePreCaching(options.offlinePage)))
+    }
+
+    // Normalize preCaching
+    options.preCaching = normalizePreCaching(options.preCaching)
   }
 
   // Default cacheId
   if (options.cacheOptions.cacheId === undefined) {
     options.cacheOptions.cacheId = (process.env.npm_package_name || 'nuxt') + (nuxt.options.dev ? '-dev' : '-prod')
   }
-
-  // Normalize preCaching
-  options.preCaching = normalizePreCaching(options.preCaching)
 
   // Normalize runtimeCaching
   const pluginModules = {

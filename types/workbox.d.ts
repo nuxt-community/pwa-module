@@ -69,7 +69,7 @@ export interface WorkboxOptions {
   /**
    * Default: `[]`
    */
-  preCaching: string[] | {url: string, revision: string}[],
+  preCaching: false | string[] | {url: string, revision: string}[],
   cacheOptions: {
     /**
      * Default: `<npm package name> || nuxt`
