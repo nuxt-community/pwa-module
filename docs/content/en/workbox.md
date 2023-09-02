@@ -379,3 +379,36 @@ if (workbox) {
   });
 }
 ```
+
+### Refresh On Update (Automatically)
+
+Refresh the page on every update so that user sees new content automatically. Create a file `pwa-update.js` in `plugins` folder and paste the following code.
+
+```js{}[plugins/pwa-update.js]
+export default async (context) => {
+  const workbox = await window.$workbox
+
+  if (!workbox) {
+    console.log("Workbox couldn't be loaded.")
+    return
+  }
+
+  workbox.addEventListener('installed', (event) => {
+    if (!event.isUpdate) {
+      console.log('The PWA is on the latest version.')
+      return
+    }
+
+    console.log('There is an update for the PWA, reloading...')
+    window.location.reload()
+  })
+}
+```
+
+Connect this plugin in your `nuxt.config.js` file.
+
+```js{}[nuxt.config.js]
+plugins: [
+    { src: '~/plugins/pwa-update.js', mode: 'client' },
+  ],
+```
