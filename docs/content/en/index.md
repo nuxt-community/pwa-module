@@ -14,7 +14,7 @@ features:
 <img src="/preview.png" class="light-img" />
 <img src="/preview-dark.png" class="dark-img" />
 
-Zero config [PWA](https://developers.google.com/web/progressive-web-apps) solution for [Nuxt.js](https://nuxtjs.org)
+Zero config [PWA](https://developers.google.com/web/progressive-web-apps) solution for [Nuxt.js 2](https://v2.nuxtjs.org)  For Nuxt 3, see [here]((https://vite-pwa-org.netlify.app/frameworks/nuxt))
 
 ## Features
 
