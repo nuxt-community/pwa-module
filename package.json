@@ -33,7 +33,7 @@
     "@babel/preset-typescript": "^7.12.7",
     "@nuxt/test-utils": "^0.1.2",
     "@nuxt/types": "^2.14.12",
-    "@nuxt/typescript-build": "^2.0.4",
+    "@nuxt/typescript-build": "^3.0.2",
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
