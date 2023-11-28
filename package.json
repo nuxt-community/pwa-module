@@ -22,7 +22,7 @@
     "clone-deep": "^4.0.1",
     "defu": "^3.2.2",
     "execa": "^5.0.0",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^11.2.0",
     "hasha": "^5.2.2",
     "jimp-compact": "^0.16.1",
     "lodash.template": "^4.5.0",
