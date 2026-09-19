@@ -14,15 +14,15 @@ export async function icon (nuxt, pwa: PWAContext, moduleContainer) {
 
     iosSizes: [
       [1536, 2048, 'ipad'], // Ipad
-      [1536, 2048, 'ipadpro9'], // Ipad Pro 9.7"
-      [1668, 2224, 'ipadpro10'], // Ipad Pro 10.5"
-      [2048, 2732, 'ipadpro12'], // Ipad Pro 12.9"
-      [640, 1136, 'iphonese'], // Iphone SE
-      [50, 1334, 'iphone6'], // Iphone 6
-      [1080, 1920, 'iphoneplus'], // Iphone Plus
+      [1536, 2048, 'ipadpro9'], // iPad Pro 9.7"
+      [1668, 2224, 'ipadpro10'], // iPad Pro 10.5"
+      [2048, 2732, 'ipadpro12'], // iPad Pro 12.9"
+      [640, 1136, 'iphonese'], // iPhone SE
+      [50, 1334, 'iphone6'], // iPhone 6
+      [1080, 1920, 'iphoneplus'], // iPhone Plus
       [1125, 2436, 'iphonex'], // Iphone X
-      [828, 1792, 'iphonexr'], // Iphone XR
-      [1242, 2688, 'iphonexsmax'] // Iphone XS Max
+      [828, 1792, 'iphonexr'], // iPhone XR
+      [1242, 2688, 'iphonexsmax'] // iPhone XS Max
     ],
 
     fileName: 'icon.png',
@@ -125,7 +125,7 @@ async function generateIcons (_nuxt, options) {
     options.iconHash = await hasha.fromFile(options.source).then(h => h.substring(0, 6))
   }
 
-  // Icons to be emited by webpack
+  // Icons to be emitted by webpack
   options._assets = []
 
   // Manifest icons
