@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repository is archived. `@nuxtjs/pwa` was built for Nuxt 2, which reached end of life on June 30, 2024. For Nuxt 3+, see [`@vite-pwa/nuxt`](https://github.com/vite-pwa/nuxt).
+
 # PWA Module
 
 [![npm version][npm-version-src]][npm-version-href]
