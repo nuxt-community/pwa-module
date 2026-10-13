@@ -9,8 +9,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/content-theme-docs": "^0.8.2",
-    "nuxt": "^2.14.12"
+    "@nuxt/content-theme-docs": "^0.11.1",
+    "nuxt": "^2.18.1"
   },
   "devDependencies": {
     "nuxt-ackee": "^2.0.0"
